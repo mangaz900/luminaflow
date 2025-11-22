@@ -12,7 +12,7 @@ const getStripeKey = async () => {
   if (!stripePromise) {
     try {
       // Read from Vite environment variables (VITE_ prefix required for browser access)
-      const publishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+      const publishableKey = (import.meta as any).env?.VITE_STRIPE_PUBLISHABLE_KEY as string;
       
       if (!publishableKey) {
         throw new Error('Stripe Publishable Key saknas. Kontrollera Vercel Environment Variables (VITE_STRIPE_PUBLISHABLE_KEY).');
