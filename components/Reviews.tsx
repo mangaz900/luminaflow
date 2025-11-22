@@ -150,8 +150,26 @@ const Reviews: React.FC = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // Show 3 reviews at a time on desktop, 1 on mobile
-  const reviewsPerView = 3;
+  // Show 1 review on mobile, 3 on desktop
+  const getReviewsPerView = () => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 768 ? 3 : 1;
+    }
+    return 1; // Default to mobile
+  };
+
+  const [reviewsPerView, setReviewsPerView] = React.useState(getReviewsPerView());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setReviewsPerView(getReviewsPerView());
+      // Reset index when switching between mobile/desktop
+      setCurrentIndex(0);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const maxIndex = Math.max(0, reviews.length - reviewsPerView);
 
   const nextReviews = () => {
@@ -162,8 +180,8 @@ const Reviews: React.FC = () => {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
-  // Swipe Logic
-  const minSwipeDistance = 50;
+  // Swipe Logic - lägre tröskel för mobil för bättre känsla
+  const minSwipeDistance = 30;
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
