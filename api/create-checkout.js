@@ -43,16 +43,23 @@ export default async function handler(req, res) {
       line_items: lineItems,
       mode: 'payment',
       success_url: `${frontendUrl}/order-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${frontendUrl}/checkout`,
-      customer_email: customer.email,
+      cancel_url: `${frontendUrl}/`,
+      // Stripe kommer att be om e-post och leveransinfo automatiskt
+      // Om customer.email finns, förfylls den
+      ...(customer.email && { customer_email: customer.email }),
       metadata: {
-        customer_name: `${customer.firstName} ${customer.lastName}`,
-        customer_email: customer.email,
-        customer_phone: customer.phone,
+        ...(customer.firstName && customer.lastName && {
+          customer_name: `${customer.firstName} ${customer.lastName}`,
+        }),
+        ...(customer.email && { customer_email: customer.email }),
+        ...(customer.phone && { customer_phone: customer.phone }),
       },
+      // Stripe samlar in leveransinfo automatiskt
       shipping_address_collection: {
         allowed_countries: ['SE'],
       },
+      // Stripe samlar in e-post automatiskt om den inte finns
+      customer_email: customer.email || undefined,
       payment_method_options: {
         klarna: {
           preferred_locale: 'sv-SE',

@@ -14,10 +14,49 @@ const ShoppingCart: React.FC = () => {
     getTotalPrice,
     getTotalItems 
   } = useCart();
+  const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleGoToCheckout = () => {
-    closeCart();
-    navigate('/checkout');
+  const handleGoToCheckout = async () => {
+    if (items.length === 0) return;
+    
+    setIsLoading(true);
+    try {
+      // Skapa Stripe Checkout direkt (Stripe hanterar allt - e-post, leveransinfo, betalning)
+      const response = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items,
+          customer: {
+            // Minimal info - Stripe kommer att be om resten
+            email: '',
+            firstName: '',
+            lastName: '',
+            phone: '',
+            address: '',
+            city: '',
+            postalCode: '',
+          },
+          total: getTotalPrice(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!data.success || !data.url) {
+        throw new Error(data.error || 'Kunde inte skapa checkout');
+      }
+
+      // Redirecta direkt till Stripe Checkout
+      window.location.href = data.url;
+    } catch (err) {
+      console.error('Checkout error:', err);
+      // Fallback till vanlig checkout-sida om det misslyckas
+      closeCart();
+      navigate('/checkout');
+    }
   };
 
   if (!isCartOpen) return null;
@@ -123,10 +162,20 @@ const ShoppingCart: React.FC = () => {
               </p>
               <button
                 onClick={handleGoToCheckout}
-                className="w-full bg-medical-900 text-white py-4 rounded-full text-lg font-medium hover:bg-[#0A2A4A] transition-all shadow-lg flex items-center justify-center gap-2"
+                disabled={isLoading}
+                className="w-full bg-medical-900 text-white py-4 rounded-full text-lg font-medium hover:bg-[#0A2A4A] transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Gå till kassan</span>
-                <ArrowRight size={20} />
+                {isLoading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Förbereder...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Gå till kassan</span>
+                    <ArrowRight size={20} />
+                  </>
+                )}
               </button>
               <button
                 onClick={closeCart}
