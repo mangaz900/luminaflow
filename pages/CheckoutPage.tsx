@@ -11,19 +11,14 @@ let stripePromise: Promise<any> | null = null;
 const getStripeKey = async () => {
   if (!stripePromise) {
     try {
-      const response = await fetch('/api/stripe-key');
+      // Read directly from environment variables (works in both dev and production)
+      const publishableKey = typeof process !== 'undefined' && process.env?.STRIPE_PUBLISHABLE_KEY;
       
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}. Kontrollera att backend-servern körs på port 3001.`);
+      if (!publishableKey) {
+        throw new Error('Stripe Publishable Key saknas. Kontrollera Vercel Environment Variables.');
       }
       
-      const data = await response.json();
-      
-      if (!data.publishableKey) {
-        throw new Error('Stripe Publishable Key saknas i backend. Kontrollera server/.env filen.');
-      }
-      
-      stripePromise = loadStripe(data.publishableKey);
+      stripePromise = loadStripe(publishableKey);
     } catch (error) {
       console.error('Error loading Stripe:', error);
       throw error;
