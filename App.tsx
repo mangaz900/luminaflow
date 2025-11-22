@@ -17,7 +17,6 @@ import Reviews from './components/Reviews';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
-import CheckoutPage from './pages/CheckoutPage';
 import OrderSuccess from './components/OrderSuccess';
 
 const HomePage: React.FC = () => {
@@ -59,7 +58,6 @@ const App: React.FC = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/order-success" element={<OrderSuccess />} />
         </Routes>
         <ShoppingCart />

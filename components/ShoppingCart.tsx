@@ -53,9 +53,8 @@ const ShoppingCart: React.FC = () => {
       window.location.href = data.url;
     } catch (err) {
       console.error('Checkout error:', err);
-      // Fallback till vanlig checkout-sida om det misslyckas
-      closeCart();
-      navigate('/checkout');
+      alert('Kunde inte skapa checkout. Försök igen.');
+      setIsLoading(false);
     }
   };
 
