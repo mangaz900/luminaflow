@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -47,15 +47,19 @@ const HomePage: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  const location = useLocation();
+
   // Scroll to top on initial load
   useEffect(() => {
     // Prevent scroll restoration
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
-    // Scroll to top on mount
-    window.scrollTo(0, 0);
-  }, []);
+    // Scroll to top on mount (endast om det inte finns scrollTo state)
+    if (!location.state?.scrollTo) {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   return (
     <CartProvider>
