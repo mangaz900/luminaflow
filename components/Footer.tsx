@@ -8,18 +8,18 @@ const Footer: React.FC = () => {
 
   const handleNavClick = (hash: string) => {
     if (location.pathname !== '/') {
-      navigate('/');
+      // Navigera till startsidan med hash i state
+      navigate('/', { state: { scrollTo: hash } });
+    } else {
+      // Om vi redan är på startsidan, scrolla direkt
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const yOffset = -80; // Offset för fixed navbar
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
-      }, 100);
-    } else {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      }, 50);
     }
   };
 

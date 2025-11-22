@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
@@ -9,24 +9,37 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Hantera scrollning efter navigation
+  useEffect(() => {
+    if (location.pathname === '/' && location.state?.scrollTo) {
+      setTimeout(() => {
+        const element = document.querySelector(location.state.scrollTo);
+        if (element) {
+          const yOffset = -80; // Offset för fixed navbar
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+        // Rensa state så det inte scrollar igen vid refresh
+        navigate(location.pathname, { replace: true, state: {} });
+      }, 150);
+    }
+  }, [location, navigate]);
+
   const handleNavClick = (hash: string) => {
     setIsOpen(false);
     if (location.pathname !== '/') {
-      // Om vi inte är på startsidan, navigera dit först
-      navigate('/');
-      // Vänta lite så sidan laddas, sedan scrolla
+      // Navigera till startsidan med hash i state
+      navigate('/', { state: { scrollTo: hash } });
+    } else {
+      // Om vi redan är på startsidan, scrolla direkt
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const yOffset = -80; // Offset för fixed navbar
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
-      }, 100);
-    } else {
-      // Om vi redan är på startsidan, scrolla direkt
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      }, 50);
     }
   };
 
