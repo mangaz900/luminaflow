@@ -22,7 +22,19 @@ export default async function handler(req, res) {
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  // Hantera payment_intent.succeeded event
+  // Hantera checkout.session.completed event (Stripe Checkout)
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    console.log(`✅ Checkout session completed: ${session.id}`);
+    
+    // Här kan du lägga till Shopify order update om det behövs
+    // const shopifyOrderId = session.metadata?.shopify_order_id;
+    // if (shopifyOrderId) {
+    //   await updateShopifyOrder(parseInt(shopifyOrderId), 'paid');
+    // }
+  }
+
+  // Hantera payment_intent.succeeded event (för Payment Element, om det används)
   if (event.type === 'payment_intent.succeeded') {
     const paymentIntent = event.data.object;
     console.log(`✅ Payment succeeded: ${paymentIntent.id}`);
