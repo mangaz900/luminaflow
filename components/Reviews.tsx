@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Review } from '../types';
 
@@ -158,7 +158,7 @@ const Reviews: React.FC = () => {
     return 1; // Default to mobile
   };
 
-  const [reviewsPerView, setReviewsPerView] = React.useState(getReviewsPerView());
+  const [reviewsPerView, setReviewsPerView] = useState(getReviewsPerView());
 
   useEffect(() => {
     const handleResize = () => {
