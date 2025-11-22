@@ -77,11 +77,8 @@ export default async function handler(req, res) {
       shipping_address_collection: {
         allowed_countries: ['SE'],
       },
-      payment_method_options: {
-        klarna: {
-          preferred_locale: 'sv-SE',
-        },
-      },
+      // Klarna kommer automatiskt att vara tillgängligt för Sverige (SE)
+      // Stripe detekterar locale baserat på shipping address
     });
 
     res.json({
