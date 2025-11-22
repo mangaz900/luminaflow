@@ -17,11 +17,26 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Check if Stripe key is configured
+    if (!process.env.STRIPE_SECRET_KEY) {
+      console.error('❌ STRIPE_SECRET_KEY is not configured');
+      return res.status(500).json({
+        success: false,
+        error: 'Stripe är inte konfigurerat. Kontakta support.',
+      });
+    }
+
     const { items, customer, total } = req.body;
 
     if (!items || items.length === 0) {
       return res.status(400).json({ success: false, error: 'Inga produkter i varukorgen' });
     }
+
+    console.log('📦 Creating checkout session:', {
+      itemsCount: items.length,
+      total,
+      hasEmail: !!customer?.email,
+    });
 
     // Skapa Stripe Checkout Session
     const lineItems = items.map(item => ({

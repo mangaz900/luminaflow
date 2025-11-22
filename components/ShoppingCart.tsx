@@ -43,6 +43,12 @@ const ShoppingCart: React.FC = () => {
         }),
       });
 
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('API Error:', response.status, errorText);
+        throw new Error(`Server error: ${response.status}`);
+      }
+
       const data = await response.json();
 
       if (!data.success || !data.url) {
@@ -53,7 +59,8 @@ const ShoppingCart: React.FC = () => {
       window.location.href = data.url;
     } catch (err) {
       console.error('Checkout error:', err);
-      alert('Kunde inte skapa checkout. Försök igen.');
+      const errorMessage = err instanceof Error ? err.message : 'Kunde inte skapa checkout. Försök igen.';
+      alert(errorMessage);
       setIsLoading(false);
     }
   };
