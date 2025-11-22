@@ -5,11 +5,12 @@ let ai: GoogleGenAI | null = null;
 
 const getAI = () => {
   if (!ai) {
-    // Get API key from environment (Vite uses import.meta.env, but we define it as process.env in vite.config)
-    const apiKey = (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
+    // Get API key from environment - try multiple sources
+    const apiKey = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY)
+      || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
       || (typeof process !== 'undefined' && process.env?.API_KEY)
       || '';
-    if (!apiKey) {
+    if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY') {
       throw new Error("Gemini API key not configured");
     }
     ai = new GoogleGenAI({ apiKey });
@@ -89,11 +90,12 @@ Svara alltid på Svenska.
 
 export const sendChatMessage = async (history: {role: string, parts: {text: string}[]}[], newMessage: string): Promise<string> => {
   try {
-    // Check if API key is available
-    const apiKey = (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
+    // Check if API key is available - try multiple sources
+    const apiKey = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY)
+      || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
       || (typeof process !== 'undefined' && process.env?.API_KEY)
       || '';
-    if (!apiKey) {
+    if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY') {
       return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
     }
 
