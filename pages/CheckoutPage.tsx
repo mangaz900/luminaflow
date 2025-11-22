@@ -180,8 +180,14 @@ const PaymentForm: React.FC<{
         </label>
         <PaymentElement
           options={{
-            layout: 'tabs',
             paymentMethodOrder: ['klarna', 'card'],
+            paymentMethodTypes: ['klarna', 'card'],
+            business: {
+              name: 'Lumina Growth',
+            },
+            terms: {
+              klarna: 'always',
+            },
             fields: {
               billingDetails: {
                 name: 'never',
