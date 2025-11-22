@@ -1,15 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Instagram, Facebook, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (hash: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   return (
     <footer className="bg-dark-900 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           
           <div className="space-y-6">
-            <h3 className="font-serif text-2xl font-bold text-white">Lumina.</h3>
+            <button
+              onClick={() => navigate('/')}
+              className="font-serif text-2xl font-bold text-white hover:text-gold-400 transition-colors cursor-pointer text-left"
+            >
+              Lumina.
+            </button>
             <p className="text-gray-400 text-sm leading-relaxed">
               Vi skapar premium hårvård för den moderna människan. Veganskt, hållbart och effektivt.
             </p>
@@ -27,9 +52,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-medium text-lg mb-6">Hjälp</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-gold-400 transition-colors">Kontakta oss</a></li>
-              <li><a href="#" className="hover:text-gold-400 transition-colors">Frakt & Retur</a></li>
-              <li><a href="#" className="hover:text-gold-400 transition-colors">FAQ</a></li>
+              <li><button onClick={() => handleNavClick('#faq')} className="hover:text-gold-400 transition-colors text-left">Kontakta oss</button></li>
+              <li><Link to="/returpolicy" className="hover:text-gold-400 transition-colors">Frakt & Retur</Link></li>
+              <li><button onClick={() => handleNavClick('#faq')} className="hover:text-gold-400 transition-colors text-left">FAQ</button></li>
             </ul>
           </div>
 

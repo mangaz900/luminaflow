@@ -1,10 +1,34 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { openCart, getTotalItems } = useCart();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (hash: string) => {
+    setIsOpen(false);
+    if (location.pathname !== '/') {
+      // Om vi inte är på startsidan, navigera dit först
+      navigate('/');
+      // Vänta lite så sidan laddas, sedan scrolla
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Om vi redan är på startsidan, scrolla direkt
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   return (
     <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
@@ -13,11 +37,11 @@ const Navbar: React.FC = () => {
           
           {/* Left: Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 flex-1">
-            <a href="#faq" className="text-dark-900 hover:text-gold-600 transition-colors">FAQ</a>
-            <a href="#anvandning" className="text-dark-900 hover:text-gold-600 transition-colors">Användning</a>
-            <a href="#ingredienser" className="text-dark-900 hover:text-gold-600 transition-colors">Ingredienser</a>
-            <a href="#recensioner" className="text-dark-900 hover:text-gold-600 transition-colors">Recensioner</a>
-            <a href="#ai-expert" className="text-dark-900 hover:text-gold-600 transition-colors">AI Expert</a>
+            <button onClick={() => handleNavClick('#faq')} className="text-dark-900 hover:text-gold-600 transition-colors">FAQ</button>
+            <button onClick={() => handleNavClick('#anvandning')} className="text-dark-900 hover:text-gold-600 transition-colors">Användning</button>
+            <button onClick={() => handleNavClick('#ingredienser')} className="text-dark-900 hover:text-gold-600 transition-colors">Ingredienser</button>
+            <button onClick={() => handleNavClick('#recensioner')} className="text-dark-900 hover:text-gold-600 transition-colors">Recensioner</button>
+            <button onClick={() => handleNavClick('#ai-expert')} className="text-dark-900 hover:text-gold-600 transition-colors">AI Expert</button>
           </div>
 
           {/* Mobile Menu Button (Left) */}
@@ -29,7 +53,12 @@ const Navbar: React.FC = () => {
 
           {/* Center: Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex-shrink-0 z-10">
-            <span className="font-serif text-xl sm:text-2xl font-bold text-dark-900">Lumina.</span>
+            <button
+              onClick={() => navigate('/')}
+              className="font-serif text-xl sm:text-2xl font-bold text-dark-900 hover:text-medical-900 transition-colors cursor-pointer"
+            >
+              Lumina.
+            </button>
           </div>
 
           {/* Right: Shopping Cart */}
@@ -53,10 +82,11 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full">
           <div className="px-4 pt-2 pb-6 space-y-2 shadow-lg">
-            <a href="#faq" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">FAQ</a>
-            <a href="#anvandning" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Användning</a>
-            <a href="#ingredienser" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Ingredienser</a>
-            <a href="#recensioner" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Recensioner</a>
+            <button onClick={() => handleNavClick('#faq')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">FAQ</button>
+            <button onClick={() => handleNavClick('#anvandning')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Användning</button>
+            <button onClick={() => handleNavClick('#ingredienser')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Ingredienser</button>
+            <button onClick={() => handleNavClick('#recensioner')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Recensioner</button>
+            <button onClick={() => handleNavClick('#ai-expert')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">AI Expert</button>
             <button 
               onClick={() => { setIsOpen(false); openCart(); }} 
               className="mt-4 bg-dark-900 text-white p-3 rounded-full flex items-center justify-center relative"
