@@ -18,6 +18,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 import OrderSuccess from './components/OrderSuccess';
+import CookieConsent from './components/CookieConsent';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
@@ -69,6 +70,7 @@ const App: React.FC = () => {
           <Route path="/returpolicy" element={<ReturnPolicy />} />
         </Routes>
         <ShoppingCart />
+        <CookieConsent />
       </div>
     </CartProvider>
   );
