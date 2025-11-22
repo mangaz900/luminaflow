@@ -7,14 +7,17 @@ const FAQ: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleScrollToPricing = () => {
+  const handleScrollToPricing = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+    }
     if (location.pathname !== '/') {
       navigate('/', { state: { scrollTo: '#erbjudande' } });
     } else {
       setTimeout(() => {
         const element = document.querySelector('#erbjudande');
         if (element) {
-          const yOffset = -80;
+          const yOffset = -80; // Offset för fixed navbar
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }

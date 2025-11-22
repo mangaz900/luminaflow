@@ -4,13 +4,16 @@ import { BrowserRouter, useLocation } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
-// Scroll to top on route change
+// Scroll to top on route change (endast om det inte finns scrollTo state)
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, state } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Scrolla inte till top om det finns scrollTo state (hanteras av Navbar)
+    if (!state?.scrollTo) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, state]);
 
   return null;
 };

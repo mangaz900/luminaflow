@@ -49,17 +49,24 @@ const HomePage: React.FC = () => {
 const App: React.FC = () => {
   const location = useLocation();
 
-  // Scroll to top on initial load
+  // Prevent scroll restoration och scrolla till top endast vid initial load
   useEffect(() => {
     // Prevent scroll restoration
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
-    // Scroll to top on mount (endast om det inte finns scrollTo state)
-    if (!location.state?.scrollTo) {
-      window.scrollTo(0, 0);
+    
+    // Scrolla till top endast vid initial mount (inte vid varje route change)
+    // ScrollToTop i index.tsx hanterar route changes
+    if (location.pathname === '/' && !location.state?.scrollTo) {
+      // Endast scrolla till top om vi är på startsidan och det inte finns scrollTo state
+      const hasScrolled = sessionStorage.getItem('hasScrolled');
+      if (!hasScrolled) {
+        window.scrollTo(0, 0);
+        sessionStorage.setItem('hasScrolled', 'true');
+      }
     }
-  }, [location]);
+  }, []); // Endast vid mount, inte vid varje location change
 
   return (
     <CartProvider>

@@ -25,7 +25,10 @@ const Navbar: React.FC = () => {
     }
   }, [location, navigate]);
 
-  const handleNavClick = (hash: string) => {
+  const handleNavClick = (hash: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+    }
     setIsOpen(false);
     if (location.pathname !== '/') {
       // Navigera till startsidan med hash i state
