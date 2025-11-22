@@ -20,7 +20,7 @@ const ProblemSolution: React.FC = () => {
         </div>
 
         {/* The Villain & Solution Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-stretch">
           
           {/* The Problem (The Villain) */}
           <div className="bg-[#FDF2F2] rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 border border-red-100">

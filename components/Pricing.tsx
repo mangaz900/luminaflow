@@ -56,8 +56,8 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="erbjudande" className="py-12 md:py-16 bg-white scroll-mt-20">
-      <div className="max-w-lg mx-auto px-4 sm:px-6">
+    <section id="erbjudande" className="py-12 md:py-16 lg:py-20 bg-white scroll-mt-20">
+      <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">

@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#F5F7FA] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
           
           {/* Text Content */}
           <div className="order-2 md:order-1 space-y-6 md:space-y-8 animate-fade-in-up">

@@ -28,8 +28,8 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Center: Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex-shrink-0">
-            <span className="font-serif text-2xl font-bold text-dark-900">Lumina.</span>
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex-shrink-0 z-10">
+            <span className="font-serif text-xl sm:text-2xl font-bold text-dark-900">Lumina.</span>
           </div>
 
           {/* Right: Shopping Cart */}

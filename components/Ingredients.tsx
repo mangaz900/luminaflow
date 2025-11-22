@@ -72,7 +72,7 @@ const Ingredients: React.FC = () => {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 relative lg:sticky lg:top-24 mb-8 lg:mb-0">
+          <div className="order-1 lg:order-2 relative lg:sticky lg:top-24 mb-8 md:mb-12 lg:mb-0">
              {/* Minimalist product shot mixed with nature/science vibe */}
             <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden border border-medical-700 shadow-2xl aspect-square md:aspect-[4/5]">
                  <img 

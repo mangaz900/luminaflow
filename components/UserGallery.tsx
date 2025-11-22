@@ -57,10 +57,10 @@ const UserGallery: React.FC = () => {
         {/* Main Gallery Card */}
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
               
               {/* Image Side */}
-              <div className="relative aspect-square lg:aspect-auto lg:h-[600px]">
+              <div className="relative aspect-square md:aspect-auto md:h-[500px] lg:h-[600px]">
                 <div className="relative w-full h-full overflow-hidden">
                   <img 
                     src={userStories[currentIndex].image}
