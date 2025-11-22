@@ -11,11 +11,11 @@ let stripePromise: Promise<any> | null = null;
 const getStripeKey = async () => {
   if (!stripePromise) {
     try {
-      // Read directly from environment variables (works in both dev and production)
-      const publishableKey = typeof process !== 'undefined' && process.env?.STRIPE_PUBLISHABLE_KEY;
+      // Read from Vite environment variables (VITE_ prefix required for browser access)
+      const publishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
       
       if (!publishableKey) {
-        throw new Error('Stripe Publishable Key saknas. Kontrollera Vercel Environment Variables.');
+        throw new Error('Stripe Publishable Key saknas. Kontrollera Vercel Environment Variables (VITE_STRIPE_PUBLISHABLE_KEY).');
       }
       
       stripePromise = loadStripe(publishableKey);
