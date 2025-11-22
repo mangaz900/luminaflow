@@ -1,8 +1,18 @@
 import { GoogleGenAI } from "@google/genai";
 
-// Initialize the Gemini client
-// Note: API Key is assumed to be available in process.env.API_KEY per instructions.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initialize the Gemini client lazily (only when needed and if API key exists)
+let ai: GoogleGenAI | null = null;
+
+const getAI = () => {
+  if (!ai) {
+    const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error("Gemini API key not configured");
+    }
+    ai = new GoogleGenAI({ apiKey });
+  }
+  return ai;
+};
 
 const SYSTEM_INSTRUCTION = `
 Du är en empatisk trikolog (hårexpert) och rådgivare för "Lumina Growth Serum Roll-on".
@@ -39,9 +49,16 @@ Svara alltid på Svenska.
 
 export const sendChatMessage = async (history: {role: string, parts: {text: string}[]}[], newMessage: string): Promise<string> => {
   try {
+    // Check if API key is available
+    const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
+    }
+
+    const aiInstance = getAI();
     const model = 'gemini-2.5-flash';
     
-    const chat = ai.chats.create({
+    const chat = aiInstance.chats.create({
       model: model,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
@@ -54,6 +71,10 @@ export const sendChatMessage = async (history: {role: string, parts: {text: stri
     return result.text || "Ursäkta, jag kunde inte svara på det just nu.";
   } catch (error) {
     console.error("Error communicating with Gemini:", error);
+    // Return a friendly message instead of crashing
+    if (error instanceof Error && error.message.includes("API key")) {
+      return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
+    }
     return "Tyvärr uppstod ett fel när jag skulle kontakta AI-experten. Försök igen senare.";
   }
 };
