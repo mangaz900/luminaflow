@@ -1,8 +1,26 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronUp, ShieldCheck } from 'lucide-react';
 
 const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScrollToPricing = () => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: '#erbjudande' } });
+    } else {
+      setTimeout(() => {
+        const element = document.querySelector('#erbjudande');
+        if (element) {
+          const yOffset = -80;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 50);
+    }
+  };
 
   const faqs = [
     {
@@ -70,7 +88,10 @@ const FAQ: React.FC = () => {
              Ser du ingen skillnad? Då får du pengarna tillbaka. Inget krångel.
            </p>
            
-           <button className="bg-medical-900 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-medical-800 transition-all shadow-lg">
+           <button 
+             onClick={handleScrollToPricing}
+             className="bg-medical-900 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-medical-800 transition-all shadow-lg"
+           >
              Testa riskfritt idag
            </button>
         </div>

@@ -1,10 +1,28 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Star, ShieldCheck, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScrollToPricing = () => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: '#erbjudande' } });
+    } else {
+      setTimeout(() => {
+        const element = document.querySelector('#erbjudande');
+        if (element) {
+          const yOffset = -80;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 50);
+    }
+  };
 
   // Produktbilder - BYT UT DESSA URL:ER MOT DINA EGNA BILDER
   // Lägg dina bilder i public-mappen eller använd externa URL:er
@@ -107,9 +125,12 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <a href="#erbjudande" className="bg-medical-900 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-medical-800 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+              <button 
+                onClick={handleScrollToPricing}
+                className="bg-medical-900 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-medical-800 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+              >
                 <span>Välj ditt paket</span>
-              </a>
+              </button>
               <div className="flex items-center justify-center sm:justify-start gap-2 px-4 py-4">
                   <ShieldCheck size={18} className="text-medical-500" />
                   <span className="text-sm font-medium text-gray-600">Testa riskfritt i 90 dagar</span>
