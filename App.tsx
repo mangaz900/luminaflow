@@ -23,6 +23,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
 import ReturnPolicy from './pages/ReturnPolicy';
+import ContactPage from './pages/ContactPage';
 
 const HomePage: React.FC = () => {
   return (
@@ -79,6 +80,7 @@ const App: React.FC = () => {
           <Route path="/anvandarvillkor" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/returpolicy" element={<ReturnPolicy />} />
+          <Route path="/kontakt" element={<ContactPage />} />
         </Routes>
         <ShoppingCart />
         <CookieConsent />

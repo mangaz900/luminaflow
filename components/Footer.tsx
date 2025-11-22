@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-medium text-lg mb-6">Hjälp</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><button onClick={() => handleNavClick('#faq')} className="hover:text-gold-400 transition-colors text-left">Kontakta oss</button></li>
+              <li><Link to="/kontakt" className="hover:text-gold-400 transition-colors">Kontakta oss</Link></li>
               <li><Link to="/returpolicy" className="hover:text-gold-400 transition-colors">Frakt & Retur</Link></li>
               <li><button onClick={() => handleNavClick('#faq')} className="hover:text-gold-400 transition-colors text-left">FAQ</button></li>
             </ul>
