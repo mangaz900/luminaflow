@@ -51,7 +51,11 @@ export default async function handler(req, res) {
       quantity: item.quantity,
     }));
 
-    const frontendUrl = process.env.FRONTEND_URL || req.headers.origin || 'https://hairoil-kappa.vercel.app';
+    // Get frontend URL from environment or request
+    const frontendUrl = process.env.FRONTEND_URL || 
+                       process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 
+                       req.headers.origin || 
+                       'https://hairoil-kappa.vercel.app';
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card', 'klarna'], // Både kort och Klarna
@@ -87,9 +91,16 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     console.error('❌ Error creating checkout:', error);
+    console.error('Error details:', {
+      message: error.message,
+      type: error.type,
+      code: error.code,
+      stack: error.stack,
+    });
     res.status(500).json({
       success: false,
       error: error.message || 'Kunde inte skapa checkout',
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   }
 }
