@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -52,18 +53,18 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
             <p>&copy; {new Date().getFullYear()} Lumina Haircare AB. Alla rättigheter reserverade.</p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              <a href="/integritetspolicy" className="hover:text-gold-400 transition-colors">
+              <Link to="/integritetspolicy" className="hover:text-gold-400 transition-colors">
                 Integritetspolicy
-              </a>
-              <a href="/anvandarvillkor" className="hover:text-gold-400 transition-colors">
+              </Link>
+              <Link to="/anvandarvillkor" className="hover:text-gold-400 transition-colors">
                 Användarvillkor
-              </a>
-              <a href="/cookie-policy" className="hover:text-gold-400 transition-colors">
+              </Link>
+              <Link to="/cookie-policy" className="hover:text-gold-400 transition-colors">
                 Cookie Policy
-              </a>
-              <a href="/returpolicy" className="hover:text-gold-400 transition-colors">
+              </Link>
+              <Link to="/returpolicy" className="hover:text-gold-400 transition-colors">
                 Returpolicy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
