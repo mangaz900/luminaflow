@@ -215,13 +215,13 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Thumbnail Navigation (Under bilderna) */}
-            <div className="flex justify-center gap-2 mt-4 px-2 flex-wrap">
+            <div className="flex justify-center gap-2 mt-4 px-2 overflow-x-auto scrollbar-hide">
               {productImages.map((image, index) => (
                 <button
                   key={image.id}
                   onClick={() => setCurrentImageIndex(index)}
                   className={`
-                    relative flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg overflow-hidden transition-all duration-200
+                    relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg overflow-hidden transition-all duration-200
                     ${currentImageIndex === index 
                       ? 'ring-2 ring-medical-900 opacity-100 scale-105' 
                       : 'opacity-60 hover:opacity-100 hover:scale-105'

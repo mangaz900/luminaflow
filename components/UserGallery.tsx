@@ -139,13 +139,13 @@ const UserGallery: React.FC = () => {
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex justify-center gap-4 mt-8 overflow-x-auto scrollbar-hide">
             {userStories.map((story, index) => (
               <button
                 key={story.id}
                 onClick={() => setCurrentIndex(index)}
                 className={`
-                  relative w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-2 transition-all duration-200
+                  relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-2 transition-all duration-200
                   ${currentIndex === index 
                     ? 'border-medical-900 shadow-lg scale-110' 
                     : 'border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
