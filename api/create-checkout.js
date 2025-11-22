@@ -58,8 +58,6 @@ export default async function handler(req, res) {
       shipping_address_collection: {
         allowed_countries: ['SE'],
       },
-      // Stripe samlar in e-post automatiskt om den inte finns
-      customer_email: customer.email || undefined,
       payment_method_options: {
         klarna: {
           preferred_locale: 'sv-SE',
