@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
@@ -43,6 +43,16 @@ const HomePage: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  // Scroll to top on initial load
+  useEffect(() => {
+    // Prevent scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    // Scroll to top on mount
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <CartProvider>
       <div className="min-h-screen bg-white font-sans text-dark-900 antialiased selection:bg-medical-100 selection:text-medical-900 overflow-x-hidden">
