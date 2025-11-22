@@ -18,6 +18,10 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 import OrderSuccess from './components/OrderSuccess';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
+import ReturnPolicy from './pages/ReturnPolicy';
 
 const HomePage: React.FC = () => {
   return (
@@ -59,6 +63,10 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/order-success" element={<OrderSuccess />} />
+          <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
+          <Route path="/anvandarvillkor" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/returpolicy" element={<ReturnPolicy />} />
         </Routes>
         <ShoppingCart />
       </div>
