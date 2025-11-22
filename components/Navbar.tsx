@@ -34,19 +34,17 @@ const Navbar: React.FC = () => {
 
           {/* Right: Shopping Cart */}
           <div className="flex items-center justify-end flex-1">
-            <a 
-              href="#erbjudande" 
-              onClick={(e) => { e.preventDefault(); openCart(); }}
-              className="bg-dark-900 text-white px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all flex items-center gap-2 relative"
+            <button 
+              onClick={openCart}
+              className="bg-dark-900 text-white p-3 rounded-full hover:bg-gray-800 transition-all flex items-center justify-center relative"
             >
-              <ShoppingBag size={18} />
-              <span className="hidden sm:inline">Köp nu</span>
+              <ShoppingBag size={20} />
               {getTotalItems() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {getTotalItems()}
                 </span>
               )}
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -59,19 +57,17 @@ const Navbar: React.FC = () => {
             <a href="#anvandning" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Användning</a>
             <a href="#ingredienser" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Ingredienser</a>
             <a href="#recensioner" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Recensioner</a>
-            <a 
-              href="#erbjudande" 
-              onClick={(e) => { e.preventDefault(); setIsOpen(false); openCart(); }} 
-              className="w-full mt-4 bg-dark-900 text-white px-6 py-3 rounded-full flex items-center justify-center gap-2 relative"
+            <button 
+              onClick={() => { setIsOpen(false); openCart(); }} 
+              className="mt-4 bg-dark-900 text-white p-3 rounded-full flex items-center justify-center relative"
             >
-              <ShoppingBag size={18} />
-              <span>Köp nu</span>
+              <ShoppingBag size={20} />
               {getTotalItems() > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {getTotalItems()}
                 </span>
               )}
-            </a>
+            </button>
           </div>
         </div>
       )}
