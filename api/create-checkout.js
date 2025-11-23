@@ -38,13 +38,16 @@ export default async function handler(req, res) {
       hasEmail: !!customer?.email,
     });
 
-    // Skapa Stripe Checkout Session
+    // Skapa Stripe Checkout Session med metadata för Shopify mapping
     const lineItems = items.map(item => ({
       price_data: {
         currency: 'sek',
         product_data: {
           name: item.title,
           description: item.subtitle,
+          metadata: {
+            package_id: item.id.toString(),
+          },
         },
         unit_amount: Math.round((item.price / item.quantity) * 100),
       },
@@ -72,6 +75,8 @@ export default async function handler(req, res) {
         }),
         ...(customer.email && { customer_email: customer.email }),
         ...(customer.phone && { customer_phone: customer.phone }),
+        // Add package IDs for Shopify mapping
+        package_ids: items.map(item => item.id).join(','),
       },
       // Stripe samlar in leveransinfo automatiskt
       shipping_address_collection: {

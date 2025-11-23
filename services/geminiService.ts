@@ -95,12 +95,23 @@ export const sendChatMessage = async (history: {role: string, parts: {text: stri
       || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
       || (typeof process !== 'undefined' && process.env?.API_KEY)
       || '';
+    
+    // Debug logging (only in development)
+    if (import.meta.env.DEV) {
+      console.log('API Key check:', {
+        hasKey: !!apiKey,
+        keyLength: apiKey ? apiKey.length : 0,
+        startsWith: apiKey ? apiKey.substring(0, 10) + '...' : 'none'
+      });
+    }
+    
     if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY') {
       return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
     }
 
     const aiInstance = getAI();
-    const model = 'gemini-2.5-flash';
+    // Use gemini-1.5-flash as it's more stable and widely available
+    const model = 'gemini-1.5-flash';
     
     const chat = aiInstance.chats.create({
       model: model,
@@ -116,8 +127,12 @@ export const sendChatMessage = async (history: {role: string, parts: {text: stri
   } catch (error) {
     console.error("Error communicating with Gemini:", error);
     // Return a friendly message instead of crashing
-    if (error instanceof Error && error.message.includes("API key")) {
-      return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
+    if (error instanceof Error) {
+      // Check for API key errors
+      if (error.message.includes("API key") || error.message.includes("INVALID_ARGUMENT")) {
+        console.error("API key error details:", error);
+        return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
+      }
     }
     return "Tyvärr uppstod ett fel när jag skulle kontakta AI-experten. Försök igen senare.";
   }
