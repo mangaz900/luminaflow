@@ -1,10 +1,10 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Initialize the Gemini client lazily (only when needed and if API key exists)
-let ai: GoogleGenAI | null = null;
+let genAI: GoogleGenerativeAI | null = null;
 
 const getAI = () => {
-  if (!ai) {
+  if (!genAI) {
     // Get API key from environment - try multiple sources
     const apiKey = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY)
       || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
@@ -13,9 +13,9 @@ const getAI = () => {
     if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY') {
       throw new Error("Gemini API key not configured");
     }
-    ai = new GoogleGenAI({ apiKey });
+    genAI = new GoogleGenerativeAI(apiKey);
   }
-  return ai;
+  return genAI;
 };
 
 const SYSTEM_INSTRUCTION = `
@@ -109,21 +109,31 @@ export const sendChatMessage = async (history: {role: string, parts: {text: stri
       return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
     }
 
-    const aiInstance = getAI();
-    // Use gemini-pro as it's the most stable and widely available model
-    const model = 'gemini-pro';
-    
-    const chat = aiInstance.chats.create({
-      model: model,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.8,
-      },
-      history: history
+    const genAI = getAI();
+    // Use gemini-1.5-flash as it's fast and efficient
+    const model = genAI.getGenerativeModel({ 
+      model: 'gemini-1.5-flash',
+      systemInstruction: SYSTEM_INSTRUCTION,
     });
 
-    const result = await chat.sendMessage({ message: newMessage });
-    return result.text || "Ursäkta, jag kunde inte svara på det just nu.";
+    // Convert history format for GoogleGenerativeAI
+    const chatHistory = history.map(msg => {
+      const role = msg.role === 'model' ? 'model' : 'user';
+      const text = msg.parts.map(part => part.text).join(' ');
+      return { role, parts: [{ text }] };
+    });
+
+    // Start chat with history
+    const chat = model.startChat({
+      history: chatHistory as any,
+      generationConfig: {
+        temperature: 0.8,
+      },
+    });
+
+    const result = await chat.sendMessage(newMessage);
+    const response = await result.response;
+    return response.text() || "Ursäkta, jag kunde inte svara på det just nu.";
   } catch (error) {
     console.error("Error communicating with Gemini:", error);
     // Return a friendly message instead of crashing
