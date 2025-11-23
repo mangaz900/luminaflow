@@ -55,17 +55,30 @@ export default async function handler(req, res) {
     }));
 
     // Get frontend URL from environment or request
-    const frontendUrl = process.env.FRONTEND_URL || 
-                       process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 
-                       req.headers.origin || 
-                       'https://hairoil-kappa.vercel.app';
+    // Priority: FRONTEND_URL > VERCEL_URL > request origin > default
+    let frontendUrl = process.env.FRONTEND_URL;
+    
+    if (!frontendUrl) {
+      if (process.env.VERCEL_URL) {
+        frontendUrl = `https://${process.env.VERCEL_URL}`;
+      } else if (req.headers.origin) {
+        frontendUrl = req.headers.origin;
+      } else {
+        frontendUrl = 'https://hairoil-kappa.vercel.app';
+      }
+    }
+    
+    // Ensure URL doesn't have trailing slash for consistency
+    frontendUrl = frontendUrl.replace(/\/$/, '');
+    
+    console.log('🌐 Frontend URL:', frontendUrl);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card', 'klarna'], // Både kort och Klarna
       line_items: lineItems,
       mode: 'payment',
       success_url: `${frontendUrl}/order-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${frontendUrl}/`,
+      cancel_url: `${frontendUrl}`, // No trailing slash - Stripe will handle it
       // Stripe kommer att be om e-post och leveransinfo automatiskt
       // Om customer.email finns, förfylls den
       ...(customer.email && { customer_email: customer.email }),
