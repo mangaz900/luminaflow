@@ -105,16 +105,6 @@ export default async function handler(req, res) {
               currency: 'sek',
             },
             display_name: 'PostNord',
-            delivery_estimate: {
-              minimum: {
-                unit: 'business_day',
-                value: 2,
-              },
-              maximum: {
-                unit: 'business_day',
-                value: 5,
-              },
-            },
           },
         },
       ],
