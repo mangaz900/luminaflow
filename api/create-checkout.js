@@ -77,7 +77,7 @@ export default async function handler(req, res) {
       payment_method_types: ['card', 'klarna'], // Både kort och Klarna
       line_items: lineItems,
       mode: 'payment',
-      allow_promotion_codes: true, // Aktivera kupongkoder i checkout
+      allow_promotion_codes: true, // Enable coupon/promotion code field in checkout
       success_url: `${frontendUrl}/order-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${frontendUrl}`, // No trailing slash - Stripe will handle it
       // Stripe kommer att be om e-post och leveransinfo automatiskt
