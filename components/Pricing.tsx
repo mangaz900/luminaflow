@@ -14,7 +14,7 @@ const Pricing: React.FC = () => {
       quantity: 1,
       title: "KÖP 1",
       subtitle: "Startpaket",
-      price: 0, // TEST: Satt till 0 kr för testbeställningar
+      price: 399,
       originalPrice: 798,
       discountLabel: "50% RABATT",
       tag: null,
