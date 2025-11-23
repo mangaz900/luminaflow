@@ -110,8 +110,8 @@ export const sendChatMessage = async (history: {role: string, parts: {text: stri
     }
 
     const aiInstance = getAI();
-    // Use gemini-1.5-flash as it's more stable and widely available
-    const model = 'gemini-1.5-flash';
+    // Use gemini-pro as it's the most stable and widely available model
+    const model = 'gemini-pro';
     
     const chat = aiInstance.chats.create({
       model: model,
