@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, ShoppingBag, ShieldCheck, Star } from 'lucide-react';
 import AIConsultant from './AIConsultant';
 import { useCart } from '../contexts/CartContext';
+import { trackViewItemList } from '../services/analytics';
 
 const Pricing: React.FC = () => {
   const [selectedId, setSelectedId] = useState<number>(2); // Default to option 2 (Best Seller)
@@ -40,6 +41,18 @@ const Pricing: React.FC = () => {
       tag: "MEST VÄRDE",
     }
   ];
+
+  // Track view item list when component mounts
+  useEffect(() => {
+    trackViewItemList(
+      options.map(option => ({
+        id: option.id,
+        name: option.title,
+        category: 'Hårvård',
+        price: option.price,
+      }))
+    );
+  }, []);
 
   const handleAddToCart = () => {
     const selectedOption = options.find(o => o.id === selectedId);

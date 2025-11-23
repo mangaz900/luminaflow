@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, ShoppingBag, Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
+import { trackBeginCheckout } from '../services/analytics';
 
 const ShoppingCart: React.FC = () => {
   const navigate = useNavigate();
@@ -18,6 +19,30 @@ const ShoppingCart: React.FC = () => {
 
   const handleGoToCheckout = async () => {
     if (items.length === 0) return;
+    
+    // Track begin checkout event
+    trackBeginCheckout(
+      items.map(item => ({
+        id: item.id,
+        name: item.title,
+        category: 'Hårvård',
+        price: item.price / item.quantity, // Price per unit
+        quantity: item.quantity,
+      })),
+      getTotalPrice()
+    );
+    
+    // Save order data for purchase tracking
+    localStorage.setItem('pending_order', JSON.stringify({
+      items: items.map(item => ({
+        id: item.id,
+        name: item.title,
+        category: 'Hårvård',
+        price: item.price / item.quantity,
+        quantity: item.quantity,
+      })),
+      total: getTotalPrice(),
+    }));
     
     setIsLoading(true);
     try {

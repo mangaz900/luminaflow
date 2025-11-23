@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { trackAddToCart } from '../services/analytics';
 
 export interface CartItem {
   id: number;
@@ -35,6 +36,14 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const addToCart = (item: CartItem) => {
     setItems([item]);
     setIsCartOpen(true);
+    // Track add to cart event
+    trackAddToCart({
+      id: item.id,
+      name: item.title,
+      category: 'Hårvård',
+      price: item.price / item.quantity, // Price per unit
+      quantity: item.quantity,
+    });
   };
 
   const removeFromCart = (id: number) => {

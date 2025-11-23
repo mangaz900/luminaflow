@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import { initGA4, trackPageView } from './services/analytics';
+
+// Initialize GA4 on app load
+initGA4();
 
 // Scroll to top on route change (endast om det inte finns scrollTo state)
 const ScrollToTop = () => {
@@ -13,6 +17,8 @@ const ScrollToTop = () => {
     if (!state?.scrollTo) {
       window.scrollTo(0, 0);
     }
+    // Track page view
+    trackPageView(pathname);
   }, [pathname, state]);
 
   return null;

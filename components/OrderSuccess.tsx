@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CheckCircle, Home } from 'lucide-react';
 import { useSearchParams, Link } from 'react-router-dom';
+import { trackPurchase } from '../services/analytics';
 
 const OrderSuccess: React.FC = () => {
   const [searchParams] = useSearchParams();
   const orderNumber = searchParams.get('order_number');
   const sessionId = searchParams.get('session_id');
   const paymentIntent = searchParams.get('payment_intent');
+
+  useEffect(() => {
+    // Track purchase when order success page loads
+    if (sessionId) {
+      // Get order details from localStorage (saved before checkout)
+      const orderData = localStorage.getItem('pending_order');
+      if (orderData) {
+        try {
+          const order = JSON.parse(orderData);
+          trackPurchase({
+            transaction_id: sessionId,
+            value: order.total || 0,
+            items: order.items || [],
+          });
+          // Clear pending order after tracking
+          localStorage.removeItem('pending_order');
+        } catch (error) {
+          console.error('Error tracking purchase:', error);
+        }
+      }
+    }
+  }, [sessionId]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
