@@ -95,6 +95,29 @@ export default async function handler(req, res) {
       shipping_address_collection: {
         allowed_countries: ['SE'],
       },
+      // PostNord som gratis leveransalternativ
+      shipping_options: [
+        {
+          shipping_rate_data: {
+            type: 'fixed_amount',
+            fixed_amount: {
+              amount: 0, // Gratis
+              currency: 'sek',
+            },
+            display_name: 'PostNord',
+            delivery_estimate: {
+              minimum: {
+                unit: 'business_day',
+                value: 2,
+              },
+              maximum: {
+                unit: 'business_day',
+                value: 5,
+              },
+            },
+          },
+        },
+      ],
       // Klarna kommer automatiskt att vara tillgängligt för Sverige (SE)
       // Stripe detekterar locale baserat på shipping address
     });
