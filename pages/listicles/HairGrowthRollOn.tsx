@@ -7,7 +7,7 @@ const HairGrowthRollOn: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+      <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 lg:pt-28 pb-8 md:pb-12 lg:pb-16">
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
