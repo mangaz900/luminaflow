@@ -242,7 +242,7 @@ const HairGrowthRollOn: React.FC = () => {
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
               <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
                 <img 
-                  src="/listicle-point-4.jpg" 
+                  src="/kvinna-applicerar-3.jpg" 
                   alt="Enkel att använda"
                   className="w-full h-full object-cover"
                   onError={(e) => {
