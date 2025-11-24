@@ -1,35 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 const HairGrowthRollOn: React.FC = () => {
   const navigate = useNavigate();
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 23,
-    minutes: 59,
-    seconds: 56
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        let { hours, minutes, seconds } = prev;
-        if (seconds > 0) {
-          seconds--;
-        } else if (minutes > 0) {
-          minutes--;
-          seconds = 59;
-        } else if (hours > 0) {
-          hours--;
-          minutes = 59;
-          seconds = 59;
-        }
-        return { hours, minutes, seconds };
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -398,26 +372,6 @@ const HairGrowthRollOn: React.FC = () => {
           <p className="text-lg md:text-xl mb-6 md:mb-8 opacity-90">
             Upp Till 75% RABATT + Gratis Frakt
           </p>
-          <div className="flex justify-center gap-4 md:gap-6 mb-8 md:mb-10">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px] border border-white/30">
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif">
-                {String(timeLeft.hours).padStart(2, '0')}
-              </div>
-              <div className="text-xs md:text-sm opacity-80 mt-1">Hours</div>
-            </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px] border border-white/30">
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif">
-                {String(timeLeft.minutes).padStart(2, '0')}
-              </div>
-              <div className="text-xs md:text-sm opacity-80 mt-1">Minutes</div>
-            </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px] border border-white/30">
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif">
-                {String(timeLeft.seconds).padStart(2, '0')}
-              </div>
-              <div className="text-xs md:text-sm opacity-80 mt-1">Seconds</div>
-            </div>
-          </div>
         </section>
 
         {/* CTA */}
