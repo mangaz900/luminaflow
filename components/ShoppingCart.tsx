@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { X, ShoppingBag, Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import { trackBeginCheckout } from '../services/analytics';
+import { trackTikTokInitiateCheckout } from '../services/tiktokPixel';
 
 const ShoppingCart: React.FC = () => {
   const navigate = useNavigate();
@@ -20,13 +21,23 @@ const ShoppingCart: React.FC = () => {
   const handleGoToCheckout = async () => {
     if (items.length === 0) return;
     
+    const mappedItems = items.map(item => ({
+      id: item.id,
+      name: item.title,
+      category: 'Hårvård',
+      price: item.price / item.quantity, // Price per unit
+      quantity: item.quantity,
+    }));
+    
     // Track begin checkout event
-    trackBeginCheckout(
-      items.map(item => ({
+    trackBeginCheckout(mappedItems, getTotalPrice());
+    
+    // Track TikTok InitiateCheckout
+    trackTikTokInitiateCheckout(
+      mappedItems.map(item => ({
         id: item.id,
-        name: item.title,
-        category: 'Hårvård',
-        price: item.price / item.quantity, // Price per unit
+        name: item.name,
+        price: item.price,
         quantity: item.quantity,
       })),
       getTotalPrice()

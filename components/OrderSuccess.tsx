@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { CheckCircle, Home } from 'lucide-react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { trackPurchase } from '../services/analytics';
+import { trackTikTokPurchase } from '../services/tiktokPixel';
 
 const OrderSuccess: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -17,11 +18,29 @@ const OrderSuccess: React.FC = () => {
       if (orderData) {
         try {
           const order = JSON.parse(orderData);
+          const transactionId = sessionId;
+          const transactionValue = order.total || 0;
+          const transactionItems = order.items || [];
+          
+          // Track GA4 purchase
           trackPurchase({
-            transaction_id: sessionId,
-            value: order.total || 0,
-            items: order.items || [],
+            transaction_id: transactionId,
+            value: transactionValue,
+            items: transactionItems,
           });
+          
+          // Track TikTok Purchase
+          trackTikTokPurchase({
+            transaction_id: transactionId,
+            value: transactionValue,
+            items: transactionItems.map((item: any) => ({
+              id: item.id,
+              name: item.name,
+              price: item.price,
+              quantity: item.quantity,
+            })),
+          });
+          
           // Clear pending order after tracking
           localStorage.removeItem('pending_order');
         } catch (error) {

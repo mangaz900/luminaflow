@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { trackAddToCart } from '../services/analytics';
+import { trackTikTokAddToCart } from '../services/tiktokPixel';
 
 export interface CartItem {
   id: number;
@@ -37,11 +38,19 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setItems([item]);
     setIsCartOpen(true);
     // Track add to cart event
+    const pricePerUnit = item.price / item.quantity;
     trackAddToCart({
       id: item.id,
       name: item.title,
       category: 'Hårvård',
-      price: item.price / item.quantity, // Price per unit
+      price: pricePerUnit,
+      quantity: item.quantity,
+    });
+    // Track TikTok AddToCart
+    trackTikTokAddToCart({
+      id: item.id,
+      name: item.title,
+      price: pricePerUnit,
       quantity: item.quantity,
     });
   };

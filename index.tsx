@@ -4,9 +4,11 @@ import { BrowserRouter, useLocation } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import { initGA4, trackPageView } from './services/analytics';
+import { initTikTokPixel, trackTikTokPageView } from './services/tiktokPixel';
 
-// Initialize GA4 on app load
+// Initialize GA4 and TikTok Pixel on app load
 initGA4();
+initTikTokPixel();
 
 // Scroll to top on route change (endast om det inte finns scrollTo state)
 const ScrollToTop = () => {
@@ -24,6 +26,7 @@ const ScrollToTop = () => {
     }
     // Track page view
     trackPageView(pathname);
+    trackTikTokPageView();
   }, [pathname, state]);
 
   return null;
