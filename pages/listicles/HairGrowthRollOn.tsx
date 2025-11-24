@@ -45,11 +45,11 @@ const HairGrowthRollOn: React.FC = () => {
 
         {/* Hero Header */}
         <header className="mb-12 md:mb-16 lg:mb-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-medical-900 mb-6 md:mb-8 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medical-900 mb-6 md:mb-8 leading-tight">
             5 Anledningar Varför Allt Fler Kvinnor Över 40 Använder Lumina Roll-on – Och Varför Du Borde Testa Det Själv
           </h1>
           
-          <div className="space-y-4 md:space-y-5 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+          <div className="space-y-4 md:space-y-5 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
             <p>
               När håret börjar bli tunnare efter 40 är det lätt att känna sig ensam.
             </p>
@@ -68,15 +68,15 @@ const HairGrowthRollOn: React.FC = () => {
           <section className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
-              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
                 <img 
                   src="/listicle-point-1.jpg" 
                   alt="Håravfall lugnar sig"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-gray-100 rounded-lg flex items-center justify-center';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-gray-400 text-sm text-center px-4">Bild kommer här</div>';
+                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-medical-50 rounded-xl flex items-center justify-center border border-medical-100';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-medical-500 text-sm text-center px-4">Bild kommer här</div>';
                   }}
                 />
               </div>
@@ -85,15 +85,15 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-bold text-2xl md:text-3xl lg:text-4xl">
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl md:text-3xl lg:text-4xl shadow-lg">
                   1
                 </div>
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
                   Det första som händer är att håravfallet lugnar sig
                 </h2>
-                <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
+                <div className="space-y-3 md:space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
                   <p>
                     De flesta kvinnor beskriver mindre hår i duschen redan efter ett par veckor.
                   </p>
@@ -112,15 +112,15 @@ const HairGrowthRollOn: React.FC = () => {
           <section className="flex flex-col md:flex-row-reverse gap-6 md:gap-8 lg:gap-12 items-start">
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
-              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
                 <img 
                   src="/listicle-point-2.jpg" 
                   alt="Stressad hårbotten"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-gray-100 rounded-lg flex items-center justify-center';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-gray-400 text-sm text-center px-4">Bild kommer här</div>';
+                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-medical-50 rounded-xl flex items-center justify-center border border-medical-100';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-medical-500 text-sm text-center px-4">Bild kommer här</div>';
                   }}
                 />
               </div>
@@ -129,19 +129,19 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-bold text-2xl md:text-3xl lg:text-4xl">
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl md:text-3xl lg:text-4xl shadow-lg">
                   2
                 </div>
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
                   Den hjälper en stressad hårbotten att slappna av
                 </h2>
-                <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
+                <div className="space-y-3 md:space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
                   <p>
                     Efter 40 kan hårbotten bli:
                   </p>
-                  <ul className="list-disc list-inside space-y-2 ml-2">
+                  <ul className="list-disc list-inside space-y-2 ml-2 text-medical-700">
                     <li>känsligare</li>
                     <li>torrare</li>
                     <li>stelare</li>
@@ -153,12 +153,12 @@ const HairGrowthRollOn: React.FC = () => {
                   <p>
                     Det gör att hårbotten känns:
                   </p>
-                  <ul className="list-disc list-inside space-y-2 ml-2">
+                  <ul className="list-disc list-inside space-y-2 ml-2 text-medical-700">
                     <li>lugnare</li>
                     <li>mjukare</li>
                     <li>mindre irriterad</li>
                   </ul>
-                  <p className="italic">
+                  <p className="italic text-medical-800">
                     En del beskriver till och med en "varm, lätt känsla" efter användning.
                   </p>
                 </div>
@@ -170,15 +170,15 @@ const HairGrowthRollOn: React.FC = () => {
           <section className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
-              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
                 <img 
                   src="/listicle-point-3.jpg" 
                   alt="Babyhår"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-gray-100 rounded-lg flex items-center justify-center';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-gray-400 text-sm text-center px-4">Bild kommer här</div>';
+                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-medical-50 rounded-xl flex items-center justify-center border border-medical-100';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-medical-500 text-sm text-center px-4">Bild kommer här</div>';
                   }}
                 />
               </div>
@@ -187,15 +187,15 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-bold text-2xl md:text-3xl lg:text-4xl">
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl md:text-3xl lg:text-4xl shadow-lg">
                   3
                 </div>
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
                   Det kommer små nya hårstrån (babyhår)
                 </h2>
-                <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
+                <div className="space-y-3 md:space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
                   <p>
                     Det här är det kvinnor 40–60 pratar mest om.
                   </p>
@@ -205,18 +205,18 @@ const HairGrowthRollOn: React.FC = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-medical-900 flex-shrink-0 mt-1" size={20} />
-                      <span>små korta strån vid tinningarna</span>
+                      <span className="text-medical-700">små korta strån vid tinningarna</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-medical-900 flex-shrink-0 mt-1" size={20} />
-                      <span>en fylligare hårfäste-linje</span>
+                      <span className="text-medical-700">en fylligare hårfäste-linje</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-medical-900 flex-shrink-0 mt-1" size={20} />
-                      <span>små "bebisstrån" längst fram</span>
+                      <span className="text-medical-700">små "bebisstrån" längst fram</span>
                     </li>
                   </ul>
-                  <p className="font-semibold">
+                  <p className="font-semibold text-medical-900">
                     Det är exakt denna effekt som får flest att fortsätta.
                   </p>
                 </div>
@@ -228,15 +228,15 @@ const HairGrowthRollOn: React.FC = () => {
           <section className="flex flex-col md:flex-row-reverse gap-6 md:gap-8 lg:gap-12 items-start">
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
-              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
                 <img 
                   src="/listicle-point-4.jpg" 
                   alt="Enkel att använda"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-gray-100 rounded-lg flex items-center justify-center';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-gray-400 text-sm text-center px-4">Bild kommer här</div>';
+                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-medical-50 rounded-xl flex items-center justify-center border border-medical-100';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-medical-500 text-sm text-center px-4">Bild kommer här</div>';
                   }}
                 />
               </div>
@@ -245,16 +245,16 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-bold text-2xl md:text-3xl lg:text-4xl">
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl md:text-3xl lg:text-4xl shadow-lg">
                   4
                 </div>
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
                   Den är superenkel att använda
                 </h2>
-                <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
-                  <ul className="list-disc list-inside space-y-2 ml-2">
+                <div className="space-y-3 md:space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
+                  <ul className="list-disc list-inside space-y-2 ml-2 text-medical-700">
                     <li>Inga piller.</li>
                     <li>Inga blandningar.</li>
                     <li>Inget kladd.</li>
@@ -265,7 +265,7 @@ const HairGrowthRollOn: React.FC = () => {
                   <p>
                     Används på 5 sekunder.
                   </p>
-                  <p className="font-semibold">
+                  <p className="font-semibold text-medical-900">
                     Perfekt för kvinnor som har fullt upp.
                   </p>
                 </div>
@@ -277,15 +277,15 @@ const HairGrowthRollOn: React.FC = () => {
           <section className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
-              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
                 <img 
                   src="/listicle-point-5.jpg" 
                   alt="Förebyggande"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-gray-100 rounded-lg flex items-center justify-center';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-gray-400 text-sm text-center px-4">Bild kommer här</div>';
+                    (e.target as HTMLImageElement).parentElement!.className = 'aspect-square bg-medical-50 rounded-xl flex items-center justify-center border border-medical-100';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-medical-500 text-sm text-center px-4">Bild kommer här</div>';
                   }}
                 />
               </div>
@@ -294,22 +294,22 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-bold text-2xl md:text-3xl lg:text-4xl">
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl md:text-3xl lg:text-4xl shadow-lg">
                   5
                 </div>
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-medical-900 mb-4 md:mb-6 leading-tight">
                   Den funkar både om du redan tappar hår – och om du vill förebygga
                 </h2>
-                <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
-                  <p className="font-semibold">
+                <div className="space-y-3 md:space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
+                  <p className="font-semibold text-medical-900">
                     Den största styrkan är att den jobbar före problemet blir stort.
                   </p>
                   <p>
                     Kvinnor använder den:
                   </p>
-                  <ul className="list-disc list-inside space-y-2 ml-2">
+                  <ul className="list-disc list-inside space-y-2 ml-2 text-medical-700">
                     <li>när de redan märker tunnare hår</li>
                     <li>eller i förebyggande syfte</li>
                     <li>eller för att hålla hårbotten frisk efter 45</li>
@@ -327,15 +327,15 @@ const HairGrowthRollOn: React.FC = () => {
         <section className="bg-medical-50 border-l-4 border-medical-900 p-8 md:p-10 lg:p-12 rounded-r-lg mb-12 md:mb-16">
           <div className="flex items-start gap-3 mb-4 md:mb-6">
             <span className="text-3xl md:text-4xl">⭐</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-medical-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-medical-900">
               Slutsats
             </h2>
           </div>
-          <div className="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
+          <div className="space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
             <p>
               Om du märker att:
             </p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
+            <ul className="list-disc list-inside space-y-2 ml-4 text-medical-700">
               <li>benan blivit bredare</li>
               <li>du tappar mer i duschen</li>
               <li>håret känns tunnare framme vid tinningarna</li>
@@ -347,46 +347,46 @@ const HairGrowthRollOn: React.FC = () => {
         </section>
 
         {/* Black Friday Deal Section */}
-        <section className="bg-gradient-to-br from-medical-900 to-medical-800 text-white rounded-2xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16 text-center">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
+        <section className="bg-gradient-to-br from-medical-900 via-medical-800 to-medical-900 text-white rounded-2xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16 text-center shadow-xl">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-4 md:mb-6">
             Exclusive Early Black Friday Deal
           </h3>
           <p className="text-lg md:text-xl mb-6 md:mb-8 opacity-90">
             Sale Ends In
           </p>
           <div className="flex justify-center gap-4 md:gap-6 mb-8 md:mb-10">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px]">
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px] border border-white/30">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif">
                 {String(timeLeft.hours).padStart(2, '0')}
               </div>
               <div className="text-xs md:text-sm opacity-80 mt-1">Hours</div>
             </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px]">
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px] border border-white/30">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </div>
               <div className="text-xs md:text-sm opacity-80 mt-1">Minutes</div>
             </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px]">
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px] border border-white/30">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </div>
               <div className="text-xs md:text-sm opacity-80 mt-1">Seconds</div>
             </div>
           </div>
           <p className="text-base md:text-lg mb-6 md:mb-8 opacity-90">
-            Get your Lumina Roll-on before beauty lovers everywhere catch on!
+            Få din Lumina Roll-on innan alla andra upptäcker den!
           </p>
         </section>
 
         {/* CTA */}
-        <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 text-center">
-          <p className="text-gray-700 leading-relaxed mb-6 md:mb-8 text-lg md:text-xl">
+        <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 text-center shadow-lg">
+          <p className="text-gray-600 leading-relaxed mb-6 md:mb-8 text-lg md:text-xl">
             Många kvinnor över 40 börjar med 2 flaskor så de inte står utan.
           </p>
           <button
             onClick={() => navigate('/#pricing')}
-            className="bg-medical-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-bold hover:bg-medical-800 transition-colors text-lg md:text-xl lg:text-2xl w-full md:w-auto min-w-[280px] shadow-lg hover:shadow-xl"
+            className="bg-medical-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-bold hover:bg-medical-800 transition-all text-lg md:text-xl lg:text-2xl w-full md:w-auto min-w-[280px] shadow-lg hover:shadow-xl font-serif"
           >
             SHOP NOW
           </button>
