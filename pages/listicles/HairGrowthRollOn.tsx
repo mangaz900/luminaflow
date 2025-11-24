@@ -70,8 +70,8 @@ const HairGrowthRollOn: React.FC = () => {
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
               <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
                 <img 
-                  src="/listicle-point-1.jpg" 
-                  alt="Håravfall lugnar sig"
+                  src="/fore-efter-1.jpg" 
+                  alt="Före och efter - Håravfall lugnar sig"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
