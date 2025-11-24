@@ -366,6 +366,89 @@ const HairGrowthRollOn: React.FC = () => {
           </div>
         </section>
 
+        {/* Black Friday Pricing Comparison Section */}
+        <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-medical-900 mb-6 md:mb-8 text-center">
+            Black Friday: 50-75% Rabatt + Gratis Frakt
+          </h3>
+          
+          <div className="mb-8 md:mb-10">
+            <h4 className="text-xl md:text-2xl font-serif font-bold text-medical-900 mb-4 md:mb-6">
+              Låt oss jämföra kostnader:
+            </h4>
+            <div className="space-y-3 md:space-y-4 text-gray-700 text-base md:text-lg">
+              <p><strong>Minoxidil:</strong> 950 kr/månad × 12 = 11 400 kr per år (för alltid)</p>
+              <p><strong>PRP:</strong> 37 500 kr första året, sedan 12 500 kr/år</p>
+              <p><strong>Premium serum + tillskott:</strong> 1 800 kr/månad = 21 600 kr per år</p>
+              <p><strong>Velana HairFlow Pro:</strong> Normalt 798 kr/flaska (räcker 2-3 månader)</p>
+            </div>
+          </div>
+
+          <div className="mb-8 md:mb-10">
+            <p className="text-lg md:text-xl font-semibold text-medical-900 mb-4 md:mb-6">
+              Men just nu under Black Friday:
+            </p>
+            <div className="space-y-4 md:space-y-5">
+              <div className="bg-medical-50 border-2 border-medical-900 rounded-lg p-4 md:p-5">
+                <div className="flex items-start gap-2 mb-2">
+                  <CheckCircle2 className="text-medical-900 flex-shrink-0 mt-1" size={20} />
+                  <div className="flex-1">
+                    <p className="font-bold text-medical-900 text-lg md:text-xl">
+                      6 flaskor: 1 197 kr - Köp 3 få 3 extra (75% rabatt)
+                    </p>
+                    <p className="text-medical-700 font-semibold">← BÄST VÄRDE + GRATIS FRAKT</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-medical-50 border-2 border-medical-900 rounded-lg p-4 md:p-5">
+                <div className="flex items-start gap-2 mb-2">
+                  <CheckCircle2 className="text-medical-900 flex-shrink-0 mt-1" size={20} />
+                  <div className="flex-1">
+                    <p className="font-bold text-medical-900 text-lg md:text-xl">
+                      3 flaskor: 798 kr - Köp 3 betala för 2 (67% rabatt)
+                    </p>
+                    <p className="text-medical-700 font-semibold">← MEST POPULÄR</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-medical-50 border-2 border-medical-900 rounded-lg p-4 md:p-5">
+                <div className="flex items-start gap-2 mb-2">
+                  <CheckCircle2 className="text-medical-900 flex-shrink-0 mt-1" size={20} />
+                  <div className="flex-1">
+                    <p className="font-bold text-medical-900 text-lg md:text-xl">
+                      1 flaska: 399 kr (50% rabatt)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-600 mt-4 md:mt-5 text-sm md:text-base">
+              Det är mindre än vad du betalar för två månaders Minoxidil.
+            </p>
+          </div>
+
+          <div className="bg-medical-50 rounded-lg p-6 md:p-8 border border-medical-200">
+            <h4 className="text-xl md:text-2xl font-serif font-bold text-medical-900 mb-4 md:mb-6">
+              Så Här Beställer Du
+            </h4>
+            <p className="text-gray-700 mb-4 md:mb-5 text-base md:text-lg">
+              Om du vill prova Velana HairFlow Pro med Black Friday-rabatt (50-75% rabatt), följ dessa steg:
+            </p>
+            <ol className="space-y-3 md:space-y-4 text-gray-700 text-base md:text-lg list-decimal list-inside ml-2">
+              <li>Klicka på knappen nedan för att aktivera din rabatt sen kommer du gå till Velanas officiella webbplats</li>
+              <li>Välj din paketlösning (3-flaskors paketet är mest populärt för 12 veckors resultat)</li>
+              <li>Fyll i din leveransinformation</li>
+              <li>Bekräfta din beställning</li>
+            </ol>
+            <p className="text-gray-600 mt-4 md:mt-5 text-sm md:text-base">
+              Din order skickas inom 24 timmar och levereras till din dörr.
+            </p>
+            <p className="text-medical-900 font-semibold mt-4 md:mt-5 text-sm md:text-base">
+              Black Friday-erbjudandet gäller endast medan lagret räcker. Efter det går priset tillbaka till 798 kr per flaska.
+            </p>
+          </div>
+        </section>
+
         {/* Black Friday Deal Section */}
         <section className="bg-gradient-to-br from-medical-900 via-medical-800 to-medical-900 text-white rounded-2xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16 text-center shadow-xl">
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-4 md:mb-6">
