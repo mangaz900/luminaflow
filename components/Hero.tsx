@@ -119,8 +119,7 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-medical-900 leading-tight">
-              Återupptäck ditt <br />
-              <span className="italic text-medical-500">fylliga hår</span> – utan kompromisser.
+              Fylligare hår börjar i hårbotten.
             </h1>
             
             <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-lg">
