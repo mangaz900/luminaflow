@@ -11,11 +11,16 @@ initGA4();
 // Scroll to top on route change (endast om det inte finns scrollTo state)
 const ScrollToTop = () => {
   const { pathname, state } = useLocation();
+  const prevPathnameRef = React.useRef(pathname);
 
   useEffect(() => {
-    // Scrolla inte till top om det finns scrollTo state (hanteras av Navbar)
-    if (!state?.scrollTo) {
-      window.scrollTo(0, 0);
+    // Scrolla bara till top om pathname faktiskt ändrats (inte vid refresh)
+    if (prevPathnameRef.current !== pathname) {
+      // Scrolla inte till top om det finns scrollTo state (hanteras av Navbar)
+      if (!state?.scrollTo) {
+        window.scrollTo(0, 0);
+      }
+      prevPathnameRef.current = pathname;
     }
     // Track page view
     trackPageView(pathname);
