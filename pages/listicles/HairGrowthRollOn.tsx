@@ -133,12 +133,12 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-white shadow-xl z-10">
-                    2
+                <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20">
+                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-xl md:text-2xl lg:text-3xl text-white shadow-lg z-10">
+                    <span className="leading-none flex items-center justify-center">2</span>
                   </div>
                   <div className="absolute inset-0 bg-medical-900 rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute inset-0 border-4 border-medical-100 rounded-full"></div>
+                  <div className="absolute inset-0 border-2 border-medical-100 rounded-full"></div>
                 </div>
               </div>
               <div className="flex-1">
@@ -195,12 +195,12 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-white shadow-xl z-10">
-                    3
+                <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20">
+                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-xl md:text-2xl lg:text-3xl text-white shadow-lg z-10">
+                    <span className="leading-none flex items-center justify-center">3</span>
                   </div>
                   <div className="absolute inset-0 bg-medical-900 rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute inset-0 border-4 border-medical-100 rounded-full"></div>
+                  <div className="absolute inset-0 border-2 border-medical-100 rounded-full"></div>
                 </div>
               </div>
               <div className="flex-1">
@@ -257,12 +257,12 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-white shadow-xl z-10">
-                    4
+                <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20">
+                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-xl md:text-2xl lg:text-3xl text-white shadow-lg z-10">
+                    <span className="leading-none flex items-center justify-center">4</span>
                   </div>
                   <div className="absolute inset-0 bg-medical-900 rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute inset-0 border-4 border-medical-100 rounded-full"></div>
+                  <div className="absolute inset-0 border-2 border-medical-100 rounded-full"></div>
                 </div>
               </div>
               <div className="flex-1">
@@ -310,12 +310,12 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-white shadow-xl z-10">
-                    5
+                <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20">
+                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-xl md:text-2xl lg:text-3xl text-white shadow-lg z-10">
+                    <span className="leading-none flex items-center justify-center">5</span>
                   </div>
                   <div className="absolute inset-0 bg-medical-900 rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute inset-0 border-4 border-medical-100 rounded-full"></div>
+                  <div className="absolute inset-0 border-2 border-medical-100 rounded-full"></div>
                 </div>
               </div>
               <div className="flex-1">
