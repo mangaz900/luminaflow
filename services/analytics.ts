@@ -9,7 +9,7 @@ declare global {
   }
 }
 
-const GA4_MEASUREMENT_ID = 'G-HJRS7GJH5V';
+const GA4_MEASUREMENT_ID = 'G-QTWPPCYSNM';
 
 /**
  * Initialize GA4
