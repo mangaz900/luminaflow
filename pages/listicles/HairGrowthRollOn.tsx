@@ -85,8 +85,12 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-medical-900 text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl md:text-3xl lg:text-4xl shadow-lg">
-                  1
+                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
+                  <div className="absolute inset-0 bg-medical-900 rounded-full flex items-center justify-center font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-white shadow-xl z-10">
+                    1
+                  </div>
+                  <div className="absolute inset-0 bg-medical-900 rounded-full opacity-20 blur-xl"></div>
+                  <div className="absolute inset-0 border-4 border-medical-100 rounded-full"></div>
                 </div>
               </div>
               <div className="flex-1">
