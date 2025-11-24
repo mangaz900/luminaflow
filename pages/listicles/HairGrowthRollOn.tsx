@@ -378,12 +378,7 @@ const HairGrowthRollOn: React.FC = () => {
         {/* CTA */}
         <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 text-center shadow-lg">
           <button
-            onClick={() => {
-              navigate('/');
-              setTimeout(() => {
-                window.scrollTo(0, 0);
-              }, 100);
-            }}
+            onClick={() => navigate('/')}
             className="bg-medical-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-bold hover:bg-medical-800 transition-all text-lg md:text-xl lg:text-2xl w-full md:w-auto min-w-[280px] shadow-lg hover:shadow-xl font-serif"
           >
             Aktivera din Rabatt idag!
