@@ -24,6 +24,7 @@ import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
 import ReturnPolicy from './pages/ReturnPolicy';
 import ContactPage from './pages/ContactPage';
+import HairGrowthRollOn from './pages/listicles/HairGrowthRollOn';
 
 const HomePage: React.FC = () => {
   return (
@@ -81,6 +82,7 @@ const App: React.FC = () => {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/returpolicy" element={<ReturnPolicy />} />
           <Route path="/kontakt" element={<ContactPage />} />
+          <Route path="/5-anledningar-hair-growth-roll-on" element={<HairGrowthRollOn />} />
         </Routes>
         <ShoppingCart />
         <CookieConsent />
