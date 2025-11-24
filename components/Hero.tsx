@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-lg">
-              Den första serumlösningen med <strong>3% Rosmarin, Redensyl, Aminexil & Anagain™</strong>. Kliniskt bevisad effekt för kvinnor som har provat allt men inte vill ge upp.
+              Den första serumlösningen med 3% Rosmarin, Redensyl, Aminexil & Anagain. Kliniskt bevisad effekt för kvinnor som vill se resultat, inte gissningar.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
