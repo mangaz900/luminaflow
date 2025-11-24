@@ -20,7 +20,7 @@ const HairGrowthRollOn: React.FC = () => {
         {/* Header */}
         <header className="mb-12">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-medical-900 mb-6 leading-tight">
-            5 Anledningar Varför Allt Fler Kvinnor Över 40 Använder En Hair Growth Roll-on – Och Varför Du Kanske Borde Testa Det Själv
+            5 Anledningar Varför Allt Fler Kvinnor Över 40 Använder Lumina Roll-on – Och Varför Du Borde Testa Det Själv
           </h1>
           
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
