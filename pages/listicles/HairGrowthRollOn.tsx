@@ -373,10 +373,10 @@ const HairGrowthRollOn: React.FC = () => {
               Så Här Beställer Du
             </h4>
             <p className="text-gray-700 mb-4 md:mb-5 text-base md:text-lg">
-              Om du vill prova Velana HairFlow Pro med Black Friday-rabatt (50-75% rabatt), följ dessa steg:
+              Om du vill prova Lumina från Hairscan med Black Friday-rabatt (50-75% rabatt), följ dessa steg:
             </p>
             <ol className="space-y-3 md:space-y-4 text-gray-700 text-base md:text-lg list-decimal list-inside ml-2">
-              <li>Klicka på knappen nedan för att aktivera din rabatt sen kommer du gå till Velanas officiella webbplats</li>
+              <li>Klicka på knappen nedan för att aktivera din rabatt</li>
               <li>Välj din paketlösning (3-flaskors paketet är mest populärt för 12 veckors resultat)</li>
               <li>Fyll i din leveransinformation</li>
               <li>Bekräfta din beställning</li>
