@@ -19,11 +19,21 @@ const AIConsultant: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    // Scrolla bara inom chat-containern, inte hela sidan
+    if (messagesEndRef.current) {
+      const container = messagesEndRef.current.parentElement;
+      if (container) {
+        container.scrollTop = container.scrollHeight;
+      }
+    }
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Scrolla bara när nya meddelanden läggs till, inte vid första mount
+    // Detta förhindrar att sidan scrollar till AI-chatten när man kommer in
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const handleSend = async () => {
