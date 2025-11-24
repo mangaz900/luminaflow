@@ -393,10 +393,10 @@ const HairGrowthRollOn: React.FC = () => {
         {/* Black Friday Deal Section */}
         <section className="bg-gradient-to-br from-medical-900 via-medical-800 to-medical-900 text-white rounded-2xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16 text-center shadow-xl">
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-4 md:mb-6">
-            Exclusive Early Black Friday Deal
+            BLACK FRIDAY DEAL
           </h3>
           <p className="text-lg md:text-xl mb-6 md:mb-8 opacity-90">
-            Sale Ends In
+            Upp Till 75% RABATT + Gratis Frakt
           </p>
           <div className="flex justify-center gap-4 md:gap-6 mb-8 md:mb-10">
             <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 md:px-6 py-3 md:py-4 min-w-[60px] md:min-w-[80px] border border-white/30">
