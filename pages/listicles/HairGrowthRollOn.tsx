@@ -1,9 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 const HairGrowthRollOn: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-white">
@@ -377,7 +378,20 @@ const HairGrowthRollOn: React.FC = () => {
         {/* CTA */}
         <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 text-center shadow-lg">
           <button
-            onClick={() => navigate('/#pricing')}
+            onClick={() => {
+              if (location.pathname !== '/') {
+                navigate('/', { state: { scrollTo: '#erbjudande' } });
+              } else {
+                setTimeout(() => {
+                  const element = document.querySelector('#erbjudande');
+                  if (element) {
+                    const yOffset = -80; // Offset för fixed navbar
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }, 50);
+              }
+            }}
             className="bg-medical-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-bold hover:bg-medical-800 transition-all text-lg md:text-xl lg:text-2xl w-full md:w-auto min-w-[280px] shadow-lg hover:shadow-xl font-serif"
           >
             Aktivera din Rabatt idag!

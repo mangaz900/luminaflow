@@ -53,7 +53,6 @@ const Navbar: React.FC = () => {
           
           {/* Left: Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 flex-1">
-            <button onClick={() => { setIsOpen(false); navigate('/5-anledningar-hair-growth-roll-on'); }} className="text-dark-900 hover:text-gold-600 transition-colors">5 Anledningar</button>
             <button onClick={() => handleNavClick('#faq')} className="text-dark-900 hover:text-gold-600 transition-colors">FAQ</button>
             <button onClick={() => handleNavClick('#anvandning')} className="text-dark-900 hover:text-gold-600 transition-colors">Användning</button>
             <button onClick={() => handleNavClick('#ingredienser')} className="text-dark-900 hover:text-gold-600 transition-colors">Ingredienser</button>
@@ -99,7 +98,6 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full">
           <div className="px-4 pt-2 pb-6 space-y-2 shadow-lg">
-            <button onClick={() => { setIsOpen(false); navigate('/5-anledningar-hair-growth-roll-on'); }} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">5 Anledningar</button>
             <button onClick={() => handleNavClick('#faq')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">FAQ</button>
             <button onClick={() => handleNavClick('#anvandning')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Användning</button>
             <button onClick={() => handleNavClick('#ingredienser')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Ingredienser</button>
