@@ -418,21 +418,15 @@ const HairGrowthRollOn: React.FC = () => {
               <div className="text-xs md:text-sm opacity-80 mt-1">Seconds</div>
             </div>
           </div>
-          <p className="text-base md:text-lg mb-6 md:mb-8 opacity-90">
-            Få din Lumina Roll-on innan alla andra upptäcker den!
-          </p>
         </section>
 
         {/* CTA */}
         <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 text-center shadow-lg">
-          <p className="text-gray-600 leading-relaxed mb-6 md:mb-8 text-lg md:text-xl">
-            Många kvinnor över 40 börjar med 2 flaskor så de inte står utan.
-          </p>
           <button
             onClick={() => navigate('/#pricing')}
             className="bg-medical-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-bold hover:bg-medical-800 transition-all text-lg md:text-xl lg:text-2xl w-full md:w-auto min-w-[280px] shadow-lg hover:shadow-xl font-serif"
           >
-            SHOP NOW
+            Aktivera din Rabatt idag!
           </button>
         </section>
       </article>
