@@ -40,6 +40,17 @@ export const initGA4 = () => {
   };
   window.gtag('js', new Date());
 
+  // Check if script already exists
+  const existingScript = document.querySelector(`script[src*="gtag/js?id=${GA4_MEASUREMENT_ID}"]`);
+  if (existingScript) {
+    // Script already loaded, configure immediately
+    window.gtag('config', GA4_MEASUREMENT_ID, {
+      page_path: window.location.pathname,
+    });
+    console.log(`✅ GA4 already loaded, configured with Measurement ID: ${GA4_MEASUREMENT_ID}`);
+    return;
+  }
+
   // Load GA4 script
   const script1 = document.createElement('script');
   script1.async = true;
