@@ -9,7 +9,7 @@ declare global {
   }
 }
 
-const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-QTWPPCYSNM';
+const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-VWTD934FW1';
 
 /**
  * Initialize GA4
@@ -34,10 +34,12 @@ export const initGA4 = () => {
   }
 
   // Initialize dataLayer and gtag BEFORE loading script (required by Google)
+  // This matches Google's official code exactly
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function(...args: any[]) {
+  function gtag(...args: any[]) {
     window.dataLayer.push(args);
-  };
+  }
+  window.gtag = gtag;
   window.gtag('js', new Date());
 
   // Check if script already exists
