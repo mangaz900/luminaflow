@@ -89,8 +89,8 @@ export default async function handler(req, res) {
         }),
         ...(customer.email && { customer_email: customer.email }),
         ...(customer.phone && { customer_phone: customer.phone }),
-        // Add package IDs for Shopify mapping
-        package_ids: items.map(item => item.id).join(','),
+        // Save entire cart data for Shopify order creation (like Supabase version)
+        cart_data: JSON.stringify(items),
       },
       // Stripe samlar in leveransinfo automatiskt
       shipping_address_collection: {

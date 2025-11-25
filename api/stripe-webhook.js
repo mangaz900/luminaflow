@@ -47,10 +47,27 @@ export default async function handler(req, res) {
         // Create new order in Shopify
         console.log('📦 Creating new Shopify order from Stripe session');
         
-        // Retrieve line items from Stripe
-        const lineItems = await stripe.checkout.sessions.listLineItems(session.id, {
-          expand: ['data.price.product'],
-        });
+        // Get cart data from metadata (like Supabase version)
+        const cartData = session.metadata?.cart_data;
+        
+        if (!cartData) {
+          console.error('❌ Missing cart_data in session metadata. Cannot create Shopify order.');
+          console.error('Metadata:', JSON.stringify(session.metadata, null, 2));
+          // Return 200 OK - we don't want to retry if metadata is missing
+          return res.json({ received: true });
+        }
+
+        // Parse cart data
+        let cart;
+        try {
+          cart = JSON.parse(cartData);
+          console.log(`✅ Parsed cart data - ${cart.length} items`);
+        } catch (parseError) {
+          console.error('❌ Failed to parse cart_data from metadata:', parseError);
+          console.error('Cart data string:', cartData);
+          // Return 200 OK - we don't want to retry if data is malformed
+          return res.json({ received: true });
+        }
 
         // Get customer details
         let customer = null;
@@ -58,15 +75,11 @@ export default async function handler(req, res) {
           customer = await stripe.customers.retrieve(session.customer);
         }
 
-        // Build Shopify line items from Stripe line items
+        // Build Shopify line items from cart data (using package_id mapping)
         const shopifyLineItems = [];
         
-        for (const item of lineItems.data) {
-          // Try to extract package ID from product metadata first, then price metadata, then fallback to name
-          const packageId = item.price?.product?.metadata?.package_id ||
-                          item.price?.metadata?.package_id ||
-                          item.price?.metadata?.packageId ||
-                          extractPackageIdFromName(item.description || item.price?.product?.name || '');
+        for (const item of cart) {
+          const packageId = item.id;
           
           if (packageId) {
             try {
@@ -82,30 +95,43 @@ export default async function handler(req, res) {
               console.warn(`⚠️ Could not get variant ID for package ${packageId}:`, error.message);
               // Fallback: create line item without variant ID (Shopify will need product name)
               shopifyLineItems.push({
-                title: item.description || item.price?.product?.name || 'Lumina Growth Serum',
+                title: item.title || item.subtitle || 'Lumina Growth Serum',
                 quantity: item.quantity,
-                price: (item.price.unit_amount / 100).toFixed(2),
+                price: (item.price / item.quantity).toFixed(2), // Price per unit
               });
             }
           } else {
             // Fallback if we can't determine package ID
-            console.warn(`⚠️ Could not determine package ID for item: ${item.description || item.price?.product?.name}`);
+            console.warn(`⚠️ Could not determine package ID for item: ${item.title || item.subtitle}`);
             shopifyLineItems.push({
-              title: item.description || item.price?.product?.name || 'Lumina Growth Serum',
+              title: item.title || item.subtitle || 'Lumina Growth Serum',
               quantity: item.quantity,
-              price: (item.price.unit_amount / 100).toFixed(2),
+              price: (item.price / item.quantity).toFixed(2),
             });
           }
         }
 
+        // Get customer email (like Supabase version)
+        let customerEmail = session.customer_details?.email || session.metadata?.customer_email;
+        if (!customerEmail && customer && customer.email) {
+          customerEmail = customer.email;
+        }
+        if (!customerEmail && typeof session.customer === 'string') {
+          try {
+            console.log('📧 Retrieving customer email from Stripe...');
+            const customerObj = await stripe.customers.retrieve(session.customer);
+            if (customerObj && typeof customerObj !== 'string' && customerObj.email) {
+              customerEmail = customerObj.email;
+              console.log(`✅ Retrieved customer email: ${customerEmail}`);
+            }
+          } catch (customerError) {
+            console.error('❌ Failed to retrieve customer from Stripe:', customerError);
+          }
+        }
+
         // Build customer object for Shopify
-        const shopifyCustomer = customer ? {
-          email: customer.email,
-          first_name: customer.name?.split(' ')[0] || session.metadata?.customer_name?.split(' ')[0] || '',
-          last_name: customer.name?.split(' ').slice(1).join(' ') || session.metadata?.customer_name?.split(' ').slice(1).join(' ') || '',
-          phone: customer.phone || session.metadata?.customer_phone || '',
-        } : {
-          email: session.customer_details?.email || session.metadata?.customer_email || '',
+        const shopifyCustomer = {
+          email: customerEmail || '',
           first_name: session.customer_details?.name?.split(' ')[0] || session.metadata?.customer_name?.split(' ')[0] || '',
           last_name: session.customer_details?.name?.split(' ').slice(1).join(' ') || session.metadata?.customer_name?.split(' ').slice(1).join(' ') || '',
           phone: session.customer_details?.phone || session.metadata?.customer_phone || '',
@@ -163,25 +189,5 @@ export default async function handler(req, res) {
   }
 
   res.json({ received: true });
-}
-
-/**
- * Helper function to extract package ID from product name
- * Looks for patterns like "KÖP 3 BETALA FÖR 2" (package 2) or "KÖP 3 FÅ 3 EXTRA" (package 3)
- */
-function extractPackageIdFromName(name) {
-  const lowerName = name.toLowerCase();
-  
-  if (lowerName.includes('köp 3 få 3 extra') || lowerName.includes('storpack')) {
-    return '3';
-  }
-  if (lowerName.includes('köp 3 betala för 2') || lowerName.includes('behandlingskur')) {
-    return '2';
-  }
-  if (lowerName.includes('startpaket') || lowerName.includes('köp 1')) {
-    return '1';
-  }
-  
-  return null;
 }
 
