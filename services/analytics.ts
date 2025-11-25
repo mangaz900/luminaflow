@@ -33,6 +33,13 @@ export const initGA4 = () => {
     return;
   }
 
+  // Initialize dataLayer and gtag BEFORE loading script (required by Google)
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(...args: any[]) {
+    window.dataLayer.push(args);
+  };
+  window.gtag('js', new Date());
+
   // Load GA4 script
   const script1 = document.createElement('script');
   script1.async = true;
@@ -42,20 +49,13 @@ export const initGA4 = () => {
   };
   script1.onload = () => {
     console.log(`✅ GA4 script loaded with ID: ${GA4_MEASUREMENT_ID}`);
+    // Config GA4 AFTER script is loaded
+    window.gtag('config', GA4_MEASUREMENT_ID, {
+      page_path: window.location.pathname,
+    });
+    console.log(`✅ GA4 initialized with Measurement ID: ${GA4_MEASUREMENT_ID}`);
   };
   document.head.appendChild(script1);
-
-  // Initialize dataLayer and gtag
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function(...args: any[]) {
-    window.dataLayer.push(args);
-  };
-  window.gtag('js', new Date());
-  window.gtag('config', GA4_MEASUREMENT_ID, {
-    page_path: window.location.pathname,
-  });
-  
-  console.log(`✅ GA4 initialized with Measurement ID: ${GA4_MEASUREMENT_ID}`);
 };
 
 /**
