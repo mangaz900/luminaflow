@@ -6,9 +6,22 @@ import App from './App';
 import { initGA4, trackPageView } from './services/analytics';
 import { initTikTokPixel, trackTikTokPageView } from './services/tiktokPixel';
 
-// Initialize GA4 and TikTok Pixel on app load
-initGA4();
-initTikTokPixel();
+// Initialize analytics when DOM is ready
+const initializeAnalytics = () => {
+  // Vänta tills DOM är helt laddad
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initGA4();
+    initTikTokPixel();
+  } else {
+    window.addEventListener('load', () => {
+      initGA4();
+      initTikTokPixel();
+    });
+  }
+};
+
+// Initialize analytics
+initializeAnalytics();
 
 // Scroll to top on route change (endast om det inte finns scrollTo state)
 const ScrollToTop = () => {

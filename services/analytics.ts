@@ -15,10 +15,34 @@ const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-QTWPPCY
  * Initialize GA4
  */
 export const initGA4 = () => {
+  // Kontrollera att vi är i browser-miljö
+  if (typeof window === 'undefined' || !document.head) {
+    console.error('❌ Cannot initialize GA4: DOM not ready');
+    return;
+  }
+
+  // Kontrollera att Measurement ID finns och är korrekt
+  if (!GA4_MEASUREMENT_ID || !GA4_MEASUREMENT_ID.startsWith('G-')) {
+    console.warn('⚠️ GA4 Measurement ID not configured properly:', GA4_MEASUREMENT_ID);
+    return;
+  }
+
+  // Kontrollera om GA4 redan är initierad
+  if (window.gtag && window.dataLayer) {
+    console.log('✅ GA4 already initialized');
+    return;
+  }
+
   // Load GA4 script
   const script1 = document.createElement('script');
   script1.async = true;
   script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
+  script1.onerror = () => {
+    console.error('❌ Failed to load GA4 script');
+  };
+  script1.onload = () => {
+    console.log(`✅ GA4 script loaded with ID: ${GA4_MEASUREMENT_ID}`);
+  };
   document.head.appendChild(script1);
 
   // Initialize dataLayer and gtag
@@ -30,6 +54,8 @@ export const initGA4 = () => {
   window.gtag('config', GA4_MEASUREMENT_ID, {
     page_path: window.location.pathname,
   });
+  
+  console.log(`✅ GA4 initialized with Measurement ID: ${GA4_MEASUREMENT_ID}`);
 };
 
 /**
