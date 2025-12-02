@@ -4,23 +4,24 @@ import { X, ShoppingBag, Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import { trackBeginCheckout } from '../services/analytics';
 import { trackTikTokInitiateCheckout } from '../services/tiktokPixel';
+import { trackEvent } from '../services/pixel';
 
 const ShoppingCart: React.FC = () => {
   const navigate = useNavigate();
-  const { 
-    items, 
-    isCartOpen, 
-    closeCart, 
-    removeFromCart, 
+  const {
+    items,
+    isCartOpen,
+    closeCart,
+    removeFromCart,
     updateQuantity,
     getTotalPrice,
-    getTotalItems 
+    getTotalItems
   } = useCart();
   const [isLoading, setIsLoading] = React.useState(false);
 
   const handleGoToCheckout = async () => {
     if (items.length === 0) return;
-    
+
     const mappedItems = items.map(item => ({
       id: item.id,
       name: item.title,
@@ -28,10 +29,10 @@ const ShoppingCart: React.FC = () => {
       price: item.price / item.quantity, // Price per unit
       quantity: item.quantity,
     }));
-    
+
     // Track begin checkout event
     trackBeginCheckout(mappedItems, getTotalPrice());
-    
+
     // Track TikTok InitiateCheckout
     trackTikTokInitiateCheckout(
       mappedItems.map(item => ({
@@ -42,7 +43,17 @@ const ShoppingCart: React.FC = () => {
       })),
       getTotalPrice()
     );
-    
+
+    // Track Facebook InitiateCheckout
+    trackEvent('InitiateCheckout', {
+      content_ids: mappedItems.map(item => item.id),
+      content_name: 'Checkout',
+      content_type: 'product',
+      value: getTotalPrice(),
+      currency: 'SEK',
+      num_items: getTotalItems(),
+    });
+
     // Save order data for purchase tracking
     localStorage.setItem('pending_order', JSON.stringify({
       items: items.map(item => ({
@@ -54,7 +65,7 @@ const ShoppingCart: React.FC = () => {
       })),
       total: getTotalPrice(),
     }));
-    
+
     setIsLoading(true);
     try {
       // Skapa Stripe Checkout direkt (Stripe hanterar allt - e-post, leveransinfo, betalning)
@@ -106,11 +117,11 @@ const ShoppingCart: React.FC = () => {
   return (
     <>
       {/* Overlay */}
-      <div 
+      <div
         className="fixed inset-0 bg-black/50 z-40 transition-opacity"
         onClick={closeCart}
       />
-      
+
       {/* Sidebar */}
       <div className={`
         fixed right-0 top-0 h-full w-full md:w-96 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out
@@ -156,7 +167,7 @@ const ShoppingCart: React.FC = () => {
                         <Trash2 size={18} className="text-red-600" />
                       </button>
                     </div>
-                    
+
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <button
