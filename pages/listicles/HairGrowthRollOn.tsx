@@ -23,7 +23,7 @@ const HairGrowthRollOn: React.FC = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medical-900 mb-6 md:mb-8 leading-tight">
             5 Anledningar Varför Allt Fler Kvinnor Över 40 Använder Lumina Roll-on – Och Varför Du Borde Testa Det Själv
           </h1>
-          
+
           <div className="space-y-4 md:space-y-5 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
             <p>
               När håret börjar bli tunnare efter 40 är det lätt att känna sig ensam.
@@ -44,8 +44,8 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
               <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
-                <img 
-                  src="/fore-efter-1.jpg" 
+                <img
+                  src="/fore-efter-1.jpg"
                   alt="Före och efter - Håravfall lugnar sig"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -56,7 +56,7 @@ const HairGrowthRollOn: React.FC = () => {
                 />
               </div>
             </div>
-            
+
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
@@ -92,8 +92,8 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
               <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
-                <img 
-                  src="/list 2.jpg" 
+                <img
+                  src="/list 2.jpg"
                   alt="Stressad hårbotten"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -104,7 +104,7 @@ const HairGrowthRollOn: React.FC = () => {
                 />
               </div>
             </div>
-            
+
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
@@ -154,8 +154,8 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
               <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
-                <img 
-                  src="/list 1.jpg" 
+                <img
+                  src="/list 1.jpg"
                   alt="Babyhår"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -166,7 +166,7 @@ const HairGrowthRollOn: React.FC = () => {
                 />
               </div>
             </div>
-            
+
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
@@ -216,8 +216,8 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
               <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
-                <img 
-                  src="/kvinna-applicerar-3.jpg" 
+                <img
+                  src="/kvinna-applicerar-3.jpg"
                   alt="Enkel att använda"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -228,7 +228,7 @@ const HairGrowthRollOn: React.FC = () => {
                 />
               </div>
             </div>
-            
+
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
@@ -269,8 +269,8 @@ const HairGrowthRollOn: React.FC = () => {
             {/* Image Placeholder */}
             <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
               <div className="aspect-square bg-medical-50 rounded-xl overflow-hidden border border-medical-100">
-                <img 
-                  src="/fore-efter-2.jpg" 
+                <img
+                  src="/fore-efter-2.jpg"
                   alt="Förebyggande"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -281,7 +281,7 @@ const HairGrowthRollOn: React.FC = () => {
                 />
               </div>
             </div>
-            
+
             {/* Content */}
             <div className="flex-1 flex gap-4 md:gap-6">
               <div className="flex-shrink-0">
@@ -342,50 +342,52 @@ const HairGrowthRollOn: React.FC = () => {
         </section>
 
         {/* How to Order Section */}
-        <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16">
-          <div className="bg-medical-50 rounded-lg p-6 md:p-8 border border-medical-200">
+        <section className="bg-white border border-medical-100 rounded-2xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16 shadow-sm">
+          <div className="bg-medical-50/50 rounded-xl p-6 md:p-8 border border-medical-100">
             <h4 className="text-xl md:text-2xl font-serif font-bold text-medical-900 mb-4 md:mb-6">
               Så Här Beställer Du
             </h4>
             <p className="text-gray-700 mb-4 md:mb-5 text-base md:text-lg">
-              Om du vill prova Lumina från Hairscan med Black Friday-rabatt (50-75% rabatt), följ dessa steg:
+              Om du vill prova Lumina från Hairscan med vårt specialerbjudande, följ dessa steg:
             </p>
-            <ol className="space-y-3 md:space-y-4 text-gray-700 text-base md:text-lg list-decimal list-inside ml-2">
-              <li>Klicka på knappen nedan för att aktivera din rabatt</li>
-              <li>Välj din paketlösning (3-flaskors paketet är mest populärt för 12 veckors resultat)</li>
+            <ol className="space-y-3 md:space-y-4 text-gray-700 text-base md:text-lg list-decimal list-inside ml-2 marker:text-medical-900 marker:font-semibold">
+              <li>Klicka på knappen nedan för att se paketen</li>
+              <li>Välj din lösning (3-flaskors paketet rekommenderas för bästa resultat)</li>
               <li>Fyll i din leveransinformation</li>
-              <li>Bekräfta din beställning</li>
+              <li>Få hem ditt paket smidigt och enkelt</li>
             </ol>
-            <p className="text-gray-600 mt-4 md:mt-5 text-sm md:text-base">
-              Din order skickas inom 24 timmar och levereras till din dörr.
-            </p>
-            <p className="text-medical-900 font-semibold mt-4 md:mt-5 text-sm md:text-base">
-              Black Friday-erbjudandet gäller endast medan lagret räcker. Efter det går priset tillbaka till 798 kr per flaska.
+            <p className="text-gray-600 mt-6 md:mt-8 text-sm md:text-base italic">
+              Din order skickas inom 24 timmar och levereras direkt till din dörr eller brevlåda.
             </p>
           </div>
         </section>
 
-        {/* Black Friday Deal Section */}
-        <section className="bg-gradient-to-br from-medical-900 via-medical-800 to-medical-900 text-white rounded-2xl p-8 md:p-10 lg:p-12 mb-12 md:mb-16 text-center shadow-xl">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-4 md:mb-6">
-            BLACK FRIDAY DEAL
-          </h3>
-          <p className="text-lg md:text-xl mb-6 md:mb-8 opacity-90">
-            Upp Till 75% RABATT + Gratis Frakt
-          </p>
-        </section>
+        {/* Special Offer Section */}
+        <section className="bg-gradient-to-br from-medical-900 via-[#1a3b5c] to-medical-900 text-white rounded-2xl p-8 md:p-12 lg:p-16 mb-12 md:mb-16 text-center shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
+          <div className="relative z-10">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-4 md:mb-6 tracking-wide">
+              BEGRÄNSAT ERBJUDANDE
+            </h3>
+            <p className="text-lg md:text-xl mb-8 md:mb-10 text-medical-100 max-w-2xl mx-auto leading-relaxed">
+              Just nu får du upp till <span className="font-bold text-white">50% RABATT</span> på våra startpaket.
+              Gäller så långt lagret räcker.
+            </p>
 
-        {/* CTA */}
-        <section className="bg-white border-2 border-medical-200 rounded-xl p-8 md:p-10 lg:p-12 text-center shadow-lg">
-          <button
-            onClick={() => {
-              navigate('/');
-              window.scrollTo(0, 0);
-            }}
-            className="bg-medical-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-bold hover:bg-medical-800 transition-all text-lg md:text-xl lg:text-2xl w-full md:w-auto min-w-[280px] shadow-lg hover:shadow-xl font-serif"
-          >
-            Aktivera din Rabatt idag!
-          </button>
+            <button
+              onClick={() => {
+                navigate('/');
+                window.scrollTo(0, 0);
+              }}
+              className="bg-white text-medical-900 px-8 md:px-12 py-4 md:py-5 rounded-full font-bold hover:bg-medical-50 transition-all text-lg md:text-xl transform hover:scale-105 shadow-lg hover:shadow-xl font-serif"
+            >
+              Se Erbjudandet Här
+            </button>
+
+            <p className="mt-6 text-sm text-medical-200 opacity-80">
+              30 dagars nöjd-kund-garanti • Fri frakt över 500 kr
+            </p>
+          </div>
         </section>
       </article>
     </div>
