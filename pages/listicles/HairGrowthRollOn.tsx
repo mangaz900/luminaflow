@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
-import ProductHero from '../../components/ProductHero';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 const HairGrowthRollOn: React.FC = () => {
   const navigate = useNavigate();
@@ -37,9 +37,6 @@ const HairGrowthRollOn: React.FC = () => {
             </p>
           </div>
         </header>
-
-        {/* Product Hero */}
-        <ProductHero />
 
         {/* Main Content - 5 Points */}
         <div className="space-y-16 md:space-y-20 lg:space-y-24 mb-16 md:mb-20">

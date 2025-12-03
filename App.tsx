@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import ProductHero from './components/ProductHero';
 import ProblemSolution from './components/ProblemSolution';
 import Benefits from './components/Benefits';
 import Usage from './components/Usage';
@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <main className="overflow-x-hidden">
-        <Hero />
+        <ProductHero />
         <UserGallery />
         <ProblemSolution />
         <Benefits />
