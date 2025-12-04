@@ -20,31 +20,34 @@ export const initPixel = () => {
 // Track PageView
 export const pageView = () => {
     if (!PIXEL_ID) return;
-    ReactPixel.pageView();
+    const eventId = crypto.randomUUID();
+
+    // Use window.fbq directly to support eventID
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'PageView', {}, { eventID: eventId });
+    }
 
     // Send to CAPI (Server-side)
-    sendToCAPI('PageView', {});
+    sendToCAPI('PageView', {}, eventId);
 };
 
 // Track Custom/Standard Events
 export const trackEvent = (event: string, data: any = {}) => {
     if (!PIXEL_ID) return;
-    ReactPixel.track(event, data);
+    const eventId = crypto.randomUUID();
+
+    // Use window.fbq directly to support eventID
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', event, data, { eventID: eventId });
+    }
 
     // Send to CAPI (Server-side)
-    sendToCAPI(event, data);
+    sendToCAPI(event, data, eventId);
 };
 
 // Helper to send data to our serverless function which forwards to Facebook CAPI
-const sendToCAPI = async (eventName: string, eventData: any) => {
+const sendToCAPI = async (eventName: string, eventData: any, eventId: string) => {
     try {
-        const eventId = crypto.randomUUID(); // Deduplication ID
-
-        // Add eventID to browser pixel for deduplication if supported by library, 
-        // but ReactPixel.track doesn't easily support eventID in the second arg for standard events in all versions.
-        // For advanced deduplication, we might need to pass eventID to ReactPixel.trackSingle if needed.
-        // For now, we'll focus on getting the data to CAPI.
-
         await fetch('/api/facebook-conversion', {
             method: 'POST',
             headers: {
