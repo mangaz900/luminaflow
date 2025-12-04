@@ -7,7 +7,7 @@ const getAI = () => {
   if (!genAI) {
     // Get API key from environment - try multiple sources
     const apiKey = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY)
-      || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
+      || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY)
       || (typeof process !== 'undefined' && process.env?.API_KEY)
       || '';
     if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY') {
@@ -88,14 +88,14 @@ Ton: Varm, empatisk, expertis, naturlig. Du är en vänlig expert som vill hjäl
 Svara alltid på Svenska.
 `;
 
-export const sendChatMessage = async (history: {role: string, parts: {text: string}[]}[], newMessage: string): Promise<string> => {
+export const sendChatMessage = async (history: { role: string, parts: { text: string }[] }[], newMessage: string): Promise<string> => {
   try {
     // Check if API key is available - try multiple sources
     const apiKey = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY)
-      || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) 
+      || (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY)
       || (typeof process !== 'undefined' && process.env?.API_KEY)
       || '';
-    
+
     // Debug logging (only in development)
     if (import.meta.env.DEV) {
       console.log('API Key check:', {
@@ -104,15 +104,15 @@ export const sendChatMessage = async (history: {role: string, parts: {text: stri
         startsWith: apiKey ? apiKey.substring(0, 10) + '...' : 'none'
       });
     }
-    
+
     if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY') {
       return "AI-konsultation är för närvarande inte tillgänglig. Kontakta oss gärna direkt för personlig rådgivning!";
     }
 
     const genAI = getAI();
-    // Use gemini-1.5-flash as it's fast and efficient
-    const model = genAI.getGenerativeModel({ 
-      model: 'gemini-1.5-flash',
+    // Use gemini-1.5-flash-001 as it's the stable version
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-1.5-flash-001',
       systemInstruction: SYSTEM_INSTRUCTION,
     });
 
