@@ -26,6 +26,7 @@ import ReturnPolicy from './pages/ReturnPolicy';
 import ContactPage from './pages/ContactPage';
 import HairGrowthRollOn from './pages/listicles/HairGrowthRollOn';
 import { initPixel, pageView } from './services/pixel';
+import { initGA4, trackPageView } from './services/analytics';
 
 const HomePage: React.FC = () => {
   return (
@@ -64,11 +65,14 @@ const App: React.FC = () => {
 
     // Initialize Facebook Pixel
     initPixel();
+    // Initialize Google Analytics
+    initGA4();
   }, []); // Endast vid mount, inte vid varje location change
 
   // Track PageView on route change
   useEffect(() => {
     pageView();
+    trackPageView(location.pathname);
   }, [location.pathname]);
 
   return (
