@@ -110,9 +110,9 @@ export const sendChatMessage = async (history: { role: string, parts: { text: st
     }
 
     const genAI = getAI();
-    // Use gemini-1.5-flash-001 as it's the stable version
+    // Use gemini-pro as a stable fallback
     const model = genAI.getGenerativeModel({
-      model: 'gemini-1.5-flash-001',
+      model: 'gemini-pro',
       systemInstruction: SYSTEM_INSTRUCTION,
     });
 
