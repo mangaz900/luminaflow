@@ -1,4 +1,5 @@
 import ReactPixel from 'react-facebook-pixel';
+import { getCookie } from '../utils/cookie';
 
 const PIXEL_ID = import.meta.env.VITE_FACEBOOK_PIXEL_ID;
 
@@ -32,7 +33,7 @@ export const pageView = () => {
 };
 
 // Track Custom/Standard Events
-export const trackEvent = (event: string, data: any = {}) => {
+export const trackEvent = (event: string, data: any = {}, userData: any = {}) => {
     if (!PIXEL_ID) return;
     const eventId = crypto.randomUUID();
 
@@ -42,12 +43,15 @@ export const trackEvent = (event: string, data: any = {}) => {
     }
 
     // Send to CAPI (Server-side)
-    sendToCAPI(event, data, eventId);
+    sendToCAPI(event, data, eventId, userData);
 };
 
 // Helper to send data to our serverless function which forwards to Facebook CAPI
-const sendToCAPI = async (eventName: string, eventData: any, eventId: string) => {
+const sendToCAPI = async (eventName: string, eventData: any, eventId: string, userData: any = {}) => {
     try {
+        const fbc = getCookie('_fbc');
+        const fbp = getCookie('_fbp');
+
         await fetch('/api/facebook-conversion', {
             method: 'POST',
             headers: {
@@ -59,6 +63,9 @@ const sendToCAPI = async (eventName: string, eventData: any, eventId: string) =>
                 eventId,
                 url: window.location.href,
                 userAgent: navigator.userAgent,
+                fbc,
+                fbp,
+                userData, // Pass explicit user data (email, phone, etc.)
             }),
         });
     } catch (error) {

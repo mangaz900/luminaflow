@@ -1,11 +1,18 @@
 import crypto from 'crypto';
 
+// Helper to hash data (SHA256)
+const hashData = (data) => {
+    if (!data) return undefined;
+    const normalized = data.toString().trim().toLowerCase();
+    return crypto.createHash('sha256').update(normalized).digest('hex');
+};
+
 export default async function handler(request, response) {
     if (request.method !== 'POST') {
         return response.status(405).json({ error: 'Method Not Allowed' });
     }
 
-    const { eventName, eventData, eventId, url, userAgent } = request.body;
+    const { eventName, eventData, eventId, url, userAgent, fbc, fbp, userData } = request.body;
 
     const PIXEL_ID = process.env.FACEBOOK_PIXEL_ID;
     const ACCESS_TOKEN = process.env.FACEBOOK_ACCESS_TOKEN;
@@ -19,6 +26,27 @@ export default async function handler(request, response) {
     // Get client IP
     const clientIp = request.headers['x-forwarded-for'] || request.socket.remoteAddress;
 
+    // Construct user_data object
+    const fbUserData = {
+        client_ip_address: clientIp,
+        client_user_agent: userAgent,
+        fbc: fbc || undefined,
+        fbp: fbp || undefined,
+    };
+
+    // Add hashed user data if provided
+    if (userData) {
+        if (userData.email) fbUserData.em = hashData(userData.email);
+        if (userData.phone) fbUserData.ph = hashData(userData.phone);
+        if (userData.firstName) fbUserData.fn = hashData(userData.firstName);
+        if (userData.lastName) fbUserData.ln = hashData(userData.lastName);
+        if (userData.city) fbUserData.ct = hashData(userData.city);
+        if (userData.state) fbUserData.st = hashData(userData.state);
+        if (userData.zip) fbUserData.zp = hashData(userData.zip);
+        if (userData.country) fbUserData.country = hashData(userData.country);
+        if (userData.externalId) fbUserData.external_id = hashData(userData.externalId);
+    }
+
     const payload = {
         data: [
             {
@@ -27,12 +55,7 @@ export default async function handler(request, response) {
                 event_id: eventId,
                 event_source_url: url,
                 action_source: 'website',
-                user_data: {
-                    client_ip_address: clientIp,
-                    client_user_agent: userAgent,
-                    // Hash user data if available in eventData (email, phone, etc.)
-                    // This is a basic implementation. For better matching, we should hash email/phone if provided.
-                },
+                user_data: fbUserData,
                 custom_data: eventData,
             },
         ],

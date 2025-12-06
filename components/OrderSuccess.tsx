@@ -17,45 +17,64 @@ const OrderSuccess: React.FC = () => {
       // Get order details from localStorage (saved before checkout)
       const orderData = localStorage.getItem('pending_order');
       if (orderData) {
-        try {
-          const order = JSON.parse(orderData);
-          const transactionId = sessionId;
-          const transactionValue = order.total || 0;
-          const transactionItems = order.items || [];
+        // Fetch customer details from Stripe session
+        fetch(`/api/get-checkout-session?session_id=${sessionId}`)
+          .then(res => res.json())
+          .then(data => {
+            const customer = data.customer || {};
 
-          // Track GA4 purchase
-          trackPurchase({
-            transaction_id: transactionId,
-            value: transactionValue,
-            items: transactionItems,
-          });
+            try {
+              const order = JSON.parse(orderData);
+              const transactionId = sessionId;
+              const transactionValue = order.total || 0;
+              const transactionItems = order.items || [];
 
-          // Track TikTok Purchase
-          trackTikTokPurchase({
-            transaction_id: transactionId,
-            value: transactionValue,
-            items: transactionItems.map((item: any) => ({
-              id: item.id,
-              name: item.name,
-              price: item.price,
-              quantity: item.quantity,
-            })),
-          });
+              // Track GA4 purchase
+              trackPurchase({
+                transaction_id: transactionId,
+                value: transactionValue,
+                items: transactionItems,
+              });
 
-          // Track Facebook Purchase
-          trackEvent('Purchase', {
-            content_ids: transactionItems.map((item: any) => item.id),
-            content_type: 'product',
-            value: transactionValue,
-            currency: 'SEK',
-            num_items: transactionItems.reduce((acc: number, item: any) => acc + item.quantity, 0),
-          });
+              // Track TikTok Purchase
+              trackTikTokPurchase({
+                transaction_id: transactionId,
+                value: transactionValue,
+                items: transactionItems.map((item: any) => ({
+                  id: item.id,
+                  name: item.name,
+                  price: item.price,
+                  quantity: item.quantity,
+                })),
+              });
 
-          // Clear pending order after tracking
-          localStorage.removeItem('pending_order');
-        } catch (error) {
-          console.error('Error tracking purchase:', error);
-        }
+              // Track Facebook Purchase with Customer Data
+              trackEvent('Purchase', {
+                content_ids: transactionItems.map((item: any) => item.id),
+                content_type: 'product',
+                value: transactionValue,
+                currency: 'SEK',
+                num_items: transactionItems.reduce((acc: number, item: any) => acc + item.quantity, 0),
+              }, {
+                // Pass customer data for matching
+                email: customer.email,
+                phone: customer.phone,
+                firstName: customer.firstName,
+                lastName: customer.lastName,
+                city: customer.city,
+                state: customer.state,
+                zip: customer.zip,
+                country: customer.country,
+                externalId: sessionId // Use session ID as external ID
+              });
+
+              // Clear pending order after tracking
+              localStorage.removeItem('pending_order');
+            } catch (error) {
+              console.error('Error tracking purchase:', error);
+            }
+          })
+          .catch(err => console.error('Error fetching session details:', err));
       }
     }
   }, [sessionId]);
