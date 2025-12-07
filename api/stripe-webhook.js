@@ -8,26 +8,42 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Vercel serverless functions need raw body for webhooks
-  const body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
-
   const sig = req.headers['stripe-signature'];
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   let event;
+  let buf;
 
   try {
-    event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
+    // Read raw body from stream for signature verification
+    const buffers = [];
+    for await (const chunk of req) {
+      buffers.push(chunk);
+    }
+    buf = Buffer.concat(buffers);
+
+    // Verify signature using the raw buffer
+    event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
   } catch (err) {
     console.error('❌ Webhook signature verification failed:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  // Parse JSON from the buffer for logic usage
+  // (req.body might be empty if we consumed the stream, so rely on our buffer)
+  let parsedBody;
+  try {
+    parsedBody = JSON.parse(buf.toString());
+  } catch (err) {
+    console.error('JSON parse failed:', err);
+    return res.status(400).send('Invalid JSON');
   }
 
   // Hantera checkout.session.completed event (Stripe Checkout)
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
     console.log(`✅ Checkout session completed: ${session.id}`);
-    
+
     try {
       // Check if Shopify is configured
       if (!isShopifyConfigured()) {
@@ -37,7 +53,7 @@ export default async function handler(req, res) {
 
       // Check if order already exists in Shopify (from metadata)
       const existingShopifyOrderId = session.metadata?.shopify_order_id;
-      
+
       if (existingShopifyOrderId) {
         // Update existing order to 'paid'
         console.log(`📦 Updating existing Shopify order ${existingShopifyOrderId} to 'paid'`);
@@ -46,10 +62,10 @@ export default async function handler(req, res) {
       } else {
         // Create new order in Shopify
         console.log('📦 Creating new Shopify order from Stripe session');
-        
+
         // Get cart data from metadata (like Supabase version)
         const cartData = session.metadata?.cart_data;
-        
+
         if (!cartData) {
           console.error('❌ Missing cart_data in session metadata. Cannot create Shopify order.');
           console.error('Metadata:', JSON.stringify(session.metadata, null, 2));
@@ -77,10 +93,10 @@ export default async function handler(req, res) {
 
         // Build Shopify line items from cart data (using package_id mapping)
         const shopifyLineItems = [];
-        
+
         for (const item of cart) {
           const packageId = item.id;
-          
+
           if (packageId) {
             try {
               // Get Product ID and then fetch first variant
@@ -175,7 +191,7 @@ export default async function handler(req, res) {
   if (event.type === 'payment_intent.succeeded') {
     const paymentIntent = event.data.object;
     console.log(`✅ Payment succeeded: ${paymentIntent.id}`);
-    
+
     // If there's a Shopify order ID in metadata, update it
     const shopifyOrderId = paymentIntent.metadata?.shopify_order_id;
     if (shopifyOrderId && isShopifyConfigured()) {
