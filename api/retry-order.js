@@ -29,17 +29,41 @@ export default async function handler(req, res) {
             throw new Error('Shopify not configured');
         }
 
-        // 1. Parse Cart
+        // 1. Parse Cart (Support both metadata and line_items)
+        let cart = [];
         const cartData = session.metadata?.cart_data;
-        if (!cartData) throw new Error('No cart_data in metadata');
 
-        let cart;
-        try {
-            cart = JSON.parse(cartData);
-        } catch (e) {
-            throw new Error('Invalid JSON in cart_data');
+        if (cartData) {
+            try {
+                cart = JSON.parse(cartData);
+                log(`Found cached cart_data with ${cart.length} items.`);
+            } catch (e) {
+                log('Invalid JSON in cart_data, falling back to line_items.');
+            }
         }
-        log(`Cart contains ${cart.length} items.`);
+
+        if (cart.length === 0 && session.line_items?.data) {
+            log('Using Stripe line_items to reconstruct cart...');
+            cart = session.line_items.data.map(item => {
+                // Try to find package_id in product metadata if expanded, or guess
+                const packageId = item.price?.product?.metadata?.package_id ||
+                    item.price?.metadata?.package_id ||
+                    // Fallback guessing based on amount if no ID found
+                    (item.amount_total === 79800 ? 2 : (item.amount_total === 39900 ? 1 : 3));
+
+                return {
+                    id: packageId,
+                    quantity: item.quantity,
+                    title: item.description,
+                    price: item.amount_total / 100 // Stripe is in cents
+                };
+            });
+        }
+
+        if (cart.length === 0) {
+            throw new Error('Could not determine cart items from metadata or session data.');
+        }
+        log(`Final processed cart contains ${cart.length} items.`);
 
         // 2. Map Items
         const shopifyLineItems = [];
