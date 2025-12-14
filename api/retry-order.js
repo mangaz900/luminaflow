@@ -23,7 +23,18 @@ export default async function handler(req, res) {
         if (!session) {
             throw new Error('Session not found');
         }
-        log('Session retrieved from Stripe.');
+
+        // Check if paid
+        if (session.payment_status !== 'paid') {
+            const status = session.status || 'unknown';
+            return res.json({
+                success: false,
+                logs,
+                error: `This session is '${session.payment_status}' (Status: ${status}). We can only sync PAID orders. This looks like an abandoned cart.`
+            });
+        }
+
+        log('Session retrieved and verified as PAID.');
 
         if (!isShopifyConfigured()) {
             throw new Error('Shopify not configured');
