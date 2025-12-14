@@ -75,11 +75,16 @@ export default async function handler(req, res) {
             }
         }
 
+        const formatPhone = (phone) => {
+            if (!phone) return '0700000000';
+            return phone;
+        };
+
         const shopifyCustomer = {
             email: session.customer_details.email,
             first_name: session.customer_details.name.split(' ')[0],
             last_name: session.customer_details.name.split(' ').slice(1).join(' '),
-            phone: session.customer_details.phone || ''
+            phone: formatPhone(session.customer_details.phone)
         };
         log(`Prepared Customer: ${JSON.stringify(shopifyCustomer)}`);
 
