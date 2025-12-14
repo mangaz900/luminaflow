@@ -104,5 +104,47 @@ export default async function handler(req, res) {
         results.tests.push({ name: 'Read Products Permission', status: 'ERROR', message: err.message });
     }
 
+    // ... previous code ...
+
+    // 5. Check Product ID Configuration
+    const p1 = process.env.SHOPIFY_PRODUCT_ID_1;
+    const p2 = process.env.SHOPIFY_PRODUCT_ID_2;
+    const p3 = process.env.SHOPIFY_PRODUCT_ID_3;
+
+    results.config.productIds = {
+        p1: p1 ? 'Set' : 'MISSING',
+        p2: p2 ? 'Set' : 'MISSING',
+        p3: p3 ? 'Set' : 'MISSING'
+    };
+
+    // 6. Simulation: Try to fetch Variant for Product 2 (since user bought package 2)
+    if (p2) {
+        try {
+            const url = `${baseUrl}/products/${p2}.json`;
+            const prodRes = await fetch(url, { headers });
+            const prodData = await prodRes.json();
+
+            if (!prodRes.ok) {
+                results.tests.push({
+                    name: 'Simulate Product 2 Fetch',
+                    status: 'FAILED',
+                    error: prodData.errors || prodRes.statusText,
+                    statusCode: prodRes.status,
+                    hint: prodRes.status === 404 ? 'Product ID 2 is incorrect or does not exist in this store' : ''
+                });
+            } else {
+                results.tests.push({
+                    name: 'Simulate Product 2 Fetch',
+                    status: 'SUCCESS',
+                    variantId: prodData.product?.variants?.[0]?.id
+                });
+            }
+        } catch (err) {
+            results.tests.push({ name: 'Simulate Product 2 Fetch', status: 'ERROR', message: err.message });
+        }
+    } else {
+        results.tests.push({ name: 'Simulate Product 2 Fetch', status: 'SKIPPED', message: 'SHOPIFY_PRODUCT_ID_2 is missing' });
+    }
+
     res.json(results);
 }
