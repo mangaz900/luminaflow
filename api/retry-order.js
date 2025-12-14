@@ -101,7 +101,8 @@ export default async function handler(req, res) {
 
         // 3. Prepare Customer (with Phone Fix)
         const formatPhone = (phone) => {
-            if (!phone) return '0700000000';
+            // If no phone, generate a random unique dummy to avoid "has already been taken" error in Shopify
+            if (!phone) return `070${Math.floor(1000000 + Math.random() * 9000000)}`;
             return phone;
         };
 

@@ -76,7 +76,7 @@ export default async function handler(req, res) {
         }
 
         const formatPhone = (phone) => {
-            if (!phone) return '0700000000';
+            if (!phone) return `070${Math.floor(1000000 + Math.random() * 9000000)}`;
             return phone;
         };
 
