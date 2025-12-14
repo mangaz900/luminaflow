@@ -145,12 +145,20 @@ export default async function handler(req, res) {
           }
         }
 
+        // Helper to ensure valid phone or fallback
+        const formatPhone = (phone) => {
+          if (!phone) return '0700000000'; // Fallback phone to satisfy Shopify requirement
+          return phone;
+        };
+
+        const customerPhone = formatPhone(session.customer_details?.phone || session.metadata?.customer_phone);
+
         // Build customer object for Shopify
         const shopifyCustomer = {
           email: customerEmail || '',
           first_name: session.customer_details?.name?.split(' ')[0] || session.metadata?.customer_name?.split(' ')[0] || '',
           last_name: session.customer_details?.name?.split(' ').slice(1).join(' ') || session.metadata?.customer_name?.split(' ').slice(1).join(' ') || '',
-          phone: session.customer_details?.phone || session.metadata?.customer_phone || '',
+          phone: customerPhone,
         };
 
         // Build shipping address
@@ -163,7 +171,7 @@ export default async function handler(req, res) {
           province: session.shipping_details.address.state || '',
           zip: session.shipping_details.address.postal_code,
           country: session.shipping_details.address.country,
-          phone: session.customer_details?.phone || shopifyCustomer.phone || '',
+          phone: customerPhone,
         } : null;
 
         // Create order in Shopify
