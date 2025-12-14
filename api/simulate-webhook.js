@@ -59,9 +59,16 @@ export default async function handler(req, res) {
                 const variantId = await getFirstVariantId(productId);
                 log(`Fetched Variant ID: ${variantId}`);
 
+                // Normalize quantity
+                let packageSize = 1;
+                if (parseInt(packageId) === 2) packageSize = 3;
+                if (parseInt(packageId) === 3) packageSize = 6;
+
+                const shopifyQuantity = Math.max(1, Math.round(item.quantity / packageSize));
+
                 shopifyLineItems.push({
                     variant_id: variantId,
-                    quantity: item.quantity,
+                    quantity: shopifyQuantity,
                 });
             } catch (err) {
                 errorLog(`Item mapping failed: ${err.message}`);

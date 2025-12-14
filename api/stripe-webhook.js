@@ -102,9 +102,21 @@ export default async function handler(req, res) {
               // Get Product ID and then fetch first variant
               const productId = getProductId(parseInt(packageId));
               const variantId = await getFirstVariantId(productId);
+
+              // Normalize quantity: Stripe sends total bottles, but Shopify expects total packages.
+              // Package 1 = 1 bottle (Divisor 1) - Price 399
+              // Package 2 = 3 bottles (Divisor 3) - Price 798
+              // Package 3 = 6 bottles (Divisor 6) - Price 999
+
+              let packageSize = 1;
+              if (parseInt(packageId) === 2) packageSize = 3;
+              if (parseInt(packageId) === 3) packageSize = 6;
+
+              const shopifyQuantity = Math.max(1, Math.round(item.quantity / packageSize));
+
               shopifyLineItems.push({
                 variant_id: variantId,
-                quantity: item.quantity,
+                quantity: shopifyQuantity,
               });
               console.log(`✅ Mapped package ${packageId} to Shopify product ${productId}, variant ${variantId}`);
             } catch (error) {

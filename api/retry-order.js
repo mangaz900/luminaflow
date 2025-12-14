@@ -83,11 +83,19 @@ export default async function handler(req, res) {
                 const packageId = item.id;
                 const productId = getProductId(parseInt(packageId));
                 const variantId = await getFirstVariantId(productId);
+
+                // Normalize quantity
+                let packageSize = 1;
+                if (parseInt(packageId) === 2) packageSize = 3;
+                if (parseInt(packageId) === 3) packageSize = 6;
+
+                const shopifyQuantity = Math.max(1, Math.round(item.quantity / packageSize));
+
                 shopifyLineItems.push({
                     variant_id: variantId,
-                    quantity: item.quantity
+                    quantity: shopifyQuantity
                 });
-                log(`Mapped item ${packageId} to Variant ${variantId}`);
+                log(`Mapped item ${packageId} to Variant ${variantId} (Qty: ${item.quantity} -> ${shopifyQuantity})`);
             } catch (err) {
                 errorLog(`Mapping failed for item ${item.id}: ${err.message}`);
                 // Fallback
