@@ -117,15 +117,25 @@ export default async function handler(req, res) {
         };
         log('Customer prepared.');
 
-        const shippingAddress = session.shipping_details?.address ? {
-            first_name: session.shipping_details?.name?.split(' ')[0] || shopifyCustomer.first_name,
-            last_name: session.shipping_details?.name?.split(' ').slice(1).join(' ') || shopifyCustomer.last_name,
-            address1: session.shipping_details.address.line1,
-            address2: session.shipping_details.address.line2 || '',
-            city: session.shipping_details.address.city,
-            province: session.shipping_details.address.state || '',
-            zip: session.shipping_details.address.postal_code,
-            country: session.shipping_details.address.country,
+        // Address fallback logic
+        let addressSource = session.shipping_details?.address;
+        let nameSource = session.shipping_details?.name;
+
+        if (!addressSource && session.customer_details?.address) {
+            log('No shipping_details found, falling back to customer_details address.');
+            addressSource = session.customer_details.address;
+            nameSource = session.customer_details.name;
+        }
+
+        const shippingAddress = addressSource ? {
+            first_name: nameSource?.split(' ')[0] || shopifyCustomer.first_name,
+            last_name: nameSource?.split(' ').slice(1).join(' ') || shopifyCustomer.last_name,
+            address1: addressSource.line1,
+            address2: addressSource.line2 || '',
+            city: addressSource.city,
+            province: addressSource.state || '',
+            zip: addressSource.postal_code,
+            country: addressSource.country,
             phone: customerPhone,
         } : null;
 
