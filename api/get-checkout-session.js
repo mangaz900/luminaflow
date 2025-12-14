@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
     try {
         const session = await stripe.checkout.sessions.retrieve(session_id, {
-            expand: ['customer_details', 'shipping_details']
+            expand: ['customer_details']
         });
 
         // Extract key customer info
