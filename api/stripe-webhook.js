@@ -3,6 +3,12 @@ import { createShopifyOrder, updateShopifyOrder, getVariantId, getProductId, get
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -47,7 +53,9 @@ export default async function handler(req, res) {
     try {
       // Check if Shopify is configured
       if (!isShopifyConfigured()) {
-        console.log('ℹ️ Shopify not configured - skipping order creation');
+        console.error('❌ Shopify not configured - skipping order creation');
+        console.error('Debug: STORE_NAME present:', !!process.env.SHOPIFY_STORE_NAME);
+        console.error('Debug: ADMIN_API_TOKEN present:', !!process.env.SHOPIFY_ADMIN_API_TOKEN);
         return res.json({ received: true });
       }
 
