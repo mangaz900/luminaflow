@@ -25,6 +25,7 @@ import CookiePolicy from './pages/CookiePolicy';
 import ReturnPolicy from './pages/ReturnPolicy';
 import ContactPage from './pages/ContactPage';
 import HairGrowthRollOn from './pages/listicles/HairGrowthRollOn';
+import Women55Plus from './pages/listicles/Women55Plus';
 import { initPixel, pageView } from './services/pixel';
 import { initGA4, trackPageView } from './services/analytics';
 
@@ -78,7 +79,7 @@ const App: React.FC = () => {
   return (
     <CartProvider>
       <div className="min-h-screen bg-white font-sans text-dark-900 antialiased selection:bg-medical-100 selection:text-medical-900 overflow-x-hidden">
-        <Navbar />
+        {location.pathname !== '/kvinnor-55-plus-lumina' && <Navbar />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/order-success" element={<OrderSuccess />} />
@@ -88,6 +89,7 @@ const App: React.FC = () => {
           <Route path="/returpolicy" element={<ReturnPolicy />} />
           <Route path="/kontakt" element={<ContactPage />} />
           <Route path="/5-anledningar-hair-growth-roll-on" element={<HairGrowthRollOn />} />
+          <Route path="/kvinnor-55-plus-lumina" element={<Women55Plus />} />
         </Routes>
         <ShoppingCart />
         <CookieConsent />
