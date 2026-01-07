@@ -94,7 +94,7 @@ const App: React.FC = () => {
           <Route path="/5-anledningar-65" element={<FiveReasons65 />} />
         </Routes>
         <ShoppingCart />
-        {!['/5-anledningar-65'].includes(location.pathname) && <CookieConsent />}
+        <CookieConsent />
       </div>
     </CartProvider>
   );

@@ -32,7 +32,7 @@ const CookieConsent: React.FC = () => {
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
     setShowBanner(false);
     setShowSettings(false);
-    
+
     // Här kan du lägga till logik för att aktivera/avaktivera cookies baserat på preferenser
     if (prefs.analytics) {
       // Aktivera analytics cookies (t.ex. Google Analytics)
@@ -72,45 +72,36 @@ const CookieConsent: React.FC = () => {
     <>
       {/* Cookie Banner */}
       {showBanner && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-medical-900 shadow-2xl">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="flex-1">
-                <h3 className="font-semibold text-medical-900 mb-2 text-lg">
-                  Vi använder cookies
+                <h3 className="font-bold text-medical-900 mb-1 text-base">
+                  Vi använder cookies 🍪
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Vi använder cookies för att förbättra din upplevelse, analysera trafik och personalisera innehåll. 
-                  Genom att klicka "Acceptera alla" godkänner du vår användning av cookies. 
-                  Du kan ändra dina inställningar när som helst.
+                  För att ge dig bästa möjliga upplevelse.
+                  <a
+                    href="/cookie-policy"
+                    className="text-medical-900 hover:underline ml-1"
+                  >
+                    Läs mer
+                  </a>
                 </p>
-                <a 
-                  href="/cookie-policy" 
-                  className="text-sm text-medical-900 hover:underline mt-2 inline-block"
-                >
-                  Läs mer i vår Cookie Policy
-                </a>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-                <button
-                  onClick={() => setShowSettings(true)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
-                >
-                  <Settings size={16} />
-                  Anpassa
-                </button>
-                <button
-                  onClick={handleRejectAll}
-                  className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-                >
-                  Avvisa
-                </button>
+
+              <div className="flex flex-row gap-3 w-full md:w-auto">
                 <button
                   onClick={handleAcceptAll}
-                  className="px-6 py-2 bg-medical-900 text-white rounded-lg text-sm font-medium hover:bg-medical-800 transition-colors"
+                  className="flex-1 md:flex-none px-8 py-3 bg-medical-900 text-white rounded-lg text-base font-bold hover:bg-medical-800 transition-colors shadow-lg"
                 >
-                  Acceptera alla
+                  Acceptera
+                </button>
+                <button
+                  onClick={() => setShowSettings(true)}
+                  className="px-4 py-3 border-2 border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  Inställningar
                 </button>
               </div>
             </div>
@@ -138,7 +129,7 @@ const CookieConsent: React.FC = () => {
 
               {/* Description */}
               <p className="text-gray-600 mb-6 text-sm">
-                Välj vilka typer av cookies du vill acceptera. Nödvändiga cookies kan inte inaktiveras 
+                Välj vilka typer av cookies du vill acceptera. Nödvändiga cookies kan inte inaktiveras
                 eftersom de är nödvändiga för att webbplatsen ska fungera.
               </p>
 
@@ -156,7 +147,7 @@ const CookieConsent: React.FC = () => {
                     </div>
                   </div>
                   <p className="text-sm text-gray-600">
-                    Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt. 
+                    Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt.
                     De kan inte inaktiveras.
                   </p>
                 </div>
@@ -179,7 +170,7 @@ const CookieConsent: React.FC = () => {
                     </label>
                   </div>
                   <p className="text-sm text-gray-600">
-                    Dessa cookies möjliggör förbättrad funktionalitet och personalisering, 
+                    Dessa cookies möjliggör förbättrad funktionalitet och personalisering,
                     såsom att komma ihåg dina val.
                   </p>
                 </div>
@@ -202,7 +193,7 @@ const CookieConsent: React.FC = () => {
                     </label>
                   </div>
                   <p className="text-sm text-gray-600">
-                    Dessa cookies hjälper oss att förstå hur besökare interagerar med webbplatsen 
+                    Dessa cookies hjälper oss att förstå hur besökare interagerar med webbplatsen
                     genom att samla in och rapportera information anonymt.
                   </p>
                 </div>
@@ -210,8 +201,8 @@ const CookieConsent: React.FC = () => {
 
               {/* Links */}
               <div className="mb-6 pt-4 border-t border-gray-200">
-                <a 
-                  href="/cookie-policy" 
+                <a
+                  href="/cookie-policy"
                   className="text-sm text-medical-900 hover:underline"
                 >
                   Läs mer i vår Cookie Policy →
