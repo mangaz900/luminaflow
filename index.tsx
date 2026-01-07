@@ -6,22 +6,8 @@ import App from './App';
 import { initGA4, trackPageView } from './services/analytics';
 import { initTikTokPixel, trackTikTokPageView } from './services/tiktokPixel';
 
-// Initialize analytics when DOM is ready
-const initializeAnalytics = () => {
-  // Vänta tills DOM är helt laddad
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    initGA4();
-    initTikTokPixel();
-  } else {
-    window.addEventListener('load', () => {
-      initGA4();
-      initTikTokPixel();
-    });
-  }
-};
-
-// Initialize analytics
-initializeAnalytics();
+// Analytics will be initialized by CookieConsent component based on user preferences
+// This ensures GDPR compliance - no tracking before consent
 
 // Scroll to top on route change (endast om det inte finns scrollTo state)
 const ScrollToTop = () => {

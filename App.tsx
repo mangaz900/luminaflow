@@ -65,10 +65,7 @@ const App: React.FC = () => {
     // Scrolla alltid till top vid mount (inklusive refresh)
     window.scrollTo(0, 0);
 
-    // Initialize Facebook Pixel
-    initPixel();
-    // Initialize Google Analytics
-    initGA4();
+    // Tracking initialization moved to CookieConsent for GDPR compliance
   }, []); // Endast vid mount, inte vid varje location change
 
   // Track PageView on route change

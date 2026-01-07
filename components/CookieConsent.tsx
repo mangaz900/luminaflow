@@ -20,6 +20,25 @@ const CookieConsent: React.FC = () => {
       try {
         const savedPrefs = JSON.parse(consent);
         setPreferences(savedPrefs);
+
+        // GDPR: Load tracking if user has previously consented
+        if (savedPrefs.analytics) {
+          import('../services/analytics').then(({ initGA4 }) => {
+            initGA4();
+            console.log('✅ Google Analytics laddad från sparad consent');
+          });
+
+          import('../services/tiktokPixel').then(({ initTikTokPixel }) => {
+            initTikTokPixel();
+            console.log('✅ TikTok Pixel laddad från sparad consent');
+          });
+
+          // Initialize Facebook Pixel
+          import('../services/pixel').then(({ initPixel }) => {
+            initPixel();
+            console.log('✅ Facebook Pixel laddad från sparad consent');
+          });
+        }
       } catch (e) {
         // Om parsing misslyckas, visa banner igen
         setShowBanner(true);
@@ -33,14 +52,30 @@ const CookieConsent: React.FC = () => {
     setShowBanner(false);
     setShowSettings(false);
 
-    // Här kan du lägga till logik för att aktivera/avaktivera cookies baserat på preferenser
+    // GDPR-compliant: Only load tracking scripts after user consent
     if (prefs.analytics) {
-      // Aktivera analytics cookies (t.ex. Google Analytics)
-      console.log('Analytics cookies aktiverade');
+      // Dynamically import and initialize analytics
+      import('../services/analytics').then(({ initGA4 }) => {
+        initGA4();
+        console.log('✅ Google Analytics aktiverad efter consent');
+      });
+
+      import('../services/tiktokPixel').then(({ initTikTokPixel }) => {
+        initTikTokPixel();
+        console.log('✅ TikTok Pixel aktiverad efter consent');
+      });
+
+      // Initialize Facebook Pixel
+      import('../services/pixel').then(({ initPixel }) => {
+        initPixel();
+        console.log('✅ Facebook Pixel aktiverad efter consent');
+      });
+    } else {
+      console.log('❌ Analytics cookies avvisade - ingen tracking laddas');
     }
+
     if (prefs.functional) {
-      // Aktivera funktionella cookies
-      console.log('Funktionella cookies aktiverade');
+      console.log('✅ Funktionella cookies aktiverade');
     }
   };
 
