@@ -320,6 +320,11 @@ const Women55PlusV3: React.FC = () => {
                             Varför ingenting du prövat har fungerat
                         </h3>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/2 (6).jpg" alt="Misslyckade behandlingar" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-8">
                             Jag insåg tre saker som gjorde mig rasande:
                         </p>
