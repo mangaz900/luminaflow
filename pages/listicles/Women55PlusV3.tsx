@@ -252,7 +252,7 @@ const Women55PlusV3: React.FC = () => {
 
                         {/* Image */}
                         <div className="mb-6">
-                            <img src="/4 (4).jpg" alt="Östrogen-vakuum och DHT" className="w-full h-auto rounded-lg" />
+                            <img src="/problem-bild.jpg" alt="Östrogen-vakuum och DHT" className="w-full h-auto rounded-lg" />
                         </div>
 
                         <p className="text-[17px] mb-6">
