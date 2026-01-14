@@ -17,7 +17,7 @@ const Women55PlusV3: React.FC = () => {
     }, []);
 
     const scrollToOffer = () => {
-        window.location.href = 'https://hairscanpro.com/';
+        window.location.href = 'https://www.hairscanpro.com/';
     };
 
     return (
