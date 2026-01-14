@@ -525,6 +525,11 @@ const Women55PlusV3: React.FC = () => {
                             </p>
                         </div>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/produkt-ingredienser.jpg" alt="Produktens ingredienser och effekt" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-8">
                             Jag började sent oktober. Applicerade det direkt på hårbotten. 90 sekunder. Morgon och kväll.
                         </p>
