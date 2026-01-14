@@ -494,6 +494,11 @@ const Women55PlusV3: React.FC = () => {
                             Och det var exakt vad jag hittade i Lumina
                         </h3>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/list 2.jpg" alt="Lumina ingredienser" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-6">
                             Inte ett schampo. Inte en olja. Inte en tablett.
                         </p>
