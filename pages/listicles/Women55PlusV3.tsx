@@ -580,6 +580,11 @@ const Women55PlusV3: React.FC = () => {
                             Varför Lumina fungerade när allt annat misslyckades
                         </h3>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/losning-bild.jpg" alt="Lumina lösning" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-6">
                             Det handlar inte om "hemligheter" eller "exklusiv teknologi".
                         </p>
