@@ -134,6 +134,11 @@ const Women55PlusV3: React.FC = () => {
                             Det började smått – sen exploderade det
                         </h3>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/57.jpg" alt="Håravfall progression" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-3">
                             <strong>Januari 2025:</strong> Jag märkte att hårelastiken behövde rullas fyra vardar istället för två.
                         </p>
@@ -205,6 +210,11 @@ const Women55PlusV3: React.FC = () => {
                         <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                             Sanningen ingen läkare sa till mig
                         </h3>
+
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/3 (6).jpg" alt="Forskning om håravfall" className="w-full h-auto rounded-lg" />
+                        </div>
 
                         <p className="text-[17px] mb-4">
                             En natt i september satt jag i köket klockan 02:30.
