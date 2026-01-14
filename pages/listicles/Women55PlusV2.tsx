@@ -31,6 +31,11 @@ const Women55PlusV2: React.FC = () => {
                         "Jag trodde mitt hår var borta för alltid. Det var bara sovande."
                     </h1>
 
+                    {/* Hero Image */}
+                    <div className="mb-6">
+                        <img src="/1 (6).jpg" alt="Kvinna med håravfall" className="w-full h-auto rounded-lg" />
+                    </div>
+
                     {/* Subheadline */}
                     <div className="text-[16px] md:text-[18px] text-[#4F5256] mb-4 leading-snug font-sans">
                         Svenska kvinnor upptäcker varför ingenting har fungerat mot håravfall – och den enkla lösningen som äntligen gör skillnad
@@ -57,7 +62,7 @@ const Women55PlusV2: React.FC = () => {
                         </p>
 
                         <p className="text-[17px] mb-4">
-                            Mitt namn är Lena Bergström. Jag är 54. Jag bor i Linköping.
+                            Mitt namn är Lena Bergström. Jag är 57. Jag bor i Stockholm.
                         </p>
 
                         <p className="text-[17px] mb-4">
@@ -80,10 +85,6 @@ const Women55PlusV2: React.FC = () => {
                             Jag vill bara inte att de ska se mitt hår.
                         </p>
 
-                        {/* Image */}
-                        <div className="mb-8">
-                            <img src="/kvinna70.webp" alt="Kvinna med håravfall" className="w-full h-auto rounded-lg" />
-                        </div>
 
                         <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                             Det började smått
