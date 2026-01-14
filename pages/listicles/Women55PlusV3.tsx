@@ -434,6 +434,12 @@ const Women55PlusV3: React.FC = () => {
                         <div className="space-y-6 mb-8">
                             <div className="bg-white border-2 border-[#17242C] p-5 rounded-lg">
                                 <h4 className="text-[18px] font-bold mb-2 text-[#17242C]">Process #1: Fibros måste mjukas upp</h4>
+
+                                {/* Image */}
+                                <div className="mb-3">
+                                    <img src="/4 (4).jpg" alt="Fibros i hårsäcken" className="w-full h-auto rounded-lg" />
+                                </div>
+
                                 <p className="text-[16px] mb-3">
                                     Under klimakteriet stelnar kollagenet runt hårsäcken.
                                 </p>
@@ -450,6 +456,12 @@ const Women55PlusV3: React.FC = () => {
 
                             <div className="bg-white border-2 border-[#17242C] p-5 rounded-lg">
                                 <h4 className="text-[18px] font-bold mb-2 text-[#17242C]">Process #2: Stamcellerna måste väckas</h4>
+
+                                {/* Image */}
+                                <div className="mb-3">
+                                    <img src="/5 (4).jpg" alt="Stamceller i hårsäcken" className="w-full h-auto rounded-lg" />
+                                </div>
+
                                 <p className="text-[16px] mb-3">
                                     Vilande hårsäckar vaknar inte av vitaminer. De vaknar inte av olja.
                                 </p>
