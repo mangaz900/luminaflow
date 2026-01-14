@@ -107,7 +107,7 @@ const Women55PlusV3: React.FC = () => {
                         </p>
 
                         <p className="text-[17px] mb-4">
-                            Jag är 52 år. Gift. Två vuxna barn. Lärare i Göteborg.
+                            Jag är 55 år. Gift. Två vuxna barn. Lärare i Göteborg.
                         </p>
 
                         <p className="text-[17px] mb-4">
