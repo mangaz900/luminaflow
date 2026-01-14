@@ -31,6 +31,11 @@ const Women55PlusV3: React.FC = () => {
                         "Klimakteriet stal mitt hår. Jag stal det tillbaka."
                     </h1>
 
+                    {/* Hero Image */}
+                    <div className="mb-6">
+                        <img src="/8 (2).jpg" alt="Kvinna med håravfall" className="w-full h-auto rounded-lg" />
+                    </div>
+
                     {/* Subheadline */}
                     <div className="text-[16px] md:text-[18px] text-[#4F5256] mb-4 leading-snug font-sans">
                         Svenska kvinnor 45+ upptäcker den dolda orsaken till håravfall – och varför läkare aldrig pratar om den
