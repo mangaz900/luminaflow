@@ -73,6 +73,11 @@ const Women55PlusV3: React.FC = () => {
                             Om du räknar hårstrån i duschen och rädslan växer varje dag...
                         </p>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/9 (1).jpg" alt="Hårstrån i duschen" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[18px] mb-8 font-bold">
                             Då måste du läsa detta.
                         </p>
