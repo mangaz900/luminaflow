@@ -90,6 +90,11 @@ const Women55PlusV2: React.FC = () => {
                             Det började smått
                         </h3>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/58.jpg" alt="Kvinna med håravfall" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-4">
                             Först slutade jag gå till frisören. För vad skulle jag säga? "Kan du fixa min bena?"
                         </p>
@@ -142,6 +147,11 @@ const Women55PlusV2: React.FC = () => {
                             Jag försökte fixa det
                         </h3>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/2 (6).jpg" alt="Kvinna försöker fixa håravfall" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-4">
                             Volymschampos – hjälpte inte.
                         </p>
@@ -178,14 +188,15 @@ const Women55PlusV2: React.FC = () => {
                             Det kändes som att jag inte kunde leva mitt liv längre.
                         </p>
 
-                        {/* Image */}
-                        <div className="mb-8">
-                            <img src="/problem-bild.jpg" alt="Håravfall problem" className="w-full h-auto rounded-lg" />
-                        </div>
 
                         <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                             Tills jag lärde mig sanningen
                         </h3>
+
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/3 (6).jpg" alt="Forskning om håravfall" className="w-full h-auto rounded-lg" />
+                        </div>
 
                         <p className="text-[17px] mb-6">
                             Klockan 03:00 en natt, medan jag inte kunde sova, gjorde jag det varje panikslagen kvinna gör – jag forskade desperat.
@@ -226,10 +237,6 @@ const Women55PlusV2: React.FC = () => {
                             </p>
                         </div>
 
-                        {/* Image */}
-                        <div className="mb-8">
-                            <img src="/utbildningsdiagram.jpg" alt="Hårsäck diagram" className="w-full h-auto rounded-lg" />
-                        </div>
 
                         <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                             Men varför hade ingenting fungerat?
@@ -243,6 +250,12 @@ const Women55PlusV2: React.FC = () => {
                             <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
                                 Problem #1: Klimakteriet orsakar "fibros"
                             </h4>
+
+                            {/* Image */}
+                            <div className="mb-4">
+                                <img src="/4 (4).jpg" alt="Fibros i hårsäcken" className="w-full h-auto rounded-lg" />
+                            </div>
+
                             <p className="text-[17px] mb-4">
                                 Här är vad ingen sa till mig:
                             </p>
@@ -264,6 +277,12 @@ const Women55PlusV2: React.FC = () => {
                             <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
                                 Problem #2: Hårsäckarna behöver en "väckarklocka"
                             </h4>
+
+                            {/* Image */}
+                            <div className="mb-4">
+                                <img src="/5 (4).jpg" alt="Hårsäckar behöver väckarklocka" className="w-full h-auto rounded-lg" />
+                            </div>
+
                             <p className="text-[17px] mb-4">
                                 Sovande hårsäckar vaknar inte av vitaminer. De vaknar inte av schampo.
                             </p>
@@ -279,6 +298,12 @@ const Women55PlusV2: React.FC = () => {
                             <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
                                 Problem #3: Minoxidil är för aggressivt
                             </h4>
+
+                            {/* Image */}
+                            <div className="mb-4">
+                                <img src="/6 (4).jpg" alt="Minoxidil biverkningar" className="w-full h-auto rounded-lg" />
+                            </div>
+
                             <p className="text-[17px] mb-4">
                                 Du har hört skräckhistorierna.
                             </p>
@@ -301,10 +326,6 @@ const Women55PlusV2: React.FC = () => {
                             </ul>
                         </div>
 
-                        {/* Image */}
-                        <div className="mb-8">
-                            <img src="/COMPARISON.webp" alt="Jämförelse behandlingar" className="w-full h-auto rounded-lg" />
-                        </div>
 
                         <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                             Så vad är lösningen?
@@ -317,6 +338,7 @@ const Women55PlusV2: React.FC = () => {
                         <p className="text-[18px] mb-6 font-bold text-[#17242C]">
                             Det är mikrocirkulation + stamcells-aktivering + fibros-mjukning.
                         </p>
+
 
                         <p className="text-[17px] mb-4">
                             Studier visar att när du:
@@ -373,14 +395,15 @@ const Women55PlusV2: React.FC = () => {
                             </p>
                         </div>
 
-                        {/* Image */}
-                        <div className="mb-8">
-                            <img src="/produkt-flaska-sten.jpg" alt="Lumina Hair Serum" className="w-full h-auto rounded-lg" />
-                        </div>
 
                         <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                             Och det var exakt vad jag hittade
                         </h3>
+
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/produkt-flaska-sten.jpg" alt="Lumina Hair Serum" className="w-full h-auto rounded-lg" />
+                        </div>
 
                         <p className="text-[17px] mb-6">
                             En topisk behandling – INTE en tablett, INTE hormonell – som kombinerar:
@@ -436,6 +459,11 @@ const Women55PlusV2: React.FC = () => {
                                 Jag applicerade det direkt på hårbotten. En gång om dagen. 90 sekunder.
                             </p>
 
+                            {/* Image */}
+                            <div className="mb-6">
+                                <img src="/steg-ny.webp" alt="Applicering steg" className="w-full h-auto rounded-lg" />
+                            </div>
+
                             <div className="space-y-4 mt-6">
                                 <div>
                                     <p className="font-bold text-[17px] mb-2">Vecka 1-4:</p>
@@ -459,25 +487,15 @@ const Women55PlusV2: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Timeline Images */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                            <div>
-                                <img src="/timeline-manad-1-2.jpg" alt="Månad 1-2" className="w-full h-auto rounded-lg" />
-                                <p className="text-center text-sm mt-2 font-bold">Månad 1-2</p>
-                            </div>
-                            <div>
-                                <img src="/timeline-manad-3-4.jpg" alt="Månad 3-4" className="w-full h-auto rounded-lg" />
-                                <p className="text-center text-sm mt-2 font-bold">Månad 3-4</p>
-                            </div>
-                            <div>
-                                <img src="/timeline-manad-5-6.jpg" alt="Månad 5-6" className="w-full h-auto rounded-lg" />
-                                <p className="text-center text-sm mt-2 font-bold">Månad 5-6</p>
-                            </div>
-                        </div>
 
                         <p className="text-[18px] mb-6 font-bold">
                             Och nu, 6 månader senare:
                         </p>
+
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/7 (3).jpg" alt="Resultat efter 6 månader" className="w-full h-auto rounded-lg" />
+                        </div>
 
                         <ul className="space-y-3 mb-8">
                             <li className="flex gap-3 items-start">
@@ -506,20 +524,7 @@ const Women55PlusV2: React.FC = () => {
                             Det här är inte bara hår. Det här är frihet.
                         </p>
 
-                        {/* Before/After Image */}
-                        <div className="mb-12">
-                            <img src="/fore-efter-2.jpg" alt="Före och efter resultat" className="w-full h-auto rounded-lg" />
-                        </div>
 
-                        {/* CTA Button */}
-                        <div className="mb-16">
-                            <button
-                                onClick={scrollToOffer}
-                                className="w-full bg-[#0B2240] hover:bg-[#051628] text-white font-bold text-[20px] md:text-[24px] py-6 px-4 rounded shadow-lg transition-transform transform hover:scale-[1.02] uppercase tracking-wide leading-tight"
-                            >
-                                → KOLLA TILLGÄNGLIGHET OCH APPLICERA RABATT HÄR ←
-                            </button>
-                        </div>
 
                         <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                             Varför Lumina fungerade när allt annat misslyckades
@@ -715,7 +720,7 @@ const Women55PlusV2: React.FC = () => {
                                 <p className="italic text-[#17242C] text-[16px] mb-2 font-medium">
                                     "Enkel att använda, vilket var avgörande för mig. Har använt den i 4 månader nu och skillnaden på kronan är tydlig. Önskar jag hittat denna tidigare."
                                 </p>
-                                <p className="text-right font-bold text-[#17242C] text-[13px]">– Susanne K., Verifierad köpare</p>
+                                <p className="text-right font-bold text-[#17242C] text-[13px]">– Susanne K., 65, Verifierad köpare</p>
                             </div>
                         </div>
 
@@ -773,15 +778,6 @@ const Women55PlusV2: React.FC = () => {
                 <p className="mt-2">Denna webbplats är inte en del av Facebook eller Facebook Inc.</p>
             </div>
 
-            {/* Sticky Footer CTA - Mobile Only */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] z-50 md:hidden">
-                <button
-                    onClick={scrollToOffer}
-                    className="w-full bg-[#0B2240] text-white font-bold py-3 px-6 rounded shadow text-[18px] uppercase tracking-wide"
-                >
-                    Få 50% Rabatt Idag
-                </button>
-            </div>
         </div>
     );
 };
