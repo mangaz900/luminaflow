@@ -250,6 +250,11 @@ const Women55PlusV3: React.FC = () => {
                             Klimakteriet skapar ett "östrogen-vakuum" – och DHT flyttar in
                         </h3>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/4 (4).jpg" alt="Östrogen-vakuum och DHT" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[17px] mb-6">
                             Här är vad som verkligen händer i din hårbotten:
                         </p>
