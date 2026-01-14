@@ -723,6 +723,11 @@ const Women55PlusV3: React.FC = () => {
                             </p>
                         </div>
 
+                        {/* Image */}
+                        <div className="mb-6">
+                            <img src="/7 (3).jpg" alt="Resultat efter 90 dagar" className="w-full h-auto rounded-lg" />
+                        </div>
+
                         <p className="text-[18px] mb-12 font-bold">
                             ...då kan detta vara exakt vad du behöver.
                         </p>
