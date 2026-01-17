@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ShieldCheck, Truck } from 'lucide-react';
+import { ShieldCheck, Truck, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const Women55PlusV4: React.FC = () => {
-    const navigate = useNavigate();
-
     // Dynamically load fonts
     useEffect(() => {
         const link = document.createElement('link');
@@ -27,751 +25,494 @@ const Women55PlusV4: React.FC = () => {
                 <div className="p-4 md:px-0 md:py-6">
 
                     {/* Headline */}
-                    <h1 className="text-[28px] md:text-[40px] font-[900] leading-[1.15] mb-4 text-[#17242C] tracking-tight" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                        "Klimakteriet stal mitt hår. Jag stal det tillbaka."
+                    <h1 className="text-[28px] md:text-[40px] font-[900] leading-[1.15] mb-8 text-[#17242C] tracking-tight" style={{ fontFamily: '"Montserrat", sans-serif' }}>
+                        "Läkaren sa: 'Det är normalt i din ålder.' Men varför känns det så fel?"
                     </h1>
-
-                    {/* Hero Image */}
-                    <div className="mb-6">
-                        <img src="/8 (2).jpg" alt="Kvinna med håravfall" className="w-full h-auto rounded-lg" />
-                    </div>
-
-                    {/* Subheadline */}
-                    <div className="text-[16px] md:text-[18px] text-[#4F5256] mb-4 leading-snug font-sans">
-                        Svenska kvinnor 45+ upptäcker den dolda orsaken till håravfall – och varför läkare aldrig pratar om den
-                    </div>
 
                     {/* Date */}
                     <div className="text-[13px] text-[#6C757D] mb-8">
-                        14 januari, 2026 | Sponsrat innehåll
+                        17 januari, 2026 | Sponsrat innehåll
                     </div>
 
                     {/* Main Content */}
                     <div className="prose prose-lg max-w-none text-[#212529] leading-[1.8]">
 
-                        <p className="text-[17px] mb-4">
-                            Tre tussar hår på kudden. Varje morgon nu.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Det är inte längre enstaka strån.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Det är klumpar.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Om du har börjat se hårbotten genom håret när taklampan lyser ner...
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Om dina vikar vid tinningarna har blivit bredare än för ett år sedan...
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Om du räknar hårstrån i duschen och rädslan växer varje dag...
-                        </p>
-
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/9 (1).jpg" alt="Hårstrån i duschen" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[18px] mb-8 font-bold">
-                            Då måste du läsa detta.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Det finns en dold epidemi som härjar bland svenska kvinnor över 45 just nu.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            2 av 3 kvinnor drabbas.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Och här är den skrämmande delen:
-                        </p>
-
-                        <p className="text-[18px] mb-10 font-bold text-[#17242C]">
-                            Det du tror håller ditt hår friskt kanske faktiskt förvärrar problemet.
-                        </p>
-
-                        <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            890 kronor på akuten förändrade allt
-                        </h3>
-
-                        <p className="text-[17px] mb-4">
-                            Mitt namn är Eva Andersson.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Jag är 55 år. Gift. Två vuxna barn. Lärare i Göteborg.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            För ett år sedan började något förändras.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Först tänkte jag inte på det.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Ett par extra hårstrån i borsten. Lite tunnare vid tinningarna.
-                        </p>
-
-                        <p className="text-[17px] mb-4 italic">
-                            "Det är bara stress," sa jag till mig själv. "Det går över."
-                        </p>
-
-                        <p className="text-[17px] mb-8 font-bold">
-                            Men det gick inte över.
-                        </p>
-
-                        <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Det började smått – sen exploderade det
-                        </h3>
-
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/57.jpg" alt="Håravfall progression" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[17px] mb-3">
-                            <strong>Januari 2025:</strong> Jag märkte att hårelastiken behövde rullas fyra vardar istället för två.
-                        </p>
-
-                        <p className="text-[17px] mb-3">
-                            <strong>Mars 2025:</strong> Min frisör tittade bort när hon klippte mig. Hon såg vad jag vägrade se.
-                        </p>
-
-                        <p className="text-[17px] mb-3">
-                            <strong>Maj 2025:</strong> Min dotter frågade: "Mamma, varför kan jag se din hjässa?"
-                        </p>
-
-                        <p className="text-[17px] mb-8">
-                            <strong>Juli 2025:</strong> Jag slutade gå på middagar. Inte för att jag inte ville. Utan för att jag inte orkade förklara mitt hår.
-                        </p>
-
-                        <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Läkaren som inte lyssnade
-                        </h3>
-
-                        <p className="text-[17px] mb-4">
-                            I augusti 2025 bokade jag äntligen tid på vårdcentralen.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Jag tog med mig foton. Före och efter.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Jag visade vikarna vid tinningarna som växte sig större varje vecka.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Jag visade benan – dubbelt så bred som för ett år sedan.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Läkaren tittade knappt upp från datorn.
-                        </p>
-
-                        <p className="text-[17px] mb-6 italic">
-                            "Det är klimakteriet," sa hon. "Det är helt normalt. Prova Priorin om du vill."
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Klimakteriet?
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Det förklarade ingenting.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Varför ramlar håret? Varför just nu? Varför kan jag inte stoppa det?
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            She hade inga svar.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Jag gick därifrån med tomma händer och ett brusande i öronen.
-                        </p>
-
-                        <p className="text-[17px] mb-8 font-bold">
-                            Men jag vägrade ge upp.
-                        </p>
-
-                        <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Sanningen ingen läkare sa till mig
-                        </h3>
-
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/3 (6).jpg" alt="Forskning om håravfall" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[17px] mb-4">
-                            En natt i september satt jag i köket klockan 02:30.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Jag kunde inte sova. Jag googlade desperat.
-                        </p>
-
-                        <p className="text-[17px] mb-2 italic">
-                            "Håravfall klimakteriet"
-                        </p>
-                        <p className="text-[17px] mb-2 italic">
-                            "Varför slutar håret växa"
-                        </p>
-                        <p className="text-[17px] mb-6 italic">
-                            "Östrogen hårsäckar"
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Och då hittade jag det.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            En studie. En artikel. En förklaring.
-                        </p>
-
-                        <p className="text-[18px] mb-8 font-bold text-[#17242C]">
-                            Sanningen som ingen läkare någonsin berättat för mig:
-                        </p>
-
-                        <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Klimakteriet skapar ett "östrogen-vakuum" – och DHT flyttar in
-                        </h3>
-
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/problem-bild.jpg" alt="Östrogen-vakuum och DHT" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[17px] mb-6">
-                            Här är vad som verkligen händer i din hårbotten:
-                        </p>
-
-                        <div className="bg-[#EEEBFC] p-6 rounded-lg mb-6 border border-[#DCD6F7]">
-                            <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                Före klimakteriet:
-                            </h4>
-                            <p className="text-[17px] mb-3">Östrogen är din hårsäckens livlina.</p>
-                            <p className="text-[17px] mb-3">Det håller håret i tillväxtfas (anagen) i 3-7 år.</p>
-                            <p className="text-[17px] mb-3">Det blockerar DHT – ett hormon som kväver hårrötterna.</p>
-                            <p className="text-[17px]">Det håller hårbotten mjuk, näringsrik, elastisk.</p>
-                        </div>
-
-                        <div className="bg-[#EEEBFC] p-6 rounded-lg mb-8 border border-[#DCD6F7]">
-                            <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                Under klimakteriet:
-                            </h4>
-                            <p className="text-[17px] mb-3">Östrogenet sjunker med 60-90% på bara några år.</p>
-                            <p className="text-[17px] mb-3">Plötsligt finns det ingen sköld längre.</p>
-                            <p className="text-[17px] mb-3">DHT tar över. Det binder sig till hårsäcken som en parasit.</p>
-                            <p className="text-[17px] mb-3">Hårsäcken krymper. Håret blir tunnare. Tillväxtfasen förkortas från år till månader.</p>
-                            <p className="text-[17px] font-bold">Och hårbotten själv? Den blir torr, fibrotisk, stram som betong – vilket fysiskt kväver roten.</p>
-                        </div>
-
-                        <div className="bg-[#FFF9EA] border-l-4 border-[#F4BE19] p-6 rounded-r-lg my-8">
-                            <p className="text-[18px] mb-4 font-bold text-[#17242C]">
-                                Men här är hoppet: Dina hårsäckar är inte döda. De sover.
+                        <div className="mb-10">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-4 uppercase tracking-wider border-b-2 border-red-500 inline-block">📍 INTRO – PROBLEM INTENSIFICATION</h2>
+                            <p className="text-[18px] mb-4">
+                                Du står framför spegeln och ser det igen.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Forskare kallar det "sustained dormancy" – varaktig dvala.
+                            <p className="text-[18px] mb-4 font-bold">
+                                Ännu mer hår i borsten. Ännu tunnare ponnysvans. Ännu mer av din hjässa som lyser igenom.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Hårsäckarna går in i en vilofas (telogen).
+                            <p className="text-[18px] mb-6">
+                                Och värst av allt? Känslan att ingen förstår.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                De slutar inte fungera för evigt. De är bara... avstängda.
+                            <p className="text-[18px] mb-4 italic">
+                                Din läkare säger: "Det är normalt i klimakteriet."<br />
+                                Dina väninnor säger: "Mitt hår är också tunnare nu."
                             </p>
-                            <p className="text-[18px] font-bold text-[#17242C]">
-                                Och när något sover kan det väckas.
+                            <p className="text-[18px] mb-6">
+                                Men deras hår ser inte ut som ditt.
+                            </p>
+                            <p className="text-[18px] mb-4">
+                                De kan fortfarande sätta upp håret i en knut. De kan fortfarande gå ut utan att tänka på det. De behöver inte spendera 20 minuter framför spegeln varje morgon för att hitta rätt vinkel där håret inte ser så tunt ut.
+                            </p>
+                            <p className="text-[18px] font-bold">
+                                Du gör det.
                             </p>
                         </div>
 
-                        <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg my-8">
-                            <p className="text-[17px] mb-4">
-                                Men här är problemet:
+                        <div className="mb-10 bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-4 uppercase tracking-wider border-b-2 border-red-500 inline-block">📍 AGITATION – LAYER 2</h2>
+                            <p className="text-[18px] mb-4">
+                                För två år sedan var ditt hår ditt signum.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Ju längre de står stilla, desto djupare går de in i dvala.
+                            <p className="text-[18px] mb-6 font-bold text-[#17242C]">
+                                Tjockt. Glansigt. Starkt.
                             </p>
-                            <p className="text-[17px] mb-4 font-bold">
-                                Om du väntar 2 år tar det längre tid att väcka dem än om du agerar inom 6 månader.
+                            <p className="text-[18px] mb-2">Nu undviker du fotografier.</p>
+                            <p className="text-[18px] mb-2">Nu ändrar du frisyr för tredje gången.</p>
+                            <p className="text-[18px] mb-6">Nu köper du schampo efter schampo — volymschampo, proteinschampo, "återuppbyggande" schampo — men ingenting händer.</p>
+
+                            <p className="text-[18px] mb-4 font-bold italic">
+                                Och när du frågar din läkare igen?
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Varje dag du väntar är en dag dina hårsäckar glider djupare in i sömn.
+                            <p className="text-[20px] mb-6 text-red-600 font-bold underline">
+                                "Det är åldrande. Det händer alla."
                             </p>
-                            <p className="text-[17px] font-bold">
-                                Varje månad av dormans gör skada som kan bli permanent.
+
+                            <p className="text-[18px] mb-4">
+                                Men det händer inte alla.
+                            </p>
+                            <p className="text-[18px] mb-6">
+                                Inte så här snabbt. Inte så här synligt. Inte med den här skammen.
+                            </p>
+                            <p className="text-[18px] mb-4">
+                                Din mamma hade tjockt hår hela livet. Din syster har tjockt hår. Men du? Du börjar se dig själv i spegeln och känna dig äldre än du egentligen är.
+                            </p>
+                            <p className="text-[22px] font-bold text-[#17242C]">
+                                Och det gör ont.
                             </p>
                         </div>
 
-                        <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Varför ingenting du prövat har fungerat
-                        </h3>
+                        <div className="mb-10">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-4 uppercase tracking-wider border-b-2 border-red-500 inline-block">📍 AMPLIFICATION – LAYER 3</h2>
+                            <p className="text-[18px] mb-4 italic">
+                                Och djupt inne börjar du tro på det ingen vågar säga högt:
+                            </p>
+                            <p className="text-[18px] mb-2 ml-4">"Kanske är det kört."</p>
+                            <p className="text-[18px] mb-2 ml-4">"Kanske kommer det aldrig tillbaka."</p>
+                            <p className="text-[18px] mb-8 ml-4">"Kanske är det så här jag ser ut nu — för alltid."</p>
 
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/2 (6).jpg" alt="Misslyckade behandlingar" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[17px] mb-8">
-                            Jag insåg tre saker som gjorde mig rasande:
-                        </p>
-
-                        <div className="bg-[#EEEBFC] p-6 rounded-lg mb-6 border border-[#DCD6F7]">
-                            <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                Misslyckande #1: Priorin, Hairlust, Biotin
-                            </h4>
-                            <p className="text-[17px] mb-4">
-                                Jag slukade kapslar stora som valpar.
+                            <p className="text-[18px] mb-6">
+                                Du googlar: <span className="underline italic">"håravfall klimakteriet"</span>.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                4,800 kronor på 8 månader.
+                            <p className="text-[18px] mb-6">
+                                Du läser om östrogenbrist. Om hårsäckar som "går i vila". Om DHT. Om androgener.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Mitt hår? Fortfarande tunnare. Fortfarande tunnare varje månad.
+                            <p className="text-[18px] mb-8 font-bold">
+                                Men ingen säger vad du egentligen kan göra.
                             </p>
-                            <p className="text-[17px] mb-4 font-bold">
-                                Varför?
+                            <p className="text-[18px] mb-4">
+                                Alla artiklar slutar med: "Prata med din läkare."
                             </p>
-                            <p className="text-[17px] mb-4">
-                                För att vitaminer kan hjälpa om du har brist.
+                            <p className="text-[18px] mb-6 italic text-[#6C757D]">
+                                Du gjorde det.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Men om problemet är DHT som blockerar hårsäcken och östrogen som är borta?
+                            <p className="text-[18px] mb-10 font-bold">
+                                Och läkaren sa: "Det är normalt. Inget att oroa sig för."
                             </p>
-                            <p className="text-[17px] mb-4 font-bold">
-                                Då gör vitaminer ingenting.
+                            <p className="text-[24px] mb-8 text-center font-bold text-[#17242C]">
+                                Men du oroar dig.
                             </p>
-                            <p className="text-[17px] italic">
-                                Det är som att ge vatten till en trädgård där rötterna är omslutna av betong.
+                            <p className="text-[18px] mb-6">
+                                Så du slutar söka.
                             </p>
-                        </div>
-
-                        <div className="bg-[#EEEBFC] p-6 rounded-lg mb-6 border border-[#DCD6F7]">
-                            <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                Misslyckande #2: Minoxidil – rädslan som stoppade mig
-                            </h4>
-                            <p className="text-[17px] mb-4">
-                                Jag stod i Apoteket med Recrea Forte i handen.
+                            <p className="text-[18px] mb-4">
+                                Du accepterar det. Du köper en mössa. Du fixar din lugg så att den täcker mer. Du undviker starkt ljus.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Jag läste bipacksedeln.
+                            <p className="text-[18px] mb-8 font-bold">
+                                Men du glömmer det aldrig.
                             </p>
-                            <p className="text-[17px] mb-4 italic">
-                                "Kan orsaka initialt ökad håravfall (dread shed)."
+                            <p className="text-[18px] mb-6">
+                                Varje morgon när du borstar håret. Varje gång du ser ett fotografi från för fem år sedan. Varje gång någon komplimangerar din väninnas hår — men inte ditt.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Vänta – det ska göra håravfallet värre först?
-                            </p>
-                            <p className="text-[17px] mb-4">
-                                Jag googlade. Forum efter forum:
-                            </p>
-                            <p className="text-[16px] mb-2 italic ml-4">
-                                "Vecka 2 på Minoxidil – förlorade 30% av mitt hår. Jag slutade omedelbart."
-                            </p>
-                            <p className="text-[16px] mb-2 italic ml-4">
-                                "Klibbigt, fett, mitt hår såg smutsigt ut hela tiden."
-                            </p>
-                            <p className="text-[16px] mb-4 italic ml-4">
-                                "Använt i 2 år. Slutade i 3 veckor. Allt föll av. Nu är jag värre än innan jag började."
-                            </p>
-                            <p className="text-[17px] mb-4">
-                                Livslång användning. Dread shed. Klibbigt. Giftigt för katter.
-                            </p>
-                            <p className="text-[17px] font-bold">
-                                Jag lade tillbaka flaskan.
+                            <p className="text-[22px] font-bold text-center border-y-2 border-gray-100 py-6 my-10">
+                                Du tänker på det.
                             </p>
                         </div>
 
-                        <div className="bg-[#EEEBFC] p-6 rounded-lg mb-8 border border-[#DCD6F7]">
-                            <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                Misslyckande #3: Rosemarinolja från TikTok
-                            </h4>
-                            <p className="text-[17px] mb-4">
-                                En influencer sa: "Naturens Minoxidil!"
+                        <div className="mb-12 bg-[#F8F9FF] p-8 rounded-2xl border-2 border-blue-50">
+                            <h2 className="text-[20px] font-bold text-blue-800 mb-6 uppercase tracking-wider border-b-2 border-blue-500 inline-block">📍 TURNING POINT</h2>
+                            <p className="text-[24px] mb-6 font-bold text-[#17242C] leading-tight text-center">
+                                Men vad om din läkare hade fel?
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Jag köpte olja. Jag masserade in den varje kväll.
+                            <p className="text-[18px] mb-8 text-center italic">
+                                Inte om att håravfall är "normalt" — utan om att det inte går att göra något åt.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Mitt hår blev fett, tungt, platt.
+                            <p className="text-[19px] mb-6 font-bold">
+                                För det finns något som nästan ingen kvinna i klimakteriet får veta:
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Jag kunde inte gå ut utan att tvätta det först.
+                            <p className="text-[26px] mb-6 text-blue-900 font-black text-center leading-tight">
+                                Dina hårsäckar är inte döda. De sover.
                             </p>
-                            <p className="text-[17px] mb-4">
-                                Efter 2 månader: Noll skillnad.
+                            <p className="text-[18px] mb-8">
+                                Och det är skillnad. En död hårsäck kan aldrig väckas.
                             </p>
-                            <p className="text-[17px]">
-                                Förutom att jag luktade rosmarin hela tiden.
+                            <p className="text-[22px] mb-8 font-bold text-center text-blue-800 bg-white p-4 rounded-lg shadow-sm">
+                                Men en sovande hårsäck? Den kan aktiveras igen — om du ger den rätt signal i rätt ordning.
+                            </p>
+                            <p className="text-[18px] mb-4 italic text-center">
+                                Det här är inte teori. Det här är inte wishful thinking.
+                            </p>
+                            <p className="text-[20px] font-bold text-center text-blue-900 uppercase">
+                                Det här är vetenskap — och det fungerar även för dig.
                             </p>
                         </div>
 
-                        <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Då hittade jag sanningen
-                        </h3>
+                        <div className="mb-12">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-6 uppercase tracking-wider border-b-2 border-green-500 inline-block">📍 GRADUALIZATION (Logical Bridge)</h2>
+                            <h3 className="text-[24px] font-bold mb-6 text-[#17242C]">Varför håret faller efter klimakteriet:</h3>
+                            <p className="text-[18px] mb-6">
+                                När östrogennivåerna sjunker under klimakteriet händer fyra saker i din hårbotten:
+                            </p>
+                            <div className="space-y-4 mb-10">
+                                <div className="flex gap-4 items-start bg-gray-50 p-4 rounded-lg">
+                                    <span className="bg-[#17242C] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
+                                    <p className="text-[17px] m-0 leading-relaxed font-bold">Hårsäckarna går in i djupsömn (telogen-fas — stamcellerna "stänger av")</p>
+                                </div>
+                                <div className="flex gap-4 items-start bg-gray-50 p-4 rounded-lg">
+                                    <span className="bg-[#17242C] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
+                                    <p className="text-[17px] m-0 leading-relaxed font-bold">Kollagenet runt hårroten stelnar (fibros — håret kan inte sitta kvar)</p>
+                                </div>
+                                <div className="flex gap-4 items-start bg-gray-50 p-4 rounded-lg">
+                                    <span className="bg-[#17242C] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
+                                    <p className="text-[17px] m-0 leading-relaxed font-bold">Växtfasen krymper (från 2-6 år → 6-12 månader — du hinner aldrig få volym)</p>
+                                </div>
+                                <div className="flex gap-4 items-start bg-gray-50 p-4 rounded-lg">
+                                    <span className="bg-[#17242C] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
+                                    <p className="text-[17px] m-0 leading-relaxed font-bold">Blodcirkulationen minskar (mindre näring → tunnare hårstrån)</p>
+                                </div>
+                            </div>
 
-                        <p className="text-[17px] mb-6">
-                            I oktober hittade jag en artikel från en dermatolog.
-                        </p>
+                            <p className="text-[19px] mb-8 font-bold italic text-center text-gray-600">
+                                Läkaren har rätt: Detta är normalt.
+                            </p>
 
-                        <p className="text-[17px] mb-8">
-                            Hon förklarade tre biologiska processer som måste adresseras för att väcka dormanta hårsäckar:
-                        </p>
+                            <p className="text-[22px] mb-8 text-center font-bold text-red-600">
+                                Men här är vad läkaren inte berättar:
+                            </p>
 
-                        <div className="space-y-6 mb-8">
-                            <div className="bg-white border-2 border-[#17242C] p-5 rounded-lg">
-                                <h4 className="text-[18px] font-bold mb-2 text-[#17242C]">Process #1: Fibros måste mjukas upp</h4>
+                            <p className="text-[19px] mb-10 text-center leading-relaxed px-4">
+                                Dessa fyra faktorer är <span className="font-bold underline">INTE</span> permanenta. De går att påverka — <span className="font-bold text-red-700">men ENDAST i rätt ordning.</span>
+                            </p>
 
-                                {/* Image */}
-                                <div className="mb-3">
-                                    <img src="/4 (4).jpg" alt="Fibros i hårsäcken" className="w-full h-auto rounded-lg" />
+                            <p className="text-[18px] mb-8 italic text-center">
+                                Det räcker inte att "ge näring" eller "öka blodflödet".
+                            </p>
+
+                            <p className="text-[20px] mb-10 font-bold text-[#17242C]">Du måste:</p>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                                <div className="border-2 border-gray-100 p-4 rounded-xl text-center">
+                                    <p className="text-[17px] font-bold text-blue-800 uppercase mb-2 m-0">VÄCKA</p>
+                                    <p className="text-[15px] m-0">stamcellerna (annars sover hårsäcken vidare)</p>
+                                </div>
+                                <div className="border-2 border-gray-100 p-4 rounded-xl text-center">
+                                    <p className="text-[17px] font-bold text-blue-800 uppercase mb-2 m-0">ANKRA</p>
+                                    <p className="text-[15px] m-0">håret i roten (annars faller det ut direkt)</p>
+                                </div>
+                                <div className="border-2 border-gray-100 p-4 rounded-xl text-center">
+                                    <p className="text-[17px] font-bold text-blue-800 uppercase mb-2 m-0">FÖRLÄNGA</p>
+                                    <p className="text-[15px] m-0">växtfasen (annars hinner håret inte växa)</p>
+                                </div>
+                                <div className="border-2 border-gray-100 p-4 rounded-xl text-center">
+                                    <p className="text-[17px] font-bold text-blue-800 uppercase mb-2 m-0">CIRKULERA</p>
+                                    <p className="text-[15px] m-0">näring (annars svälter hårsäcken)</p>
+                                </div>
+                            </div>
+                            <p className="text-[22px] text-center font-bold text-[#17242C] border-2 border-[#17242C] p-4 rounded-lg">
+                                I denna ordning. Inte förr. Inte senare.
+                            </p>
+                        </div>
+
+                        <div className="mb-12 bg-[#EEEBFC] p-8 rounded-2xl border border-[#DCD6F7]">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-6 uppercase tracking-wider border-b-2 border-blue-600 inline-block">📍 BREAKTHROUGH MOMENT</h2>
+                            <h3 className="text-[24px] font-bold mb-6 text-[#17242C] leading-tight">När forskare testade denna exakta sekvens:</h3>
+                            <p className="text-[18px] mb-10">
+                                I en klinisk studie med 200 kvinnor mellan 45-60 år applicerade man en topical formel som aktiverade hårsäckarna i EXAKT denna ordning.
+                            </p>
+
+                            <div className="space-y-4 mb-10">
+                                <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-sm border-l-4 border-green-500">
+                                    <CheckCircle2 className="text-green-500" size={24} />
+                                    <p className="text-[19px] font-bold m-0"><span className="text-blue-800">89%</span> såg minskad avfallning <span className="text-gray-500 text-[15px] font-normal">(inom 4 veckor)</span></p>
+                                </div>
+                                <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-sm border-l-4 border-green-500">
+                                    <CheckCircle2 className="text-green-500" size={24} />
+                                    <p className="text-[19px] font-bold m-0"><span className="text-blue-800">85%</span> rapporterade förbättrad tillväxt <span className="text-gray-500 text-[15px] font-normal">(inom 8 veckor)</span></p>
+                                </div>
+                                <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-sm border-l-4 border-green-500">
+                                    <CheckCircle2 className="text-green-500" size={24} />
+                                    <p className="text-[19px] font-bold m-0"><span className="text-blue-800">74%</span> såg synligt tätare hår <span className="text-gray-500 text-[15px] font-normal">(inom 12 veckor)</span></p>
+                                </div>
+                                <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-sm border-l-4 border-green-500">
+                                    <CheckCircle2 className="text-green-500" size={24} />
+                                    <p className="text-[19px] font-bold m-0"><span className="text-blue-800">91%</span> skulle rekommendera till en vän</p>
+                                </div>
+                            </div>
+
+                            <p className="text-[14px] text-gray-500 mb-8 font-bold italic border-t pt-4">Publicerad i Journal of Cosmetic Dermatology, 2023</p>
+
+                            <p className="text-[18px] mb-8 font-bold text-center bg-white py-3 rounded-full text-blue-900 border border-blue-100">
+                                Utan recept. Utan hormoner. Utan biverkningar.
+                            </p>
+
+                            <p className="text-[19px] font-bold mb-4 text-[#17242C]">Men här är det viktiga:</p>
+                            <p className="text-[18px] mb-8 leading-relaxed">
+                                Formeln fungerade <span className="underline">ENDAST</span> när ingredienserna aktiverades i rätt sekvens. När forskarna testade samma ingredienser i fel ordning? Inga resultat.
+                            </p>
+                            <p className="text-[20px] font-bold text-red-600 border-2 border-red-100 bg-red-50 p-6 rounded-xl leading-snug">
+                                Det är därför 95% av hårsera på marknaden inte fungerar för kvinnor i klimakteriet — de ger näring, men de väcker aldrig hårsäcken först.
+                            </p>
+                        </div>
+
+                        <div className="mb-12">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-6 uppercase tracking-wider border-b-2 border-blue-500 inline-block">📍 MECHANISM REVEAL</h2>
+                            <h3 className="text-[22px] font-bold mb-3 text-center text-gray-600">Denna sekvens kallas:</h3>
+                            <h2 className="text-[32px] font-black text-[#17242C] mb-12 text-center leading-tight tracking-tight uppercase" style={{ fontFamily: '"Montserrat", sans-serif' }}>
+                                "The 4-Phase Follicle Reactivation System™"
+                            </h2>
+                            <p className="text-[18px] mb-10 text-center font-bold italic bg-gray-50 p-6 rounded-xl border border-gray-100">
+                                Den enda vetenskapligt beprövda metoden som aktiverar sovande hårsäckar i klimakteriet — i exakt rätt ordning.
+                            </p>
+
+                            <div className="space-y-8">
+                                <div className="border-2 border-gray-100 p-8 rounded-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 bg-blue-900 text-white px-4 py-1 font-bold rounded-br-lg text-sm">PHASE 1</div>
+                                    <h4 className="text-[24px] font-bold mt-4 mb-4 text-[#17242C]">🧬 WAKE (Väck sovande stamceller)</h4>
+                                    <p className="text-[18px] font-bold mb-4 text-blue-800 underline">Redensyl® 3% — Den molekylära strömbrytaren</p>
+                                    <p className="text-[17px] mb-4">I klimakteriet går dina hårsäckar in i "telogen-fas" (djupsömn). Stamcellerna slutar dela sig. Håret slutar växa.</p>
+                                    <p className="text-[17px] mb-6">Redensyl® är den ENDA patenterade ingrediensen som kan "trycka på strömbrytaren" och återaktivera stamcellerna.</p>
+                                    <p className="text-[16px] font-bold bg-blue-50 p-3 rounded-lg border border-blue-100">Klinisk studie: 85% av användarna såg förbättrad tillväxt efter 3 månader.</p>
+                                    <p className="text-[16px] mt-4 font-bold text-red-600 italic">→ Utan denna fas? Resten spelar ingen roll — hårsäcken sover fortfarande.</p>
                                 </div>
 
-                                <p className="text-[16px] mb-3">
-                                    Under klimakteriet stelnar kollagenet runt hårsäcken.
-                                </p>
-                                <p className="text-[16px] mb-3">
-                                    Det kallas "perifollicular fibrosis".
-                                </p>
-                                <p className="text-[16px] mb-3">
-                                    Det är som att hårroten blir inlindad i betong. Ingen näring kommer in. Inget hår kommer ut.
-                                </p>
-                                <p className="text-[16px] font-bold">
-                                    Lösning: Aminexil – det enda ämnet som är designat för att motverka fibros.
-                                </p>
-                            </div>
-
-                            <div className="bg-white border-2 border-[#17242C] p-5 rounded-lg">
-                                <h4 className="text-[18px] font-bold mb-2 text-[#17242C]">Process #2: Stamcellerna måste väckas</h4>
-
-                                {/* Image */}
-                                <div className="mb-3">
-                                    <img src="/5 (4).jpg" alt="Stamceller i hårsäcken" className="w-full h-auto rounded-lg" />
+                                <div className="border-2 border-gray-100 p-8 rounded-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 bg-blue-900 text-white px-4 py-1 font-bold rounded-br-lg text-sm">PHASE 2</div>
+                                    <h4 className="text-[24px] font-bold mt-4 mb-4 text-[#17242C]">⚓ ANCHOR (Håll håret kvar i roten)</h4>
+                                    <p className="text-[18px] font-bold mb-4 text-blue-800 underline">Aminexil — Fibros-blockaren</p>
+                                    <p className="text-[17px] mb-4">När östrogen sjunker stelnar kollagenet runt hårroten (kallas "perifollicular fibrosis"). Detta kväver hårsäcken — som att hålla en växt i för hård jord.</p>
+                                    <p className="text-[17px] mb-6 font-bold">Aminexil mjukar upp kollagenet så att håret kan:</p>
+                                    <ul className="mb-6 space-y-2">
+                                        <li className="flex items-center gap-2 text-[17px] font-bold text-green-700"><CheckCircle2 size={18} /> Sitta kvar (mindre avfallning)</li>
+                                        <li className="flex items-center gap-2 text-[17px] font-bold text-green-700"><CheckCircle2 size={18} /> Växa sig grovt (tjockare strån)</li>
+                                        <li className="flex items-center gap-2 text-[17px] font-bold text-green-700"><CheckCircle2 size={18} /> Få näring (blodflöde återställs)</li>
+                                    </ul>
+                                    <p className="text-[16px] mt-4 font-bold text-red-600 italic">→ Utan denna fas? Håret faller ut INNAN det hinner växa.</p>
                                 </div>
 
-                                <p className="text-[16px] mb-3">
-                                    Vilande hårsäckar vaknar inte av vitaminer. De vaknar inte av olja.
-                                </p>
-                                <p className="text-[16px] mb-3">
-                                    De behöver en molekylär signal – något som säger till stamcellerna: "det är säkert att växa igen".
-                                </p>
-                                <p className="text-[16px] font-bold">
-                                    Lösning: Redensyl® – en patenterad "strömbrytare" för sovande stamceller. 85% av användarna i studier såg förbättrad tillväxt.
-                                </p>
-                            </div>
+                                <div className="border-2 border-gray-100 p-8 rounded-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 bg-blue-900 text-white px-4 py-1 font-bold rounded-br-lg text-sm">PHASE 3</div>
+                                    <h4 className="text-[24px] font-bold mt-4 mb-4 text-[#17242C]">📈 EXTEND (Förläng växtfasen)</h4>
+                                    <p className="text-[18px] font-bold mb-4 text-blue-800 underline">Anagain™ 2% — Volymmultiplikatorn</p>
+                                    <p className="text-[17px] mb-4">Normalt växer hår i 2-6 år (anagen-fas). Men i klimakteriet? Denna fas krymper till 6-12 månader.</p>
+                                    <p className="text-[17px] mb-6">Anagain™ (utvunnet ur ekologiska ärtgroddar) förlänger anagen-fasen med upp till <span className="font-bold underline">78%</span>.</p>
+                                    <p className="text-[17px] font-bold bg-green-50 p-4 rounded-xl text-center text-green-900">Resultat: Du behåller fler strån längre → synligt tätare hår.</p>
+                                    <p className="text-[16px] mt-4 font-bold text-red-600 italic">→ Utan denna fas? Håret växer, men faller för snabbt — du når aldrig full volym.</p>
+                                </div>
 
-                            <div className="bg-white border-2 border-[#17242C] p-5 rounded-lg">
-                                <h4 className="text-[18px] font-bold mb-2 text-[#17242C]">Process #3: Mikrocirkulationen måste återställas</h4>
-                                <p className="text-[16px] mb-3">
-                                    Hårsäcken sitter 3-4 mm under huden.
-                                </p>
-                                <p className="text-[16px] mb-3">
-                                    Utan blodflöde = ingen syre = ingen tillväxt.
-                                </p>
-                                <p className="text-[16px] mb-3">
-                                    Klimakteriet minskar blodflödet till hårbotten med upp till 40%.
-                                </p>
-                                <p className="text-[16px] font-bold">
-                                    Lösning: 3% Rosmarin – i jämförande studier lika effektivt som Minoxidil för att öka cirkulationen, men utan biverkningar.
-                                </p>
+                                <div className="border-2 border-gray-100 p-8 rounded-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 bg-blue-900 text-white px-4 py-1 font-bold rounded-br-lg text-sm">PHASE 4</div>
+                                    <h4 className="text-[24px] font-bold mt-4 mb-4 text-[#17242C]">🔄 CIRCULATE (Öka blodflödet)</h4>
+                                    <p className="text-[18px] font-bold mb-4 text-blue-800 underline">Rosmarinolja 3% — Cirkulationsboostern</p>
+                                    <p className="text-[17px] mb-6">Kliniska studier visar att rosmarinolja är lika effektivt som Minoxidil för att öka blodflödet till hårbotten.</p>
+                                    <div className="flex flex-wrap gap-4 mb-6">
+                                        <span className="bg-orange-50 text-orange-700 px-3 py-1 rounded-full font-bold text-[14px] border border-orange-100">Utan klåda</span>
+                                        <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full font-bold text-[14px] border border-orange-200">Utan biverkningar</span>
+                                        <span className="bg-orange-50 text-orange-700 px-3 py-1 rounded-full font-bold text-[14px] border border-orange-100">Utan "shedding phase"</span>
+                                    </div>
+                                    <p className="text-[18px] font-bold leading-snug">Mer blodflöde = mer syre + näringsämnen → starkare, snabbare tillväxt.</p>
+                                    <p className="text-[16px] mt-4 font-bold text-red-600 italic">→ Utan denna fas? Hårsäcken är vaken, men svälter — den kan inte producera starkt hår.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Och det var exakt vad jag hittade i Lumina
-                        </h3>
-
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/list 2.jpg" alt="Lumina ingredienser" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[17px] mb-6">
-                            Inte ett schampo. Inte en olja. Inte en tablett.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            Ett vetenskapligt designat serum som adresserar alla tre processerna:
-                        </p>
-
-                        <div className="space-y-3 mb-8">
-                            <p className="text-[17px]">
-                                🔬 <strong>3% Redensyl®</strong> - Väcker sovande stamceller (85% såg förbättring i studier)
+                        <div className="mb-12 bg-white border-4 border-blue-900 p-8 rounded-3xl shadow-xl text-center relative">
+                            <h2 className="text-[20px] font-bold text-blue-900 mb-6 uppercase tracking-wider border-b-2 border-blue-900 inline-block">📍 PRODUCT REVEAL</h2>
+                            <p className="text-[24px] mb-6 font-bold text-[#17242C] leading-tight">
+                                Denna exakta sekvens finns i ETT enda serum:
                             </p>
-                            <p className="text-[17px]">
-                                🔬 <strong>Aminexil</strong> - Mjukar upp fibros så hårsäcken kan andas
+                            <h2 className="text-[42px] font-black text-blue-900 mb-8 tracking-tight uppercase" style={{ fontFamily: '"Montserrat", sans-serif' }}>
+                                Lumina Hair Growth Serum
+                            </h2>
+                            <p className="text-[20px] mb-10 font-bold bg-[#F0F4FF] p-6 rounded-2xl text-blue-800 inline-block">
+                                Det ENDA topikala serumet designat specifikt för kvinnor i klimakteriet.
                             </p>
-                            <p className="text-[17px]">
-                                🔬 <strong>3% Rosmarin</strong> - Ökar mikrocirkulation lika effektivt som Minoxidil, utan biverkningar
+
+                            <p className="text-[18px] mb-12 italic border-y-2 border-gray-100 py-6">
+                                Inga generiska vitaminer. Inga "hoppfulla ingredienser". Inga gissningar.
                             </p>
-                            <p className="text-[17px]">
-                                🔬 <strong>2% Anagain™</strong> - Förlänger tillväxtfasen så håret stannar kvar längre
-                            </p>
-                            <p className="text-[17px]">
-                                + <strong>Patenterad Titanium-kula</strong> som masserar hårbotten medan den applicerar. Ökar blodflödet medan den levererar ingredienserna.
-                            </p>
-                        </div>
 
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/produkt-ingredienser.jpg" alt="Produktens ingredienser och effekt" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[17px] mb-8">
-                            Jag började sent oktober. Applicerade det direkt på hårbotten. 90 sekunder. Morgon och kväll.
-                        </p>
-
-                        <p className="text-[18px] mb-6 font-bold">
-                            Jag ska vara brutalt ärlig med dig:
-                        </p>
-
-                        <p className="text-[17px] mb-3">
-                            <strong>Vecka 1-4 (november):</strong> Ingenting. Jag tänkte: "Här går vi igen. Slösade pengar på ingenting."
-                        </p>
-
-                        <p className="text-[17px] mb-3">
-                            <strong>Vecka 5 (mitten av november):</strong> Något förändrades. Håret i duschen blev... mindre? Jag trodde jag inbillade mig.
-                        </p>
-
-                        <p className="text-[17px] mb-3">
-                            <strong>Vecka 8 (december):</strong> Det var inte inbillning. Från 50+ strån i duschen till kanske 20.
-                        </p>
-
-                        <p className="text-[17px] mb-6">
-                            <strong>Månad 3 (nu i januari):</strong> Jag ser det. Små, tunna babyhår vid vikarna. Inte många. Men de är där.
-                        </p>
-
-                        <p className="text-[18px] mb-10 font-bold">
-                            Och för första gången på över ett år känner jag hopp.
-                        </p>
-
-                        <h3 className="text-[24px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Jag är inte klar än – men jag är på rätt väg
-                        </h3>
-
-                        <p className="text-[17px] mb-3">✨ Håravfallet har minskat med 60%</p>
-                        <p className="text-[17px] mb-3">✨ Benan ser smalare ut</p>
-                        <p className="text-[17px] mb-3">✨ Jag ser små babyhår vid vikarna</p>
-                        <p className="text-[17px] mb-3">✨ Hårbotten känns friskare, mindre torr</p>
-                        <p className="text-[17px] mb-8">✨ Jag sa ja till middag förra veckan. Spontant.</p>
-
-                        <p className="text-[17px] mb-6">
-                            För första gången på länge känns det som att jag inte tappar kontroll.
-                        </p>
-
-                        <p className="text-[20px] mb-12 font-bold text-center text-[#17242C]">
-                            Det här är inte bara hår. Det här är frihet.
-                        </p>
-
-                        <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Varför Lumina fungerade när allt annat misslyckades
-                        </h3>
-
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/losning-bild.jpg" alt="Lumina lösning" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[17px] mb-6">
-                            Det handlar inte om "hemligheter" eller "exklusiv teknologi".
-                        </p>
-
-                        <p className="text-[17px] mb-8 font-bold">
-                            Det handlar om att Lumina adresserar de fyra biologiska processerna som alla andra ignorerar:
-                        </p>
-
-                        <div className="space-y-6 mb-12">
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                                <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                    1. De flesta serum har inga stamcells-aktivatorer
-                                </h4>
-                                <p className="text-[17px] mb-4">
-                                    Jag kollade ingredienslistorna på 7 olika apotek-serum.
-                                </p>
-                                <p className="text-[17px] mb-4">
-                                    Vet du hur många som faktiskt innehöll bevisade stamcells-aktivatorer? Noll.
-                                </p>
-                                <p className="text-[17px] mb-4">
-                                    De innehöll "volymiserande polymerer" och "hydraterande oljor" som gör inget mot vilande hårsäckar.
-                                </p>
-                                <p className="text-[17px] mb-4">
-                                    Lumina innehåller Redensyl® - en patenterad molekyl som väcker sovande stamceller.
-                                </p>
-                                <p className="text-[17px]">
-                                    I kliniska studier såg 85% av användarna förbättrad tillväxt.
-                                </p>
+                            <div className="text-left bg-gray-50 p-8 rounded-3xl border border-gray-100 mb-10 overflow-hidden relative">
+                                <h3 className="text-[22px] font-bold mb-8 text-[#17242C] text-center uppercase tracking-wider">🧬 FULL INGREDIENSLISTA:</h3>
+                                <div className="space-y-6">
+                                    <div className="bg-white p-4 rounded-xl shadow-sm">
+                                        <p className="font-bold text-blue-900 mb-1">PHASE 1: WAKE</p>
+                                        <p className="text-[18px] font-bold">→ Redensyl® 3% <span className="text-[15px] font-normal text-gray-500">(patenterad stamcells-aktiverare)</span></p>
+                                        <p className="text-[14px] text-green-700 italic font-bold">85% saw improved growth (clinical study, 3 months)</p>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-xl shadow-sm">
+                                        <p className="font-bold text-blue-900 mb-1">PHASE 2: ANCHOR</p>
+                                        <p className="text-[18px] font-bold">→ Aminexil <span className="text-[15px] font-normal text-gray-500">(perifollicular fibrosis blocker)</span></p>
+                                        <p className="text-[14px] text-green-700 italic font-bold">Prevents collagen stiffening around hair root</p>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-xl shadow-sm">
+                                        <p className="font-bold text-blue-900 mb-1">PHASE 3: EXTEND</p>
+                                        <p className="text-[18px] font-bold">→ Anagain™ 2% <span className="text-[15px] font-normal text-gray-500">(anagen phase extender)</span></p>
+                                        <p className="text-[14px] text-green-700 italic font-bold">Extends growth phase by up to 78%</p>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-xl shadow-sm">
+                                        <p className="font-bold text-blue-900 mb-1">PHASE 4: CIRCULATE</p>
+                                        <p className="text-[18px] font-bold">→ Rosmarinolja 3% <span className="text-[15px] font-normal text-gray-500">(circulation booster)</span></p>
+                                        <p className="text-[14px] text-green-700 italic font-bold">As effective as Minoxidil in studies — without side effects</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                                <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                    2. De flesta serum ignorerar fibros
-                                </h4>
-                                <p className="text-[17px] mb-4">
-                                    Under klimakteriet stelnar kollagenet runt hårsäcken.
-                                </p>
-                                <p className="text-[17px] mb-4">
-                                    Det är som att hårroten blir inlindad i betong.
-                                </p>
-                                <p className="text-[17px]">
-                                    Lumina innehåller Aminexil - det enda ämnet designat för att motverka fibros.
-                                </p>
+                            <div className="space-y-4 mb-10">
+                                <p className="text-[18px] font-bold">Varje fas är vetenskapligt bevisad.</p>
+                                <p className="text-[18px] font-bold">Varje ingrediens är kliniskt testad.</p>
+                                <p className="text-[18px] font-bold text-blue-800">Och sekvensen är specifikt designad för vad som händer i din hårbotten efter klimakteriet.</p>
                             </div>
 
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                                <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                    3. De flesta serum stannar på ytan
-                                </h4>
-                                <p className="text-[17px] mb-4">
-                                    Hårsäcken sitter 3-4 mm under huden.
-                                </p>
-                                <p className="text-[17px] mb-4">
-                                    Lumina har en patenterad Titanium-kula som masserar hårbotten medan den applicerar.
-                                </p>
-                                <p className="text-[17px] mb-4">
-                                    Det ökar blodflödet medan den levererar ingredienserna.
-                                </p>
-                                <p className="text-[17px]">
-                                    Andra märken använder standardkulor. Ingen massage = sämre resultat.
-                                </p>
-                            </div>
+                            <p className="text-[20px] mb-8 font-black text-center text-red-600 bg-red-50 py-4 px-6 rounded-full inline-block">
+                                Detta är inte "ännu ett hårserum".
+                            </p>
 
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                                <h4 className="text-[20px] font-bold mb-3 text-[#17242C]">
-                                    4. De flesta serum är för tunga för nordiskt hår
-                                </h4>
-                                <p className="text-[17px] mb-4">
-                                    Svenska kvinnor har 30% tunnare hårstrån än medelhavskvinnor.
-                                </p>
-                                <p className="text-[17px]">
-                                    Lumina är vattenbaserat och kladdfritt. Ingen fetma. Ingen tyngd.
-                                </p>
+                            <p className="text-[19px] mb-6 font-bold text-center leading-relaxed">
+                                Detta är den första formeln som behandlar håravfall i klimakteriet i rätt ordning.
+                            </p>
+                        </div>
+
+                        <div className="mb-12">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-orange-500 inline-block">📍 SOCIAL PROOF</h2>
+                            <h3 className="text-[24px] font-bold mb-10 text-[#17242C] text-center">Vad kvinnor säger efter 90 dagar:</h3>
+
+                            <div className="space-y-6">
+                                <div className="bg-[#EFEDFD] p-8 rounded-3xl border border-blue-100 relative">
+                                    <div className="text-[40px] text-blue-300 absolute top-4 left-6 leading-none">"</div>
+                                    <p className="italic text-[#17242C] text-[18px] mb-6 leading-relaxed relative z-10">
+                                        Efter 8 veckor såg jag babyhår längs hårfästet. Efter 12 veckor kunde jag inte tro mina ögon — mitt hår såg tjockare ut än det gjort på år. Jag kan äntligen sätta upp det i en knut igen.
+                                    </p>
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">L</div>
+                                        <p className="font-bold text-[#17242C] text-[15px] m-0">— Lena, 52 år, Göteborg</p>
+                                    </div>
+                                </div>
+
+                                <div className="bg-[#EFEDFD] p-8 rounded-3xl border border-blue-100 relative">
+                                    <div className="text-[40px] text-blue-300 absolute top-4 left-6 leading-none">"</div>
+                                    <p className="italic text-[#17242C] text-[18px] mb-6 leading-relaxed relative z-10">
+                                        Jag trodde mitt hår var borta för alltid. Läkaren sa det var 'normalt åldrande.' Men efter 3 månader med Lumina hade jag tillbaka självförtroendet. Jag slutade undvika fotografier.
+                                    </p>
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">M</div>
+                                        <p className="font-bold text-[#17242C] text-[15px] m-0">— Maria, 48 år, Stockholm</p>
+                                    </div>
+                                </div>
+
+                                <div className="bg-[#EFEDFD] p-8 rounded-3xl border border-blue-100 relative">
+                                    <div className="text-[40px] text-blue-300 absolute top-4 left-6 leading-none">"</div>
+                                    <p className="italic text-[#17242C] text-[18px] mb-6 leading-relaxed relative z-10">
+                                        Läkaren sa 'det är normalt, inget att göra.' Men det VAR något att göra — jag behövde bara väcka hårsäckarna i rätt ordning. Lumina gjorde det åt mig.
+                                    </p>
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">S</div>
+                                        <p className="font-bold text-[#17242C] text-[15px] m-0">— Sofia, 55 år, Malmö</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <h3 className="text-[24px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Vad säger andra kvinnor?
-                        </h3>
+                        <div className="mb-12 bg-red-950 text-white p-10 rounded-3xl shadow-xl">
+                            <h2 className="text-[20px] font-bold text-red-100 mb-8 uppercase tracking-wider border-b-2 border-red-500 inline-block">📍 URGENCY</h2>
+                            <h2 className="text-[34px] font-black mb-10 leading-tight uppercase tracking-tight" style={{ fontFamily: '"Montserrat", sans-serif' }}>Varför du måste agera NU:</h2>
 
-                        <div className="space-y-4 mb-12">
-                            <div className="bg-[#EFEDFD] border-l-4 border-[#CCCCCC] p-4 rounded-r-md">
-                                <p className="italic text-[#17242C] text-[16px] mb-2 font-medium">
-                                    "Efter 3 månader frågade min frisör vad jag gjort. Håret känns faktiskt tjockare och jag ser nya strån växa ut vid tinningarna."
+                            <p className="text-[20px] mb-6 font-bold text-red-200">Varje dag du väntar:</p>
+                            <ul className="space-y-4 mb-10 border-l-2 border-red-500 pl-6">
+                                <li className="text-[18px]">Fler hårsäckar går in i viloläge</li>
+                                <li className="text-[18px]">Fler hårstrån faller (50-150/dag i klimakteriet vs 50-100 normalt)</li>
+                                <li className="text-[18px]">Fler månader där du undviker fotografier</li>
+                                <li className="text-[18px]">Fler morgnar där du känner dig äldre än du är</li>
+                            </ul>
+
+                            <div className="bg-red-900 p-8 rounded-2xl border border-red-800 mb-10">
+                                <p className="text-[22px] font-bold mb-6 text-yellow-400">Och efter 24 månader i viloläge?</p>
+                                <p className="text-[18px] leading-relaxed mb-6 italic">
+                                    Forskning visar att hårsäckar som varit inaktiva i mer än <span className="font-bold underline text-white">2 år</span> kan inte längre aktiveras — även med Redensyl®.
                                 </p>
-                                <p className="text-right font-bold text-[#17242C] text-[13px]">– Lena, 52, Stockholm</p>
+                                <p className="text-[22px] font-bold text-center leading-snug m-0">
+                                    De är inte döda. Men de är för djupt sovande för att vakna.
+                                </p>
                             </div>
 
-                            <div className="bg-[#EFEDFD] border-l-4 border-[#CCCCCC] p-4 rounded-r-md">
-                                <p className="italic text-[#17242C] text-[16px] mb-2 font-medium">
-                                    "Jag vågade knappt gå till frisören förut för jag skämdes över mina tunna vikar. Efter 3 månader med Lumina frågade min frisör vad jag gjort. Håret känns äntligen levande igen."
-                                </p>
-                                <p className="text-right font-bold text-[#17242C] text-[13px]">– Anna, 54, Verifierad köpare</p>
+                            <p className="text-[24px] font-black text-center mb-8 uppercase text-red-100 leading-snug">
+                                Det är därför tidig intervention är KRITISK.
+                            </p>
+
+                            <p className="text-[19px] mb-10 leading-relaxed text-center px-6">
+                                Ditt hår försvinner inte över en natt. Men varje månad du väntar? Fler hårsäckar går förlorade för alltid.
+                            </p>
+
+                            <p className="text-[22px] font-bold text-center bg-white text-red-950 py-6 rounded-2xl shadow-xl uppercase cursor-pointer hover:scale-[1.02] transition-transform" onClick={scrollToOffer}>
+                                Agera nu — medan dina hårsäckar fortfarande kan väckas.
+                            </p>
+                        </div>
+
+                        <div className="mb-24">
+                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-blue-900 inline-block">📍 FINAL CTA</h2>
+                            <h2 className="text-[34px] font-black text-[#17242C] mb-8 leading-tight tracking-tight uppercase" style={{ fontFamily: '"Montserrat", sans-serif' }}>
+                                Redo att ge ditt hår en andra chans?
+                            </h2>
+
+                            <div className="space-y-4 mb-12">
+                                <div className="flex gap-4 items-center bg-gray-50 p-5 rounded-2xl">
+                                    <div className="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <ShieldCheck size={26} />
+                                    </div>
+                                    <p className="text-[18px] font-bold m-0 leading-tight">90-dagars pengarna-tillbaka-garanti <span className="text-[14px] text-blue-800 underline block font-normal">(testa helt riskfritt)</span></p>
+                                </div>
+                                <div className="flex gap-4 items-center bg-gray-50 p-5 rounded-2xl">
+                                    <div className="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle2 size={26} />
+                                    </div>
+                                    <p className="text-[18px] font-bold m-0 leading-tight">Kliniskt bevisade ingredienser <span className="text-[14px] text-gray-500 block font-normal">(Redensyl® + Anagain™ + Aminexil + Rosmarin)</span></p>
+                                </div>
+                                <div className="flex gap-4 items-center bg-gray-50 p-5 rounded-2xl">
+                                    <div className="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <ArrowRight size={26} />
+                                    </div>
+                                    <p className="text-[18px] font-bold m-0 leading-tight">Specifikt för klimakteriet <span className="text-[14px] text-gray-500 block font-normal">(designat för östrogenbrist + fibros + förkortad anagen-fas)</span></p>
+                                </div>
                             </div>
 
-                            <div className="bg-[#EFEDFD] border-l-4 border-[#CCCCCC] p-4 rounded-r-md">
-                                <p className="italic text-[#17242C] text-[16px] mb-2 font-medium">
-                                    "Tappade massor av hår i duschen. Var skeptisk men denna är inte fet alls. Nu stannar håret på huvudet och jag ser små strån växa ut vid pannan."
-                                </p>
-                                <p className="text-right font-bold text-[#17242C] text-[13px]">– Maria, 46, Verifierad köpare</p>
-                            </div>
-                        </div>
+                            {/* Final CTA Button */}
+                            <div className="bg-white border-4 border-dashed border-blue-900 p-8 rounded-3xl text-center relative shadow-2xl overflow-hidden group">
+                                <div className="absolute top-0 right-0 bg-red-600 text-white px-6 py-2 font-black text-sm uppercase skew-x-12 translate-x-4 -translate-y-1">LÄGSTA PRIS GARANTERAT</div>
 
-                        <h3 className="text-[24px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Jag ska vara ärlig – detta är INTE för alla
-                        </h3>
+                                <button
+                                    onClick={scrollToOffer}
+                                    className="w-full bg-[#0B2240] hover:bg-blue-950 text-white font-black text-[28px] md:text-[34px] py-8 rounded-2xl shadow-[0_10px_0_0_rgba(0,0,0,0.2)] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-tighter mb-6 relative z-10"
+                                    style={{ fontFamily: '"Montserrat", sans-serif' }}
+                                >
+                                    VÄCK MINA HÅRSÄCKAR →
+                                </button>
 
-                        <div className="space-y-3 mb-8">
-                            <p className="text-[17px]">
-                                ❌ Om du vill ha resultat på 7 dagar – detta är inte det.
-                            </p>
-                            <p className="text-[17px]">
-                                ❌ Om du inte är villig att applicera något dagligen i 90 dagar – detta är inte för dig.
-                            </p>
-                            <p className="text-[17px]">
-                                ❌ Om du förväntar dig mirakel utan tålamod – fortsätt leta.
-                            </p>
-                        </div>
-
-                        <p className="text-[17px] mb-4">
-                            Men om du:
-                        </p>
-
-                        <div className="space-y-3 mb-8">
-                            <p className="text-[17px]">
-                                ✅ Är trött på att undvika speglar
-                            </p>
-                            <p className="text-[17px]">
-                                ✅ Vill sluta räkna hårstrån i duschen
-                            </p>
-                            <p className="text-[17px]">
-                                ✅ Vill vara spontan igen utan att tänka på håret först
-                            </p>
-                            <p className="text-[17px]">
-                                ✅ Är villig att ge dina hårsäckar 90 dagar att vakna
-                            </p>
-                        </div>
-
-                        {/* Image */}
-                        <div className="mb-6">
-                            <img src="/7 (3).jpg" alt="Resultat efter 90 dagar" className="w-full h-auto rounded-lg" />
-                        </div>
-
-                        <p className="text-[18px] mb-12 font-bold">
-                            ...då kan detta vara exakt vad du behöver.
-                        </p>
-
-                        <h3 className="text-[26px] font-bold mt-12 mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            Så vad ska du göra nu?
-                        </h3>
-
-                        <p className="text-[17px] mb-6">
-                            Du har två val.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            <strong>Val 1:</strong> Fortsätt som vanligt. Fortsätt undvika. Fortsätt hoppas att det går över av sig själv.
-                        </p>
-
-                        <p className="text-[17px] mb-8">
-                            <strong>Val 2:</strong> Ge dina hårsäckar 90 dagar. Väck dem. Se vad som händer.
-                        </p>
-
-                        <p className="text-[17px] mb-4">
-                            Jag vet vilket val jag gjorde.
-                        </p>
-
-                        <p className="text-[18px] mb-12 font-bold">
-                            Och tre månader senare ser jag äntligen hopp igen.
-                        </p>
-
-                        {/* Final CTA */}
-                        <div className="bg-[#FFF9EA] border border-[#F4BE19] p-6 rounded-lg text-center my-10 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 bg-[#F4BE19] text-white text-[10px] font-bold px-2 py-1 uppercase">Begränsat Erbjudande</div>
-                            <h3 className="font-bold text-[22px] mb-2 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>BEGRÄNSAT ERBJUDANDE</h3>
-                            <p className="text-gray-700 mb-6">Få 50% RABATT + 90-Dagars Nöjd-Kund-Garanti</p>
-
-                            <button
-                                onClick={scrollToOffer}
-                                className="w-full bg-[#0B2240] hover:bg-[#051628] text-white font-bold text-[20px] py-4 rounded shadow-lg transition-transform transform hover:scale-[1.02] uppercase tracking-wide mb-4"
-                            >
-                                → KOLLA TILLGÄNGLIGHET OCH APPLICERA RABATT HÄR ←
-                            </button>
-
-                            <div className="flex justify-center gap-4 text-xs font-bold text-gray-500 uppercase tracking-wide">
-                                <span className="flex items-center gap-1"><ShieldCheck size={14} /> 90 Dagar Öppet Köp</span>
-                                <span className="flex items-center gap-1"><Truck size={14} /> Fri Frakt</span>
+                                <div className="flex flex-wrap justify-center gap-6 text-[14px] font-black text-blue-900 uppercase tracking-widest relative z-10">
+                                    <span className="flex items-center gap-2">🛡️ 90 Dagar Nöjdhetsgaranti</span>
+                                    <span className="flex items-center gap-2">🚚 Fri Frakt Idag</span>
+                                </div>
                             </div>
                         </div>
 
@@ -781,9 +522,14 @@ const Women55PlusV4: React.FC = () => {
             </article>
 
             {/* Footer Text */}
-            <div className="max-w-[780px] mx-auto p-8 pb-24 text-center text-[11px] text-[#8A8D91] border-t bg-white">
-                <p>&copy; 2026 Lumina Hair Serum. Alla rättigheter förbehållna.</p>
-                <p className="mt-2">Denna webbplats är inte en del av Facebook eller Facebook Inc.</p>
+            <div className="max-w-[780px] mx-auto p-12 pb-32 text-center text-[12px] text-[#A0A4A8] border-t bg-gray-50 leading-relaxed font-bold tracking-tight">
+                <p className="mb-4 uppercase tracking-[0.2em]">&copy; 2026 Lumina Hair Serum. Alla rättigheter förbehållna.</p>
+                <div className="flex justify-center flex-wrap gap-4 mb-8">
+                    <span className="cursor-pointer hover:text-blue-900 transition-colors">INTEGRITETSPOLICY</span>
+                    <span className="cursor-pointer hover:text-blue-900 transition-colors">ANVÄNDARVILLKOR</span>
+                    <span className="cursor-pointer hover:text-blue-900 transition-colors">KONTAKT</span>
+                </div>
+                <p className="max-w-[500px] mx-auto opacity-60">Denna webbplats är inte en del av Facebook eller Facebook Inc. Innehållet på denna sida är avsett för utbildningsändamål och är inte en ersättning för professionell medicinsk rådgivning.</p>
             </div>
 
         </div>
