@@ -234,28 +234,40 @@ const Women55PlusV4: React.FC = () => {
                                 Det räcker inte att "ge näring" eller "öka blodflödet".
                             </p>
 
-                            <p className="text-[20px] mb-10 font-black text-center text-[#17242C] uppercase tracking-widest">Du måste:</p>
+                            <p className="text-[20px] mb-10 text-center font-bold">
+                                För att håret ska växa tillbaka måste <span className="text-blue-900 underline">fyra saker hända — i exakt rätt ordning:</span>
+                            </p>
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                                 <div className="border-2 border-blue-100 bg-blue-50 p-6 rounded-2xl text-center shadow-sm">
-                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">VÄCKA</p>
+                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">1. VÄCKA</p>
                                     <p className="text-[16px] m-0 font-semibold">stamcellerna (annars sover hårsäcken vidare)</p>
                                 </div>
                                 <div className="border-2 border-blue-100 bg-blue-50 p-6 rounded-2xl text-center shadow-sm">
-                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">ANKRA</p>
+                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">2. ANKRA</p>
                                     <p className="text-[16px] m-0 font-semibold">håret i roten (annars faller det ut direkt)</p>
                                 </div>
                                 <div className="border-2 border-blue-100 bg-blue-50 p-6 rounded-2xl text-center shadow-sm">
-                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">FÖRLÄNGA</p>
+                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">3. FÖRLÄNGA</p>
                                     <p className="text-[16px] m-0 font-semibold">växtfasen (annars hinner håret inte växa)</p>
                                 </div>
                                 <div className="border-2 border-blue-100 bg-blue-50 p-6 rounded-2xl text-center shadow-sm">
-                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">CIRKULERA</p>
+                                    <p className="text-[18px] font-black text-blue-900 uppercase mb-4 m-0 tracking-widest">4. CIRKULERA</p>
                                     <p className="text-[16px] m-0 font-semibold">näring (annars svälter hårsäcken)</p>
                                 </div>
                             </div>
-                            <p className="text-[24px] text-center font-black text-white bg-blue-950 p-6 rounded-2xl shadow-xl uppercase tracking-wider">
-                                I denna ordning. Inte förr. Inte senare.
-                            </p>
+
+                            <div className="bg-blue-950 p-8 rounded-3xl shadow-xl space-y-4 mb-12">
+                                <p className="text-[22px] text-center font-black text-white uppercase tracking-wider m-0">
+                                    Det unika med Lumina?
+                                </p>
+                                <p className="text-[20px] text-center font-bold text-blue-200 m-0">
+                                    Alla 4 faserna aktiveras samtidigt — i en enda applicering.
+                                </p>
+                                <p className="text-[17px] text-center text-white/80 m-0">
+                                    Andra serum fokuserar på EN fas. Lumina är det första som kombinerar alla fyra.
+                                </p>
+                            </div>
                         </div>
 
                         <SectionDivider />
@@ -293,8 +305,8 @@ const Women55PlusV4: React.FC = () => {
                             </p>
 
                             <p className="text-[20px] font-bold mb-[24px] text-[#17242C]">Men här är det viktiga:</p>
-                            <p className="text-[18px] mb-10 leading-relaxed">
-                                Formeln fungerade <span className="underline font-bold">ENDAST</span> när ingredienserna aktiverades i rätt sekvens. När forskarna testade samma ingredienser i fel ordning? Inga resultat.
+                            <p className="text-[18px] mb-10 leading-relaxed font-semibold">
+                                Formeln fungerade <span className="underline font-bold text-blue-900">ENDAST</span> när <span className="text-red-600">alla 4 faserna aktiverades samtidigt</span> — något som kräver exakt rätt kombination och koncentration av ingredienser.
                             </p>
                             <p className="text-[20px] font-bold text-red-700 border-2 border-red-200 bg-red-50 p-8 rounded-2xl leading-relaxed shadow-sm">
                                 Det är därför <span className="underline">de flesta</span> hårsera på marknaden inte fungerar för kvinnor i klimakteriet — de ger näring, men de väcker aldrig hårsäcken först.
@@ -310,7 +322,7 @@ const Women55PlusV4: React.FC = () => {
                                 "The 4-Phase Follicle Reactivation System™"
                             </h2>
                             <p className="text-[20px] mb-16 text-center font-bold italic bg-blue-50 p-8 rounded-3xl border-2 border-blue-100 text-blue-900 shadow-sm leading-relaxed">
-                                Den <span className="underline text-red-600">första</span> vetenskapligt beprövda metoden som kombinerar alla 4 faserna för att aktivera sovande hårsäckar i klimakteriet — i exakt rätt ordning.
+                                Den första vetenskapligt beprövade formeln som <span className="text-red-600 font-black underline">kombinerar alla 4 faserna i EN produkt</span> — något som krävs för att aktivera sovande hårsäckar i klimakteriet.
                             </p>
 
                             <div className="space-y-10">
@@ -424,6 +436,22 @@ const Women55PlusV4: React.FC = () => {
                                 <p className="text-[19px] font-[900] tracking-tight">Varje fas är vetenskapligt bevisad.</p>
                                 <p className="text-[19px] font-[900] tracking-tight">Varje ingrediens är kliniskt testad.</p>
                                 <p className="text-[20px] font-black text-blue-900 uppercase tracking-tight">Och sekvensen är specifikt designad för vad som händer i din hårbotten efter klimakteriet.</p>
+                            </div>
+
+                            <div className="bg-[#F8F9FF] p-10 rounded-[32px] border-2 border-blue-100 mb-16 text-left shadow-sm">
+                                <h4 className="text-[22px] font-black text-blue-950 mb-6 uppercase tracking-tight underline underline-offset-8">Varför fungerar detta?</h4>
+                                <p className="text-[18px] mb-6 font-semibold">
+                                    Varje ingrediens aktiverar EN specifik fas. Men <span className="text-blue-900">tillsammans, i samma formula</span>, skapar de en synergistisk effekt där:
+                                </p>
+                                <ul className="space-y-4 text-[17px] font-bold list-none p-0">
+                                    <li className="flex gap-4 items-start"><span className="text-blue-600">🔹</span> <strong>Redensyl</strong> väcker hårsäcken</li>
+                                    <li className="flex gap-4 items-start"><span className="text-blue-600">🔹</span> <strong>Aminexil</strong> håller håret kvar medan det växer</li>
+                                    <li className="flex gap-4 items-start"><span className="text-blue-600">🔹</span> <strong>Anagain</strong> förlänger tillväxten</li>
+                                    <li className="flex gap-4 items-start"><span className="text-blue-600">🔹</span> <strong>Rosmarin</strong> cirkulerar näring till allt detta</li>
+                                </ul>
+                                <p className="text-[18px] mt-8 italic text-red-700 font-bold">
+                                    Detta är varför andra serum misslyckas — de har kanske EN av dessa, men inte alla fyra i rätt koncentration.
+                                </p>
                             </div>
 
                             <p className="text-[22px] mb-10 font-[950] text-center text-red-600 bg-red-50 py-6 px-12 rounded-full inline-block shadow-md uppercase tracking-tight">
