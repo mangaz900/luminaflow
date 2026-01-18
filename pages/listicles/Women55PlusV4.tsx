@@ -309,7 +309,7 @@ const Women55PlusV4: React.FC = () => {
                                 Formeln fungerade <span className="underline font-bold text-blue-900">ENDAST</span> när <span className="text-red-600">alla 4 faserna aktiverades samtidigt</span> — något som kräver exakt rätt kombination och koncentration av ingredienser.
                             </p>
                             <p className="text-[20px] font-bold text-red-700 border-2 border-red-200 bg-red-50 p-8 rounded-2xl leading-relaxed shadow-sm">
-                                Det är därför <span className="underline">de flesta</span> hårsera på marknaden inte fungerar för kvinnor i klimakteriet — de ger näring, men de väcker aldrig hårsäcken först.
+                                Det är därför <span className="underline">de flesta</span> hårserum på marknaden inte fungerar för kvinnor i klimakteriet — de ger näring, men de väcker aldrig hårsäcken först.
                             </p>
                         </div>
 
@@ -450,7 +450,7 @@ const Women55PlusV4: React.FC = () => {
                                     <li className="flex gap-4 items-start"><span className="text-blue-600">🔹</span> <strong>Rosmarin</strong> cirkulerar näring till allt detta</li>
                                 </ul>
                                 <p className="text-[18px] mt-8 italic text-red-700 font-bold">
-                                    Detta är varför andra serum misslyckas — de har kanske EN av dessa, men inte alla fyra i rätt koncentration.
+                                    Detta är varför andra hårserum misslyckas — de har kanske EN av dessa, men inte alla fyra i rätt koncentration.
                                 </p>
                             </div>
 
