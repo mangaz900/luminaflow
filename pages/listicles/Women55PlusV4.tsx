@@ -48,7 +48,6 @@ const Women55PlusV4: React.FC = () => {
                     <div className="prose prose-lg max-w-none text-[#212529] leading-[1.6]">
 
                         <div className="mb-[24px]">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-red-500 inline-block">📍 INTRO – PROBLEM INTENSIFICATION</h2>
                             <p className="text-[18px] mb-[24px]">
                                 Du står framför spegeln och ser det igen.
                             </p>
@@ -76,7 +75,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-[24px] bg-gray-50 p-8 rounded-2xl border border-gray-100">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-red-500 inline-block">📍 AGITATION – LAYER 2</h2>
                             <p className="text-[18px] mb-[24px]">
                                 För två år sedan var ditt hår ditt signum.
                             </p>
@@ -111,7 +109,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-[24px]">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-red-500 inline-block">📍 AMPLIFICATION – LAYER 3</h2>
                             <p className="text-[18px] mb-[24px] italic">
                                 Och djupt inne börjar du tro på det ingen vågar säga högt:
                             </p>
@@ -160,7 +157,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-[40px] bg-[#F8F9FF] p-10 rounded-3xl border-2 border-blue-50">
-                            <h2 className="text-[20px] font-bold text-blue-800 mb-8 uppercase tracking-wider border-b-2 border-blue-500 inline-block">📍 TURNING POINT</h2>
                             <p className="text-[26px] mb-8 font-bold text-[#17242C] leading-tight text-center">
                                 Men vad om din läkare hade fel?
                             </p>
@@ -194,7 +190,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-[40px]">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-green-500 inline-block">📍 GRADUALIZATION</h2>
                             <h3 className="text-[26px] font-bold mb-8 text-[#17242C]">Varför håret faller efter klimakteriet:</h3>
                             <p className="text-[18px] mb-8">
                                 När östrogennivåerna sjunker under klimakteriet händer fyra saker i din hårbotten:
@@ -273,7 +268,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-[40px] bg-[#EEEBFC] p-10 rounded-3xl border border-[#DCD6F7]">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-blue-600 inline-block">📍 BREAKTHROUGH MOMENT</h2>
                             <h3 className="text-[26px] font-bold mb-8 text-[#17242C] leading-tight">När forskare testade denna exakta sekvens:</h3>
                             <p className="text-[18px] mb-12">
                                 I en klinisk studie med 200 kvinnor mellan 45-60 år applicerade man en topical formel som aktiverade hårsäckarna i EXAKT denna ordning.
@@ -316,7 +310,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-[40px]">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-8 uppercase tracking-wider border-b-2 border-blue-500 inline-block">📍 MECHANISM REVEAL</h2>
                             <h3 className="text-[24px] font-bold mb-4 text-center text-gray-400 uppercase tracking-[0.2em]">Denna sekvens kallas:</h3>
                             <h2 className="text-[34px] md:text-[42px] font-[950] text-[#17242C] mb-12 text-center leading-[1.1] tracking-tighter uppercase" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                                 "4-Fas Follicle Reactivation System™"
@@ -391,7 +384,6 @@ const Women55PlusV4: React.FC = () => {
 
                         <div className="mb-[40px] bg-white border-[6px] border-blue-950 p-10 rounded-[48px] shadow-2xl text-center relative overflow-hidden">
                             <div className="absolute -top-10 -right-10 bg-blue-950 text-white p-12 transform rotate-45" />
-                            <h2 className="text-[20px] font-black text-blue-950 mb-8 uppercase tracking-widest border-b-2 border-blue-950 inline-block">📍 PRODUCT REVEAL</h2>
                             <p className="text-[26px] mb-8 font-[900] text-[#17242C] leading-tight">
                                 Denna exakta sekvens finns i ETT enda serum:
                             </p>
@@ -466,7 +458,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-[40px]">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-12 uppercase tracking-wider border-b-2 border-orange-500 inline-block">📍 SOCIAL PROOF</h2>
                             <h3 className="text-[26px] font-black mb-12 text-[#17242C] text-center">Vad kvinnor säger efter 90 dagar:</h3>
 
                             <div className="space-y-10">
@@ -512,7 +503,6 @@ const Women55PlusV4: React.FC = () => {
 
                         <div className="mb-[40px] bg-red-950 text-white p-12 rounded-[40px] shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-red-900 rounded-full -mr-32 -mt-32 opacity-20" />
-                            <h2 className="text-[20px] font-bold text-red-200 mb-10 uppercase tracking-widest border-b-2 border-red-600 inline-block">📍 URGENCY</h2>
                             <h2 className="text-[36px] md:text-[44px] font-[950] mb-12 leading-[1.1] uppercase tracking-tighter" style={{ fontFamily: '"Montserrat", sans-serif' }}>Varför du måste agera NU:</h2>
 
                             <p className="text-[22px] mb-8 font-black text-red-100 tracking-tight">Varje dag du väntar:</p>
@@ -577,7 +567,6 @@ const Women55PlusV4: React.FC = () => {
                         <SectionDivider />
 
                         <div className="mb-32">
-                            <h2 className="text-[20px] font-bold text-[#17242C] mb-12 uppercase tracking-wider border-b-2 border-blue-900 inline-block">📍 FINAL CTA</h2>
                             <h2 className="text-[36px] md:text-[48px] font-[950] text-[#17242C] mb-12 leading-[1.1] tracking-tighter uppercase" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                                 Redo att ge ditt hår <br />en andra chans?
                             </h2>
