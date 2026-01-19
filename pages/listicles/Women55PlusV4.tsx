@@ -48,6 +48,11 @@ const Women55PlusV4: React.FC = () => {
                     <div className="prose prose-lg max-w-none text-[#212529] leading-[1.6]">
 
                         <div className="mb-[24px]">
+                            <img
+                                src="/1 (7).jpg"
+                                alt="Kvinna med tunt hår tittar i spegeln"
+                                className="w-full rounded-2xl mb-8 shadow-lg"
+                            />
                             <p className="text-[18px] mb-[24px]">
                                 Du står framför spegeln och ser det igen.
                             </p>
