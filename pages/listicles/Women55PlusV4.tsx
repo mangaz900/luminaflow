@@ -196,6 +196,11 @@ const Women55PlusV4: React.FC = () => {
 
                         <div className="mb-[40px]">
                             <h3 className="text-[26px] font-bold mb-8 text-[#17242C]">Varför håret faller efter klimakteriet:</h3>
+                            <img
+                                src="/2 (7).jpg"
+                                alt="Håravfall hos kvinna i klimakteriet"
+                                className="w-full rounded-2xl mb-8 shadow-lg"
+                            />
                             <p className="text-[18px] mb-8">
                                 När östrogennivåerna sjunker under klimakteriet händer fyra saker i din hårbotten:
                             </p>
