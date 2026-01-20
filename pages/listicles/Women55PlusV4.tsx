@@ -467,6 +467,11 @@ const Women55PlusV4: React.FC = () => {
 
                             <div className="bg-[#F8F9FF] p-10 rounded-[32px] border-2 border-blue-100 mb-16 text-left shadow-sm">
                                 <h4 className="text-[22px] font-black text-blue-950 mb-6 uppercase tracking-tight underline underline-offset-8">Varför fungerar detta?</h4>
+                                <img
+                                    src="/7 (3).jpg"
+                                    alt="Synergistisk effekt av ingredienser"
+                                    className="w-full rounded-2xl mb-6 shadow-lg"
+                                />
                                 <p className="text-[18px] mb-6 font-semibold">
                                     Varje ingrediens aktiverar EN specifik fas. Men <span className="text-blue-900">tillsammans, i samma formula</span>, skapar de en synergistisk effekt där:
                                 </p>
