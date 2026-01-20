@@ -420,6 +420,11 @@ const Women55PlusV4: React.FC = () => {
                             <h2 className="text-[38px] md:text-[52px] font-[950] text-blue-900 mb-10 tracking-[ -0.05em] uppercase leading-none" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                                 Lumina Hair Growth Serum
                             </h2>
+                            <img
+                                src="/produkt-ingredienser.jpg"
+                                alt="Lumina Hair Growth Serum med ingredienser"
+                                className="w-full rounded-2xl mb-10 shadow-lg"
+                            />
                             <p className="text-[22px] mb-12 font-black bg-blue-50 p-8 rounded-[24px] text-blue-900 inline-block shadow-sm">
                                 Det <span className="underline italic">första</span> topikala serumet som kombinerar alla 4 faserna specifikt för kvinnor i klimakteriet.
                             </p>
