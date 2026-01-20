@@ -570,6 +570,11 @@ const Women55PlusV4: React.FC = () => {
                                     <p className="text-center font-black mt-8 text-[19px] border-t border-[#F4BE19]/30 pt-6">
                                         Efter lång inaktivitet? Kan inte längre väckas.
                                     </p>
+                                    <img
+                                        src="/7 (4).jpg"
+                                        alt="Tidsfräst för att väcka hårsäckar"
+                                        className="w-full rounded-2xl mt-8 shadow-lg"
+                                    />
                                 </div>
                             </div>
 
