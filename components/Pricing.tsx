@@ -73,9 +73,6 @@ const Pricing: React.FC = () => {
 
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
-          <span className="inline-block bg-black text-white text-[10px] md:text-xs font-bold px-3 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-wider mb-3 md:mb-4 shadow-sm">
-            BLACK FRIDAY
-          </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-medical-900 mb-2 md:mb-3">Välj ditt paket</h2>
           <p className="text-gray-500 text-xs md:text-sm px-2">
             Fri frakt & 90 dagars garanti ingår i alla paket.

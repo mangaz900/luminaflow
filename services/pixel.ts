@@ -28,11 +28,10 @@ export const initPixel = () => {
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '${PIXEL_ID}');
-        fbq('track', 'PageView');
     `;
     document.head.appendChild(script);
 
-    console.log('✅ Facebook Pixel script injected and initialized');
+    console.log('✅ Facebook Pixel script injected and initialized (PageView should be tracked separately with eventID)');
 };
 
 // Track PageView

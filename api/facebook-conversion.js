@@ -23,8 +23,38 @@ export default async function handler(request, response) {
         return response.status(500).json({ error: 'Server configuration error' });
     }
 
-    // Get client IP
-    const clientIp = request.headers['x-forwarded-for'] || request.socket.remoteAddress;
+    // Get client IP - prioritize IPv6 over IPv4
+    let clientIp = request.headers['x-forwarded-for'] || request.socket.remoteAddress;
+
+    // x-forwarded-for can contain multiple IPs (client, proxy1, proxy2...)
+    // Format: "client_ip, proxy1_ip, proxy2_ip" or "ipv6_address, ipv4_address"
+    if (clientIp && clientIp.includes(',')) {
+        const ips = clientIp.split(',').map(ip => ip.trim());
+
+        // Prioritize IPv6 addresses (contain colons)
+        const ipv6 = ips.find(ip => ip.includes(':') && !ip.startsWith('::ffff:'));
+        const ipv4 = ips.find(ip => !ip.includes(':') || ip.startsWith('::ffff:'));
+
+        // Use IPv6 if available, otherwise IPv4
+        clientIp = ipv6 || ipv4 || ips[0];
+    }
+
+    // Remove port number if present (e.g., "192.168.1.1:3000" -> "192.168.1.1")
+    if (clientIp && clientIp.includes(':')) {
+        // For IPv6, only remove port if it's at the end after the last colon
+        // IPv6 format: "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+        // IPv6 with port: "[2001:0db8:85a3::7334]:3000"
+        if (clientIp.startsWith('[')) {
+            clientIp = clientIp.split(']:')[0].replace('[', '');
+        } else if (!clientIp.match(/^[0-9a-f:]+$/i)) {
+            // If it's not a pure IPv6 address (contains non-hex chars), it might have a port
+            const parts = clientIp.split(':');
+            if (parts.length === 2 && !isNaN(parts[1])) {
+                // It's IPv4:port format
+                clientIp = parts[0];
+            }
+        }
+    }
 
     // Construct user_data object
     const fbUserData = {

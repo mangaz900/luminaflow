@@ -34,8 +34,10 @@ const CookieConsent: React.FC = () => {
           });
 
           // Initialize Facebook Pixel
-          import('../services/pixel').then(({ initPixel }) => {
+          import('../services/pixel').then(({ initPixel, pageView }) => {
             initPixel();
+            // Track initial PageView with eventID for proper deduplication
+            setTimeout(() => pageView(), 100);
             console.log('✅ Facebook Pixel laddad från sparad consent');
           });
         }
@@ -66,8 +68,10 @@ const CookieConsent: React.FC = () => {
       });
 
       // Initialize Facebook Pixel
-      import('../services/pixel').then(({ initPixel }) => {
+      import('../services/pixel').then(({ initPixel, pageView }) => {
         initPixel();
+        // Track initial PageView with eventID for proper deduplication
+        setTimeout(() => pageView(), 100);
         console.log('✅ Facebook Pixel aktiverad efter consent');
       });
     } else {
