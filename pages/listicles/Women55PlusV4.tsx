@@ -86,6 +86,11 @@ const Women55PlusV4: React.FC = () => {
                             <p className="text-[18px] mb-[40px] font-bold text-[#17242C] text-2xl">
                                 Tjockt. Glansigt. Starkt.
                             </p>
+                            <img
+                                src="/10.jpg"
+                                alt="Kvinna som undviker fotografier på grund av håravfall"
+                                className="w-full rounded-2xl my-8 shadow-lg"
+                            />
                             <p className="text-[18px] mb-[12px]">Nu undviker du fotografier.</p>
                             <p className="text-[18px] mb-[12px]">Nu ändrar du frisyr för tredje gången.</p>
                             <p className="text-[18px] mb-[40px]">Nu köper du schampo efter schampo — volymschampo, proteinschampo, "återuppbyggande" schampo — men ingenting händer.</p>
