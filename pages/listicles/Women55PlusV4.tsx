@@ -94,6 +94,11 @@ const Women55PlusV4: React.FC = () => {
                             <p className="text-[18px] mb-[12px]">Nu undviker du fotografier.</p>
                             <p className="text-[18px] mb-[12px]">Nu ändrar du frisyr för tredje gången.</p>
                             <p className="text-[18px] mb-[40px]">Nu köper du schampo efter schampo — volymschampo, proteinschampo, "återuppbyggande" schampo — men ingenting händer.</p>
+                            <img
+                                src="/10.jpg"
+                                alt="Kvinna som undviker fotografier på grund av håravfall"
+                                className="w-full rounded-2xl my-8 shadow-lg"
+                            />
 
                             <p className="text-[18px] mb-[24px] font-bold italic">
                                 Och när du frågar din läkare igen?
@@ -132,6 +137,11 @@ const Women55PlusV4: React.FC = () => {
                             <p className="text-[18px] mb-[24px]">
                                 Du läser om östrogenbrist. Om hårsäckar som "går i vila". Om DHT. Om androgener.
                             </p>
+                            <img
+                                src="/3 (6).jpg"
+                                alt="Kvinna som googlar om håravfall i klimakteriet"
+                                className="w-full rounded-2xl my-8 shadow-lg"
+                            />
                             <p className="text-[18px] mb-[40px] font-bold">
                                 Men ingen säger vad du egentligen kan göra.
                             </p>
