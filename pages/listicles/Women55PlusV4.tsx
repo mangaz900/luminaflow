@@ -439,22 +439,22 @@ const Women55PlusV4: React.FC = () => {
                                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                                         <p className="font-black text-blue-900 mb-2 tracking-wider">FAS 1: WAKE</p>
                                         <p className="text-[20px] font-black m-0 mb-2">→ Redensyl® 3% <span className="text-[16px] font-semibold text-gray-500 block md:inline md:ml-2">(patenterad stamcells-aktiverare)</span></p>
-                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">85% saw improved growth (clinical study, 3 months)</p>
+                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">85% såg förbättrad tillväxt (klinisk studie, 3 månader)</p>
                                     </div>
                                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                                         <p className="font-black text-blue-900 mb-2 tracking-wider">FAS 2: ANCHOR</p>
                                         <p className="text-[20px] font-black m-0 mb-2">→ Aminexil <span className="text-[16px] font-semibold text-gray-500 block md:inline md:ml-2">(perifollicular fibrosis blocker)</span></p>
-                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">Prevents collagen stiffening around hair root</p>
+                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">Förhindrar kollagenstelning runt hårroten</p>
                                     </div>
                                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                                         <p className="font-black text-blue-900 mb-2 tracking-wider">FAS 3: EXTEND</p>
                                         <p className="text-[20px] font-black m-0 mb-2">→ Anagain™ 2% <span className="text-[16px] font-semibold text-gray-500 block md:inline md:ml-2">(anagen phase extender)</span></p>
-                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">Extends growth phase by up to 78%</p>
+                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">Förlänger tillväxtfasen med upp till 78%</p>
                                     </div>
                                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                                         <p className="font-black text-blue-900 mb-2 tracking-wider">FAS 4: CIRCULATE</p>
                                         <p className="text-[20px] font-black m-0 mb-2">→ Rosmarinolja 3% <span className="text-[16px] font-semibold text-gray-500 block md:inline md:ml-2">(circulation booster)</span></p>
-                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">As effective as Minoxidil in studies — without side effects</p>
+                                        <p className="text-[15px] text-green-700 italic font-bold uppercase tracking-wide">Lika effektivt som Minoxidil i studier — utan biverkningar</p>
                                     </div>
                                 </div>
                             </div>
