@@ -273,6 +273,11 @@ const Women55PlusV4: React.FC = () => {
                                     Andra serum fokuserar på EN fas. Lumina är det första som kombinerar alla fyra.
                                 </p>
                             </div>
+                            <img
+                                src="/4 (5).jpg"
+                                alt="Lumina Hair Growth Serum - 4-fas system"
+                                className="w-full rounded-2xl mt-8 shadow-lg"
+                            />
                         </div>
 
                         <SectionDivider />
