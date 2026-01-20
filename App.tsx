@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 import OrderSuccess from './components/OrderSuccess';
 import CookieConsent from './components/CookieConsent';
+import UrgencySection from './components/UrgencySection';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
@@ -46,6 +47,7 @@ const HomePage: React.FC = () => {
         <ComparisonTable />
         <Usage />
         <Timeline />
+        <UrgencySection />
         <Pricing />
         <Reviews />
         <FAQ />

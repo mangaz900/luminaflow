@@ -17,8 +17,8 @@ const Usage: React.FC = () => {
     },
     {
       number: "03",
-      title: "Använd dagligen i 6 veckor för synliga resultat",
-      description: "Kontinuitet är nyckeln. Använd Lumina dagligen i minst 6 veckor för att se tydliga resultat. Håret behöver tid att växa sig starkt.",
+      title: "Konsistens är nyckeln",
+      description: "Använd Lumina dagligen. Folliklar behöver daglig signal för att stanna i tillväxtfas. När ser du resultat? Vecka 6-8: Mindre håravfall, första babyhår. Vecka 10-12: Synligt tätare hår längs bena. Månad 6: Maximal effekt.",
       icon: <Calendar className="w-6 h-6 text-white" />
     }
   ];
@@ -34,17 +34,17 @@ const Usage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 relative px-2 md:px-4 max-w-6xl mx-auto">
-            {/* Connection line for desktop */}
-            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-medical-200 -z-10"></div>
+          {/* Connection line for desktop */}
+          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-medical-200 -z-10"></div>
 
           {steps.map((step, index) => (
             <div key={index} className="relative flex flex-col items-center text-center group bg-white md:bg-transparent p-6 rounded-2xl md:p-0 shadow-sm md:shadow-none">
               <div className="w-24 h-24 rounded-full bg-white border-4 border-medical-100 flex items-center justify-center mb-6 shadow-md group-hover:border-medical-400 group-hover:scale-110 transition-all duration-300 z-10">
                 <div className="w-16 h-16 rounded-full bg-medical-900 flex items-center justify-center">
-                    {step.icon}
+                  {step.icon}
                 </div>
               </div>
-              
+
               <div className="hidden md:block absolute top-0 -right-4 font-serif text-8xl text-medical-100 -z-10 opacity-60 select-none">
                 {step.number}
               </div>

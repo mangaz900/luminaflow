@@ -6,24 +6,24 @@ const Ingredients: React.FC = () => {
     <section id="ingredienser" className="py-12 md:py-24 bg-medical-900 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
-          
+
           <div className="order-2 lg:order-1">
             <div className="mb-8 md:mb-10">
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-tight mb-3 md:mb-4">
-                4 Krafter.<br/>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-tight mb-3 md:mb-4">
+                4 Krafter.<br />
                 <span className="text-medical-100">En flaska.</span>
-                </h2>
-                <p className="text-medical-200 text-sm md:text-base">Kliniskt utvalda för kvinnligt håravfall.</p>
+              </h2>
+              <p className="text-medical-200 text-sm md:text-base">Kliniskt utvalda för håravfall efter klimakteriet.</p>
             </div>
-            
+
             <div className="space-y-6 md:space-y-8">
               {/* Ingredient 1 */}
               <div className="bg-medical-800/50 p-4 md:p-6 rounded-xl border border-medical-700">
                 <div className="flex justify-between items-start mb-2 md:mb-3">
-                    <div className="flex items-center gap-2 md:gap-3">
-                        <div className="bg-green-900/50 p-1.5 md:p-2 rounded-lg text-green-300"><Leaf size={18} className="md:w-5 md:h-5" /></div>
-                        <h3 className="text-lg md:text-xl font-serif text-white">3% Rosmarin</h3>
-                    </div>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="bg-green-900/50 p-1.5 md:p-2 rounded-lg text-green-300"><Leaf size={18} className="md:w-5 md:h-5" /></div>
+                    <h3 className="text-lg md:text-xl font-serif text-white">3% Rosmarin</h3>
+                  </div>
                 </div>
                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
                   <strong>Varför?</strong> I jämförande studier har rosmarinolja visat sig vara lika effektivt som Minoxidil för att öka cirkulationen, men utan klåda eller biverkningar.
@@ -33,39 +33,39 @@ const Ingredients: React.FC = () => {
               {/* Ingredient 2 */}
               <div className="bg-medical-800/50 p-4 md:p-6 rounded-xl border border-medical-700">
                 <div className="flex justify-between items-start mb-2 md:mb-3">
-                    <div className="flex items-center gap-2 md:gap-3">
-                        <div className="bg-blue-900/50 p-1.5 md:p-2 rounded-lg text-blue-300"><Zap size={18} className="md:w-5 md:h-5" /></div>
-                        <h3 className="text-lg md:text-xl font-serif text-white">3% Redensyl®</h3>
-                    </div>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="bg-blue-900/50 p-1.5 md:p-2 rounded-lg text-blue-300"><Zap size={18} className="md:w-5 md:h-5" /></div>
+                    <h3 className="text-lg md:text-xl font-serif text-white">3% Redensyl®</h3>
+                  </div>
                 </div>
                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
-                  <strong>Effekten:</strong> Fungerar som en "molekylär strömbrytare" som väcker sovande stamceller. 85% av användarna i studier såg förbättrad tillväxt.
+                  <strong>Effekten:</strong> Fungerar som en "molekylär strömbrytare" som väcker sovande stamceller i hårsäckar som varit vilande sedan klimakteriet. 85% av användarna i studier såg förbättrad tillväxt.
                 </p>
               </div>
 
               {/* Ingredient 3 */}
               <div className="bg-medical-800/50 p-4 md:p-6 rounded-xl border border-medical-700">
                 <div className="flex justify-between items-start mb-2 md:mb-3">
-                    <div className="flex items-center gap-2 md:gap-3">
-                        <div className="bg-purple-900/50 p-1.5 md:p-2 rounded-lg text-purple-300"><Shield size={18} className="md:w-5 md:h-5" /></div>
-                        <h3 className="text-lg md:text-xl font-serif text-white">Aminexil</h3>
-                    </div>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="bg-purple-900/50 p-1.5 md:p-2 rounded-lg text-purple-300"><Shield size={18} className="md:w-5 md:h-5" /></div>
+                    <h3 className="text-lg md:text-xl font-serif text-white">Aminexil</h3>
+                  </div>
                 </div>
                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
-                  <strong>Problemlösaren:</strong> Motverkar att kollagenet runt hårroten stelnar (fibros). Detta är avgörande för att håret ska sitta kvar och kunna växa sig grovt.
+                  <strong>Problemlösaren:</strong> Motverkar att kollagenet runt hårroten stelnar (fibros) — vanligt efter klimakteriet när kollagenproduktionen sjunker. Avgörande för att håret ska sitta kvar och kunna växa sig grovt.
                 </p>
               </div>
-              
-               {/* Ingredient 4 */}
-               <div className="bg-medical-800/50 p-4 md:p-6 rounded-xl border border-medical-700">
+
+              {/* Ingredient 4 */}
+              <div className="bg-medical-800/50 p-4 md:p-6 rounded-xl border border-medical-700">
                 <div className="flex justify-between items-start mb-2 md:mb-3">
-                    <div className="flex items-center gap-2 md:gap-3">
-                        <div className="bg-yellow-900/50 p-1.5 md:p-2 rounded-lg text-yellow-300"><Activity size={18} className="md:w-5 md:h-5" /></div>
-                        <h3 className="text-lg md:text-xl font-serif text-white">2% Anagain™</h3>
-                    </div>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="bg-yellow-900/50 p-1.5 md:p-2 rounded-lg text-yellow-300"><Activity size={18} className="md:w-5 md:h-5" /></div>
+                    <h3 className="text-lg md:text-xl font-serif text-white">2% Anagain™</h3>
+                  </div>
                 </div>
                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
-                  <strong>Volymen:</strong> Utvunnet ur ekologiska ärtgroddar. Förlänger hårets naturliga växtfas så att du behåller fler strån längre.
+                  <strong>Volymen:</strong> Utvunnet ur ekologiska ärtgroddar. Förlänger hårets naturliga växtfas i kliniska studier på kvinnor efter menopaus. Behåller fler strån längre.
                 </p>
               </div>
 
@@ -73,23 +73,23 @@ const Ingredients: React.FC = () => {
           </div>
 
           <div className="order-1 lg:order-2 relative lg:sticky lg:top-24 mb-8 md:mb-12 lg:mb-0">
-             {/* Minimalist product shot mixed with nature/science vibe */}
+            {/* Minimalist product shot mixed with nature/science vibe */}
             <div className="relative z-10 rounded-2xl md:rounded-3xl overflow-hidden border border-medical-700 shadow-2xl aspect-square md:aspect-[4/5]">
-                 <img 
-                    src="/losning-bild.jpg" 
-                    alt="Lösningen: Ny Vetenskap" 
-                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x1000?text=Lösning+Bild";
-                    }}
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-medical-900 via-transparent to-transparent"></div>
-                 
-                 <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 right-4 md:right-8">
-                    <div className="bg-white/10 backdrop-blur p-3 md:p-4 lg:p-6 rounded-xl border border-white/20">
-                        <p className="text-white italic font-serif text-sm md:text-base lg:text-lg">"Vi tog bort det onödiga och maximerade det som fungerar. Inga hormoner, bara resultat."</p>
-                    </div>
-                 </div>
+              <img
+                src="/losning-bild.jpg"
+                alt="Lösningen: Ny Vetenskap"
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x1000?text=Lösning+Bild";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-medical-900 via-transparent to-transparent"></div>
+
+              <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 right-4 md:right-8">
+                <div className="bg-white/10 backdrop-blur p-3 md:p-4 lg:p-6 rounded-xl border border-white/20">
+                  <p className="text-white italic font-serif text-sm md:text-base lg:text-lg">"Vi tog bort det onödiga och maximerade det som fungerar. Inga hormoner, bara resultat."</p>
+                </div>
+              </div>
             </div>
             {/* Background glow */}
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-medical-500/30 rounded-full blur-3xl"></div>

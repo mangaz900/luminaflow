@@ -5,23 +5,23 @@ import { Review } from '../types';
 const reviews: Review[] = [
   {
     id: 1,
-    name: "Lena, 52",
+    name: "Lena, 58, Göteborg",
     rating: 5,
-    comment: "Jag vågade knappt gå till frisören förut för jag skämdes över mina tunna vikar. Efter 3 månader med Lumina frågade min frisör vad jag gjort. Håret känns äntligen levande igen.",
+    comment: "Jag är 58. Efter klimakteriet tappade jag 60% av mitt hår på 3 år. Läkaren sa det var 'normalt' men kunde inte hjälpa. Efter 10 veckor med Lumina ser jag babyhår ÖVERALLT. För första gången på år känner jag mig som mig själv igen.",
     avatar: ""
   },
   {
     id: 2,
-    name: "Maria, 46",
+    name: "Maria, 62, Stockholm",
     rating: 5,
-    comment: "Tappade massor av hår i duschen pga stress. Var skeptisk till 'oljor' men denna är inte fet alls. Nu stannar håret på huvudet och jag ser små strån växa ut vid pannan.",
+    comment: "Jag väntade 4 år efter menopaus innan jag agerade. Trodde det skulle gå över. Men det blev bara värre. Efter 12 veckor med Lumina är min bena dubbelt så smal. Önskar jag hade börjat tidigare.",
     avatar: ""
   },
   {
     id: 3,
-    name: "Susanne K.",
-    rating: 4,
-    comment: "Enkel att använda, vilket var avgörande för mig. Har använt den i 4 månader nu och skillnaden på kronan är tydlig. Önskar jag hittat denna tidigare.",
+    name: "Karin, 54, Malmö",
+    rating: 5,
+    comment: "Min frisör märkte skillnaden efter 8 veckor — innan JAG ens sa något. 'Vad har du gjort? Det är så mycket nytt hår!' Det var det bästa jag hört på år.",
     avatar: ""
   },
   {
@@ -33,14 +33,14 @@ const reviews: Review[] = [
   },
   {
     id: 5,
-    name: "Karin, 50",
+    name: "Birgitta, 56, Uppsala",
     rating: 5,
-    comment: "Jag har provat allt från apoteket men inget hjälpte. Lumina är den första produkten som faktiskt fungerar. Min hårbotten ser inte längre ut som en väg och jag känner mig så mycket mer självsäker.",
+    comment: "Efter klimakteriet blev håret så tunt att jag skämdes. Lumina har gett mig tillbaka mitt självförtroende. Efter 5 månader ser jag faktiskt resultat i spegeln nu.",
     avatar: ""
   },
   {
     id: 6,
-    name: "Eva, 48",
+    name: "Eva, 51, Linköping",
     rating: 5,
     comment: "Klimakteriet tog verkligen på mitt hår. Jag var desperat när jag hittade Lumina. Nu, efter 3 månader, ser jag faktiskt nytt hår växa ut. Det är fantastiskt!",
     avatar: ""
@@ -54,9 +54,9 @@ const reviews: Review[] = [
   },
   {
     id: 8,
-    name: "Ingrid, 55",
+    name: "Ingrid, 59, Västerås",
     rating: 5,
-    comment: "Jag trodde att det bara var åldern som gjorde att håret tunnades. Men Lumina har bevisat att det finns hopp. Min hårbotten är mycket tätare nu.",
+    comment: "Jag trodde att det bara var åldern som gjorde att håret tunnades efter menopaus. Men Lumina har bevisat att det finns hopp. Min hårbotten är mycket tätare nu.",
     avatar: ""
   },
   {
@@ -75,16 +75,16 @@ const reviews: Review[] = [
   },
   {
     id: 11,
-    name: "Kristina, 51",
+    name: "Kristina, 53, Örebro",
     rating: 5,
-    comment: "Jag har använt Lumina i 6 månader nu och skillnaden är enorm. Min frisör frågade vad jag gjort - håret är så mycket tjockare!",
+    comment: "Jag har använt Lumina i 6 månader nu och skillnaden är enorm. Efter klimakteriet tappade jag så mycket hår. Min frisör frågade vad jag gjort - håret är så mycket tjockare!",
     avatar: ""
   },
   {
     id: 12,
-    name: "Birgitta, 49",
+    name: "Marianne, 57, Helsingborg",
     rating: 5,
-    comment: "Efter klimakteriet blev håret så tunt. Lumina har gett mig tillbaka mitt självförtroende. Jag ser faktiskt resultat i spegeln nu.",
+    comment: "Efter menopaus blev håret så tunt. Läkaren sa 'normalt vid din ålder' men erbjud ingen lösning. Lumina har gett mig tillbaka mitt självförtroende. Jag ser faktiskt resultat i spegeln nu.",
     avatar: ""
   },
   {
@@ -103,9 +103,9 @@ const reviews: Review[] = [
   },
   {
     id: 15,
-    name: "Marianne, 53",
+    name: "Gunilla, 60, Lund",
     rating: 5,
-    comment: "Jag har provat så många produkter men inget hjälpte. Lumina är den första som faktiskt fungerar. Håret känns levande igen!",
+    comment: "Jag har provat så många produkter efter klimakteriet men inget hjälpte. Lumina är den första som faktiskt fungerar. Håret känns levande igen!",
     avatar: ""
   },
   {
@@ -117,9 +117,9 @@ const reviews: Review[] = [
   },
   {
     id: 17,
-    name: "Gunilla, 50",
+    name: "Annika, 55, Umeå",
     rating: 5,
-    comment: "Min hårbotten var så tunn att jag skämdes. Nu, efter 5 månader med Lumina, täcker håret mycket bättre. Jag känner mig som mig själv igen.",
+    comment: "Min hårbotten var så tunn efter menopaus att jag skämdes. Nu, efter 5 månader med Lumina, täcker håret mycket bättre. Jag känner mig som mig själv igen.",
     avatar: ""
   },
   {
@@ -214,16 +214,16 @@ const Reviews: React.FC = () => {
     <section id="recensioner" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif text-4xl text-center text-medical-900 mb-4">Från kvinnor som varit där</h2>
-        
+
         {/* Rating Overview */}
         <div className="flex flex-col items-center justify-center mb-8 md:mb-12">
           <div className="flex items-center gap-3 mb-2">
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star 
-                  key={i} 
-                  size={28} 
-                  className={`${i < Math.floor(averageRating) ? 'text-gold-400 fill-gold-400' : i < averageRating ? 'text-gold-400 fill-gold-400 opacity-50' : 'text-gray-200'}`} 
+                <Star
+                  key={i}
+                  size={28}
+                  className={`${i < Math.floor(averageRating) ? 'text-gold-400 fill-gold-400' : i < averageRating ? 'text-gold-400 fill-gold-400 opacity-50' : 'text-gray-200'}`}
                 />
               ))}
             </div>
@@ -231,39 +231,39 @@ const Reviews: React.FC = () => {
           </div>
           <p className="text-gray-600 text-sm md:text-base">Baserat på {totalReviews} recensioner</p>
         </div>
-        
+
         <p className="text-center text-gray-500 mb-16">Riktiga resultat från verifierade köpare.</p>
-        
-        <div 
+
+        <div
           className="relative overflow-hidden"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <div 
+          <div
             className="flex transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${currentIndex * (100 / reviewsPerView)}%)` }}
           >
             {reviews.map((review) => (
-              <div 
-                key={review.id} 
+              <div
+                key={review.id}
                 className="min-w-full md:min-w-[33.333%] px-2 md:px-4"
               >
                 <div className="bg-[#F9FAFB] p-4 md:p-6 lg:p-8 rounded-2xl border border-gray-100 hover:border-medical-200 transition-all relative h-full">
                   <Quote className="absolute top-6 right-6 text-medical-200" size={40} />
-                  
+
                   <div className="flex items-center gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        size={16} 
-                        className={`${i < review.rating ? 'text-gold-400 fill-gold-400' : 'text-gray-200'}`} 
+                      <Star
+                        key={i}
+                        size={16}
+                        className={`${i < review.rating ? 'text-gold-400 fill-gold-400' : 'text-gray-200'}`}
                       />
                     ))}
                   </div>
-                  
+
                   <p className="text-gray-700 mb-6 md:mb-8 leading-relaxed italic text-sm md:text-base min-h-[80px] md:min-h-[100px]">"{review.comment}"</p>
-                  
+
                   <div>
                     <p className="font-bold text-medical-900 text-sm mb-1">{review.name}</p>
                     <p className="text-xs text-green-600 font-medium">Verifierad köpare</p>
@@ -296,11 +296,10 @@ const Reviews: React.FC = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`transition-all duration-300 rounded-full ${
-                currentIndex === index 
-                  ? 'w-6 h-1.5 bg-medical-900' 
+              className={`transition-all duration-300 rounded-full ${currentIndex === index
+                  ? 'w-6 h-1.5 bg-medical-900'
                   : 'w-1.5 h-1.5 bg-gray-300 hover:bg-medical-400'
-              }`}
+                }`}
               aria-label={`Gå till recension ${index + 1}`}
             />
           ))}

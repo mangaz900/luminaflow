@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Check, ShoppingBag, ShieldCheck, Star } from 'lucide-react';
-import AIConsultant from './AIConsultant';
 import { useCart } from '../contexts/CartContext';
 import { trackViewItemList } from '../services/analytics';
 
@@ -71,7 +70,7 @@ const Pricing: React.FC = () => {
   return (
     <section id="erbjudande" className="py-12 md:py-16 lg:py-20 bg-white scroll-mt-20">
       <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
           <span className="inline-block bg-black text-white text-[10px] md:text-xs font-bold px-3 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-wider mb-3 md:mb-4 shadow-sm">
@@ -87,15 +86,15 @@ const Pricing: React.FC = () => {
         <div className="flex flex-col gap-4 mb-8">
           {options.map((option) => {
             const isSelected = selectedId === option.id;
-            
+
             return (
-              <div 
+              <div
                 key={option.id}
                 onClick={() => setSelectedId(option.id)}
                 className={`
                   relative flex items-center p-4 md:p-5 rounded-xl md:rounded-2xl cursor-pointer transition-all duration-200 border-2 select-none group
-                  ${isSelected 
-                    ? 'border-medical-900 bg-white shadow-lg z-10' 
+                  ${isSelected
+                    ? 'border-medical-900 bg-white shadow-lg z-10'
                     : 'border-gray-200 bg-white hover:border-gray-300'
                   }
                 `}
@@ -154,31 +153,26 @@ const Pricing: React.FC = () => {
 
         {/* Sticky/Main CTA Button */}
         <div className="bg-white">
-            <button 
-                onClick={handleAddToCart}
-                className="w-full bg-medical-900 text-white py-4 rounded-full text-lg font-medium hover:bg-[#0A2A4A] transition-all shadow-xl flex items-center justify-center gap-3 transform active:scale-[0.98]"
-            >
-                <ShoppingBag size={20} />
-                <span>Lägg till i varukorg</span>
-            </button>
-            
-            <p className="mt-3 text-center text-sm font-medium text-[#DC2626]">
-              Få kvar i lager!
-            </p>
-            
-            <div className="mt-6 flex items-center justify-center gap-6 text-xs text-gray-500 font-medium">
-                <span className="flex items-center gap-1.5">
-                    <ShieldCheck size={16} className="text-medical-500"/> 90 dagars garanti
-                </span>
-                <span className="flex items-center gap-1.5">
-                    <Check size={16} className="text-green-500"/> Klarna & Swish
-                </span>
-            </div>
-        </div>
+          <button
+            onClick={handleAddToCart}
+            className="w-full bg-medical-900 text-white py-4 rounded-full text-lg font-medium hover:bg-[#0A2A4A] transition-all shadow-xl flex items-center justify-center gap-3 transform active:scale-[0.98]"
+          >
+            <ShoppingBag size={20} />
+            <span>Lägg till i varukorg</span>
+          </button>
 
-        {/* AI Consultant Section */}
-        <div className="mt-16">
-          <AIConsultant />
+          <p className="mt-3 text-center text-sm font-medium text-[#DC2626]">
+            Få kvar i lager!
+          </p>
+
+          <div className="mt-6 flex items-center justify-center gap-6 text-xs text-gray-500 font-medium">
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck size={16} className="text-medical-500" /> 90 dagars garanti
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Check size={16} className="text-green-500" /> Klarna & Swish
+            </span>
+          </div>
         </div>
 
       </div>
