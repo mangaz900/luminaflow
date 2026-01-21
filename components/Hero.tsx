@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Star, ShieldCheck, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, ShieldCheck, Check, ChevronLeft, ChevronRight, ShoppingBag, Truck, Package, RefreshCw } from 'lucide-react';
+import { useCart } from '../contexts/CartContext';
 
 const Hero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [selectedPackageId, setSelectedPackageId] = useState<number>(2); // Default to "MEST POPULÄR"
   const navigate = useNavigate();
   const location = useLocation();
+  const { addToCart } = useCart();
 
   const handleScrollToPricing = (e?: React.MouseEvent) => {
     if (e) {
@@ -126,24 +129,154 @@ const Hero: React.FC = () => {
               När östrogen sjunker och hårsäckar går i viloläge — Lumina väcker dem tillbaka till tillväxt. Hormonfritt. Kliniskt bevisat. 90 dagars garanti.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <button
-                onClick={handleScrollToPricing}
-                className="bg-medical-900 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-medical-800 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
-              >
-                <span>Beställ nu</span>
-              </button>
-              <div className="flex items-center justify-center sm:justify-start gap-2 px-4 py-4">
-                <ShieldCheck size={18} className="text-medical-500" />
-                <span className="text-sm font-medium text-gray-600">Testa riskfritt i 90 dagar</span>
-              </div>
-            </div>
+            {/* Inline Pricing - Package Selection */}
+            <div className="mt-8 w-full max-w-lg">
+              <h3 className="font-serif text-2xl text-medical-900 mb-6 text-center">Välj ditt paket</h3>
 
-            <div className="pt-6 border-t border-gray-100 flex flex-col gap-3 text-sm text-gray-600">
-              <span className="flex items-center gap-2"><Check size={16} className="text-green-500" /> 90 dagars pengarna-tillbaka-garanti</span>
-              <span className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Fri frakt över 500 SEK</span>
-              <span className="flex items-center gap-2"><Check size={16} className="text-green-500" /> Kliniskt bevisad formel</span>
-              <span className="flex items-center gap-2"><ShieldCheck size={16} className="text-medical-500" /> Hormonfritt</span>
+              <div className="flex flex-col gap-4 mb-6">
+                {[
+                  {
+                    id: 1,
+                    quantity: 1,
+                    title: "KÖP 1",
+                    subtitle: "Startpaket",
+                    price: 399,
+                    originalPrice: 798,
+                    discountLabel: "50% RABATT",
+                    tag: null,
+                  },
+                  {
+                    id: 2,
+                    quantity: 3,
+                    title: "KÖP 3 BETALA FÖR 2",
+                    subtitle: "Behandlingskur",
+                    price: 798,
+                    originalPrice: 2394,
+                    discountLabel: "SPARA 67%",
+                    tag: "MEST POPULÄR",
+                  },
+                  {
+                    id: 3,
+                    quantity: 6,
+                    title: "KÖP 3 FÅ 3 EXTRA",
+                    subtitle: "Storpack",
+                    price: 999,
+                    originalPrice: 4788,
+                    discountLabel: "SPARA 79%",
+                    tag: "MEST VÄRDE",
+                  }
+                ].map((option) => {
+                  const isSelected = selectedPackageId === option.id;
+
+                  return (
+                    <div
+                      key={option.id}
+                      onClick={() => setSelectedPackageId(option.id)}
+                      className={`
+                        relative flex items-center p-4 rounded-xl cursor-pointer transition-all duration-200 border-2 select-none
+                        ${isSelected
+                          ? 'border-medical-900 bg-white shadow-lg'
+                          : 'border-gray-200 bg-white hover:border-gray-300'
+                        }
+                      `}
+                    >
+                      {/* Tag Badge */}
+                      {option.tag && (
+                        <div className="absolute -top-3 right-6 z-20">
+                          <span className="bg-medical-900 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                            {option.tag}
+                          </span>
+                        </div>
+                      )}
+
+                      {/* Radio Button */}
+                      <div className="flex-shrink-0 mr-5">
+                        <div className={`
+                          w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors
+                          ${isSelected ? 'border-medical-900' : 'border-gray-300'}
+                        `}>
+                          {isSelected && (
+                            <div className="w-3 h-3 bg-medical-900 rounded-full" />
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Text Content */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-1">
+                          <h4 className="font-bold text-medical-900 text-lg leading-none">
+                            {option.title}
+                          </h4>
+                          {option.discountLabel && (
+                            <span className="bg-gray-100 text-medical-900 text-[10px] font-bold px-2 py-0.5 rounded">
+                              {option.discountLabel}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-gray-500 font-medium">
+                          {option.subtitle}
+                        </p>
+                      </div>
+
+                      {/* Price */}
+                      <div className="text-right pl-2">
+                        <div className="text-xs text-gray-400 line-through decoration-red-400 decoration-1 mb-0.5">
+                          {option.originalPrice} kr
+                        </div>
+                        <div className="text-xl font-bold text-[#DC2626] leading-none">
+                          {option.price} kr
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Add to Cart Button */}
+              <button
+                onClick={() => {
+                  const selectedOption = [
+                    { id: 1, quantity: 1, title: "KÖP 1", subtitle: "Startpaket", price: 399, originalPrice: 798 },
+                    { id: 2, quantity: 3, title: "KÖP 3 BETALA FÖR 2", subtitle: "Behandlingskur", price: 798, originalPrice: 2394 },
+                    { id: 3, quantity: 6, title: "KÖP 3 FÅ 3 EXTRA", subtitle: "Storpack", price: 999, originalPrice: 4788 }
+                  ].find(o => o.id === selectedPackageId);
+
+                  if (selectedOption) {
+                    addToCart(selectedOption);
+                  }
+                }}
+                className="w-full bg-medical-900 text-white py-4 rounded-full text-lg font-medium hover:bg-medical-800 transition-all shadow-xl flex items-center justify-center gap-3"
+              >
+                <ShoppingBag size={20} />
+                <span>Lägg till i varukorg</span>
+              </button>
+
+              {/* Trust Bar */}
+              <div className="mt-6 flex items-center justify-center gap-6 text-xs text-gray-600 font-medium">
+                <span className="flex items-center gap-1.5">
+                  <Truck size={18} className="text-gray-600" /> Gratis frakt
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Package size={18} className="text-gray-600" /> 2-7 dagar leverans
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <RefreshCw size={18} className="text-gray-600" /> 90 dagars garanti
+                </span>
+              </div>
+
+              {/* Klarna Payment Banner */}
+              <div className="mt-6 flex justify-center">
+                <img
+                  src="/se_merchant_banner_970x90_pink (1).png"
+                  alt="Klarna betalning"
+                  className="max-w-full h-auto"
+                  style={{ maxWidth: '400px' }}
+                />
+              </div>
+
+              <p className="mt-3 text-center text-sm font-medium text-[#DC2626]">
+                Få kvar i lager!
+              </p>
             </div>
           </div>
 
