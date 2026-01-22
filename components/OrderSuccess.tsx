@@ -14,6 +14,15 @@ const OrderSuccess: React.FC = () => {
   useEffect(() => {
     // Track purchase when order success page loads
     if (sessionId) {
+      // Check if we've already tracked this purchase
+      const trackedPurchases = localStorage.getItem('tracked_purchases');
+      const trackedIds = trackedPurchases ? JSON.parse(trackedPurchases) : [];
+
+      if (trackedIds.includes(sessionId)) {
+        console.log('Purchase already tracked for session:', sessionId);
+        return; // Already tracked, skip
+      }
+
       // Get order details from localStorage (saved before checkout)
       const orderData = localStorage.getItem('pending_order');
       if (orderData) {
@@ -68,8 +77,14 @@ const OrderSuccess: React.FC = () => {
                 externalId: sessionId // Use session ID as external ID
               });
 
+              // Mark this purchase as tracked
+              trackedIds.push(sessionId);
+              localStorage.setItem('tracked_purchases', JSON.stringify(trackedIds));
+
               // Clear pending order after tracking
               localStorage.removeItem('pending_order');
+
+              console.log('✅ Purchase tracked successfully for session:', sessionId);
             } catch (error) {
               console.error('Error tracking purchase:', error);
             }
