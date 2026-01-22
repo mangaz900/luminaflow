@@ -99,7 +99,7 @@ const Women55PlusV3: React.FC = () => {
                         </p>
 
                         <h3 className="text-[24px] font-bold mt-10 mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                            890 kronor på akuten förändrade allt
+                            798 kronor på akuten förändrade allt
                         </h3>
 
                         <p className="text-[17px] mb-4">
