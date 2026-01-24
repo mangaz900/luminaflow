@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShieldCheck, Truck } from 'lucide-react';
 
-const Women55PlusV5: React.FC = () => {
+const Women55PlusV6: React.FC = () => {
     const navigate = useNavigate();
 
     // Dynamically load fonts
@@ -817,4 +817,4 @@ const Women55PlusV5: React.FC = () => {
     );
 };
 
-export default Women55PlusV5;
+export default Women55PlusV6;

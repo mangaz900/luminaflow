@@ -31,6 +31,7 @@ import Women55PlusV2 from './pages/listicles/Women55PlusV2';
 import Women55PlusV3 from './pages/listicles/Women55PlusV3';
 import Women55PlusV4 from './pages/listicles/Women55PlusV4';
 import Women55PlusV5 from './pages/listicles/Women55PlusV5';
+import Women55PlusV6 from './pages/listicles/Women55PlusV6';
 import FiveReasons65 from './pages/listicles/FiveReasons65';
 import { initPixel, pageView } from './services/pixel';
 import { initGA4, trackPageView } from './services/analytics';
@@ -83,7 +84,7 @@ const App: React.FC = () => {
   return (
     <CartProvider>
       <div className="min-h-screen bg-white font-sans text-dark-900 antialiased selection:bg-medical-100 selection:text-medical-900 overflow-x-hidden">
-        {!['/kvinnor-55-plus-lumina', '/kvinnor-55-plus-v2', '/kvinnor-55-plus-v3', '/kvinnor-55-plus-v4', '/kvinnor-55-plus-v5', '/5-anledningar-65'].includes(location.pathname) && <Navbar />}
+        {!['/kvinnor-55-plus-lumina', '/kvinnor-55-plus-v2', '/kvinnor-55-plus-v3', '/kvinnor-55-plus-v4', '/kvinnor-55-plus-v5', '/kvinnor-55-plus-v6', '/5-anledningar-65'].includes(location.pathname) && <Navbar />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/order-success" element={<OrderSuccess />} />
@@ -98,6 +99,7 @@ const App: React.FC = () => {
           <Route path="/kvinnor-55-plus-v3" element={<Women55PlusV3 />} />
           <Route path="/kvinnor-55-plus-v4" element={<Women55PlusV4 />} />
           <Route path="/kvinnor-55-plus-v5" element={<Women55PlusV5 />} />
+          <Route path="/kvinnor-55-plus-v6" element={<Women55PlusV6 />} />
           <Route path="/5-anledningar-65" element={<FiveReasons65 />} />
         </Routes>
         <ShoppingCart />

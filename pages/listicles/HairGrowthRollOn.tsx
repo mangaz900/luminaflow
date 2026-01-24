@@ -376,8 +376,7 @@ const HairGrowthRollOn: React.FC = () => {
 
             <button
               onClick={() => {
-                navigate('/');
-                window.scrollTo(0, 0);
+                window.location.href = 'https://shop.hairscanpro.com/products/lumina-hairflow-pro';
               }}
               className="bg-white text-medical-900 px-8 md:px-12 py-4 md:py-5 rounded-full font-bold hover:bg-medical-50 transition-all text-lg md:text-xl transform hover:scale-105 shadow-lg hover:shadow-xl font-serif"
             >

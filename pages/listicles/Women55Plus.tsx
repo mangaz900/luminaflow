@@ -17,7 +17,7 @@ const Women55Plus: React.FC = () => {
     }, []);
 
     const scrollToOffer = () => {
-        window.location.href = 'https://hairscanpro.com/kvinnor-55';
+        window.location.href = 'https://shop.hairscanpro.com/products/lumina-hairflow-pro';
     };
 
     const reviews = [
