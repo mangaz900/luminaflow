@@ -19,6 +19,13 @@ const ShoppingCart: React.FC = () => {
   } = useCart();
   const [isLoading, setIsLoading] = React.useState(false);
 
+  // Reset loading state when cart is opened/closed to prevent getting stuck
+  React.useEffect(() => {
+    if (!isCartOpen) {
+      setIsLoading(false);
+    }
+  }, [isCartOpen]);
+
   const handleGoToCheckout = async () => {
     if (items.length === 0) return;
 
