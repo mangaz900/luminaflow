@@ -56,11 +56,11 @@ const ShoppingCart: React.FC = () => {
 
     setIsLoading(true);
 
-    // Map internal IDs to Shopify Variant IDs
+    // Map internal IDs to Shopify Variant IDs (Verified via Shopify API)
     const variantMap: Record<number, string> = {
-      1: '10609008443656', // Startpaket
-      2: '10609009328392', // Behandlingskur
-      3: '10609009950984', // Storpack
+      1: '52853942485256', // Startpaket
+      2: '52853943501064', // Behandlingskur
+      3: '52853944090888', // Storpack
     };
 
     // Bundle sizes (bottle count per package id)
