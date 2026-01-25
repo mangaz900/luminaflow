@@ -54,61 +54,42 @@ const ShoppingCart: React.FC = () => {
       num_items: getTotalItems(),
     });
 
-    // Save order data for purchase tracking
-    localStorage.setItem('pending_order', JSON.stringify({
-      items: items.map(item => ({
-        id: item.id,
-        name: item.title,
-        category: 'Hårvård',
-        price: item.price / item.quantity,
-        quantity: item.quantity,
-      })),
-      total: getTotalPrice(),
-    }));
-
     setIsLoading(true);
-    try {
-      // Skapa Stripe Checkout direkt (Stripe hanterar allt - e-post, leveransinfo, betalning)
-      const response = await fetch('/api/create-checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          items,
-          customer: {
-            // Minimal info - Stripe kommer att be om resten
-            email: '',
-            firstName: '',
-            lastName: '',
-            phone: '',
-            address: '',
-            city: '',
-            postalCode: '',
-          },
-          total: getTotalPrice(),
-        }),
-      });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('API Error:', response.status, errorText);
-        throw new Error(`Server error: ${response.status}`);
-      }
+    // Map internal IDs to Shopify Variant IDs
+    const variantMap: Record<number, string> = {
+      1: '10609008443656', // Startpaket
+      2: '10609009328392', // Behandlingskur
+      3: '10609009950984', // Storpack
+    };
 
-      const data = await response.json();
+    // Bundle sizes (bottle count per package id)
+    const bundleSizes: Record<number, number> = {
+      1: 1,
+      2: 3,
+      3: 6
+    };
 
-      if (!data.success || !data.url) {
-        throw new Error(data.error || 'Kunde inte skapa checkout');
-      }
+    // Construct Cart Permalink
+    // Format: https://shop.hairscanpro.com/cart/{variant_id}:{quantity}
+    // Note: We currently calculate quantity based on bundle size (e.g. 3 bottles / 3 = 1 variant)
+    const cartItemsString = items
+      .map(item => {
+        const variantId = variantMap[item.id];
+        const size = bundleSizes[item.id] || 1;
+        const shopifyQty = Math.max(1, Math.round(item.quantity / size));
 
-      // Redirecta direkt till Stripe Checkout
-      window.location.href = data.url;
-    } catch (err) {
-      console.error('Checkout error:', err);
-      const errorMessage = err instanceof Error ? err.message : 'Kunde inte skapa checkout. Försök igen.';
-      alert(errorMessage);
+        if (!variantId) return null;
+        return `${variantId}:${shopifyQty}`;
+      })
+      .filter(Boolean)
+      .join(',');
+
+    if (cartItemsString) {
+      window.location.href = `https://shop.hairscanpro.com/cart/${cartItemsString}`;
+    } else {
       setIsLoading(false);
+      alert('Kunde inte skapa kassan. Försök igen.');
     }
   };
 
