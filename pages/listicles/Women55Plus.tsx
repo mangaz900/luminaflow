@@ -17,7 +17,7 @@ const Women55Plus: React.FC = () => {
     }, []);
 
     const scrollToOffer = () => {
-        window.location.href = 'https://shop.hairscanpro.com/products/lumina-hairflow-pro';
+        window.location.href = 'https://www.hairscanpro.com/';
     };
 
     const reviews = [
