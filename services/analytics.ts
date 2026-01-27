@@ -9,7 +9,7 @@ declare global {
   }
 }
 
-const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-VWTD934FW1';
+const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-M9LFPFVK9Z';
 
 /**
  * Initialize GA4
