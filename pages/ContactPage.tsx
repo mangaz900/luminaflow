@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackEvent } from '../services/pixel';
+import { trackPageView } from '../services/analytics';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +27,14 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulera formulärskickning (här kan du lägga till riktig backend-integration)
+    // Track Contact Form Submission
+    trackEvent('Contact', {
+      method: 'form',
+      subject: formData.subject
+    });
+
+    // Simulera formulärskickning (här kan du lägga till riktig backend-integration, t.ex. Formspree)
+    // Destination: malin@hairscanpro.com
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
@@ -36,7 +45,7 @@ const ContactPage: React.FC = () => {
         subject: '',
         message: ''
       });
-      
+
       // Återställ status efter 5 sekunder
       setTimeout(() => {
         setSubmitStatus('idle');
@@ -63,7 +72,7 @@ const ContactPage: React.FC = () => {
                 Kontakta oss
               </h1>
               <p className="text-gray-600 text-lg">
-                Har du frågor om våra produkter, beställningar eller behöver personlig rådgivning? 
+                Har du frågor om våra produkter, beställningar eller behöver personlig rådgivning?
                 Vi är här för att hjälpa dig!
               </p>
             </div>
@@ -75,8 +84,8 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-medical-900 mb-1">E-post</h3>
-                  <a href="mailto:info@lumina.se" className="text-gray-600 hover:text-medical-900 transition-colors">
-                    info@lumina.se
+                  <a href="mailto:malin@hairscanpro.com" className="text-gray-600 hover:text-medical-900 transition-colors">
+                    malin@hairscanpro.com
                   </a>
                 </div>
               </div>
@@ -117,10 +126,16 @@ const ContactPage: React.FC = () => {
               </p>
               <Link
                 to="/#faq"
-                className="text-medical-900 hover:text-medical-700 font-medium text-sm underline"
+                className="text-medical-900 hover:text-medical-700 font-medium text-sm underline block mb-2"
               >
                 Besök vår FAQ →
               </Link>
+              <a
+                href="https://shop.hairscanpro.com/pages/contact"
+                className="text-medical-900 hover:text-medical-700 font-medium text-sm underline"
+              >
+                Gå till Shopify Kontaktformulär →
+              </a>
             </div>
           </div>
 

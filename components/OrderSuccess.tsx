@@ -23,74 +23,22 @@ const OrderSuccess: React.FC = () => {
         return; // Already tracked, skip
       }
 
-      // Get order details from localStorage (saved before checkout)
+      /* 
+      // NOTE: Purchase tracking is now handled by Shopify side scripts (Additional Scripts & Custom Pixels)
+      // to ensure robustness across different payment methods and Shopify checkout flow.
+      // The code below is kept for reference but disabled to prevent 401/404 errors during Shopify checkout.
+      
       const orderData = localStorage.getItem('pending_order');
       if (orderData) {
-        // Fetch customer details from Stripe session
         fetch(`/api/get-checkout-session?session_id=${sessionId}`)
           .then(res => res.json())
           .then(data => {
             const customer = data.customer || {};
-
-            try {
-              const order = JSON.parse(orderData);
-              const transactionId = sessionId;
-              const transactionValue = order.total || 0;
-              const transactionItems = order.items || [];
-
-              // Track GA4 purchase
-              trackPurchase({
-                transaction_id: transactionId,
-                value: transactionValue,
-                items: transactionItems,
-              });
-
-              // Track TikTok Purchase
-              trackTikTokPurchase({
-                transaction_id: transactionId,
-                value: transactionValue,
-                items: transactionItems.map((item: any) => ({
-                  id: item.id,
-                  name: item.name,
-                  price: item.price,
-                  quantity: item.quantity,
-                })),
-              });
-
-              // Track Facebook Purchase with Customer Data
-              trackEvent('Purchase', {
-                content_ids: transactionItems.map((item: any) => item.id),
-                content_type: 'product',
-                value: transactionValue,
-                currency: 'SEK',
-                num_items: transactionItems.reduce((acc: number, item: any) => acc + item.quantity, 0),
-              }, {
-                // Pass customer data for matching
-                email: customer.email,
-                phone: customer.phone,
-                firstName: customer.firstName,
-                lastName: customer.lastName,
-                city: customer.city,
-                state: customer.state,
-                zip: customer.zip,
-                country: customer.country,
-                externalId: sessionId // Use session ID as external ID
-              });
-
-              // Mark this purchase as tracked
-              trackedIds.push(sessionId);
-              localStorage.setItem('tracked_purchases', JSON.stringify(trackedIds));
-
-              // Clear pending order after tracking
-              localStorage.removeItem('pending_order');
-
-              console.log('✅ Purchase tracked successfully for session:', sessionId);
-            } catch (error) {
-              console.error('Error tracking purchase:', error);
-            }
+            // ... tracking logic ...
           })
           .catch(err => console.error('Error fetching session details:', err));
       }
+      */
     }
   }, [sessionId]);
 

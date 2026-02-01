@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
     <footer className="bg-dark-900 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          
+
           <div className="space-y-6">
             <button
               onClick={() => navigate('/')}
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-medium text-lg mb-6">Hjälp</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><Link to="/kontakt" className="hover:text-gold-400 transition-colors">Kontakta oss</Link></li>
+              <li><a href="https://shop.hairscanpro.com/pages/contact" className="hover:text-gold-400 transition-colors">Kontakta oss</a></li>
               <li><Link to="/returpolicy" className="hover:text-gold-400 transition-colors">Frakt & Retur</Link></li>
               <li><button onClick={() => handleNavClick('#faq')} className="hover:text-gold-400 transition-colors text-left">FAQ</button></li>
               <li><Link to="/5-anledningar-hair-growth-roll-on" className="hover:text-gold-400 transition-colors">5 Anledningar</Link></li>
