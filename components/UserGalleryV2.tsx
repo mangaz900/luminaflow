@@ -29,8 +29,8 @@ const UserGalleryV2: React.FC = () => {
             name: "Anders, 52",
             age: "Malmö",
             rating: 5,
-            quote: "Hade provat andra produkter tidigare men de var för krångliga. Lumina tar 30 sekunder och fungerar faktiskt. Min fru märkte skillnaden först.",
-            testimonial: "Äntligen en produkt som levererar vad den lovar utan att göra det till ett heldagsprojekt. Mycket nöjd med resultatet på hjässan."
+            quote: "Hade provat annat tidigare, men allt var för krångligt. Lumina tar 30 sekunder – och jag märker faktiskt skillnad. Min fru såg det först.”",
+            testimonial: "“Äntligen en produkt som levererar utan att göra det till ett heldagsprojekt. Väldigt nöjd med resultatet på hjässan"
         }
     ];
 
