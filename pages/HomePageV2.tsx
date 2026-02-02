@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroV2 from '../components/HeroV2';
 import ProblemSolutionV2 from '../components/ProblemSolutionV2';
-import Benefits from '../components/Benefits';
+import BenefitsV2 from '../components/BenefitsV2';
 import Usage from '../components/Usage';
 import UserGalleryV2 from '../components/UserGalleryV2';
 import IngredientsV2 from '../components/IngredientsV2';
@@ -22,7 +22,7 @@ const HomePageV2: React.FC = () => {
                 <HeroV2 />
                 <UserGalleryV2 />
                 <ProblemSolutionV2 />
-                <Benefits />
+                <BenefitsV2 />
                 <IngredientsV2 />
                 <RollOnApplicator />
                 <ComparisonTable />
