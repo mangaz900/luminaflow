@@ -20,8 +20,8 @@ const UserGalleryV2: React.FC = () => {
             name: "Johan, 38",
             age: "Göteborg",
             rating: 5,
-            quote: "Enkelt och diskret. Jag använder den varje morgon innan jobbet. Håret känns fylligare och jag tappar inte alls lika mycket längre.",
-            testimonial: "Det bästa är att det inte syns att man har något i håret. Ingen fet känsla alls. Rekommenderas starkt till alla som börjar bli tunnhåriga."
+            quote: "Enkelt och diskret. Jag använder den varje morgon innan jobbet. Håret känns fylligare och jag tappar inte alls lika mycket längre.”",
+            testimonial: "“Det bästa är att det inte syns att man har något i håret – ingen fet känsla alls. Rekommenderas till alla som börjar bli tunnhåriga."
         },
         {
             id: 3,
