@@ -3,7 +3,7 @@ import HeroV2 from '../components/HeroV2';
 import ProblemSolution from '../components/ProblemSolution';
 import Benefits from '../components/Benefits';
 import Usage from '../components/Usage';
-import UserGallery from '../components/UserGallery';
+import UserGalleryV2 from '../components/UserGalleryV2';
 import Ingredients from '../components/Ingredients';
 import RollOnApplicator from '../components/RollOnApplicator';
 import Timeline from '../components/Timeline';
@@ -20,7 +20,7 @@ const HomePageV2: React.FC = () => {
             <main className="overflow-x-hidden">
                 {/* You can now edit this page independently for split testing */}
                 <HeroV2 />
-                <UserGallery />
+                <UserGalleryV2 />
                 <ProblemSolution />
                 <Benefits />
                 <Ingredients />
