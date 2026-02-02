@@ -9,7 +9,7 @@ import RollOnApplicator from '../components/RollOnApplicator';
 import TimelineV2 from '../components/TimelineV2';
 import Pricing from '../components/Pricing';
 import ComparisonTable from '../components/ComparisonTable';
-import Reviews from '../components/Reviews';
+import ReviewsV2 from '../components/ReviewsV2';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import UrgencySectionV2 from '../components/UrgencySectionV2';
@@ -30,7 +30,7 @@ const HomePageV2: React.FC = () => {
                 <TimelineV2 />
                 <UrgencySectionV2 />
                 <Pricing />
-                <Reviews />
+                <ReviewsV2 />
                 <FAQ />
             </main>
             <Footer />
