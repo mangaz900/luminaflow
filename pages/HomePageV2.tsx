@@ -4,7 +4,7 @@ import ProblemSolutionV2 from '../components/ProblemSolutionV2';
 import Benefits from '../components/Benefits';
 import Usage from '../components/Usage';
 import UserGalleryV2 from '../components/UserGalleryV2';
-import Ingredients from '../components/Ingredients';
+import IngredientsV2 from '../components/IngredientsV2';
 import RollOnApplicator from '../components/RollOnApplicator';
 import Timeline from '../components/Timeline';
 import Pricing from '../components/Pricing';
@@ -23,7 +23,7 @@ const HomePageV2: React.FC = () => {
                 <UserGalleryV2 />
                 <ProblemSolutionV2 />
                 <Benefits />
-                <Ingredients />
+                <IngredientsV2 />
                 <RollOnApplicator />
                 <ComparisonTable />
                 <Usage />
