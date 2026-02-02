@@ -5,65 +5,142 @@ import { Review } from '../types';
 const reviewsV2: Review[] = [
     {
         id: 1,
-        name: "Erik, 45, Stockholm",
+        name: "Lennart, 58, Göteborg",
         rating: 5,
-        comment: "Jag är 45. Märkte att vikarna kröp uppåt och att håret kändes tunnare. Läkaren sa att det var genetiskt. Efter 10 veckor med Lumina ser jag småhår som fyller i vikarna. Känns bra att ha hittat en rutin som funkar.",
+        comment: "Jag är 58. På bara några år tappade jag massor av densitet i kronan och började alltid se hårbotten i starkt ljus. Jag fick höra att det var 'normalt' och att jag fick acceptera det. Efter 10 veckor med Lumina ser jag små nya strån när jag kollar nära—och framför allt: mindre hår i duschen. För första gången på länge känner jag mig som mig själv igen.",
         avatar: ""
     },
     {
         id: 2,
-        name: "Johan, 38, Göteborg",
+        name: "Martin, 62, Stockholm",
         rating: 5,
-        comment: "Väntade för länge med att agera. Trodde det bara var en del av att bli äldre. Men efter 12 veckor med Lumina ser hjässan betydligt tätare ut, även i starkt ljus. Önskar jag börjat tidigare.",
+        comment: "Jag väntade i flera år innan jag gjorde något. Tänkte att det skulle plana ut, men det blev bara tunnare—särskilt på hjässan. Efter 12 veckor med Lumina ser jag att kronan inte lyser igenom lika mycket i overhead-ljus. Önskar jag hade börjat tidigare.",
         avatar: ""
     },
     {
         id: 3,
-        name: "Anders, 52, Malmö",
+        name: "Kalle, 54, Malmö",
         rating: 5,
-        comment: "Min frisör frågade vad jag gjort efter bara 8 veckor. 'Håret känns mycket kraftigare och det är fullt av nya strån'. Det var precis det kvitto jag behövde.",
+        comment: "Min frisör märkte skillnaden efter 8 veckor innan jag ens sa något. 'Det är mer täckning här bak—har du bytt rutin?' Det var ärligt talat det bästa jag hört på länge.",
         avatar: ""
     },
     {
         id: 4,
-        name: "Fredrik, 42",
+        name: "Andreas, 44",
         rating: 5,
-        comment: "Tappade mycket hår pga stress. Lumina har varit min räddning. Efter 2 månader började jag se resultat och nu efter 4 månader är håret betydligt tätare.",
+        comment: "Efter en period med mycket stress tappade jag hår över hela huvudet. Lumina blev min comeback. Efter 2 månader märkte jag mindre shedding och efter 4 månader känns håret tydligt tjockare vid rötterna.",
         avatar: ""
     },
     {
         id: 5,
-        name: "Mikael, 56, Uppsala",
+        name: "Bengt, 56, Uppsala",
         rating: 5,
-        comment: "Kände mig osäker när håret blev tunnare på hjässan. Lumina har gett mig tillbaka mitt självförtroende. Efter 5 månader ser jag faktiskt resultat i spegeln nu.",
+        comment: "Det blev så tunt vid hjässan att jag började skämmas i vissa vinklar och ljus. Lumina har gett mig tillbaka självförtroendet. Efter 5 månader ser jag skillnad i spegeln och på bilder.",
         avatar: ""
     },
     {
         id: 6,
-        name: "Lars, 51, Linköping",
+        name: "Erik, 51, Linköping",
         rating: 5,
-        comment: "Genetiken tog verkligen ut sin rätt på mitt hår. Jag var desperat när jag hittade Lumina. Nu, efter 3 månader, ser jag faktiskt nya strån växa ut. Det är fantastiskt!",
+        comment: "Jag märkte att hårfästet började krypa och att kronan syntes mer och mer. Jag var desperat när jag hittade Lumina. Nu efter 3 månader ser jag nya små strån och betydligt mindre hår i avloppet.",
         avatar: ""
     },
     {
         id: 7,
-        name: "Sven, 59, Västerås",
+        name: "Simon, 39",
         rating: 5,
-        comment: "Jag trodde att det bara var åldern och att det inte fanns något att göra. Men Lumina har bevisat att det finns hopp även för oss äldre. Min hårbotten är mycket tätare nu.",
+        comment: "Jag började tappa hår i perioder och paniken tog över. Lumina gav mig hopp igen. Efter 5 månader ser jag tydlig förbättring och håret känns starkare när jag stylar det.",
         avatar: ""
     },
     {
         id: 8,
-        name: "Patrik, 43",
+        name: "Ingvar, 59, Västerås",
         rating: 5,
-        comment: "Stress på jobbet gjorde att jag tappade så mycket hår. Lumina har varit min räddning. Nu tappar jag nästan inget hår alls och ser nytt hår växa.",
+        comment: "Jag trodde det bara var åldern, men det var frustrerande hur snabbt densiteten försvann. Lumina har bevisat för mig att man faktiskt kan göra något åt det. Kronan ser tätare ut nu, särskilt i starkt ljus.",
         avatar: ""
     },
     {
         id: 9,
-        name: "Stefan, 47",
+        name: "Magnus, 43",
+        rating: 5,
+        comment: "Stress på jobbet gjorde att jag tappade mycket hår. Lumina har varit min räddning. Nu tappar jag nästan inget jämfört med förut och ser nya strån komma tillbaka vid tinningarna.",
+        avatar: ""
+    },
+    {
+        id: 10,
+        name: "Henrik, 47",
         rating: 4,
-        comment: "Bra produkt, enkel att använda. Ser lite förbättring efter 2 månader. Fortsätter att använda för att se mer resultat.",
+        comment: "Bra produkt och enkel att använda. Ser lite förbättring efter 2 månader. Fortsätter för att ge det en ärlig chans över 90 dagar.",
+        avatar: ""
+    },
+    {
+        id: 11,
+        name: "Kristoffer, 53, Örebro",
+        rating: 5,
+        comment: "Jag har använt Lumina i 6 månader och skillnaden är enorm. Jag tappade mycket i kronan och nu ser det betydligt jämnare ut. Min frisör frågade rakt ut vad jag gjort—håret känns mycket tjockare.",
+        avatar: ""
+    },
+    {
+        id: 12,
+        name: "Marcel, 57, Helsingborg",
+        rating: 5,
+        comment: "Det tunnades ut så mycket att jag började se äldre ut än jag kände mig. Jag fick höra 'det är normalt i din ålder' men ingen gav en lösning som kändes rimlig. Lumina har gett mig tillbaka självförtroendet—skillnaden syns faktiskt nu.",
+        avatar: ""
+    },
+    {
+        id: 13,
+        name: "Carl, 41",
+        rating: 5,
+        comment: "Jag har alltid haft tjockt hår, så när det började tunnas blev jag chockad. Lumina har hjälpt mig få tillbaka känslan av ‘mer hår’ igen. Efter 4 månader är skillnaden tydlig när jag kollar i spegeln.",
+        avatar: ""
+    },
+    {
+        id: 14,
+        name: "Patrik, 45",
+        rating: 4,
+        comment: "Funkar bra, men det tar tid. Efter 3 månader började jag se förbättring och mindre shedding. Rekommenderar att vara tålmodig och faktiskt köra rutinen varje dag.",
+        avatar: ""
+    },
+    {
+        id: 15,
+        name: "Gunnar, 60, Lund",
+        rating: 5,
+        comment: "Jag har provat massor—schampon, oljor, allt möjligt. Inget höll i längden. Lumina är första grejen som känns som att den gör skillnad, och dessutom förstör den inte min styling.",
+        avatar: ""
+    },
+    {
+        id: 16,
+        name: "Elias, 46",
+        rating: 5,
+        comment: "Perfekt i vardagen—tar typ en minut och känns inte kladdig. Efter 3 månader ser jag små strån växa ut vid tinningarna. Väldigt nöjd att jag började när jag gjorde det.",
+        avatar: ""
+    },
+    {
+        id: 17,
+        name: "Anton, 55, Umeå",
+        rating: 5,
+        comment: "Hjässan var så tunn att jag började undvika vissa ljus och vinklar. Nu efter 5 månader med Lumina täcker håret mycket bättre. Jag känner mig som mig själv igen.",
+        avatar: ""
+    },
+    {
+        id: 18,
+        name: "Louie, 42",
+        rating: 5,
+        comment: "Jag var trött på att se mer och mer hårbotten varje år. Lumina har varit grymt bra för mig. Håret känns nu betydligt tjockare än innan jag började.",
+        avatar: ""
+    },
+    {
+        id: 19,
+        name: "Klas, 48",
+        rating: 4,
+        comment: "Bra produkt, men resultat tar tid. Efter 4 månader ser jag lite förbättring och fortsätter för att få ännu bättre densitet.",
+        avatar: ""
+    },
+    {
+        id: 20,
+        name: "Jens, 44",
+        rating: 5,
+        comment: "Jag var skeptisk, men Lumina har överträffat mina förväntningar. Efter 3 månader ser jag tydlig förbättring—framför allt mindre hår i duschen och bättre täckning i starkt ljus. Bästa köpet jag gjort.",
         avatar: ""
     }
 ];
