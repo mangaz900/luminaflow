@@ -11,8 +11,8 @@ const UserGalleryV2: React.FC = () => {
             name: "Erik, 45",
             age: "Stockholm",
             rating: 5,
-            quote: "Jag var skeptisk mot 'håroljor' men den här roll-on lösningen är klockren. Inget kladd, ingen konstig lukt, bara resultat.",
-            testimonial: "Efter 2 månader ser jag tydligt att vikarna har börjat fyllas i. Det har blivit en naturlig del av min morgonrutin."
+            quote: "Jag var skeptisk mot ‘håroljor’, men den här roll-on-lösningen är klockren. Inget kladd, ingen konstig lukt – bara en rutin som funkar.",
+            testimonial: "“Efter 2 månader ser jag tydligt att vikarna har börjat fyllas i. Det har blivit en naturlig del av min morgonrutin."
         },
         {
             id: 2,
