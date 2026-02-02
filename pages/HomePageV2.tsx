@@ -6,7 +6,7 @@ import Usage from '../components/Usage';
 import UserGalleryV2 from '../components/UserGalleryV2';
 import IngredientsV2 from '../components/IngredientsV2';
 import RollOnApplicator from '../components/RollOnApplicator';
-import Timeline from '../components/Timeline';
+import TimelineV2 from '../components/TimelineV2';
 import Pricing from '../components/Pricing';
 import ComparisonTable from '../components/ComparisonTable';
 import Reviews from '../components/Reviews';
@@ -27,7 +27,7 @@ const HomePageV2: React.FC = () => {
                 <RollOnApplicator />
                 <ComparisonTable />
                 <Usage />
-                <Timeline />
+                <TimelineV2 />
                 <UrgencySection />
                 <Pricing />
                 <Reviews />
