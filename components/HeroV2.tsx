@@ -11,7 +11,7 @@ interface HeroV2Props {
 
 const HeroV2: React.FC<HeroV2Props> = ({
     title = "Ett hårserum för män utvecklat för att vara enkelt, diskret och utan kladd.",
-    subtitle = "Väck vilande hårsäckar med vår avancerade roll-on formula. Hormonfritt. Kliniskt bevisat. 90 dagars garanti.",
+    subtitle = "Väck vilande hårsäckar med vår avancerade roll-on formula. Inga piller. Ingen kladd. 90 dagars garanti",
     badge = "Över 12 000 nöjda användare"
 }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
