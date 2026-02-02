@@ -85,7 +85,7 @@ const App: React.FC = () => {
   return (
     <CartProvider>
       <div className="min-h-screen bg-white font-sans text-dark-900 antialiased selection:bg-medical-100 selection:text-medical-900 overflow-x-hidden">
-        {!['/kvinnor-55-plus-lumina', '/kvinnor-55-plus-v2', '/kvinnor-55-plus-v3', '/kvinnor-55-plus-v4', '/kvinnor-55-plus-v5', '/kvinnor-55-plus-v6', '/5-anledningar-65', '/p2'].includes(location.pathname) && <Navbar />}
+        {!['/kvinnor-55-plus-lumina', '/kvinnor-55-plus-v2', '/kvinnor-55-plus-v3', '/kvinnor-55-plus-v4', '/kvinnor-55-plus-v5', '/kvinnor-55-plus-v6', '/5-anledningar-65'].includes(location.pathname) && <Navbar />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/order-success" element={<OrderSuccess />} />
