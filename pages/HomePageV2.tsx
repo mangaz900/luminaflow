@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from '../components/Hero';
+import HeroV2 from '../components/HeroV2';
 import ProblemSolution from '../components/ProblemSolution';
 import Benefits from '../components/Benefits';
 import Usage from '../components/Usage';
@@ -19,7 +19,7 @@ const HomePageV2: React.FC = () => {
         <>
             <main className="overflow-x-hidden">
                 {/* You can now edit this page independently for split testing */}
-                <Hero />
+                <HeroV2 />
                 <UserGallery />
                 <ProblemSolution />
                 <Benefits />
