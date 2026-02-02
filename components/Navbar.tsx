@@ -11,7 +11,10 @@ const Navbar: React.FC = () => {
 
   // Hantera scrollning efter navigation
   useEffect(() => {
-    if (location.pathname === '/' && location.state?.scrollTo) {
+    const isV2 = location.pathname === '/p2';
+    const basePath = isV2 ? '/p2' : '/';
+
+    if (location.pathname === basePath && location.state?.scrollTo) {
       setTimeout(() => {
         const element = document.querySelector(location.state.scrollTo);
         if (element) {
@@ -30,11 +33,15 @@ const Navbar: React.FC = () => {
       e.preventDefault();
     }
     setIsOpen(false);
-    if (location.pathname !== '/') {
-      // Navigera till startsidan med hash i state
-      navigate('/', { state: { scrollTo: hash } });
+
+    const isV2 = location.pathname === '/p2';
+    const basePath = isV2 ? '/p2' : '/';
+
+    if (location.pathname !== basePath) {
+      // Navigera till rätt version med hash i state
+      navigate(basePath, { state: { scrollTo: hash } });
     } else {
-      // Om vi redan är på startsidan, scrolla direkt
+      // Om vi redan är på rätt version, scrolla direkt
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
@@ -50,7 +57,7 @@ const Navbar: React.FC = () => {
     <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center h-20">
-          
+
           {/* Left: Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 flex-1">
             <button onClick={() => handleNavClick('#faq')} className="text-dark-900 hover:text-gold-600 transition-colors">FAQ</button>
@@ -70,7 +77,7 @@ const Navbar: React.FC = () => {
           {/* Center: Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex-shrink-0 z-10">
             <button
-              onClick={() => navigate('/')}
+              onClick={() => navigate(location.pathname === '/p2' ? '/p2' : '/')}
               className="font-serif text-xl sm:text-2xl font-bold text-dark-900 hover:text-medical-900 transition-colors cursor-pointer"
             >
               Lumina.
@@ -79,7 +86,7 @@ const Navbar: React.FC = () => {
 
           {/* Right: Shopping Cart */}
           <div className="flex items-center justify-end flex-1">
-            <button 
+            <button
               onClick={openCart}
               className="bg-dark-900 text-white p-3 rounded-full hover:bg-gray-800 transition-all flex items-center justify-center relative"
             >
@@ -103,8 +110,8 @@ const Navbar: React.FC = () => {
             <button onClick={() => handleNavClick('#ingredienser')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Ingredienser</button>
             <button onClick={() => handleNavClick('#recensioner')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Recensioner</button>
             <button onClick={() => handleNavClick('#ai-expert')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">AI Expert</button>
-            <button 
-              onClick={() => { setIsOpen(false); openCart(); }} 
+            <button
+              onClick={() => { setIsOpen(false); openCart(); }}
               className="mt-4 bg-dark-900 text-white p-3 rounded-full flex items-center justify-center relative"
             >
               <ShoppingBag size={20} />

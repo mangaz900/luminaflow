@@ -6,11 +6,14 @@ const Footer: React.FC = () => {
   const location = useLocation();
 
   const handleNavClick = (hash: string) => {
-    if (location.pathname !== '/') {
-      // Navigera till startsidan med hash i state
-      navigate('/', { state: { scrollTo: hash } });
+    const isV2 = location.pathname === '/p2';
+    const basePath = isV2 ? '/p2' : '/';
+
+    if (location.pathname !== basePath) {
+      // Navigera till rätt version med hash i state
+      navigate(basePath, { state: { scrollTo: hash } });
     } else {
-      // Om vi redan är på startsidan, scrolla direkt
+      // Om vi redan är på rätt version, scrolla direkt
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
@@ -29,7 +32,7 @@ const Footer: React.FC = () => {
 
           <div className="space-y-6">
             <button
-              onClick={() => navigate('/')}
+              onClick={() => navigate(location.pathname === '/p2' ? '/p2' : '/')}
               className="font-serif text-2xl font-bold text-white hover:text-gold-400 transition-colors cursor-pointer text-left"
             >
               Lumina.
