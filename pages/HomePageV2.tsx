@@ -12,7 +12,7 @@ import ComparisonTable from '../components/ComparisonTable';
 import Reviews from '../components/Reviews';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
-import UrgencySection from '../components/UrgencySection';
+import UrgencySectionV2 from '../components/UrgencySectionV2';
 
 const HomePageV2: React.FC = () => {
     return (
@@ -28,7 +28,7 @@ const HomePageV2: React.FC = () => {
                 <ComparisonTable />
                 <Usage />
                 <TimelineV2 />
-                <UrgencySection />
+                <UrgencySectionV2 />
                 <Pricing />
                 <Reviews />
                 <FAQ />
