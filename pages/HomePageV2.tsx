@@ -10,7 +10,7 @@ import TimelineV2 from '../components/TimelineV2';
 import Pricing from '../components/Pricing';
 import ComparisonTable from '../components/ComparisonTable';
 import ReviewsV2 from '../components/ReviewsV2';
-import FAQ from '../components/FAQ';
+import FAQV2 from '../components/FAQV2';
 import Footer from '../components/Footer';
 import UrgencySectionV2 from '../components/UrgencySectionV2';
 
@@ -31,7 +31,7 @@ const HomePageV2: React.FC = () => {
                 <UrgencySectionV2 />
                 <Pricing />
                 <ReviewsV2 />
-                <FAQ />
+                <FAQV2 />
             </main>
             <Footer />
         </>
