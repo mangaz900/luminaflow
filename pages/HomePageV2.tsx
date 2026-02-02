@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroV2 from '../components/HeroV2';
-import ProblemSolution from '../components/ProblemSolution';
+import ProblemSolutionV2 from '../components/ProblemSolutionV2';
 import Benefits from '../components/Benefits';
 import Usage from '../components/Usage';
 import UserGalleryV2 from '../components/UserGalleryV2';
@@ -21,7 +21,7 @@ const HomePageV2: React.FC = () => {
                 {/* You can now edit this page independently for split testing */}
                 <HeroV2 />
                 <UserGalleryV2 />
-                <ProblemSolution />
+                <ProblemSolutionV2 />
                 <Benefits />
                 <Ingredients />
                 <RollOnApplicator />
