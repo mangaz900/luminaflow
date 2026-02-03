@@ -45,13 +45,13 @@ const HeroV2: React.FC<HeroV2Props> = ({
         },
         {
             id: 5,
-            src: "/fore-efter-1.jpg",
-            alt: "Före och efter resultat - Tjockare hår"
+            src: "/30.jpg",
+            alt: "Före och efter resultat - Manlig användare"
         },
         {
             id: 6,
-            src: "/fore-efter-2.jpg",
-            alt: "Före och efter resultat - Fylligare hår"
+            src: "/31.jpg",
+            alt: "Före och efter resultat - Manlig användare"
         }
     ];
 
