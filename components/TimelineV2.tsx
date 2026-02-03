@@ -15,7 +15,7 @@ const TimelineV2: React.FC = () => {
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start bg-medical-50 p-4 md:p-6 rounded-2xl border border-medical-100">
                         <div className="w-full md:w-48 lg:w-56 flex-shrink-0 order-1 md:order-1">
                             <img
-                                src="/timeline-manad-1-2.jpg"
+                                src="/35.jpg"
                                 alt="Månad 1-2 - Mindre shedding"
                                 className="w-full object-contain rounded-lg shadow-md"
                                 loading="lazy"
@@ -44,7 +44,7 @@ const TimelineV2: React.FC = () => {
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start bg-white p-4 md:p-6 rounded-2xl border border-gray-200 shadow-lg md:transform md:scale-105 z-10">
                         <div className="w-full md:w-48 lg:w-56 flex-shrink-0 order-1 md:order-1">
                             <img
-                                src="/timeline-manad-3-4.jpg"
+                                src="/36.jpg"
                                 alt="Månad 3-4 - Nya småhår & hårfäste/krona"
                                 className="w-full object-contain rounded-lg shadow-md"
                                 loading="lazy"
@@ -73,7 +73,7 @@ const TimelineV2: React.FC = () => {
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start bg-medical-50 p-4 md:p-6 rounded-2xl border border-medical-100">
                         <div className="w-full md:w-48 lg:w-56 flex-shrink-0 order-1 md:order-1">
                             <img
-                                src="/timeline-manad-5-6.jpg"
+                                src="/37.jpg"
                                 alt="Månad 5-6 - Synlig densitet"
                                 className="w-full object-contain rounded-lg shadow-md"
                                 loading="lazy"
