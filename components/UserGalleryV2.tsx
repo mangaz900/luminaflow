@@ -7,7 +7,7 @@ const UserGalleryV2: React.FC = () => {
     const userStories = [
         {
             id: 1,
-            image: "/kvinna-applicerar-1.jpg",
+            image: "/32.jpg",
             name: "Erik, 45",
             age: "Stockholm",
             rating: 5,
@@ -16,7 +16,7 @@ const UserGalleryV2: React.FC = () => {
         },
         {
             id: 2,
-            image: "/kvinna-applicerar-2.jpg",
+            image: "/33.jpg",
             name: "Johan, 38",
             age: "Göteborg",
             rating: 5,
@@ -25,7 +25,7 @@ const UserGalleryV2: React.FC = () => {
         },
         {
             id: 3,
-            image: "/kvinna-applicerar-3.jpg",
+            image: "/34.jpg",
             name: "Anders, 52",
             age: "Malmö",
             rating: 5,
