@@ -93,7 +93,7 @@ const ShoppingCart: React.FC = () => {
       .join('&');
 
     if (cartParams) {
-      window.location.href = `https://shop.luminahairpro.com/cart/add?${cartParams}&return_to=/cart`;
+      window.location.href = `https://shop.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
     } else {
       setIsLoading(false);
       alert('Kunde inte skapa kassan. Försök igen.');
