@@ -26,7 +26,7 @@ const FiveReasons65: React.FC = () => {
     }, []);
 
     const handleRedirect = () => {
-        window.location.href = 'https://luminahairpro.com/';
+        window.location.href = 'https://www.luminahairpro.com/';
     };
 
     return (
