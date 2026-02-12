@@ -77,23 +77,23 @@ const ShoppingCart: React.FC = () => {
       3: 6
     };
 
-    // Construct Cart Permalink
-    // Format: https://shop.luminahairpro.com/cart/{variant_id}:{quantity}
-    // Note: We currently calculate quantity based on bundle size (e.g. 3 bottles / 3 = 1 variant)
-    const cartItemsString = items
+    // Construct Add to Cart URL
+    // Format: https://shop.luminahairpro.com/cart/add?id=VARIANT_ID&quantity=QTY
+    // This format is more robust and works regardless of Shopify checkout settings
+    const cartParams = items
       .map(item => {
         const variantId = variantMap[item.id];
         const size = bundleSizes[item.id] || 1;
         const shopifyQty = Math.max(1, Math.round(item.quantity / size));
 
         if (!variantId) return null;
-        return `${variantId}:${shopifyQty}`;
+        return `items[][id]=${variantId}&items[][quantity]=${shopifyQty}`;
       })
       .filter(Boolean)
-      .join(',');
+      .join('&');
 
-    if (cartItemsString) {
-      window.location.href = `https://shop.luminahairpro.com/cart/${cartItemsString}`;
+    if (cartParams) {
+      window.location.href = `https://shop.luminahairpro.com/cart/add?${cartParams}&return_to=/cart`;
     } else {
       setIsLoading(false);
       alert('Kunde inte skapa kassan. Försök igen.');
