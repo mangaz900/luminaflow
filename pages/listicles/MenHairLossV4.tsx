@@ -15,7 +15,7 @@ const MenHairLossV4: React.FC = () => {
     }, []);
 
     const scrollToOffer = () => {
-        window.location.href = 'https://www.luminahairpro.com/';
+        window.location.href = 'https://www.luminahairpro.com/p2';
     };
 
     const RatingStars = () => (
