@@ -10,10 +10,10 @@ const SHOPIFY_API_VERSION = '2024-01';
  * Check if Shopify is configured
  */
 export function isShopifyConfigured() {
-  return SHOPIFY_STORE && 
-         SHOPIFY_STORE !== 'din-butik' &&
-         SHOPIFY_ACCESS_TOKEN && 
-         SHOPIFY_ACCESS_TOKEN !== 'shpat_placeholder';
+  return SHOPIFY_STORE &&
+    SHOPIFY_STORE !== 'din-butik' &&
+    SHOPIFY_ACCESS_TOKEN &&
+    SHOPIFY_ACCESS_TOKEN !== 'shpat_placeholder';
 }
 
 /**
@@ -25,13 +25,13 @@ export function getProductId(packageId) {
     2: process.env.SHOPIFY_PRODUCT_ID_2, // Behandlingskur (KÖP 3 BETALA FÖR 2)
     3: process.env.SHOPIFY_PRODUCT_ID_3, // Storpack (KÖP 3 FÅ 3 EXTRA)
   };
-  
+
   const productId = productMap[packageId];
-  
+
   if (!productId) {
     throw new Error(`No Shopify product ID found for package ${packageId}`);
   }
-  
+
   return productId;
 }
 
@@ -44,7 +44,7 @@ export async function getFirstVariantId(productId) {
   }
 
   const url = `https://${SHOPIFY_STORE}.myshopify.com/admin/api/${SHOPIFY_API_VERSION}/products/${productId}.json`;
-  
+
   try {
     const response = await fetch(url, {
       headers: {
@@ -59,11 +59,11 @@ export async function getFirstVariantId(productId) {
 
     const data = await response.json();
     const variant = data.product?.variants?.[0];
-    
+
     if (!variant) {
       throw new Error(`No variant found for product ${productId}`);
     }
-    
+
     return variant.id.toString();
   } catch (error) {
     console.error('Error fetching product variant:', error);
@@ -88,7 +88,7 @@ export async function createShopifyOrder(orderData) {
   }
 
   const url = `https://${SHOPIFY_STORE}.myshopify.com/admin/api/${SHOPIFY_API_VERSION}/orders.json`;
-  
+
   try {
     const response = await fetch(url, {
       method: 'POST',
@@ -106,7 +106,7 @@ export async function createShopifyOrder(orderData) {
           total_price: orderData.total_price,
           currency: orderData.currency || 'SEK',
           note: orderData.note || 'Order från custom checkout',
-          tags: 'custom-checkout,stripe',
+          tags: 'custom-checkout',
         },
       }),
     });
@@ -133,7 +133,7 @@ export async function updateShopifyOrder(orderId, financialStatus) {
   }
 
   const url = `https://${SHOPIFY_STORE}.myshopify.com/admin/api/${SHOPIFY_API_VERSION}/orders/${orderId}.json`;
-  
+
   try {
     const response = await fetch(url, {
       method: 'PUT',

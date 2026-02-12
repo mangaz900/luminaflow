@@ -15,14 +15,11 @@ export interface CartItem {
 interface CartContextType {
   items: CartItem[];
   isCartOpen: boolean;
-  isCheckoutOpen: boolean;
   addToCart: (item: CartItem) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
   openCart: () => void;
   closeCart: () => void;
-  openCheckout: () => void;
-  closeCheckout: () => void;
   clearCart: () => void;
   getTotalPrice: () => number;
   getTotalItems: () => number;
@@ -33,7 +30,6 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   const addToCart = (item: CartItem) => {
     setItems([item]);
@@ -81,20 +77,6 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
-  const openCheckout = () => {
-    setIsCartOpen(false);
-    setIsCheckoutOpen(true);
-
-    // Track InitiateCheckout
-    trackEvent('InitiateCheckout', {
-      content_ids: items.map(item => item.id),
-      content_type: 'product',
-      value: getTotalPrice(),
-      currency: 'SEK',
-      num_items: getTotalItems(),
-    });
-  };
-  const closeCheckout = () => setIsCheckoutOpen(false);
   const clearCart = () => setItems([]);
 
   const getTotalPrice = () => {
@@ -109,14 +91,11 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     <CartContext.Provider value={{
       items,
       isCartOpen,
-      isCheckoutOpen,
       addToCart,
       removeFromCart,
       updateQuantity,
       openCart,
       closeCart,
-      openCheckout,
-      closeCheckout,
       clearCart,
       getTotalPrice,
       getTotalItems,

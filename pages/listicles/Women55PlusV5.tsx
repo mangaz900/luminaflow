@@ -17,7 +17,7 @@ const Women55PlusV5: React.FC = () => {
     }, []);
 
     const scrollToOffer = () => {
-        window.location.href = 'https://www.hairscanpro.com/';
+        window.location.href = 'https://luminahairpro.com/';
     };
 
     return (

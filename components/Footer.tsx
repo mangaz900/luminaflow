@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-medium text-lg mb-6">Hjälp</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="https://shop.hairscanpro.com/pages/contact" className="hover:text-gold-400 transition-colors">Kontakta oss</a></li>
+              <li><a href="https://shop.luminahairpro.com/pages/contact" className="hover:text-gold-400 transition-colors">Kontakta oss</a></li>
               <li><Link to="/returpolicy" className="hover:text-gold-400 transition-colors">Frakt & Retur</Link></li>
               <li><button onClick={() => handleNavClick('#faq')} className="hover:text-gold-400 transition-colors text-left">FAQ</button></li>
               <li><Link to="/5-anledningar-hair-growth-roll-on" className="hover:text-gold-400 transition-colors">5 Anledningar</Link></li>

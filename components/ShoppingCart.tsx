@@ -65,9 +65,9 @@ const ShoppingCart: React.FC = () => {
 
     // Map internal IDs to Shopify Variant IDs (Verified via Shopify API)
     const variantMap: Record<number, string> = {
-      1: '52853942485256', // Startpaket
-      2: '52853943501064', // Behandlingskur
-      3: '52853944090888', // Storpack
+      1: '15942117753167', // Startpaket
+      2: '15942117687631', // Behandlingskur
+      3: '15942117622095', // Storpack
     };
 
     // Bundle sizes (bottle count per package id)
@@ -78,7 +78,7 @@ const ShoppingCart: React.FC = () => {
     };
 
     // Construct Cart Permalink
-    // Format: https://shop.hairscanpro.com/cart/{variant_id}:{quantity}
+    // Format: https://shop.luminahairpro.com/cart/{variant_id}:{quantity}
     // Note: We currently calculate quantity based on bundle size (e.g. 3 bottles / 3 = 1 variant)
     const cartItemsString = items
       .map(item => {
@@ -93,7 +93,7 @@ const ShoppingCart: React.FC = () => {
       .join(',');
 
     if (cartItemsString) {
-      window.location.href = `https://shop.hairscanpro.com/cart/${cartItemsString}`;
+      window.location.href = `https://shop.luminahairpro.com/cart/${cartItemsString}`;
     } else {
       setIsLoading(false);
       alert('Kunde inte skapa kassan. Försök igen.');

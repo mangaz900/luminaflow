@@ -34,7 +34,7 @@ const ContactPage: React.FC = () => {
     });
 
     // Simulera formulärskickning (här kan du lägga till riktig backend-integration, t.ex. Formspree)
-    // Destination: malin@hairscanpro.com
+    // Destination: malin@luminahairpro.com
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
@@ -84,8 +84,8 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-medical-900 mb-1">E-post</h3>
-                  <a href="mailto:malin@hairscanpro.com" className="text-gray-600 hover:text-medical-900 transition-colors">
-                    malin@hairscanpro.com
+                  <a href="mailto:malin@luminahairpro.com" className="text-gray-600 hover:text-medical-900 transition-colors">
+                    malin@luminahairpro.com
                   </a>
                 </div>
               </div>
@@ -131,7 +131,7 @@ const ContactPage: React.FC = () => {
                 Besök vår FAQ →
               </Link>
               <a
-                href="https://shop.hairscanpro.com/pages/contact"
+                href="https://shop.luminahairpro.com/pages/contact"
                 className="text-medical-900 hover:text-medical-700 font-medium text-sm underline"
               >
                 Gå till Shopify Kontaktformulär →
