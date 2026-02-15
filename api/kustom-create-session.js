@@ -27,7 +27,8 @@ export default async function handler(req, res) {
         const apiKey = process.env.KUSTOM_API_KEY || 'kco_live_api_3Nilgw7SbYq6nemDNg7hHJuV4EC9KNcG';
 
         // Create Basic Auth header
-        const authString = Buffer.from(`${keyId}:${apiKey}`).toString('base64');
+        // Try format: apiKey as username, empty password (common for some APIs)
+        const authString = Buffer.from(`${apiKey}:`).toString('base64');
 
         // Prepare order data for Kustom
         const kustomOrderData = {
