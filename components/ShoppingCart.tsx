@@ -5,7 +5,6 @@ import { useCart } from '../contexts/CartContext';
 import { trackBeginCheckout } from '../services/analytics';
 import { trackTikTokInitiateCheckout } from '../services/tiktokPixel';
 import { trackEvent } from '../services/pixel';
-import { KustomCheckout } from './KustomCheckout';
 
 const ShoppingCart: React.FC = () => {
   const navigate = useNavigate();
@@ -19,13 +18,11 @@ const ShoppingCart: React.FC = () => {
     getTotalItems
   } = useCart();
   const [isLoading, setIsLoading] = React.useState(false);
-  const [showKustomCheckout, setShowKustomCheckout] = React.useState(false);
 
   // Reset loading state when cart is opened/closed to prevent getting stuck
   React.useEffect(() => {
     if (!isCartOpen) {
       setIsLoading(false);
-      setShowKustomCheckout(false);
     }
   }, [isCartOpen]);
 
@@ -64,8 +61,43 @@ const ShoppingCart: React.FC = () => {
       num_items: getTotalItems(),
     });
 
-    // Open Kustom Checkout modal
-    setShowKustomCheckout(true);
+    setIsLoading(true);
+
+    // Map internal IDs to Shopify Variant IDs (Verified via Shopify API)
+    const variantMap: Record<number, string> = {
+      1: '57010167480655', // Startpaket
+      2: '57010167316815', // Behandlingskur
+      3: '57010167152975', // Storpack
+    };
+
+    // Bundle sizes (bottle count per package id)
+    const bundleSizes: Record<number, number> = {
+      1: 1,
+      2: 3,
+      3: 6
+    };
+
+    // Construct Add to Cart URL
+    // Format: https://shop.luminahairpro.com/cart/add?id=VARIANT_ID&quantity=QTY
+    // This format is more robust and works regardless of Shopify checkout settings
+    const cartParams = items
+      .map(item => {
+        const variantId = variantMap[item.id];
+        const size = bundleSizes[item.id] || 1;
+        const shopifyQty = Math.max(1, Math.round(item.quantity / size));
+
+        if (!variantId) return null;
+        return `items[][id]=${variantId}&items[][quantity]=${shopifyQty}`;
+      })
+      .filter(Boolean)
+      .join('&');
+
+    if (cartParams) {
+      window.location.href = `https://shop.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
+    } else {
+      setIsLoading(false);
+      alert('Kunde inte skapa kassan. Försök igen.');
+    }
   };
 
   if (!isCartOpen) return null;
@@ -196,19 +228,6 @@ const ShoppingCart: React.FC = () => {
           )}
         </div>
       </div>
-
-      {/* Kustom Checkout Modal */}
-      {showKustomCheckout && (
-        <KustomCheckout
-          items={items.map(item => ({
-            id: item.id,
-            name: item.title,
-            price: item.price / item.quantity,
-            quantity: item.quantity,
-          }))}
-          onClose={() => setShowKustomCheckout(false)}
-        />
-      )}
     </>
   );
 };
