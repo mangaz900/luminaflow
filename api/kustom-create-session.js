@@ -65,9 +65,10 @@ export default async function handler(req, res) {
             };
         }
 
-        // Call Kustom API to create payment session
+        // Call Kustom API to create checkout session
+        // Using Kustom Checkout v3 API
         const kustomApiUrl = process.env.KUSTOM_API_URL || 'https://api.kustom.co';
-        const response = await fetch(`${kustomApiUrl}/payments/v1/authorizations/`, {
+        const response = await fetch(`${kustomApiUrl}/checkout/v3/orders`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
