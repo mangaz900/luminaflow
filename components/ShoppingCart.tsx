@@ -63,23 +63,38 @@ const ShoppingCart: React.FC = () => {
 
     setIsLoading(true);
 
-    // Map internal IDs to Shopify Product IDs (Updated 2026-02-17)
-    const productMap: Record<number, string> = {
-      1: '10609008443656', // Startpaket
-      2: '10609009328392', // Behandlingskur
-      3: '10609009950984', // Storpack
+    // Map internal IDs to Shopify Variant IDs (Correct IDs from try.luminahairpro.com)
+    const variantMap: Record<number, string> = {
+      1: '52853942485256', // Startpaket
+      2: '52853943501064', // Behandlingskur
+      3: '52853944090888', // Storpack
     };
 
-    // Construct Shopify product URL (using product handle instead)
-    const item = items[0]; // Get first item
-    const productId = productMap[item.id];
+    // Bundle sizes (bottle count per package id)
+    const bundleSizes: Record<number, number> = {
+      1: 1,
+      2: 3,
+      3: 6
+    };
 
-    if (productId) {
-      // Redirect directly to Shopify product page with quantity
-      window.location.href = `https://try.luminahairpro.com/products/${productId}?quantity=${item.quantity}`;
+    // Construct Add to Cart URL
+    const cartParams = items
+      .map(item => {
+        const variantId = variantMap[item.id];
+        const size = bundleSizes[item.id] || 1;
+        const shopifyQty = Math.max(1, Math.round(item.quantity / size));
+
+        if (!variantId) return null;
+        return `items[][id]=${variantId}&items[][quantity]=${shopifyQty}`;
+      })
+      .filter(Boolean)
+      .join('&');
+
+    if (cartParams) {
+      window.location.href = `https://try.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
     } else {
       setIsLoading(false);
-      alert('Kunde inte hitta produkten. Försök igen.');
+      alert('Kunde inte skapa kassan. Försök igen.');
     }
   };
 
