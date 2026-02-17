@@ -33,14 +33,15 @@ export default async function handler(req, res) {
         const orderId = `LHP-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
         // Prepare payment data
+        const baseUrl = 'https://www.luminahairpro.com';
         const paymentData = {
             amount: {
                 currency: 'SEK',
                 value: orderTotal.toFixed(2),
             },
             description: `Lumina Hair Pro - Order ${orderId}`,
-            redirectUrl: `${process.env.VERCEL_URL || 'https://www.luminahairpro.com'}/payment-success?order_id=${orderId}`,
-            webhookUrl: `${process.env.VERCEL_URL || 'https://www.luminahairpro.com'}/api/mollie-webhook`,
+            redirectUrl: `${baseUrl}/payment-success?order_id=${orderId}`,
+            webhookUrl: `${baseUrl}/api/mollie-webhook`,
             locale: 'sv_SE',
             metadata: {
                 order_id: orderId,
@@ -49,6 +50,12 @@ export default async function handler(req, res) {
                 customer_name: customerInfo?.name || '',
             },
         };
+
+        console.log('Creating Mollie payment with data:', {
+            amount: paymentData.amount,
+            description: paymentData.description,
+            orderId: orderId,
+        });
 
         // Create payment
         const payment = await mollieClient.payments.create(paymentData);
@@ -64,9 +71,15 @@ export default async function handler(req, res) {
 
     } catch (error) {
         console.error('Error creating Mollie payment:', error);
+        console.error('Error details:', {
+            message: error.message,
+            stack: error.stack,
+            response: error.response?.data,
+        });
         return res.status(500).json({
             error: 'Failed to create payment',
             message: error.message,
+            details: error.response?.data || 'No additional details',
         });
     }
 }
