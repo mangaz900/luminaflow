@@ -37,6 +37,7 @@ import HomePageV2 from './pages/HomePageV2';
 import MenHairLossV3 from './pages/listicles/MenHairLossV3';
 import MenHairLossV4 from './pages/listicles/MenHairLossV4';
 import MenHairLossV5 from './pages/listicles/MenHairLossV5';
+import PaymentSuccess from './pages/PaymentSuccess';
 import { initPixel, pageView } from './services/pixel';
 import { initGA4, trackPageView } from './services/analytics';
 
@@ -92,6 +93,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/order-success" element={<OrderSuccess />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
           <Route path="/anvandarvillkor" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
