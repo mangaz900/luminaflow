@@ -63,11 +63,11 @@ const ShoppingCart: React.FC = () => {
 
     setIsLoading(true);
 
-    // Map internal IDs to Shopify Variant IDs (Verified via Shopify API)
+    // Map internal IDs to Shopify Variant IDs (Updated 2026-02-17)
     const variantMap: Record<number, string> = {
-      1: '57010167480655', // Startpaket
-      2: '57010167316815', // Behandlingskur
-      3: '57010167152975', // Storpack
+      1: '10609008443656', // Startpaket
+      2: '10609009328392', // Behandlingskur
+      3: '10609009950984', // Storpack
     };
 
     // Bundle sizes (bottle count per package id)
@@ -78,7 +78,7 @@ const ShoppingCart: React.FC = () => {
     };
 
     // Construct Add to Cart URL
-    // Format: https://shop.luminahairpro.com/cart/add?id=VARIANT_ID&quantity=QTY
+    // Format: https://try.luminahairpro.com/cart/add?id=VARIANT_ID&quantity=QTY
     // This format is more robust and works regardless of Shopify checkout settings
     const cartParams = items
       .map(item => {
@@ -93,7 +93,7 @@ const ShoppingCart: React.FC = () => {
       .join('&');
 
     if (cartParams) {
-      window.location.href = `https://shop.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
+      window.location.href = `https://try.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
     } else {
       setIsLoading(false);
       alert('Kunde inte skapa kassan. Försök igen.');
