@@ -14,6 +14,7 @@ const ShoppingCart: React.FC = () => {
     closeCart,
     removeFromCart,
     updateQuantity,
+    clearCart,
     getTotalPrice,
     getTotalItems
   } = useCart();
