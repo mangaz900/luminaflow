@@ -91,8 +91,6 @@ const ShoppingCart: React.FC = () => {
       .join('&');
 
     if (cartParams) {
-      // Clear local cart before redirecting to Shopify
-      clearCart();
       // Redirect to Shopify checkout
       window.location.href = `https://try.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
     } else {
