@@ -14,7 +14,6 @@ const ShoppingCart: React.FC = () => {
     closeCart,
     removeFromCart,
     updateQuantity,
-    clearCart,
     getTotalPrice,
     getTotalItems
   } = useCart();
@@ -92,25 +91,10 @@ const ShoppingCart: React.FC = () => {
       .join('&');
 
     if (cartParams) {
-      // Clear local cart
+      // Clear local cart before redirecting to Shopify
       clearCart();
-
-      // Build cart update URL that replaces the entire cart
-      // Format: /cart/update?updates[VARIANT_ID]=QUANTITY
-      const updateParams = items
-        .map(item => {
-          const variantId = variantMap[item.id];
-          const size = bundleSizes[item.id] || 1;
-          const shopifyQty = Math.max(1, Math.round(item.quantity / size));
-
-          if (!variantId) return null;
-          return `updates[${variantId}]=${shopifyQty}`;
-        })
-        .filter(Boolean)
-        .join('&');
-
-      // First clear cart, then add items
-      window.location.href = `https://try.luminahairpro.com/cart/clear.js?${updateParams}&return_to=/cart/add?${cartParams}&return_to=/checkout`;
+      // Redirect to Shopify checkout
+      window.location.href = `https://try.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
     } else {
       setIsLoading(false);
       alert('Kunde inte skapa kassan. Försök igen.');
