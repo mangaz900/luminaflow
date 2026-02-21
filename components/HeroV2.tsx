@@ -226,12 +226,21 @@ const HeroV2: React.FC<HeroV2Props> = ({
                                     <Truck size={18} /> Gratis frakt
                                 </span>
                                 <span className="flex items-center gap-1.5">
-                                    <Package size={18} /> Diskret leverans
+                                    <Package size={18} /> 2-7 dagar leverans
                                 </span>
                                 <span className="flex items-center gap-1.5">
                                     <RefreshCw size={18} /> 90 dagars garanti
                                 </span>
                             </div>
+
+                            {/* Klarna Banner */}
+                            <div className="mt-4 flex items-center justify-between bg-[#FFB3C7] px-5 py-3 rounded-xl">
+                                <span className="font-bold text-black text-sm">Köp nu. Betala senare Klarna.</span>
+                                <span className="bg-black text-white text-xs font-bold px-3 py-1.5 rounded-md tracking-tight">Klarna.</span>
+                            </div>
+
+                            {/* Urgency */}
+                            <p className="mt-3 text-center text-[#DC2626] font-semibold text-sm">Få kvar i lager!</p>
                         </div>
                     </div>
 
