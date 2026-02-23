@@ -91,8 +91,23 @@ const ShoppingCart: React.FC = () => {
       .join('&');
 
     if (cartParams) {
-      // Redirect to Shopify checkout
-      window.location.href = `https://try.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout`;
+      // Read Facebook cookies for cross-domain tracking
+      const getCookie = (name: string) => {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+      };
+      const fbc = getCookie('_fbc');
+      const fbp = getCookie('_fbp');
+
+      // Build extra params for Facebook cross-domain tracking
+      const fbParams = [
+        fbc ? `_fbc=${encodeURIComponent(fbc)}` : null,
+        fbp ? `_fbp=${encodeURIComponent(fbp)}` : null,
+      ].filter(Boolean).join('&');
+
+      // Redirect to Shopify checkout with Facebook cookies passed as URL params
+      const shopifyUrl = `https://try.luminahairpro.com/cart/add?${cartParams}&return_to=/checkout${fbParams ? `&${fbParams}` : ''}`;
+      window.location.href = shopifyUrl;
     } else {
       setIsLoading(false);
       alert('Kunde inte skapa kassan. Försök igen.');
