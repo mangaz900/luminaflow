@@ -1,6 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { X, Settings, Check } from 'lucide-react';
 
+const CONSENT_KEY = 'cookieConsent';
+
+// Sparar cookie på root-domänen så att try.luminahairpro.com kan läsa den
+function setRootDomainCookie(name: string, value: string, maxAgeSeconds = 31536000) {
+  const encoded = encodeURIComponent(value);
+  document.cookie = `${name}=${encoded}; domain=.luminahairpro.com; path=/; max-age=${maxAgeSeconds}; SameSite=Lax`;
+}
+
+function getCookieValue(name: string): string | null {
+  const m = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))
+  return m ? decodeURIComponent(m[1]) : null;
+}
+
+// Läser från localStorage, faller tillbaka på cookie (för subdomäner)
+function readConsent(): any | null {
+  try {
+    const ls = localStorage.getItem(CONSENT_KEY);
+    if (ls) return JSON.parse(ls);
+    const c = getCookieValue(CONSENT_KEY);
+    if (c) return JSON.parse(c);
+  } catch { /* ignore */ }
+  return null;
+}
+
 const CookieConsent: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -11,46 +35,37 @@ const CookieConsent: React.FC = () => {
   });
 
   useEffect(() => {
-    // Kolla om användaren redan har gjort ett val
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
+    const savedPrefs = readConsent();
+    if (!savedPrefs) {
       setShowBanner(true);
     } else {
-      // Ladda sparade preferenser
       try {
-        const savedPrefs = JSON.parse(consent);
         setPreferences(savedPrefs);
-
-        // GDPR: Load tracking if user has previously consented
         if (savedPrefs.analytics) {
           import('../services/analytics').then(({ initGA4 }) => {
             initGA4();
-            console.log('✅ Google Analytics laddad från sparad consent');
           });
-
           import('../services/tiktokPixel').then(({ initTikTokPixel }) => {
             initTikTokPixel();
-            console.log('✅ TikTok Pixel laddad från sparad consent');
           });
-
-          // Initialize Facebook Pixel
           import('../services/pixel').then(({ initPixel, pageView }) => {
             initPixel();
-            // Track initial PageView with eventID for proper deduplication
             setTimeout(() => pageView(), 100);
-            console.log('✅ Facebook Pixel laddad från sparad consent');
           });
         }
       } catch (e) {
-        // Om parsing misslyckas, visa banner igen
         setShowBanner(true);
       }
     }
   }, []);
 
   const savePreferences = (prefs: typeof preferences) => {
-    localStorage.setItem('cookieConsent', JSON.stringify(prefs));
+    const json = JSON.stringify(prefs);
+    // Spara i localStorage (frontend)
+    localStorage.setItem(CONSENT_KEY, json);
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
+    // Spara som cookie på root-domänen (delas med try.luminahairpro.com)
+    setRootDomainCookie(CONSENT_KEY, json);
     setShowBanner(false);
     setShowSettings(false);
 
