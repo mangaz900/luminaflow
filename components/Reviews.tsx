@@ -3,147 +3,18 @@ import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Review } from '../types';
 
 const reviews: Review[] = [
-  {
-    id: 1,
-    name: "Lena, 58, Göteborg",
-    rating: 5,
-    comment: "Jag är 58. Efter klimakteriet tappade jag 60% av mitt hår på 3 år. Läkaren sa det var 'normalt' men kunde inte hjälpa. Efter 10 veckor med Lumina ser jag babyhår ÖVERALLT. För första gången på år känner jag mig som mig själv igen.",
-    avatar: ""
-  },
-  {
-    id: 2,
-    name: "Maria, 62, Stockholm",
-    rating: 5,
-    comment: "Jag väntade 4 år efter menopaus innan jag agerade. Trodde det skulle gå över. Men det blev bara värre. Efter 12 veckor med Lumina är min bena dubbelt så smal. Önskar jag hade börjat tidigare.",
-    avatar: ""
-  },
-  {
-    id: 3,
-    name: "Karin, 54, Malmö",
-    rating: 5,
-    comment: "Min frisör märkte skillnaden efter 8 veckor — innan JAG ens sa något. 'Vad har du gjort? Det är så mycket nytt hår!' Det var det bästa jag hört på år.",
-    avatar: ""
-  },
-  {
-    id: 4,
-    name: "Anna, 44",
-    rating: 5,
-    comment: "Efter min graviditet tappade jag så mycket hår. Lumina har varit min räddning. Efter 2 månader började jag se resultat och nu efter 4 månader är håret betydligt tjockare.",
-    avatar: ""
-  },
-  {
-    id: 5,
-    name: "Birgitta, 56, Uppsala",
-    rating: 5,
-    comment: "Efter klimakteriet blev håret så tunt att jag skämdes. Lumina har gett mig tillbaka mitt självförtroende. Efter 5 månader ser jag faktiskt resultat i spegeln nu.",
-    avatar: ""
-  },
-  {
-    id: 6,
-    name: "Eva, 51, Linköping",
-    rating: 5,
-    comment: "Klimakteriet tog verkligen på mitt hår. Jag var desperat när jag hittade Lumina. Nu, efter 3 månader, ser jag faktiskt nytt hår växa ut. Det är fantastiskt!",
-    avatar: ""
-  },
-  {
-    id: 7,
-    name: "Sara, 39",
-    rating: 5,
-    comment: "Efter min andra graviditet tappade jag hår i handfullar. Lumina har gett mig hopp igen. Efter 5 månader ser jag tydlig förbättring och håret känns starkare.",
-    avatar: ""
-  },
-  {
-    id: 8,
-    name: "Ingrid, 59, Västerås",
-    rating: 5,
-    comment: "Jag trodde att det bara var åldern som gjorde att håret tunnades efter menopaus. Men Lumina har bevisat att det finns hopp. Min hårbotten är mycket tätare nu.",
-    avatar: ""
-  },
-  {
-    id: 9,
-    name: "Monica, 43",
-    rating: 5,
-    comment: "Stress på jobbet gjorde att jag tappade så mycket hår. Lumina har varit min räddning. Nu tappar jag nästan inget hår alls och ser nytt hår växa.",
-    avatar: ""
-  },
-  {
-    id: 10,
-    name: "Helena, 47",
-    rating: 4,
-    comment: "Bra produkt, enkel att använda. Ser lite förbättring efter 2 månader. Fortsätter att använda för att se mer resultat.",
-    avatar: ""
-  },
-  {
-    id: 11,
-    name: "Kristina, 53, Örebro",
-    rating: 5,
-    comment: "Jag har använt Lumina i 6 månader nu och skillnaden är enorm. Efter klimakteriet tappade jag så mycket hår. Min frisör frågade vad jag gjort - håret är så mycket tjockare!",
-    avatar: ""
-  },
-  {
-    id: 12,
-    name: "Marianne, 57, Helsingborg",
-    rating: 5,
-    comment: "Efter menopaus blev håret så tunt. Läkaren sa 'normalt vid din ålder' men erbjud ingen lösning. Lumina har gett mig tillbaka mitt självförtroende. Jag ser faktiskt resultat i spegeln nu.",
-    avatar: ""
-  },
-  {
-    id: 13,
-    name: "Camilla, 41",
-    rating: 5,
-    comment: "Amning tog verkligen på mitt hår. Lumina har hjälpt mig att få tillbaka håret. Efter 4 månader är skillnaden tydlig.",
-    avatar: ""
-  },
-  {
-    id: 14,
-    name: "Petra, 45",
-    rating: 4,
-    comment: "Fungerar bra, men det tar tid att se resultat. Efter 3 månader börjar jag se förbättring. Rekommenderar att vara tålmodig.",
-    avatar: ""
-  },
-  {
-    id: 15,
-    name: "Gunilla, 60, Lund",
-    rating: 5,
-    comment: "Jag har provat så många produkter efter klimakteriet men inget hjälpte. Lumina är den första som faktiskt fungerar. Håret känns levande igen!",
-    avatar: ""
-  },
-  {
-    id: 16,
-    name: "Elisabeth, 46",
-    rating: 5,
-    comment: "Perfekt för min vardag - tar bara en minut. Efter 3 månader ser jag små strån växa ut vid tinningarna. Så glad att jag hittade detta!",
-    avatar: ""
-  },
-  {
-    id: 17,
-    name: "Annika, 55, Umeå",
-    rating: 5,
-    comment: "Min hårbotten var så tunn efter menopaus att jag skämdes. Nu, efter 5 månader med Lumina, täcker håret mycket bättre. Jag känner mig som mig själv igen.",
-    avatar: ""
-  },
-  {
-    id: 18,
-    name: "Louise, 42",
-    rating: 5,
-    comment: "Efter min tredje graviditet tappade jag massor av hår. Lumina har varit fantastisk. Håret är nu betydligt tjockare än förut.",
-    avatar: ""
-  },
-  {
-    id: 19,
-    name: "Katarina, 48",
-    rating: 4,
-    comment: "Bra produkt, men resultatet tar tid. Efter 4 månader ser jag lite förbättring. Fortsätter att använda och hoppas på mer resultat.",
-    avatar: ""
-  },
-  {
-    id: 20,
-    name: "Jenny, 44",
-    rating: 5,
-    comment: "Jag var så skeptisk men Lumina har överträffat mina förväntningar. Efter 3 månader ser jag tydlig förbättring. Bästa köpet jag gjort!",
-    avatar: ""
-  }
+  { id: 1, name: "Sofia, 42, Stockholm", rating: 5, comment: "Efter 3 veckor kände jag en tydlig fasthet på låren. Vecka 5 såg min man skillnaden utan att jag sa något. Jag är imponerad.", avatar: "" },
+  { id: 2, name: "Maria, 38, Göteborg", rating: 5, comment: "Jag har provat massageroller, krämer och allt möjligt. LuminaFlow är det enda som faktiskt verkar fungera på strukturen. Huden ser märkbart jämnare ut.", avatar: "" },
+  { id: 3, name: "Karin, 55, Malmö", rating: 5, comment: "Värvärmen och vakuumkänslan är behaglig. Inte smärtsamt alls, bara en mjuk drag-känsla. Ser resultat efter 4 veckor.", avatar: "" },
+  { id: 4, name: "Anna, 47, Uppsala", rating: 5, comment: "Använder den 3 gånger i veckan som rekommenderat. Redan vecka 3 kunde jag se att huden blivit fastare. Mycket nöjd.", avatar: "" },
+  { id: 5, name: "Petra, 33", rating: 4, comment: "Tar tid, men man ser skillnad. Jag märkte förbättringar runt vecka 4. Designen är snygg och enkel att använda.", avatar: "" },
+  { id: 6, name: "Lena, 50, Helsingborg", rating: 5, comment: "Har haft celluliter sen tonåren. Inget har fungerat. LuminaFlow gav mig synliga resultat för första gången. Jag är chockad och glad.", avatar: "" },
+  { id: 7, name: "Emma, 44", rating: 5, comment: "Otroligt enkel att använda. 10 minuter på låren och sedan klart. Huden känns stramare direkt efter och över tid ser man tydlig förbättring.", avatar: "" },
+  { id: 8, name: "Åsa, 39, Linköping", rating: 5, comment: "Begriplig logik bakom produkten. Den jobbar med strukturen, inte bara ytan. Det ger mig förtroende och resultaten bekräftar det.", avatar: "" },
+  { id: 9, name: "Cecilia, 46", rating: 5, comment: "Värmefunktionen är underbar. Huden känns varmare och lösare efter behandling. Ser resultat efter 5 veckor kontinuerlig användning.", avatar: "" },
+  { id: 10, name: "Ulrika, 52, Västerås", rating: 4, comment: "Bra produkt med tydlig känsla av att strukturen påverkas. Märker förbättring efter 4 veckor. Skulle önska lite snabbare resultat men förstår att det tar tid.", avatar: "" },
 ];
+
 
 const Reviews: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -297,8 +168,8 @@ const Reviews: React.FC = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`transition-all duration-300 rounded-full ${currentIndex === index
-                  ? 'w-6 h-1.5 bg-medical-900'
-                  : 'w-1.5 h-1.5 bg-gray-300 hover:bg-medical-400'
+                ? 'w-6 h-1.5 bg-medical-900'
+                : 'w-1.5 h-1.5 bg-gray-300 hover:bg-medical-400'
                 }`}
               aria-label={`Gå till recension ${index + 1}`}
             />

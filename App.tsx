@@ -4,22 +4,20 @@ import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProblemSolution from './components/ProblemSolution';
-import Benefits from './components/Benefits';
-import Usage from './components/Usage';
-import UserGallery from './components/UserGallery';
-import Ingredients from './components/Ingredients';
-import RollOnApplicator from './components/RollOnApplicator';
-import Timeline from './components/Timeline';
-import Pricing from './components/Pricing';
+import VideoSection from './components/VideoSection';
+import SolutionSection from './components/SolutionSection';
+import ExpertSection from './components/ExpertSection';
 import ComparisonTable from './components/ComparisonTable';
-import AIConsultant from './components/AIConsultant';
+import Usage from './components/Usage';
+import Timeline from './components/Timeline';
 import Reviews from './components/Reviews';
 import FAQ from './components/FAQ';
+import GuaranteeSection from './components/GuaranteeSection';
+import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 import OrderSuccess from './components/OrderSuccess';
 import CookieConsent from './components/CookieConsent';
-import UrgencySection from './components/UrgencySection';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
@@ -41,23 +39,51 @@ import PaymentSuccess from './pages/PaymentSuccess';
 import { initPixel, pageView } from './services/pixel';
 import { initGA4, trackPageView } from './services/analytics';
 
+// ─────────────────────────────────────────────
+// LuminaFlow 360 – Ny startsida
+// Sektion-ordning: Hero → Problem → Lösning → Expert
+// → Jämförelse → Användning → Resultat-timeline
+// → Recensioner → FAQ → Garanti → Final CTA
+// ─────────────────────────────────────────────
 const HomePage: React.FC = () => {
   return (
     <>
       <main className="overflow-x-hidden">
+        {/* 1. Hero – produkt + paketval + köpknapp */}
         <Hero />
-        <UserGallery />
+
+        {/* 1b. Videogalleri */}
+        <VideoSection />
+
+        {/* 2. Problemet – djupare strukturell förklaring */}
         <ProblemSolution />
-        <Benefits />
-        <Ingredients />
-        <RollOnApplicator />
+
+        {/* 3. Lösningen – 4 teknikblock */}
+        <SolutionSection />
+
+        {/* 4. Expertperspektiv – citat + statistik */}
+        <ExpertSection />
+
+        {/* 5. Differentiering – 3-kolumns jämförelse */}
         <ComparisonTable />
+
+        {/* 6. Användning – 3 steg */}
         <Usage />
+
+        {/* 7. Resultat-timeline – vecka 1–6+ */}
         <Timeline />
-        <UrgencySection />
-        <Pricing />
+
+        {/* 8. Recensioner */}
         <Reviews />
+
+        {/* 9. FAQ */}
         <FAQ />
+
+        {/* 10. Garanti */}
+        <GuaranteeSection />
+
+        {/* 11. Final CTA – paketval + köpknapp */}
+        <FinalCTA />
       </main>
       <Footer />
     </>

@@ -1,107 +1,37 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Clock, AlertTriangle } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 const UrgencySection: React.FC = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-
-    const handleScrollToPricing = (e?: React.MouseEvent) => {
-        if (e) {
-            e.preventDefault();
-        }
-        if (location.pathname !== '/') {
-            navigate('/', { state: { scrollTo: '#erbjudande' } });
-        } else {
-            setTimeout(() => {
-                const element = document.querySelector('#erbjudande');
-                if (element) {
-                    const yOffset = -80; // Offset för fixed navbar
-                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-            }, 50);
-        }
-    };
-
     return (
-        <section className="py-12 md:py-20 bg-gradient-to-b from-red-50 to-white border-t border-red-100">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8 md:mb-12">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
-                        <Clock className="w-8 h-8 text-red-600" />
-                    </div>
-                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-medical-900 mb-4 md:mb-6 leading-tight">
-                        Varje månad efter klimakteriet = färre aktiva folliklar
-                    </h2>
-                </div>
-
-                <div className="bg-white rounded-2xl p-6 md:p-10 shadow-lg border border-gray-200 mb-8">
-                    <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 text-center">
-                        Hårsäckar som varit i telogen-fas (viloläge) efter klimakteriet:
-                    </p>
-
-                    <div className="space-y-4 mb-8">
-                        <div className="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-200">
-                            <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                ✓
-                            </div>
-                            <div className="flex-1">
-                                <p className="font-bold text-medical-900 mb-1">0-6 månader</p>
-                                <p className="text-sm text-gray-600">Lättast att aktivera</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-start gap-4 p-4 bg-yellow-50 rounded-xl border border-yellow-200">
-                            <div className="flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                !
-                            </div>
-                            <div className="flex-1">
-                                <p className="font-bold text-medical-900 mb-1">6-12 månader</p>
-                                <p className="text-sm text-gray-600">Svårare, men möjligt</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-start gap-4 p-4 bg-orange-50 rounded-xl border border-orange-200">
-                            <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                !!
-                            </div>
-                            <div className="flex-1">
-                                <p className="font-bold text-medical-900 mb-1">12-24 månader</p>
-                                <p className="text-sm text-gray-600">Mycket svårt</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-200">
-                            <div className="flex-shrink-0 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                !!!
-                            </div>
-                            <div className="flex-1">
-                                <p className="font-bold text-medical-900 mb-1">24+ månader</p>
-                                <p className="text-sm text-gray-600">Extremt svårt (men inte omöjligt)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-medical-50 p-6 rounded-xl border border-medical-200">
-                        <p className="text-base md:text-lg text-medical-900 leading-relaxed text-center font-medium">
-                            Ju längre en hårsäck varit inaktiv → desto mer fibros (ärrväv) bildas runt roten → desto svårare att väcka.
-                            <br /><br />
-                            <span className="text-medical-700">Ju tidigare du agerar efter klimakteriet → desto fler folliklar kan räddas.</span>
-                            <br /><br />
-                            <span className="text-red-600 font-bold">Tidsfönstret stänger. Men det är inte stängt ÄN.</span>
-                        </p>
+        <section className="py-24 bg-[#EDE6DF]">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="mb-8">
+                    <div className="w-16 h-16 rounded-full bg-white border-2 border-[#B8986A] flex items-center justify-center mx-auto shadow-sm">
+                        <ShieldCheck size={28} className="text-[#B8986A]" />
                     </div>
                 </div>
 
-                <div className="text-center">
-                    <button
-                        onClick={handleScrollToPricing}
-                        className="bg-medical-900 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-medical-800 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 inline-flex items-center gap-2"
-                    >
-                        <span>Rädda dina folliklar nu</span>
-                    </button>
-                    <p className="text-sm text-gray-500 mt-4">90 dagars pengarna-tillbaka-garanti</p>
+                <span className="text-[#B8986A] text-xs font-semibold uppercase tracking-widest">Garanti</span>
+                <h2 className="font-serif text-4xl lg:text-5xl text-[#3B2E28] mt-3 mb-6">
+                    Testa hemma, <em className="not-italic text-[#B8986A]">riskfritt.</em>
+                </h2>
+
+                <p className="text-[#7A6A62] text-lg leading-relaxed max-w-xl mx-auto">
+                    Vi erbjuder 1 års garanti på alla köp. Om du upplever problem med din produkt,
+                    kontaktar du oss och vi hjälper dig — utan krångel.
+                </p>
+
+                <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mx-auto">
+                    {[
+                        { label: "1 år", sub: "Garanti" },
+                        { label: "Fri retur", sub: "Enkelt & smidigt" },
+                        { label: "Snabb service", sub: "Vi finns här" },
+                    ].map(item => (
+                        <div key={item.label} className="bg-white rounded-2xl p-5 border border-[#DDD4CB]">
+                            <p className="font-bold text-[#3B2E28] text-base">{item.label}</p>
+                            <p className="text-[#7A6A62] text-xs mt-1">{item.sub}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

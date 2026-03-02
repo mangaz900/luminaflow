@@ -1,113 +1,58 @@
 import React from 'react';
-import { AlertCircle, HeartHandshake, Microscope } from 'lucide-react';
 
 const ProblemSolution: React.FC = () => {
   return (
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-        {/* Empathy Section */}
-        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-20">
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-medical-900 mb-4 md:mb-6">
-            Varför tappar du hår efter klimakteriet?
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8 px-2">
-            Efter menopaus sjunker östrogennivåerna drastiskt. Detta gör att hårsäckar går in i 'viloläge' — det kallas telogen-fas.
-            <br /><br />
-            Hårsäckarna slutar producera hår. Bena blir bredare. Hjässan syns. Du ser det i spegeln varje dag.
-            <br /><br />
-            Men här är det viktiga:
-            <br /><br />
-            <strong>Dina hårsäckar är inte DÖDA. De SOVER.</strong>
-            <br /><br />
-            En död hårsäck kan aldrig väckas. Men en sovande hårsäck kan aktiveras — om den får rätt signaler i rätt ordning.
-          </p>
-          <div className="h-1 w-20 bg-medical-200 mx-auto rounded-full"></div>
-        </div>
-
-        {/* The Villain & Solution Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-stretch">
-
-          {/* The Problem (The Villain) */}
-          <div className="bg-[#FDF2F2] rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 border border-red-100">
-            <div className="flex items-center gap-3 mb-4 md:mb-6">
-              <div className="p-2 md:p-3 bg-red-100 rounded-full text-red-600">
-                <AlertCircle size={20} className="md:w-6 md:h-6" />
-              </div>
-              <h3 className="font-serif text-xl md:text-2xl text-medical-900">Problemet: Hårsäckar i viloläge</h3>
+          {/* TEXT LEFT */}
+          <div className="space-y-8">
+            <div className="inline-block">
+              <span className="text-[#B8986A] text-xs font-semibold uppercase tracking-widest">Förståelse</span>
+              <div className="h-px bg-[#B8986A] mt-1" />
             </div>
 
-            {/* Bild under rubriken */}
-            <div className="mb-6 rounded-xl overflow-hidden">
-              <img
-                src="/problem-bild.jpg"
-                alt="Hårsäcken kvävs - Problem illustration"
-                className="w-full h-auto object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x400?text=Problem+Bild";
-                }}
-              />
+            <h2 className="font-serif text-4xl lg:text-5xl text-[#3B2E28] leading-tight">
+              Problemet sitter djupare<br />
+              <em className="not-italic text-[#B8986A]">än du tror.</em>
+            </h2>
+
+            <div className="space-y-5 text-[#7A6A62] text-lg leading-relaxed">
+              <p>
+                Celluliter uppstår när bindvävens strukturer drar ned huden,
+                samtidigt som fettvävnad trycks upp mellan fibrerna.
+              </p>
+              <p>
+                Det är därför krämer verkar på ytan.<br />
+                Träning påverkar fett.<br />
+                Men strukturen förblir densamma.
+              </p>
+              <p>
+                Och ojämnheten består.
+              </p>
             </div>
 
-            <p className="text-gray-700 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
-              När östrogen sjunker efter klimakteriet går hårsäckarna in i telogen-fas (viloläge).
-              Kollagenet runt hårsäcken stelnar, blodtillförseln minskar, och håret slutar växa.
-            </p>
-            <ul className="space-y-2 md:space-y-3">
-              <li className="flex items-center gap-2 text-xs md:text-sm text-gray-600">
-                <span className="w-2 h-2 bg-red-400 rounded-full flex-shrink-0"></span> Hårbotten lyser igenom
-              </li>
-              <li className="flex items-center gap-2 text-xs md:text-sm text-gray-600">
-                <span className="w-2 h-2 bg-red-400 rounded-full flex-shrink-0"></span> Bena blir bredare
-              </li>
-              <li className="flex items-center gap-2 text-xs md:text-sm text-gray-600">
-                <span className="w-2 h-2 bg-red-400 rounded-full flex-shrink-0"></span> Läkaren sa "normalt vid din ålder"
-              </li>
-            </ul>
+            <div className="border-l-2 border-[#B8986A] pl-5 py-1">
+              <p className="text-[#3B2E28] font-semibold text-base italic">
+                Traditionella lösningar missar det strukturella problemet.
+              </p>
+            </div>
           </div>
 
-          {/* The Solution (Science + Nature) */}
-          <div className="bg-[#F0F7FF] rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 border border-medical-100 relative overflow-hidden">
-            <div className="flex items-center gap-3 mb-4 md:mb-6 relative z-10">
-              <div className="p-2 md:p-3 bg-medical-200 rounded-full text-medical-700">
-                <Microscope size={20} className="md:w-6 md:h-6" />
-              </div>
-              <h3 className="font-serif text-xl md:text-2xl text-medical-900">Lösningen: Väck hårsäckarna</h3>
-            </div>
-
-            {/* Bild under rubriken */}
-            <div className="mb-4 md:mb-6 rounded-xl overflow-hidden relative z-10">
+          {/* IMAGE RIGHT – 1:1, hela bilden synlig */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-[#EDE6DF] rounded-3xl transform rotate-2 scale-95 opacity-60" />
+            <div className="relative rounded-3xl overflow-hidden bg-white aspect-square">
               <img
-                src="/produkt-flaska-sten.jpg"
-                alt="Lumina Growth Serum Roll-on - Produktbild"
-                className="w-full h-auto object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x400?text=Produktbild";
-                }}
+                src="/skin-anatomy.png"
+                alt="Hudstruktur – illustration av celluliter i bindväven"
+                className="w-full h-full object-contain"
               />
             </div>
-
-            <p className="text-gray-700 mb-4 md:mb-6 leading-relaxed relative z-10 text-sm md:text-base">
-              Lumina kombinerar <strong>Redensyl®</strong> (väcker stamceller), <strong>Aminexil</strong> (motverkar fibros),
-              <strong>Anagain™</strong> (förlänger tillväxtfas) och <strong>Rosmarin 3%</strong> (cirkulationsboost).
-              <br /><br />
-              Alla 4 ingredienser arbetar SAMTIDIGT för att väcka hårsäckar som varit i viloläge sedan klimakteriet.
-              Hormonfri formel. Kliniskt bevisat.
-            </p>
-            <div className="p-4 bg-white/80 backdrop-blur rounded-xl border border-white relative z-10">
-              <div className="flex items-center gap-3">
-                <HeartHandshake className="text-medical-500" />
-                <p className="text-sm font-medium text-medical-900">Formulan som väcker hårsäckar efter klimakteriet.</p>
-              </div>
-            </div>
-
-            {/* Background decoration */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-medical-200 rounded-full blur-3xl opacity-50"></div>
-
           </div>
 
         </div>
-
       </div>
     </section>
   );

@@ -58,7 +58,7 @@ const ContactPage: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <Link
           to="/"
-          className="flex items-center gap-2 text-gray-600 hover:text-medical-900 mb-6"
+          className="flex items-center gap-2 text-[#7A6A62] hover:text-[#B8986A] transition-colors mb-6"
         >
           <ArrowLeft size={20} />
           <span>Tillbaka till startsidan</span>
@@ -68,10 +68,10 @@ const ContactPage: React.FC = () => {
           {/* Left Column - Contact Information */}
           <div className="space-y-8">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-medical-900 mb-4">
+              <h1 className="font-serif text-3xl md:text-4xl font-bold text-[#3B2E28] mb-4">
                 Kontakta oss
               </h1>
-              <p className="text-gray-600 text-lg">
+              <p className="text-[#7A6A62] text-lg">
                 Har du frågor om våra produkter, beställningar eller behöver personlig rådgivning?
                 Vi är här för att hjälpa dig!
               </p>
@@ -79,38 +79,38 @@ const ContactPage: React.FC = () => {
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="bg-medical-100 p-3 rounded-lg">
-                  <Mail className="text-medical-900" size={24} />
+                <div className="bg-[#EDE6DF] p-3 rounded-lg border border-[#DDD4CB]">
+                  <Mail className="text-[#3B2E28]" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-medical-900 mb-1">E-post</h3>
-                  <a href="mailto:malin@luminahairpro.com" className="text-gray-600 hover:text-medical-900 transition-colors">
-                    malin@luminahairpro.com
+                  <h3 className="font-semibold text-[#3B2E28] mb-1">E-post</h3>
+                  <a href="mailto:kontakt@luminaflow.se" className="text-[#7A6A62] hover:text-[#B8986A] transition-colors">
+                    kontakt@luminaflow.se
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-medical-100 p-3 rounded-lg">
-                  <Phone className="text-medical-900" size={24} />
+                <div className="bg-[#EDE6DF] p-3 rounded-lg border border-[#DDD4CB]">
+                  <Phone className="text-[#3B2E28]" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-medical-900 mb-1">Telefon</h3>
-                  <a href="tel:+46812345678" className="text-gray-600 hover:text-medical-900 transition-colors">
+                  <h3 className="font-semibold text-[#3B2E28] mb-1">Telefon</h3>
+                  <a href="tel:+46812345678" className="text-[#7A6A62] hover:text-[#B8986A] transition-colors">
                     +46 8 123 45 678
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Mån-Fre: 09:00-17:00</p>
+                  <p className="text-sm text-[#7A6A62] mt-1">Mån-Fre: 09:00-17:00</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-medical-100 p-3 rounded-lg">
-                  <MapPin className="text-medical-900" size={24} />
+                <div className="bg-[#EDE6DF] p-3 rounded-lg border border-[#DDD4CB]">
+                  <MapPin className="text-[#3B2E28]" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-medical-900 mb-1">Adress</h3>
-                  <p className="text-gray-600">
-                    Lumina Haircare AB<br />
+                  <h3 className="font-semibold text-[#3B2E28] mb-1">Adress</h3>
+                  <p className="text-[#7A6A62]">
+                    LuminaFlow AB<br />
                     Storgatan 123<br />
                     111 22 Stockholm<br />
                     Sverige
@@ -119,29 +119,23 @@ const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-medical-50 p-6 rounded-xl border border-medical-100">
-              <h3 className="font-semibold text-medical-900 mb-2">Vanliga frågor</h3>
-              <p className="text-sm text-gray-600 mb-4">
+            <div className="bg-[#EDE6DF] p-6 rounded-xl border border-[#DDD4CB]">
+              <h3 className="font-semibold text-[#3B2E28] mb-2">Vanliga frågor</h3>
+              <p className="text-sm text-[#7A6A62] mb-4">
                 Många av dina frågor kan redan vara besvarade i vår FAQ-sektion.
               </p>
               <Link
                 to="/#faq"
-                className="text-medical-900 hover:text-medical-700 font-medium text-sm underline block mb-2"
+                className="text-[#3B2E28] hover:text-[#B8986A] font-medium text-sm underline block mb-2"
               >
                 Besök vår FAQ →
               </Link>
-              <a
-                href="https://shop.luminahairpro.com/pages/contact"
-                className="text-medical-900 hover:text-medical-700 font-medium text-sm underline"
-              >
-                Gå till Shopify Kontaktformulär →
-              </a>
             </div>
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10">
-            <h2 className="text-2xl font-bold text-medical-900 mb-6">
+          <div className="bg-white rounded-2xl shadow-lg border border-[#DDD4CB] p-8 md:p-10">
+            <h2 className="font-serif text-2xl font-bold text-[#3B2E28] mb-6">
               Skicka oss ett meddelande
             </h2>
 
@@ -157,7 +151,7 @@ const ContactPage: React.FC = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 transition-colors"
+                  className="w-full px-4 py-3 border border-[#DDD4CB] rounded-lg focus:ring-2 focus:ring-[#B8986A] focus:border-[#B8986A] transition-colors bg-[#F4EFEA]"
                   placeholder="Ditt namn"
                 />
               </div>
@@ -173,7 +167,7 @@ const ContactPage: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 transition-colors"
+                  className="w-full px-4 py-3 border border-[#DDD4CB] rounded-lg focus:ring-2 focus:ring-[#B8986A] focus:border-[#B8986A] transition-colors bg-[#F4EFEA]"
                   placeholder="din@epost.se"
                 />
               </div>
@@ -188,7 +182,7 @@ const ContactPage: React.FC = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 transition-colors"
+                  className="w-full px-4 py-3 border border-[#DDD4CB] rounded-lg focus:ring-2 focus:ring-[#B8986A] focus:border-[#B8986A] transition-colors bg-[#F4EFEA]"
                   placeholder="+46 70 123 45 67"
                 />
               </div>
@@ -203,7 +197,7 @@ const ContactPage: React.FC = () => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 transition-colors"
+                  className="w-full px-4 py-3 border border-[#DDD4CB] rounded-lg focus:ring-2 focus:ring-[#B8986A] focus:border-[#B8986A] transition-colors bg-[#F4EFEA]"
                 >
                   <option value="">Välj ämne</option>
                   <option value="product">Produktfrågor</option>
@@ -225,7 +219,7 @@ const ContactPage: React.FC = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-[#DDD4CB] rounded-lg focus:ring-2 focus:ring-[#B8986A] focus:border-[#B8986A] transition-colors resize-none bg-[#F4EFEA]"
                   placeholder="Berätta för oss hur vi kan hjälpa dig..."
                 />
               </div>
@@ -245,7 +239,7 @@ const ContactPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-medical-900 text-white py-4 px-6 rounded-lg font-medium hover:bg-medical-800 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#3B2E28] text-[#F4EFEA] py-4 px-6 rounded-full font-medium hover:bg-[#B8986A] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

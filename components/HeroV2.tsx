@@ -25,33 +25,33 @@ const HeroV2: React.FC<HeroV2Props> = ({
     const productImages = [
         {
             id: 1,
-            src: "/produkt-flaska-sten.jpg",
-            alt: "Lumina Growth Serum Roll-on - Produktbild"
+            src: "/1 (7).jpg",
+            alt: "Produktbild 1"
         },
         {
             id: 2,
-            src: "/produkt-kliniska-studier.jpg",
-            alt: "Kliniska studieresultat - 98% såg resultat"
+            src: "/2 (7).jpg",
+            alt: "Produktbild 2"
         },
         {
             id: 3,
-            src: "/produkt-ingredienser.jpg",
-            alt: "Ingredienser: 3% Rosmarin, Redensyl, Aminexil & Anagain"
+            src: "/3 (7).jpg",
+            alt: "Produktbild 3"
         },
         {
             id: 4,
-            src: "/produkt-original.jpg",
-            alt: "Varför ORIGINAL HairFlow Pro fungerar bättre"
+            src: "/4 (5).jpg",
+            alt: "Produktbild 4"
         },
         {
             id: 5,
-            src: "/30.jpg",
-            alt: "Före och efter resultat - Manlig användare"
+            src: "/5 (5).jpg",
+            alt: "Produktbild 5"
         },
         {
             id: 6,
-            src: "/31.jpg",
-            alt: "Före och efter resultat - Manlig användare"
+            src: "/6 (5).jpg",
+            alt: "Produktbild 6"
         }
     ];
 

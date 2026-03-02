@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 
@@ -54,17 +54,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <nav className="fixed w-full z-50 bg-[#F4EFEA]/95 backdrop-blur-md border-b border-[#DDD4CB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center h-20">
 
           {/* Left: Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 flex-1">
-            <button onClick={() => handleNavClick('#faq')} className="text-dark-900 hover:text-gold-600 transition-colors">FAQ</button>
-            <button onClick={() => handleNavClick('#anvandning')} className="text-dark-900 hover:text-gold-600 transition-colors">Användning</button>
-            <button onClick={() => handleNavClick('#ingredienser')} className="text-dark-900 hover:text-gold-600 transition-colors">Ingredienser</button>
-            <button onClick={() => handleNavClick('#recensioner')} className="text-dark-900 hover:text-gold-600 transition-colors">Recensioner</button>
-            <button onClick={() => handleNavClick('#ai-expert')} className="text-dark-900 hover:text-gold-600 transition-colors">AI Expert</button>
+            <button onClick={() => handleNavClick('#anvandning')} className="text-[#3B2E28] hover:text-[#B8986A] text-sm transition-colors">Användning</button>
+            <button onClick={() => handleNavClick('#recensioner')} className="text-[#3B2E28] hover:text-[#B8986A] text-sm transition-colors">Recensioner</button>
+            <button onClick={() => handleNavClick('#faq')} className="text-[#3B2E28] hover:text-[#B8986A] text-sm transition-colors">FAQ</button>
+            <Link to="/kontakt" className="text-[#3B2E28] hover:text-[#B8986A] text-sm transition-colors">Kontakta oss</Link>
           </div>
 
           {/* Mobile Menu Button (Left) */}
@@ -78,9 +77,9 @@ const Navbar: React.FC = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2 flex-shrink-0 z-10">
             <button
               onClick={() => navigate(location.pathname === '/p2' ? '/p2' : '/')}
-              className="font-serif text-xl sm:text-2xl font-bold text-dark-900 hover:text-medical-900 transition-colors cursor-pointer"
+              className="font-serif text-xl sm:text-2xl font-bold text-[#3B2E28] hover:text-[#B8986A] transition-colors cursor-pointer"
             >
-              Lumina.
+              LuminaFlow
             </button>
           </div>
 
@@ -88,11 +87,11 @@ const Navbar: React.FC = () => {
           <div className="flex items-center justify-end flex-1">
             <button
               onClick={openCart}
-              className="bg-dark-900 text-white p-3 rounded-full hover:bg-gray-800 transition-all flex items-center justify-center relative"
+              className="bg-[#3B2E28] text-[#F4EFEA] p-3 rounded-full hover:bg-[#B8986A] transition-all flex items-center justify-center relative"
             >
               <ShoppingBag size={20} />
               {getTotalItems() > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-[#B8986A] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {getTotalItems()}
                 </span>
               )}
@@ -103,23 +102,18 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 absolute w-full">
-          <div className="px-4 pt-2 pb-6 space-y-2 shadow-lg">
-            <button onClick={() => handleNavClick('#faq')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">FAQ</button>
-            <button onClick={() => handleNavClick('#anvandning')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Användning</button>
-            <button onClick={() => handleNavClick('#ingredienser')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Ingredienser</button>
-            <button onClick={() => handleNavClick('#recensioner')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">Recensioner</button>
-            <button onClick={() => handleNavClick('#ai-expert')} className="w-full text-left block px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 rounded-md">AI Expert</button>
+        <div className="md:hidden bg-[#F4EFEA] border-t border-[#DDD4CB] absolute w-full shadow-lg">
+          <div className="px-4 pt-2 pb-6 space-y-1">
+            <button onClick={() => handleNavClick('#anvandning')} className="w-full text-left block px-3 py-2 text-base font-medium text-[#3B2E28] hover:text-[#B8986A] rounded-md">Användning</button>
+            <button onClick={() => handleNavClick('#recensioner')} className="w-full text-left block px-3 py-2 text-base font-medium text-[#3B2E28] hover:text-[#B8986A] rounded-md">Recensioner</button>
+            <button onClick={() => handleNavClick('#faq')} className="w-full text-left block px-3 py-2 text-base font-medium text-[#3B2E28] hover:text-[#B8986A] rounded-md">FAQ</button>
+            <Link to="/kontakt" onClick={() => setIsOpen(false)} className="w-full text-left block px-3 py-2 text-base font-medium text-[#3B2E28] hover:text-[#B8986A] rounded-md">Kontakta oss</Link>
             <button
               onClick={() => { setIsOpen(false); openCart(); }}
-              className="mt-4 bg-dark-900 text-white p-3 rounded-full flex items-center justify-center relative"
+              className="mt-4 w-full bg-[#3B2E28] text-[#F4EFEA] py-3 px-6 rounded-full font-semibold hover:bg-[#B8986A] transition-all flex items-center justify-center gap-2"
             >
-              <ShoppingBag size={20} />
-              {getTotalItems() > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {getTotalItems()}
-                </span>
-              )}
+              <ShoppingBag size={18} />
+              Varukorg
             </button>
           </div>
         </div>

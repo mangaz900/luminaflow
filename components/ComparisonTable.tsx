@@ -1,133 +1,86 @@
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, X, Minus } from 'lucide-react';
+
+const columns = [
+  {
+    title: "Krämer",
+    subtitle: "Populärt val",
+    highlight: false,
+    features: [
+      { text: "Ytlig effekt", positive: false },
+      { text: "Kortvarig förbättring", positive: false },
+      { text: "Ingen strukturell påverkan", positive: false },
+      { text: "Enkel hantering", positive: true },
+    ],
+  },
+  {
+    title: "Manuella verktyg",
+    subtitle: "Massagebräda etc.",
+    highlight: false,
+    features: [
+      { text: "Begränsad stimulering", positive: false },
+      { text: "Ingen värme eller vakuum", positive: false },
+      { text: "Kräver hög kraft", positive: false },
+      { text: "Prisvärd", positive: true },
+    ],
+  },
+  {
+    title: "LuminaFlow 360",
+    subtitle: "Strukturell behandling",
+    highlight: true,
+    features: [
+      { text: "360° strukturell aktivering", positive: true },
+      { text: "Kombinerar vakuum, värme & mekanik", positive: true },
+      { text: "Justerbar intensitet", positive: true },
+      { text: "Utvecklad för hemmabruk", positive: true },
+    ],
+  },
+];
 
 const ComparisonTable: React.FC = () => {
-  const features = [
-    {
-      label: "Kliniskt bevisad",
-      lumina: true,
-      minoxidil: true,
-      oils: false
-    },
-    {
-      label: "Motverkar stress",
-      lumina: true,
-      minoxidil: false,
-      oils: false
-    },
-    {
-      label: "Inga biverkningar",
-      lumina: true,
-      minoxidil: false, // Often causes irritation/headaches
-      oils: true
-    },
-    {
-      label: "Motverkar fibros",
-      lumina: true,
-      minoxidil: false,
-      oils: false
-    },
-    {
-      label: "Kladdfri formula",
-      lumina: true,
-      minoxidil: false, // Often drying/sticky
-      oils: false // Greasy
-    },
-    {
-      label: "90 dagars garanti",
-      lumina: true,
-      minoxidil: false,
-      oils: false
-    }
-  ];
-
   return (
-    <section className="py-12 md:py-16 bg-white overflow-x-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-10">
-          <h2 className="font-serif text-2xl md:text-3xl text-medical-900 mb-2 md:mb-3">
-            Varför Lumina?
+    <section className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 space-y-4">
+          <span className="text-[#B8986A] text-xs font-semibold uppercase tracking-widest">Jämförelse</span>
+          <h2 className="font-serif text-4xl lg:text-5xl text-[#3B2E28]">
+            Varför traditionella lösningar<br />
+            <em className="not-italic text-[#B8986A]">inte räcker</em>
           </h2>
-          <p className="text-gray-500 text-xs md:text-sm lg:text-base max-w-xl mx-auto px-2">
-            Se hur vi står oss mot alternativen.
-          </p>
         </div>
 
-        <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-x-auto max-w-2xl mx-auto">
-          {/* Header Row */}
-          <div className="grid grid-cols-[1.4fr_1fr_1fr_1fr] bg-gray-50 border-b border-gray-100 min-w-[600px]">
-            <div className="p-2 md:p-3 lg:p-5 flex items-center justify-start">
-               <span className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider">Egenskap</span>
-            </div>
-            
-            {/* Lumina Header */}
-            <div className="p-3 md:p-5 bg-medical-900/5 flex flex-col items-center justify-center relative border-x border-gray-100/50 pt-6 md:pt-5">
-              <span className="font-serif font-bold text-medical-900 text-xs md:text-lg">Lumina</span>
-              {/* Badge */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gold-400 text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-b-sm uppercase tracking-wide shadow-sm whitespace-nowrap">
-                Bäst Val
-              </div>
-            </div>
-            
-            {/* Competitor 1 Header */}
-            <div className="p-3 md:p-5 flex flex-col items-center justify-center text-center">
-              <span className="font-medium text-gray-500 text-[10px] md:text-sm">Minox.</span>
-            </div>
-            
-            {/* Competitor 2 Header */}
-            <div className="p-3 md:p-5 flex flex-col items-center justify-center text-center">
-              <span className="font-medium text-gray-500 text-[10px] md:text-sm">Oljor</span>
-            </div>
-          </div>
-
-          {/* Data Rows */}
-          {features.map((row, index) => (
-            <div key={index} className="grid grid-cols-[1.4fr_1fr_1fr_1fr] border-b border-gray-50 last:border-0 min-w-[600px]">
-              
-              {/* Feature Name */}
-              <div className="p-2 md:p-3 lg:p-5 flex items-center">
-                <span className="text-[11px] md:text-sm font-medium text-gray-700 leading-tight">{row.label}</span>
-              </div>
-
-              {/* Lumina Data */}
-              <div className="p-2 md:p-3 lg:p-5 flex items-center justify-center bg-medical-50/30 border-x border-gray-100/50">
-                {row.lumina ? (
-                  <div className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                    <Check size={12} className="md:hidden" strokeWidth={3} />
-                    <Check size={14} className="hidden md:block lg:hidden" strokeWidth={3} />
-                    <Check size={18} className="hidden lg:block" strokeWidth={3} />
-                  </div>
-                ) : (
-                   <X size={12} className="md:w-3.5 md:h-3.5 text-red-300" />
-                )}
-              </div>
-
-              {/* Minox Data */}
-              <div className="p-2 md:p-3 lg:p-5 flex items-center justify-center">
-                 {row.minoxidil ? (
-                  <div className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
-                    <Check size={12} className="md:hidden" strokeWidth={3} />
-                    <Check size={14} className="hidden md:block lg:hidden" strokeWidth={3} />
-                    <Check size={18} className="hidden lg:block" strokeWidth={3} />
-                  </div>
-                ) : (
-                   <X size={12} className="md:w-3.5 md:h-3.5 text-gray-300" />
-                )}
-              </div>
-
-              {/* Oils Data */}
-              <div className="p-2 md:p-3 lg:p-5 flex items-center justify-center">
-                 {row.oils ? (
-                   <div className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
-                    <Check size={12} className="md:hidden" strokeWidth={3} />
-                    <Check size={14} className="hidden md:block lg:hidden" strokeWidth={3} />
-                    <Check size={18} className="hidden lg:block" strokeWidth={3} />
-                  </div>
-                ) : (
-                   <X size={12} className="md:w-3.5 md:h-3.5 text-gray-300" />
-                )}
-              </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {columns.map(col => (
+            <div
+              key={col.title}
+              className={`rounded-3xl p-8 border-2 transition-all ${col.highlight
+                ? 'border-[#B8986A] bg-[#F4EFEA] shadow-xl scale-[1.02]'
+                : 'border-[#EDE6DF] bg-[#F9F6F3]'
+                }`}
+            >
+              {col.highlight && (
+                <div className="mb-4">
+                  <span className="bg-[#B8986A] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                    Rekommenderat
+                  </span>
+                </div>
+              )}
+              <h3 className={`font-serif text-xl mb-1 ${col.highlight ? 'text-[#3B2E28]' : 'text-[#7A6A62]'}`}>
+                {col.title}
+              </h3>
+              <p className="text-xs text-[#B8986A] mb-6">{col.subtitle}</p>
+              <ul className="space-y-4">
+                {col.features.map(f => (
+                  <li key={f.text} className="flex items-start gap-3">
+                    <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${f.positive ? 'bg-[#EDE6DF] text-[#B8986A]' : 'bg-red-50 text-red-400'}`}>
+                      {f.positive ? <Check size={11} strokeWidth={3} /> : <X size={11} strokeWidth={3} />}
+                    </span>
+                    <span className={`text-sm leading-snug ${f.positive ? 'text-[#3B2E28] font-medium' : 'text-[#7A6A62]'}`}>
+                      {f.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

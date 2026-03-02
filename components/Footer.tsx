@@ -26,58 +26,54 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-dark-900 text-white pt-20 pb-10">
+    <footer className="bg-[#3B2E28] text-[#F4EFEA] pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
 
           <div className="space-y-6">
             <button
-              onClick={() => navigate(location.pathname === '/p2' ? '/p2' : '/')}
-              className="font-serif text-2xl font-bold text-white hover:text-gold-400 transition-colors cursor-pointer text-left"
+              onClick={() => navigate('/')}
+              className="font-serif text-3xl font-bold text-white hover:text-[#B8986A] transition-colors cursor-pointer text-left"
             >
-              Lumina.
+              LuminaFlow
             </button>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Vi skapar premium hårvård för den moderna människan. Veganskt, hållbart och effektivt.
+            <p className="text-[#DDD4CB] text-sm leading-relaxed max-w-sm">
+              Teknik utvecklad för synligt jämnare hud hemma. Behandla celluliter på djupet, inte bara på ytan.
             </p>
           </div>
 
           <div>
-            <h4 className="font-medium text-lg mb-6">Shop</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-gold-400 transition-colors">Alla produkter</a></li>
-              <li><a href="#" className="hover:text-gold-400 transition-colors">Presentkort</a></li>
-              <li><a href="#" className="hover:text-gold-400 transition-colors">Paketerbjudanden</a></li>
+            <h4 className="font-medium text-lg mb-6 text-white">Produkter</h4>
+            <ul className="space-y-4 text-[#DDD4CB] text-sm">
+              <li><button onClick={() => handleNavClick('#order')} className="hover:text-[#B8986A] transition-colors">LuminaFlow 360</button></li>
+              <li><button onClick={() => handleNavClick('#reviews')} className="hover:text-[#B8986A] transition-colors">Recensioner</button></li>
+              <li><button onClick={() => handleNavClick('#solution')} className="hover:text-[#B8986A] transition-colors">Men hur funkar det?</button></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-medium text-lg mb-6">Hjälp</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="https://shop.luminahairpro.com/pages/contact" className="hover:text-gold-400 transition-colors">Kontakta oss</a></li>
-              <li><Link to="/returpolicy" className="hover:text-gold-400 transition-colors">Frakt & Retur</Link></li>
-              <li><button onClick={() => handleNavClick('#faq')} className="hover:text-gold-400 transition-colors text-left">FAQ</button></li>
-              <li><Link to="/5-anledningar-hair-growth-roll-on" className="hover:text-gold-400 transition-colors">5 Anledningar</Link></li>
+            <h4 className="font-medium text-lg mb-6 text-white">Hjälp</h4>
+            <ul className="space-y-4 text-[#DDD4CB] text-sm">
+              <li><a href="mailto:kontakt@luminaflow.se" className="hover:text-[#B8986A] transition-colors">Kontakta oss</a></li>
+              <li><button onClick={() => handleNavClick('#faq')} className="hover:text-[#B8986A] transition-colors text-left">Vanliga frågor</button></li>
+              <li><Link to="/returpolicy" className="hover:text-[#B8986A] transition-colors">Frakt & Retur</Link></li>
             </ul>
           </div>
 
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} Lumina Haircare AB. Alla rättigheter reserverade.</p>
+        <div className="border-t border-white/20 pt-8 mt-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[#DDD4CB] text-xs">
+            <p>&copy; {new Date().getFullYear()} LuminaFlow. Alla rättigheter reserverade.</p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              <Link to="/integritetspolicy" className="hover:text-gold-400 transition-colors">
+              <Link to="/integritetspolicy" className="hover:text-[#B8986A] transition-colors">
                 Integritetspolicy
               </Link>
-              <Link to="/anvandarvillkor" className="hover:text-gold-400 transition-colors">
+              <Link to="/anvandarvillkor" className="hover:text-[#B8986A] transition-colors">
                 Användarvillkor
               </Link>
-              <Link to="/cookie-policy" className="hover:text-gold-400 transition-colors">
-                Cookie Policy
-              </Link>
-              <Link to="/returpolicy" className="hover:text-gold-400 transition-colors">
-                Returpolicy
+              <Link to="/cookie-policy" className="hover:text-[#B8986A] transition-colors">
+                Cookiepolicy
               </Link>
             </div>
           </div>
