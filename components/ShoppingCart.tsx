@@ -65,16 +65,12 @@ const ShoppingCart: React.FC = () => {
 
     // Map internal IDs to Shopify Variant IDs (Correct IDs from try.luminahairpro.com)
     const variantMap: Record<number, string> = {
-      1: '52853942485256', // Startpaket
-      2: '52853943501064', // Behandlingskur
-      3: '52853944090888', // Storpack
+      1: '53417256583432', // CelluFlow 360 (Now LuminaFlow)
     };
 
     // Bundle sizes (bottle count per package id)
     const bundleSizes: Record<number, number> = {
       1: 1,
-      2: 3,
-      3: 6
     };
 
     // Construct Add to Cart URL
