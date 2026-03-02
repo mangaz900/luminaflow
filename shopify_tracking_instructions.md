@@ -51,11 +51,11 @@ This ensures events are tracked even if the user blocks cookies or if the cart i
 1. Go to **Shopify Admin** → **Settings** → **Customer Events**.
 2. Click **Add custom pixel**.
 3. Name it `Facebook Pixel Hybrid`.
-4. Paste the following code (Replace `597403436072604` with your Pixel ID if it changes):
+4. Paste the following code (Replace `503389253733635` with your Pixel ID if it changes):
 
 ```javascript
 // Facebook Pixel Initialization
-const PIXEL_ID = '597403436072604';
+const PIXEL_ID = '503389253733635';
 
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
