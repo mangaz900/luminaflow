@@ -56,7 +56,6 @@ const Hero: React.FC = () => {
 
             {/* Package Selection */}
             <div className="space-y-3 pt-2">
-              <p className="text-sm font-semibold text-[#7A6A62] uppercase tracking-widest">Välj ditt paket</p>
               {packages.map(option => {
                 const isSelected = selectedPackageId === option.id;
                 return (
