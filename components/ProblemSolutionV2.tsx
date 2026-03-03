@@ -89,8 +89,8 @@ const ProblemSolutionV2: React.FC = () => {
                         </div>
 
                         <p className="text-gray-700 mb-4 md:mb-6 leading-relaxed relative z-10 text-sm md:text-base">
-                            Lumina kombinerar <strong>Redensyl®</strong> (väcker stamceller), <strong>Aminexil</strong> (motverkar fibros/stelhet),
-                            <strong>Anagain™</strong> (förlänger tillväxtfas) och <strong>Rosmarin 3%</strong> (cirkulationsboost).
+                            Lumina kombinerar <strong>Redensyl</strong> (väcker stamceller), <strong>Aminexil</strong> (motverkar fibros/stelhet),
+                            <strong>Anagain</strong> (förlänger tillväxtfas) och <strong>Rosmarin 3%</strong> (cirkulationsboost).
                             <br /><br />
                             Alla 4 ingredienser arbetar SAMTIDIGT för att motverka DHT-skador och ge hårsäcken ny energi.
                             Hormonfri formel. Kliniskt bevisat.

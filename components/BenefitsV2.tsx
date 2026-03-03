@@ -6,7 +6,7 @@ const BenefitsV2: React.FC = () => {
         {
             number: "1",
             title: "VÄCK vilande hårsäckar",
-            ingredient: "Redensyl® 3%",
+            ingredient: "Redensyl 3%",
             description: "Aktiverar hårsäckens aktivitet och hjälper dig få igång en ny tillväxtcykel.",
             icon: <Zap className="w-6 h-6 text-white" />
         },
@@ -20,7 +20,7 @@ const BenefitsV2: React.FC = () => {
         {
             number: "3",
             title: "FÖRLÄNG tillväxtfasen",
-            ingredient: "Anagain™ 2%",
+            ingredient: "Anagain 2%",
             description: "Stöttar att fler strån stannar längre i tillväxtfasen – vilket ger bättre densitet över tid.",
             icon: <TrendingUp className="w-6 h-6 text-white" />
         },

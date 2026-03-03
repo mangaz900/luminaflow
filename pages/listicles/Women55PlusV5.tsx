@@ -89,15 +89,15 @@ const Women55PlusV5: React.FC = () => {
                         <p className="text-[18px] mb-8 font-bold">Problemet sitter djupare.</p>
 
                         <div className="bg-[#0B2240] text-white p-8 rounded-2xl mb-12 shadow-xl">
-                            <p className="text-[20px] mb-4 font-bold">Det var där LuminaFlow™ blev intressant.</p>
+                            <p className="text-[20px] mb-4 font-bold">Det var där LuminaFlow blev intressant.</p>
                             <h3 className="text-[28px] font-black mb-6" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                                LuminaFlow™ 3D Tissue Activation
+                                LuminaFlow 3D Tissue Activation
                             </h3>
                             <div className="mb-6">
-                                <img src="/luminaflow-usage.jpg" alt="Användning av LuminaFlow™" className="w-full h-auto rounded-xl shadow-md" />
+                                <img src="/luminaflow-usage.jpg" alt="Användning av LuminaFlow" className="w-full h-auto rounded-xl shadow-md" />
                             </div>
                             <p className="text-[18px] opacity-90">
-                                LuminaFlow™ är designad för att arbeta där celluliter faktiskt uppstår.
+                                LuminaFlow är designad för att arbeta där celluliter faktiskt uppstår.
                                 Den kombinerar tre funktioner samtidigt:
                             </p>
                         </div>
@@ -187,7 +187,7 @@ const Women55PlusV5: React.FC = () => {
                             </p>
 
                             <div className="bg-white p-6 rounded-xl shadow-sm border border-[#DCD6F7]">
-                                <h4 className="font-bold text-[#17242C] mb-2">LuminaFlow™ bygger på samma principer</h4>
+                                <h4 className="font-bold text-[#17242C] mb-2">LuminaFlow bygger på samma principer</h4>
                                 <p className="mb-4">Vakuum. Värme. Ljus.</p>
                                 <p className="text-[18px] font-bold text-[#0B2240]">Skillnaden? Du betalar en gång. Och äger behandlingen.</p>
                             </div>
@@ -213,10 +213,10 @@ const Women55PlusV5: React.FC = () => {
                         <div className="bg-red-50 border-2 border-red-500 p-8 rounded-2xl mb-12 relative overflow-hidden">
                             <div className="absolute top-0 right-0 bg-red-500 text-white text-[12px] font-bold px-4 py-1 uppercase tracking-wider">Tidsbegränsat</div>
                             <h2 className="text-[26px] font-black mb-4 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                                Nu är LuminaFlow™ 50% rabatterad
+                                Nu är LuminaFlow 50% rabatterad
                             </h2>
                             <p className="text-[18px] mb-6">
-                                För att fler ska kunna testa utan att tveka erbjuds LuminaFlow™ just nu med 50% rabatt.
+                                För att fler ska kunna testa utan att tveka erbjuds LuminaFlow just nu med 50% rabatt.
                             </p>
                             <p className="text-[18px] mb-6 border-l-4 border-red-500 pl-4 font-medium italic">
                                 Du får tillgång till en strukturell, professionell-inspirerad behandling hemma för en bråkdel av kostnaden för kliniksessioner.
@@ -238,7 +238,7 @@ const Women55PlusV5: React.FC = () => {
                                     onClick={scrollToOffer}
                                     className="w-full bg-[#0B2240] hover:bg-[#051628] text-white font-bold text-[22px] py-5 rounded-xl shadow-lg transition-transform transform hover:scale-[1.02] flex items-center justify-center gap-3"
                                 >
-                                    Säkra LuminaFlow™ med 50% rabatt idag <ArrowRight />
+                                    Säkra LuminaFlow med 50% rabatt idag <ArrowRight />
                                 </button>
                                 <p className="mt-4 text-sm text-gray-500 font-medium tracking-wide flex items-center justify-center gap-4">
                                     <span className="flex items-center gap-1 uppercase"><Truck size={14} /> Fri Frakt</span>

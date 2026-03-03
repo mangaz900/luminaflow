@@ -35,7 +35,7 @@ const IngredientsV2: React.FC = () => {
                                 <div className="flex justify-between items-start mb-2 md:mb-3">
                                     <div className="flex items-center gap-2 md:gap-3">
                                         <div className="bg-blue-900/50 p-1.5 md:p-2 rounded-lg text-blue-300"><Zap size={18} className="md:w-5 md:h-5" /></div>
-                                        <h3 className="text-lg md:text-xl font-serif text-white">3% Redensyl®</h3>
+                                        <h3 className="text-lg md:text-xl font-serif text-white">3% Redensyl</h3>
                                     </div>
                                 </div>
                                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
@@ -61,7 +61,7 @@ const IngredientsV2: React.FC = () => {
                                 <div className="flex justify-between items-start mb-2 md:mb-3">
                                     <div className="flex items-center gap-2 md:gap-3">
                                         <div className="bg-yellow-900/50 p-1.5 md:p-2 rounded-lg text-yellow-300"><Activity size={18} className="md:w-5 md:h-5" /></div>
-                                        <h3 className="text-lg md:text-xl font-serif text-white">2% Anagain™</h3>
+                                        <h3 className="text-lg md:text-xl font-serif text-white">2% Anagain</h3>
                                     </div>
                                 </div>
                                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
