@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ShieldCheck, Truck, ArrowRight, Zap, Droplets, Sun } from 'lucide-react';
+import { ShieldCheck, Truck, ArrowRight, Zap, Droplets, Sun, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Women55PlusV5: React.FC = () => {
     const navigate = useNavigate();
@@ -15,6 +15,12 @@ const Women55PlusV5: React.FC = () => {
             document.head.removeChild(link);
         };
     }, []);
+
+    const [currentVideo, setCurrentVideo] = React.useState(0);
+    const videos = ['/cel1.mp4', '/cel2.mp4', '/cel3.mp4', '/cel4.mp4'];
+
+    const nextVideo = () => setCurrentVideo((prev) => (prev + 1) % videos.length);
+    const prevVideo = () => setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
 
     const scrollToOffer = () => {
         navigate('/');
@@ -99,6 +105,50 @@ const Women55PlusV5: React.FC = () => {
                             <p className="text-[18px] opacity-90">
                                 LuminaFlow är designad för att arbeta där celluliter faktiskt uppstår.
                                 Den kombinerar tre funktioner samtidigt:
+                            </p>
+                        </div>
+
+                        {/* Video Carousel */}
+                        <div className="mb-12 relative group">
+                            <div className="relative aspect-[9/16] md:aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
+                                <video
+                                    key={videos[currentVideo]}
+                                    src={videos[currentVideo]}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover"
+                                />
+
+                                {/* Navigation Arrows */}
+                                <button
+                                    onClick={prevVideo}
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md p-2 rounded-full text-white transition-all opacity-0 group-hover:opacity-100"
+                                >
+                                    <ChevronLeft size={24} />
+                                </button>
+                                <button
+                                    onClick={nextVideo}
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md p-2 rounded-full text-white transition-all opacity-0 group-hover:opacity-100"
+                                >
+                                    <ChevronRight size={24} />
+                                </button>
+
+                                {/* Dots */}
+                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                                    {videos.map((_, i) => (
+                                        <button
+                                            key={i}
+                                            onClick={() => setCurrentVideo(i)}
+                                            className={`w-2 h-2 rounded-full transition-all ${i === currentVideo ? 'bg-white w-4' : 'bg-white/40'
+                                                }`}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                            <p className="text-center text-sm text-gray-500 mt-3 font-medium tracking-wide italic">
+                                Se hur LuminaFlow arbetar med bindväven på djupet
                             </p>
                         </div>
 
