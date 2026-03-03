@@ -187,7 +187,7 @@ const Women55PlusV5: React.FC = () => {
                             Vad kvinnor faktiskt märker
                         </h2>
 
-                        <div className="grid md:grid-cols-2 gap-6 mb-12">
+                        <div className="grid md:grid-cols-2 gap-6 mb-8">
                             <div className="bg-[#F8F9FA] p-6 rounded-xl border border-gray-100">
                                 <h4 className="font-bold text-[#0B2240] mb-4 uppercase tracking-wider text-sm">Efter 2–4 veckor:</h4>
                                 <ul className="space-y-2">
@@ -204,6 +204,10 @@ const Women55PlusV5: React.FC = () => {
                                     <li className="flex items-start gap-2"><span>•</span> Jämnare yta</li>
                                 </ul>
                             </div>
+                        </div>
+
+                        <div className="mb-12">
+                            <img src="/cellulite-lifestyle.jpg" alt="Kvinna i shorts som känner sig bekväm" className="w-full h-auto rounded-2xl shadow-sm border border-gray-100" />
                         </div>
 
                         <div className="text-center mb-12">
