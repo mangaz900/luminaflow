@@ -30,6 +30,11 @@ const Women55PlusV5: React.FC = () => {
                         Den verkliga anledningen till att celluliter inte försvinner (och varför de flesta behandlingar misslyckas)
                     </h1>
 
+                    {/* Hero Image */}
+                    <div className="mb-8">
+                        <img src="/cellulite-before-after.jpg" alt="Före och efter cellulitbehandling" className="w-full h-auto rounded-2xl shadow-lg" />
+                    </div>
+
                     {/* Main Content */}
                     <div className="prose prose-lg max-w-none text-[#212529] leading-[1.8]">
 
