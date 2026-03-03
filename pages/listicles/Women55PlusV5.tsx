@@ -58,6 +58,10 @@ const Women55PlusV5: React.FC = () => {
                             Vad som faktiskt händer under huden
                         </h2>
 
+                        <div className="mb-8">
+                            <img src="/cellulite-anatomy.jpg" alt="Anatomi av celluliter under huden" className="w-full h-auto rounded-2xl shadow-sm border border-gray-100" />
+                        </div>
+
                         <p className="text-[18px] mb-6">Celluliter uppstår när:</p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-center gap-3 text-[18px]"><Droplets className="text-[#0B2240] flex-shrink-0" size={20} /> Mikrocirkulationen är låg</li>
