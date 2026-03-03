@@ -93,6 +93,9 @@ const Women55PlusV5: React.FC = () => {
                             <h3 className="text-[28px] font-black mb-6" style={{ fontFamily: '"Montserrat", sans-serif' }}>
                                 LuminaFlow™ 3D Tissue Activation
                             </h3>
+                            <div className="mb-6">
+                                <img src="/luminaflow-usage.jpg" alt="Användning av LuminaFlow™" className="w-full h-auto rounded-xl shadow-md" />
+                            </div>
                             <p className="text-[18px] opacity-90">
                                 LuminaFlow™ är designad för att arbeta där celluliter faktiskt uppstår.
                                 Den kombinerar tre funktioner samtidigt:
