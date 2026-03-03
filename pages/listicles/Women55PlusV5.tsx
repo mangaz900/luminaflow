@@ -151,7 +151,7 @@ const Women55PlusV5: React.FC = () => {
 
                         <div className="bg-[#EEEBFC] p-8 rounded-2xl border border-[#DCD6F7] mb-12">
                             <h2 className="text-[24px] font-bold mb-6 text-[#17242C]" style={{ fontFamily: '"Montserrat", sans-serif' }}>
-                                “But don't clinic treatments work better?”
+                                ”Men fungerar inte klinikbehandlingar bättre?”
                             </h2>
                             <p className="text-[17px] mb-6">
                                 Professionella behandlingar som vakuummassage och RF kan ge resultat. Men låt oss vara ärliga om kostnaden.
