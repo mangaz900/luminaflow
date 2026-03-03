@@ -14,9 +14,14 @@ const Pricing: React.FC = () => {
           med strukturen — <em className="not-italic text-[#B8986A]">inte dölja den.</em>
         </h2>
 
-        <p className="text-[#D4B896]/70 text-base mb-10 max-w-xl mx-auto">
+        <p className="text-[#D4B896]/70 text-base mb-8 max-w-xl mx-auto">
           LuminaFlow 360 — hemmabehandling som kombinerar vakuum, värme och mekanisk stimulering för synligt jämnare hud.
         </p>
+
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <span className="text-[#D4B896]/40 text-2xl line-through">1 999 kr</span>
+          <span className="text-[#B8986A] text-5xl font-bold">799 kr</span>
+        </div>
 
         <button
           onClick={() => addToCart({ id: 1, quantity: 1, title: "LuminaFlow 360", subtitle: "Startpaket", price: 799 } as any)}

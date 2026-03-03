@@ -3,7 +3,7 @@ import { useCart } from '../contexts/CartContext';
 import { ShoppingBag, Truck, RotateCcw, Star } from 'lucide-react';
 
 const packages = [
-    { id: 1, quantity: 1, title: "LuminaFlow 360", subtitle: "1 st Strukturell Cellulitbehandling", price: 999, originalPrice: 1499, discountLabel: "SPARA 500 KR", tag: "BEGRÄNSAT ERBJUDANDE" },
+    { id: 1, quantity: 1, title: "LuminaFlow 360", subtitle: "1 st Strukturell Cellulitbehandling", price: 999, originalPrice: 1999, discountLabel: "SPARA 1000 KR", tag: "BEGRÄNSAT ERBJUDANDE" },
 ];
 
 const FinalCTA: React.FC = () => {

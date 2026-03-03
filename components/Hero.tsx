@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   ];
 
   const packages = [
-    { id: 1, quantity: 1, title: "LuminaFlow 360", subtitle: "1 st Strukturell Cellulitbehandling", price: 999, originalPrice: 1499, discountLabel: "SPARA 500 KR", tag: "BEGRÄNSAT ERBJUDANDE" },
+    { id: 1, quantity: 1, title: "LuminaFlow 360", subtitle: "1 st Strukturell Cellulitbehandling", price: 999, originalPrice: 1999, discountLabel: "SPARA 1000 KR", tag: "BEGRÄNSAT ERBJUDANDE" },
   ];
 
   const nextImage = () => setCurrentImageIndex(p => (p === productImages.length - 1 ? 0 : p + 1));
