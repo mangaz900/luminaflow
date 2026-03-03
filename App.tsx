@@ -108,6 +108,8 @@ const App: React.FC = () => {
 
   // Track PageView on route change
   useEffect(() => {
+    // Scrolla till top direkt vid sidbyte
+    window.scrollTo(0, 0);
     pageView();
     trackPageView(location.pathname);
   }, [location.pathname]);

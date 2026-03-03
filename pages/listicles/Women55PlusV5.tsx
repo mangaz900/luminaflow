@@ -23,7 +23,7 @@ const Women55PlusV5: React.FC = () => {
     const prevVideo = () => setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
 
     const scrollToOffer = () => {
-        window.location.href = 'https://flow.luminahairpro.com/';
+        navigate('/');
     };
 
     return (
