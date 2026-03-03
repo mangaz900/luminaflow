@@ -54,40 +54,43 @@ const Hero: React.FC = () => {
               Teknik utvecklad för synligt jämnare hud hemma.
             </p>
 
-            {/* Package Selection */}
+            {/* Package Offer Card */}
             <div className="space-y-3 pt-2">
-              {packages.map(option => {
-                const isSelected = selectedPackageId === option.id;
-                return (
-                  <div
-                    key={option.id}
-                    onClick={() => setSelectedPackageId(option.id)}
-                    className={`relative flex items-center p-4 rounded-2xl cursor-pointer transition-all duration-200 border-2 select-none ${isSelected ? 'border-[#B8986A] bg-white shadow-md' : 'border-[#DDD4CB] bg-[#EDE6DF] hover:border-[#B8986A]/50'}`}
-                  >
-                    {option.tag && (
-                      <div className="absolute -top-3 right-5 z-20">
-                        <span className="bg-[#B8986A] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                          {option.tag}
+              {packages.map(option => (
+                <div
+                  key={option.id}
+                  className="relative flex items-center p-5 rounded-2xl border-2 border-[#B8986A] bg-white shadow-lg transition-all duration-300 select-none"
+                >
+                  {option.tag && (
+                    <div className="absolute -top-3 right-5 z-20">
+                      <span className="bg-[#B8986A] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                        {option.tag}
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="font-bold text-[#3B2E28] text-lg">{option.title}</span>
+                      {option.discountLabel && (
+                        <span className="text-[10px] bg-[#F4EFEA] text-[#B8986A] font-bold px-2 py-0.5 rounded border border-[#B8986A]/20">
+                          {option.discountLabel}
                         </span>
-                      </div>
-                    )}
-                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mr-4 flex-shrink-0 ${isSelected ? 'border-[#B8986A]' : 'border-[#DDD4CB]'}`}>
-                      {isSelected && <div className="w-2.5 h-2.5 bg-[#B8986A] rounded-full" />}
+                      )}
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#3B2E28]">{option.title}</span>
-                        {option.discountLabel && <span className="text-[10px] bg-[#F4EFEA] text-[#B8986A] font-bold px-2 py-0.5 rounded">{option.discountLabel}</span>}
-                      </div>
-                      <p className="text-sm text-[#7A6A62]">{option.subtitle}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-[#7A6A62] line-through">{option.originalPrice} kr</p>
-                      <p className="text-xl font-bold text-[#3B2E28]">{option.price} kr</p>
-                    </div>
+                    <p className="text-sm text-[#7A6A62] italic">{option.subtitle}</p>
                   </div>
-                );
-              })}
+
+                  <div className="text-right">
+                    <p className="text-xs text-[#7A6A62] line-through opacity-60">
+                      {option.originalPrice} kr
+                    </p>
+                    <p className="text-2xl font-bold text-[#3B2E28]">
+                      {option.price} kr
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <button
