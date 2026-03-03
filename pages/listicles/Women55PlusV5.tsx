@@ -282,7 +282,7 @@ const Women55PlusV5: React.FC = () => {
                             <div className="bg-[#FFF9EA] border border-[#F4BE19] p-6 rounded-xl mb-8 flex items-center gap-4">
                                 <div className="bg-[#F4BE19] p-3 rounded-full text-white"><ShieldCheck size={32} /></div>
                                 <div>
-                                    <h4 className="font-bold text-[#17242C]">60 dagars garanti</h4>
+                                    <h4 className="font-bold text-[#17242C]">1 års garanti</h4>
                                     <p className="text-[15px]">Du testar hemma i lugn och ro. Ser du ingen förbättring? Du får pengarna tillbaka. Enkelt. Ingen risk.</p>
                                 </div>
                             </div>
@@ -296,7 +296,7 @@ const Women55PlusV5: React.FC = () => {
                                 </button>
                                 <p className="mt-4 text-sm text-gray-500 font-medium tracking-wide flex items-center justify-center gap-4">
                                     <span className="flex items-center gap-1 uppercase"><Truck size={14} /> Fri Frakt</span>
-                                    <span className="flex items-center gap-1 uppercase"><ShieldCheck size={14} /> 60 dagars öppet köp</span>
+                                    <span className="flex items-center gap-1 uppercase"><ShieldCheck size={14} /> 1 års öppet köp</span>
                                 </p>
                             </div>
                         </div>
